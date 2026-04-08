@@ -13,6 +13,7 @@
       "gallery": [],
       "featured": true,
       "color": "#7C3AED",
+      "story": [],
       "challenge": "This wasn't a campaign I led — it was one I learned from. AEON was launching their new Beta store format and needed production support. I was there to coordinate logistics, manage schedules, keep things moving.",
       "approach": "Showed up, stayed curious, asked questions when appropriate, stayed quiet when I should watch. Sometimes the best learning happens when you're not the one in charge.",
       "execution": [
@@ -47,6 +48,7 @@
       "gallery": [],
       "featured": true,
       "color": "#D4A574",
+      "story": [],
       "challenge": "There's a 300-year-old craft village 20km from Hanoi where artisans spend months inlaying mother-of-pearl into wood. Their children are leaving for office jobs. Young Vietnamese scroll past temples on TikTok without recognizing the craftsmanship. The question wasn't 'how do we sell pearl inlay' — it was 'how do we help young people feel pride in something they've been taught to see as old-fashioned?'",
       "insight": "Gen Z doesn't want to be lectured about tradition. But they desperately want to belong to something meaningful — to participate in culture, not just observe it from behind museum glass.",
       "approach": "We stopped treating Chuon Ngo as a heritage site to be preserved and started treating it as a living creative community to be joined. The artisans became collaborators, not subjects. The goal wasn't short-term awareness — it was long-term cultural pride.",
@@ -99,7 +101,19 @@
       ],
       "featured": true,
       "color": "#EC4899",
-      "challenge": "I started Pixself as a side project: custom pixel-art keychains from personal photos. The practical question was 'can I make money selling keychains?' But the real question turned out to be: 'Why do people want to carry physical reminders of the things they love?'",
+      "story": [
+        {
+          "blockType": "heading",
+          "body": "The Challenge",
+          "imageSize": "wide"
+        },
+        {
+          "blockType": "text",
+          "body": "I started Pixself as a side project: custom pixel-art keychains from personal photos. The practical question was 'can I make money selling keychains?' But the real question turned out to be: 'Why do people want to carry physical reminders of the things they love?'",
+          "image": "/images/projects/items/2/story/1/image.jpg",
+          "imageSize": "wide"
+        }
+      ],
       "insight": "In a world where everything is digital, people crave physical objects that anchor their identity. A keychain isn't functional — it's a tiny declaration: 'this is what matters to me.' Pet owners, K-pop fans, couples — they all want to carry proof of belonging.",
       "approach": "Stopped selling 'custom keychains' and started selling 'a piece of your world you can hold.' The product was the same. The emotional framing changed everything.",
       "execution": [
@@ -138,6 +152,7 @@
       "gallery": [],
       "featured": true,
       "color": "#06B6D4",
+      "story": [],
       "challenge": "Kingsport sells sports equipment for kids. They wanted to reach 'Gen Z moms.' But when we started talking to these women, we realized the brief missed the point. These aren't just 'consumers' — they're first-time parents terrified of making the wrong choice, drowning in conflicting advice, desperate to be seen as good mothers.\n\n",
       "insight": "Gen Z moms don't trust brands. They've grown up seeing through marketing. But they desperately trust each other. What they need isn't better ads — it's permission to trust their own instincts.",
       "approach": "We recommended Kingsport stop trying to convince moms and start trying to support them. Build community infrastructure. Become the place where moms help each other, with Kingsport as a quiet, trusted presence — not the loudest voice.",
@@ -179,6 +194,7 @@
       "gallery": [],
       "featured": true,
       "color": "#059669",
+      "story": [],
       "challenge": "BIDV wanted help communicating their ESG commitments. The problem: ESG reports are written for investors, not customers. Regular people don't care about 'carbon-neutral operations' or 'governance frameworks.' They care about their mortgage, their savings, their kids' education funds. How do you bridge that gap?",
       "insight": "People want to do good. But they're exhausted by abstract promises. They need to see the thread between 'I opened this account' and 'this village got clean water.' The connection has to be tangible, specific, human.",
       "approach": "Translate corporate sustainability into personal impact. Not 'we planted 10,000 trees' but 'your savings account helped plant a tree in Lào Cai — here's a photo, here's the farmer who tends it.'",
@@ -216,6 +232,7 @@
       "gallery": [],
       "featured": false,
       "color": "#DC2626",
+      "story": [],
       "challenge": "Valentine's Day e-commerce is brutal. Everyone's screaming discounts. We had two weeks. Limited budget. The practical goal was 'double revenue.' But the human question was more interesting: why does Valentine's gift shopping feel so stressful?",
       "insight": "They're afraid of getting it wrong. Of giving a gift that says 'I don't really know you.' The purchase isn't about the product — it's about proving you pay attention.",
       "approach": "We stopped selling products and started providing reassurance. 'We'll help you find something that shows you've been paying attention.' Gift guides organized by relationship stage, not product category.",
