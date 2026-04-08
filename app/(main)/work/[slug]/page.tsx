@@ -7,6 +7,23 @@ import { projects, getProjectBySlug } from "@/content/projects";
 import { personal } from "@/content/personal";
 import { ArrowLeft, ArrowRight, Trophy } from "lucide-react";
 
+function getEmbedUrl(url: string): string | null {
+  try {
+    const u = new URL(url);
+    if (u.hostname.includes("youtube.com") || u.hostname.includes("youtu.be")) {
+      const id = u.hostname.includes("youtu.be")
+        ? u.pathname.slice(1)
+        : u.searchParams.get("v");
+      return id ? `https://www.youtube.com/embed/${id}` : null;
+    }
+    if (u.hostname.includes("vimeo.com")) {
+      const id = u.pathname.split("/").filter(Boolean).pop();
+      return id ? `https://player.vimeo.com/video/${id}` : null;
+    }
+  } catch { /* invalid URL */ }
+  return null;
+}
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -142,6 +159,59 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
         </Container>
       </section>
+
+      {/* Gallery */}
+      {project.gallery && project.gallery.length > 0 && (
+        <section className="pb-16">
+          <Container size="wide">
+            <div className="space-y-6">
+              {project.gallery.map((item, i) => (
+                <div key={i}>
+                  <div className="p-2 rounded-[2rem] bg-black/[0.02] ring-1 ring-black/[0.04]">
+                    <div
+                      className="rounded-[calc(2rem-0.5rem)] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.75),0_6px_24px_rgba(0,0,0,0.05)]"
+                      style={{ backgroundColor: project.color + "12" }}
+                    >
+                      {item.type === "image" && item.image && (
+                        <img
+                          src={item.image}
+                          alt={item.caption || `${project.title} gallery ${i + 1}`}
+                          className="w-full h-auto"
+                        />
+                      )}
+                      {item.type === "video" && item.videoUrl && (() => {
+                        const embedUrl = getEmbedUrl(item.videoUrl);
+                        return embedUrl ? (
+                          <div className="aspect-video">
+                            <iframe
+                              src={embedUrl}
+                              title={item.caption || `${project.title} video ${i + 1}`}
+                              className="w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          </div>
+                        ) : (
+                          <div className="aspect-video flex items-center justify-center text-[var(--color-ink-muted)]">
+                            <a href={item.videoUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                              Watch video
+                            </a>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  </div>
+                  {item.caption && (
+                    <p className="text-sm text-[var(--color-ink-muted)] text-center mt-3">
+                      {item.caption}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Awards */}
       {project.awards && project.awards.length > 0 && (

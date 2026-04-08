@@ -299,6 +299,33 @@ export default config({
               directory: "public/images/projects",
               publicPath: "/images/projects/",
             }),
+            gallery: fields.array(
+              fields.object({
+                type: fields.select({
+                  label: "Type",
+                  options: [
+                    { label: "Image", value: "image" },
+                    { label: "Video (YouTube/Vimeo)", value: "video" },
+                  ],
+                  defaultValue: "image",
+                }),
+                image: fields.image({
+                  label: "Image",
+                  directory: "public/images/projects",
+                  publicPath: "/images/projects/",
+                }),
+                videoUrl: fields.text({
+                  label: "Video URL",
+                  description: "YouTube or Vimeo link",
+                }),
+                caption: fields.text({ label: "Caption (optional)" }),
+              }),
+              {
+                label: "Gallery (images & videos)",
+                itemLabel: (props) =>
+                  props.fields.type.value === "image" ? "Image" : "Video",
+              }
+            ),
             featured: fields.checkbox({
               label: "Featured on Homepage",
               defaultValue: false,
