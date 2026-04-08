@@ -40,11 +40,11 @@ export default config({
         status: fields.text({ label: "Status (e.g. Open to opportunities)" }),
         portraitImage: fields.text({
           label: "Portrait Image Path",
-          description: "Path relative to public/, e.g. /tien.jpg",
+          description: "e.g. /tien.jpg — upload images to public/ in your repo",
         }),
         aboutImage: fields.text({
           label: "About Page Image Path",
-          description: "Path relative to public/, e.g. /tien-about.jpg",
+          description: "e.g. /tien-about.jpg",
         }),
         seo: fields.object({
           title: fields.text({ label: "SEO Title" }),
