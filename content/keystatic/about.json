@@ -1,7 +1,7 @@
 {
   "aboutHero": {
-    "hookLine": "Xin ch\u00e0o. Hello. I\u2019m Tien.",
-    "hookSub": "Think of me as the person who makes brands sound human instead of corporate. Especially when they\u2019re talking to people who can smell inauthenticity from a mile away."
+    "hookLine": "Xin chào. Hello. I’m Tien.",
+    "hookSub": "Think of me as the person who makes brands sound human instead of corporate. Especially when they’re talking to people who can smell inauthenticity from a mile away."
   },
   "experience": [
     {
@@ -21,17 +21,15 @@
     {
       "title": "Champion",
       "event": "Social Pioneers 2025",
-      "note": "team Chu\u1ed3n Ng\u1ed1"
+      "note": "team Chuồn Ngố"
     },
     {
       "title": "1st Runner-up",
-      "event": "Digital Creatory 2024",
-      "note": ""
+      "event": "Digital Creatory 2024"
     },
     {
       "title": "Semi-finalist",
-      "event": "Marketing Olympics ASEAN 2025",
-      "note": ""
+      "event": "Marketing Olympics ASEAN 2025"
     }
   ],
   "education": {
@@ -43,26 +41,23 @@
   },
   "personalBits": [
     {
-      "text": "I run on <em>c\u00e0 ph\u00ea s\u1eefa \u0111\u00e1</em> and can debate LoL builds for hours.",
+      "text": "I run on <em>cà phê sữa đá</em> and can debate LoL builds for hours.",
       "linkText": "work",
       "linkHref": "/work",
       "suffix": "."
     },
     {
-      "text": "I dream of having croissants in Paris one day. Until then, <em>b\u00e1nh m\u00ec ch\u1ea3</em> in Hanoi hits different.",
-      "linkText": "",
-      "linkHref": "",
-      "suffix": ""
+      "text": "I dream of having croissants in Paris one day. Until then, <em>bánh mì chả</em> in Hanoi hits different."
     }
   ],
   "philosophy": {
     "approach": {
-      "headline": "Marketing isn\u2019t about winning customers.",
-      "subheadline": "It\u2019s about understanding people well enough to actually help them.",
+      "headline": "Marketing isn’t about winning customers.",
+      "subheadline": "It’s about understanding people well enough to actually help them.",
       "paragraphs": [
-        "My approach is deeply inspired by <strong>H\u00f9ng V\u00f5</strong> (APAC 2021 Top 50 CMO) and his philosophy of <strong>\u201cHi\u1ec3u \u0111\u1ec3 y\u00eau th\u01b0\u01a1ng\u201d</strong>: understand in order to love. Marketing isn\u2019t a battle for attention. It\u2019s a battle of moving people from mind to heart.",
-        "That means starting every project not with \u201chow do we get people to buy?\u201d but with <strong>\u201cwhat struggle do they wake up worrying about?\u201d</strong>",
-        "The campaigns I\u2019m most proud of aren\u2019t the ones that hit the biggest numbers. They\u2019re the ones where someone reached out saying \u201cI felt seen.\u201d"
+        "My approach is deeply inspired by <strong>Hùng Võ</strong> (APAC 2021 Top 50 CMO) and his philosophy of <strong>“Hiểu để yêu thương”</strong>: understand in order to love. Marketing isn’t a battle for attention. It’s a battle of moving people from mind to heart.",
+        "That means starting every project not with “how do we get people to buy?” but with <strong>“what struggle do they wake up worrying about?”</strong>",
+        "The campaigns I’m most proud of aren’t the ones that hit the biggest numbers. They’re the ones where someone reached out saying “I felt seen.”"
       ]
     },
     "reflections": [
@@ -70,53 +65,49 @@
         "kicker": "What Shapes My Work",
         "title": "Living Multiple Lives",
         "paragraphs": [
-          "You can\u2019t write for people you\u2019ve never talked to. So I try to live messily: eating at the ph\u1edf stall next to the xe \u00f4m drivers at 6am, then presenting to executives in an air-conditioned boardroom by noon.",
-          "The best insights don\u2019t come from data dashboards. They come from overhearing a mom complain about her kid\u2019s eating habits, or watching how a group of Gen Z friends roast each other\u2019s fashion choices. <strong>Real life is the research.</strong>"
+          "You can’t write for people you’ve never talked to. So I try to live messily: eating at the phở stall next to the xe ôm drivers at 6am, then presenting to executives in an air-conditioned boardroom by noon.",
+          "The best insights don’t come from data dashboards. They come from overhearing a mom complain about her kid’s eating habits, or watching how a group of Gen Z friends roast each other’s fashion choices. <strong>Real life is the research.</strong>"
         ]
       },
       {
-        "kicker": "What I\u2019m Still Learning",
+        "kicker": "What I’m Still Learning",
         "title": "Slowing Down to See Clearly",
         "paragraphs": [
           "This industry moves fast and rewards people who move faster. I used to think speed was the game. Now I think clarity is.",
-          "The times I\u2019ve messed up were times I was so busy proving I could deliver quickly that I didn\u2019t stop to ask: <strong>\u201cIs this actually what they need?\u201d</strong> Humility isn\u2019t weakness. It\u2019s the only way to stay curious enough to keep learning."
+          "The times I’ve messed up were times I was so busy proving I could deliver quickly that I didn’t stop to ask: <strong>“Is this actually what they need?”</strong> Humility isn’t weakness. It’s the only way to stay curious enough to keep learning."
         ]
       }
     ],
-    "quote": "\u201cThe best marketing doesn\u2019t feel like marketing. It feels like someone finally understood what you were going through.\u201d",
-    "mission": "I\u2019m not chasing awards or viral moments. I\u2019m trying to create work that makes people feel <strong>less alone</strong>. Work that gives them belonging, confidence, or just a moment of real connection."
+    "quote": "“The best marketing doesn’t feel like marketing. It feels like someone finally understood what you were going through.”",
+    "mission": "I’m not chasing awards or viral moments. I’m trying to create work that makes people feel <strong>less alone</strong>. Work that gives them belonging, confidence, or just a moment of real connection."
   },
   "afterwork": [
     {
       "id": "lol",
       "title": "League of Legends",
-      "subtitle": "10 years \u00b7 Support main \u00b7 Platinum",
-      "description": "The best players make everyone else look good. That\u2019s support in a nutshell. Also: staying calm when the team is flaming at 11pm? That skill transfers directly to client crises.",
+      "subtitle": "10 years · Support main · Platinum",
+      "description": "The best players make everyone else look good. That’s support in a nutshell. Also: staying calm when the team is flaming at 11pm? That skill transfers directly to client crises.",
       "takeaway": "Learning to lose gracefully",
-      "image": null,
-      "emoji": "\ud83c\udfae",
+      "image": "/images/about/afterwork/0/image.png",
+      "emoji": "🎮",
       "bgGradient": "from-violet-50 to-indigo-100",
       "size": "large"
     },
     {
       "id": "guitar",
       "title": "Guitar",
-      "subtitle": "",
-      "description": "Self-taught. Still can\u2019t nail barre chords. But choosing to be a beginner keeps you humble.",
+      "description": "Self-taught. Still can’t nail barre chords. But choosing to be a beginner keeps you humble.",
       "takeaway": "The discipline of being bad at something",
-      "image": null,
-      "emoji": "\ud83c\udfb8",
+      "emoji": "🎸",
       "bgGradient": "from-amber-50 to-orange-100",
       "size": "small"
     },
     {
       "id": "coffee",
-      "title": "C\u00e0 ph\u00ea s\u1eefa \u0111\u00e1",
-      "subtitle": "",
-      "description": "Morning. Afternoon. Evening. Sitting at v\u1ec9a h\u00e8 stalls, watching Hanoi go by.",
+      "title": "Cà phê sữa đá",
+      "description": "Morning. Afternoon. Evening. Sitting at vỉa hè stalls, watching Hanoi go by.",
       "takeaway": "Insights live in the pauses",
-      "image": null,
-      "emoji": "\u2615",
+      "emoji": "☕",
       "bgGradient": "from-amber-50 to-yellow-100",
       "size": "small"
     },
@@ -124,17 +115,16 @@
       "id": "cat",
       "title": "Living with a cat",
       "subtitle": "She runs the house, not me",
-      "description": "She ignores me when I want attention. Demands pets at the worst times. Zero respect for my deadlines. Perfect training for understanding that the world doesn\u2019t revolve around your brand.",
+      "description": "She ignores me when I want attention. Demands pets at the worst times. Zero respect for my deadlines. Perfect training for understanding that the world doesn’t revolve around your brand.",
       "takeaway": "Your customer has a whole life going on",
-      "image": null,
-      "emoji": "\ud83d\udc31",
+      "emoji": "🐱",
       "bgGradient": "from-pink-50 to-rose-100",
       "size": "large"
     }
   ],
   "aboutCta": {
-    "kicker": "Let\u2019s Connect",
+    "kicker": "Let’s Connect",
     "headline": "Got a project? A question?",
-    "body": "I\u2019m always down for a good conversation. Especially if it involves marketing strategy, creative campaigns, or debating whether AP or AD is better on certain champions."
+    "body": "I’m always down for a good conversation. Especially if it involves marketing strategy, creative campaigns, or debating whether AP or AD is better on certain champions."
   }
 }
