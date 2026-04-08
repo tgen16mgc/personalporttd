@@ -88,17 +88,12 @@
       "gallery": [
         {
           "type": "image",
-          "image": "/images/projects/items/2/gallery/0/image.jpeg",
+          "image": "/images/projects/items/2/gallery/0/image.jpg",
           "size": "half"
         },
         {
           "type": "video",
           "videoUrl": "https://www.tiktok.com/@pixself/video/7551064434207198485?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
-          "size": "half"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/2/gallery/2/image.jpg",
           "size": "half"
         }
       ],
