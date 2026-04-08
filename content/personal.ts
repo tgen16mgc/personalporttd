@@ -11,8 +11,8 @@ export const personal = data as {
   facebook: string;
   resumeUrl: string;
   status: string;
-  portraitImage: string;
-  aboutImage: string;
+  portraitImage: string | null;
+  aboutImage: string | null;
   seo: {
     title: string;
     description: string;

@@ -38,13 +38,15 @@ export default config({
         facebook: fields.text({ label: "Facebook URL" }),
         resumeUrl: fields.text({ label: "Resume URL" }),
         status: fields.text({ label: "Status (e.g. Open to opportunities)" }),
-        portraitImage: fields.text({
-          label: "Portrait Image Path",
-          description: "e.g. /tien.jpg — upload images to public/ in your repo",
+        portraitImage: fields.image({
+          label: "Portrait Image",
+          directory: "public/images/personal",
+          publicPath: "/images/personal/",
         }),
-        aboutImage: fields.text({
-          label: "About Page Image Path",
-          description: "e.g. /tien-about.jpg",
+        aboutImage: fields.image({
+          label: "About Page Image",
+          directory: "public/images/personal",
+          publicPath: "/images/personal/",
         }),
         seo: fields.object({
           title: fields.text({ label: "SEO Title" }),
@@ -122,9 +124,10 @@ export default config({
         brands: fields.array(
           fields.object({
             name: fields.text({ label: "Brand Name" }),
-            logo: fields.text({
-              label: "Logo Path",
-              description: "SVG in public/images/brands/, e.g. /images/brands/aeon.svg",
+            logo: fields.image({
+              label: "Logo",
+              directory: "public/images/homepage",
+              publicPath: "/images/homepage/",
             }),
           }),
           {
@@ -233,9 +236,10 @@ export default config({
             subtitle: fields.text({ label: "Subtitle (leave empty for none)" }),
             description: fields.text({ label: "Description", multiline: true }),
             takeaway: fields.text({ label: "Takeaway" }),
-            image: fields.text({
-              label: "Image Path",
-              description: "e.g. /afterwork/lol.jpg",
+            image: fields.image({
+              label: "Image",
+              directory: "public/images/about",
+              publicPath: "/images/about/",
             }),
             emoji: fields.text({ label: "Emoji" }),
             bgGradient: fields.text({
@@ -285,9 +289,10 @@ export default config({
             }),
             role: fields.text({ label: "Your Role" }),
             year: fields.text({ label: "Year" }),
-            thumbnail: fields.text({
-              label: "Thumbnail Path",
-              description: "e.g. /images/projects/my-project-thumb.svg",
+            thumbnail: fields.image({
+              label: "Thumbnail",
+              directory: "public/images/projects",
+              publicPath: "/images/projects/",
             }),
             featured: fields.checkbox({
               label: "Featured on Homepage",

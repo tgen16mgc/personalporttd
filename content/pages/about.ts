@@ -27,7 +27,7 @@ export interface AfterworkItem {
   subtitle: string | null;
   description: string;
   takeaway: string;
-  image: string;
+  image: string | null;
   emoji: string;
   bgGradient: string;
   size: "large" | "small";

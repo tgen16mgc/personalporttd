@@ -51,11 +51,11 @@
     ]
   },
   "brands": [
-    { "name": "AEON Vietnam", "logo": "/images/brands/aeon.svg" },
-    { "name": "BIDV", "logo": "/images/brands/bidv.svg" },
-    { "name": "Kingsport", "logo": "/images/brands/kingsport.svg" },
-    { "name": "VuVer", "logo": "/images/brands/vuver.svg" },
-    { "name": "Chu\u1ed3n Ng\u00f5", "logo": "/images/brands/chuon-ngo.svg" },
-    { "name": "Pixself", "logo": "/images/brands/pixself.svg" }
+    { "name": "AEON Vietnam", "logo": "/images/homepage/brands/0/logo.svg" },
+    { "name": "BIDV", "logo": "/images/homepage/brands/1/logo.svg" },
+    { "name": "Kingsport", "logo": "/images/homepage/brands/2/logo.svg" },
+    { "name": "VuVer", "logo": "/images/homepage/brands/3/logo.svg" },
+    { "name": "Chu\u1ed3n Ng\u00f5", "logo": "/images/homepage/brands/4/logo.svg" },
+    { "name": "Pixself", "logo": "/images/homepage/brands/5/logo.svg" }
   ]
 }

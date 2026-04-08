@@ -147,14 +147,16 @@ export function Hero() {
             >
               <div className="absolute inset-0 p-2 rounded-[2rem] bg-white/70 ring-1 ring-black/[0.05] shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
                 <div className="relative w-full h-full rounded-[calc(2rem-0.5rem)] overflow-hidden ring-1 ring-black/[0.06] bg-[#F9F8F5]">
-                  <Image
-                    src={personal.portraitImage}
-                    alt={`${personal.name} portrait`}
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 70vw, 28vw"
-                    className="object-cover"
-                  />
+                  {personal.portraitImage && (
+                    <Image
+                      src={personal.portraitImage}
+                      alt={`${personal.name} portrait`}
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 70vw, 28vw"
+                      className="object-cover"
+                    />
+                  )}
 
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10" />
 
