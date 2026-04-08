@@ -59,36 +59,56 @@ function parseGallery(item: RawItem): GalleryItem[] | undefined {
 
 function parseStory(item: RawItem): StoryBlock[] | undefined {
   if (!("story" in item) || !Array.isArray(item.story) || item.story.length === 0) return undefined;
-  type RawBlock = { discriminant: string; value: Record<string, unknown> };
-  return (item.story as RawBlock[]).map((b): StoryBlock => {
-    const d = b.discriminant;
-    const v = b.value || {};
+  type RawBlock = Record<string, unknown>;
+  const results: StoryBlock[] = [];
+
+  for (const raw of item.story as RawBlock[]) {
+    const d = (raw.discriminant as string) || (raw.blockType as string) || "text";
+    const v = (raw.value as Record<string, unknown>) || raw;
+
     switch (d) {
       case "heading":
-        return { discriminant: "heading", value: { body: (v.body as string) || "" } };
+        results.push({ discriminant: "heading", value: { body: (v.body as string) || "" } });
+        break;
       case "image":
-        return {
+        results.push({
           discriminant: "image",
           value: {
             image: (v.image as string | null) ?? null,
-            caption: (v.caption as string) || "",
-            size: ((v.size as string) || "wide") as "content" | "wide" | "full",
+            caption: (v.caption as string) || (v.imageCaption as string) || "",
+            size: ((v.size as string) || (v.imageSize as string) || "wide") as "content" | "wide" | "full",
           },
-        };
+        });
+        break;
       case "quote":
-        return { discriminant: "quote", value: { body: (v.body as string) || "" } };
+        results.push({ discriminant: "quote", value: { body: (v.body as string) || "" } });
+        break;
       case "steps":
-        return {
+        results.push({
           discriminant: "steps",
           value: {
             heading: (v.heading as string) || "",
             items: Array.isArray(v.items) ? (v.items as string[]) : [],
           },
-        };
-      default:
-        return { discriminant: "text", value: { body: (v.body as string) || "" } };
+        });
+        break;
+      default: {
+        results.push({ discriminant: "text", value: { body: (v.body as string) || "" } });
+        if (v.image) {
+          results.push({
+            discriminant: "image",
+            value: {
+              image: (v.image as string | null) ?? null,
+              caption: (v.imageCaption as string) || "",
+              size: ((v.imageSize as string) || "wide") as "content" | "wide" | "full",
+            },
+          });
+        }
+        break;
+      }
     }
-  });
+  }
+  return results.length > 0 ? results : undefined;
 }
 
 export const projects: Project[] = data.items.map((item) => {
