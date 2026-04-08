@@ -10,18 +10,36 @@
   "resumeUrl": "https://canva.link/o4b4tnptmaj8nri",
   "status": "Open to opportunities",
   "portraitImage": "/images/personal/portraitImage.jpg",
-  "aboutImage": null,
+  "aboutImage": "/images/personal/aboutImage.png",
   "seo": {
     "title": "Tien Duong Ngoc | Marketing Strategist",
     "description": "Marketing. Strategy. Meaning. Portfolio of Tien Duong Ngoc, a marketer who finds beauty in every brief.",
     "shortDescription": "Marketing. Strategy. Meaning.",
-    "keywords": ["marketing", "strategy", "portfolio", "Tien Duong", "creative"]
+    "keywords": [
+      "marketing",
+      "strategy",
+      "portfolio",
+      "Tien Duong",
+      "creative"
+    ]
   },
   "navigation": [
-    { "href": "/", "label": "Home" },
-    { "href": "/work", "label": "Work" },
-    { "href": "/about", "label": "About" },
-    { "href": "/contact", "label": "Contact" }
+    {
+      "href": "/",
+      "label": "Home"
+    },
+    {
+      "href": "/work",
+      "label": "Work"
+    },
+    {
+      "href": "/about",
+      "label": "About"
+    },
+    {
+      "href": "/contact",
+      "label": "Contact"
+    }
   ],
   "footerQuote": "Make things worth feeling."
 }
