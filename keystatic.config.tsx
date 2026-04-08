@@ -353,22 +353,66 @@ export default config({
               label: "Accent Color (hex)",
               description: "e.g. #06B6D4",
             }),
+            story: fields.array(
+              fields.object({
+                blockType: fields.select({
+                  label: "Block type",
+                  options: [
+                    { label: "Text paragraph", value: "text" },
+                    { label: "Section heading", value: "heading" },
+                    { label: "Image (full-width break)", value: "image" },
+                    { label: "Pull quote", value: "quote" },
+                  ],
+                  defaultValue: "text",
+                }),
+                body: fields.text({
+                  label: "Text / Heading / Quote content",
+                  multiline: true,
+                }),
+                image: fields.image({
+                  label: "Image",
+                  directory: "public/images/projects",
+                  publicPath: "/images/projects/",
+                }),
+                imageCaption: fields.text({ label: "Image caption (optional)" }),
+                imageSize: fields.select({
+                  label: "Image width",
+                  options: [
+                    { label: "Content width", value: "content" },
+                    { label: "Wide (break out)", value: "wide" },
+                    { label: "Full bleed", value: "full" },
+                  ],
+                  defaultValue: "wide",
+                }),
+              }),
+              {
+                label: "Story (editorial blocks -- images between text)",
+                itemLabel: (props) => {
+                  const t = props.fields.blockType.value;
+                  const preview = props.fields.body.value?.slice(0, 50) || "";
+                  if (t === "heading") return `H: ${preview}`;
+                  if (t === "image") return `IMG: ${props.fields.imageCaption.value || "image"}`;
+                  if (t === "quote") return `Q: ${preview}`;
+                  return preview || "text";
+                },
+              }
+            ),
             challenge: fields.text({
-              label: "The Challenge",
+              label: "The Challenge (legacy -- use Story blocks instead)",
               multiline: true,
             }),
             insight: fields.text({
-              label: "The Insight",
+              label: "The Insight (legacy -- use Story blocks instead)",
               multiline: true,
             }),
             approach: fields.text({
-              label: "The Approach",
+              label: "The Approach (legacy -- use Story blocks instead)",
               multiline: true,
             }),
             execution: fields.array(
               fields.text({ label: "Step" }),
               {
-                label: "Execution Steps",
+                label: "Execution Steps (legacy)",
                 itemLabel: (props) => props.value.slice(0, 60),
               }
             ),
