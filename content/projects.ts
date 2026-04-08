@@ -1,12 +1,11 @@
 import data from "./keystatic/projects.json";
 
-export interface StoryBlock {
-  blockType: "text" | "heading" | "image" | "quote";
-  body: string;
-  image: string | null;
-  imageCaption: string;
-  imageSize: "content" | "wide" | "full";
-}
+export type StoryBlock =
+  | { discriminant: "text"; value: { body: string } }
+  | { discriminant: "heading"; value: { body: string } }
+  | { discriminant: "image"; value: { image: string | null; caption: string; size: "content" | "wide" | "full" } }
+  | { discriminant: "quote"; value: { body: string } }
+  | { discriminant: "steps"; value: { heading: string; items: string[] } };
 
 export interface GalleryItem {
   type: "image" | "video" | "videoFile";
@@ -60,16 +59,36 @@ function parseGallery(item: RawItem): GalleryItem[] | undefined {
 
 function parseStory(item: RawItem): StoryBlock[] | undefined {
   if (!("story" in item) || !Array.isArray(item.story) || item.story.length === 0) return undefined;
-  return (item.story as {
-    blockType: string; body: string; image?: string | null;
-    imageCaption?: string; imageSize?: string;
-  }[]).map((b) => ({
-    blockType: b.blockType as StoryBlock["blockType"],
-    body: b.body || "",
-    image: b.image ?? null,
-    imageCaption: b.imageCaption || "",
-    imageSize: (b.imageSize as StoryBlock["imageSize"]) || "wide",
-  }));
+  type RawBlock = { discriminant: string; value: Record<string, unknown> };
+  return (item.story as RawBlock[]).map((b): StoryBlock => {
+    const d = b.discriminant;
+    const v = b.value || {};
+    switch (d) {
+      case "heading":
+        return { discriminant: "heading", value: { body: (v.body as string) || "" } };
+      case "image":
+        return {
+          discriminant: "image",
+          value: {
+            image: (v.image as string | null) ?? null,
+            caption: (v.caption as string) || "",
+            size: ((v.size as string) || "wide") as "content" | "wide" | "full",
+          },
+        };
+      case "quote":
+        return { discriminant: "quote", value: { body: (v.body as string) || "" } };
+      case "steps":
+        return {
+          discriminant: "steps",
+          value: {
+            heading: (v.heading as string) || "",
+            items: Array.isArray(v.items) ? (v.items as string[]) : [],
+          },
+        };
+      default:
+        return { discriminant: "text", value: { body: (v.body as string) || "" } };
+    }
+  });
 }
 
 export const projects: Project[] = data.items.map((item) => {

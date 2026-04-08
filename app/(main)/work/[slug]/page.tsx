@@ -383,77 +383,112 @@ export default async function CaseStudyPage({ params }: Props) {
 /* ─── Editorial Story Block Renderer ─── */
 
 function StoryBlockRenderer({ block, color }: { block: StoryBlock; color: string }) {
-  if (block.blockType === "heading" && block.body) {
-    return (
-      <Container>
-        <div className="max-w-3xl pt-12 pb-4">
-          <div className="flex items-center gap-3 mb-1">
-            <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: color }} aria-hidden="true" />
-            <h2 className="font-[var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-light text-[var(--color-ink)] tracking-tight">
-              {block.body}
-            </h2>
+  switch (block.discriminant) {
+    case "heading": {
+      if (!block.value.body) return null;
+      return (
+        <Container>
+          <div className="max-w-3xl pt-12 pb-4">
+            <div className="flex items-center gap-3 mb-1">
+              <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: color }} aria-hidden="true" />
+              <h2 className="font-[var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-light text-[var(--color-ink)] tracking-tight">
+                {block.value.body}
+              </h2>
+            </div>
           </div>
-        </div>
-      </Container>
-    );
-  }
+        </Container>
+      );
+    }
 
-  if (block.blockType === "text" && block.body) {
-    return (
-      <Container>
-        <div className="max-w-3xl py-3">
-          <p className="text-lg text-[var(--color-ink-light)] leading-[1.8] pl-5">
-            {block.body}
-          </p>
-        </div>
-      </Container>
-    );
-  }
-
-  if (block.blockType === "quote" && block.body) {
-    return (
-      <Container>
-        <div className="max-w-3xl py-8">
-          <blockquote className="pl-5 border-l-2 ml-0" style={{ borderColor: color + "40" }}>
-            <p className="text-xl text-[var(--color-ink)] leading-relaxed font-[var(--font-display)] font-light italic">
-              {block.body}
+    case "text": {
+      if (!block.value.body) return null;
+      return (
+        <Container>
+          <div className="max-w-3xl py-3">
+            <p className="text-lg text-[var(--color-ink-light)] leading-[1.8] pl-5">
+              {block.value.body}
             </p>
-          </blockquote>
-        </div>
-      </Container>
-    );
-  }
-
-  if (block.blockType === "image" && block.image) {
-    const sizeMap = {
-      content: "max-w-3xl",
-      wide: "max-w-7xl",
-      full: "max-w-[100vw] px-0",
-    };
-    const isFullBleed = block.imageSize === "full";
-    const wrapperClass = sizeMap[block.imageSize] || sizeMap.wide;
-
-    return (
-      <div className={`mx-auto py-8 ${isFullBleed ? "" : "px-4 sm:px-6 lg:px-8"} ${wrapperClass}`}>
-        <div className={isFullBleed ? "" : "p-1.5 rounded-[1.25rem] bg-black/[0.02] ring-1 ring-black/[0.04]"}>
-          <div className={isFullBleed ? "" : "rounded-[calc(1.25rem-0.375rem)] overflow-hidden"}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={block.image}
-              alt={block.imageCaption || ""}
-              className="w-full h-auto block"
-              loading="lazy"
-            />
           </div>
-        </div>
-        {block.imageCaption && (
-          <p className={`text-[13px] text-[var(--color-ink-muted)] leading-relaxed mt-3 ${isFullBleed ? "px-4 sm:px-6 lg:px-8" : "px-1.5"}`}>
-            {block.imageCaption}
-          </p>
-        )}
-      </div>
-    );
-  }
+        </Container>
+      );
+    }
 
-  return null;
+    case "quote": {
+      if (!block.value.body) return null;
+      return (
+        <Container>
+          <div className="max-w-3xl py-8">
+            <blockquote className="pl-5 border-l-2 ml-0" style={{ borderColor: color + "40" }}>
+              <p className="text-xl text-[var(--color-ink)] leading-relaxed font-[var(--font-display)] font-light italic">
+                {block.value.body}
+              </p>
+            </blockquote>
+          </div>
+        </Container>
+      );
+    }
+
+    case "image": {
+      if (!block.value.image) return null;
+      const sizeMap = { content: "max-w-3xl", wide: "max-w-7xl", full: "max-w-[100vw] px-0" };
+      const isFullBleed = block.value.size === "full";
+      const wrapperClass = sizeMap[block.value.size] || sizeMap.wide;
+
+      return (
+        <div className={`mx-auto py-8 ${isFullBleed ? "" : "px-4 sm:px-6 lg:px-8"} ${wrapperClass}`}>
+          <div className={isFullBleed ? "" : "p-1.5 rounded-[1.25rem] bg-black/[0.02] ring-1 ring-black/[0.04]"}>
+            <div className={isFullBleed ? "" : "rounded-[calc(1.25rem-0.375rem)] overflow-hidden"}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={block.value.image}
+                alt={block.value.caption || ""}
+                className="w-full h-auto block"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          {block.value.caption && (
+            <p className={`text-[13px] text-[var(--color-ink-muted)] leading-relaxed mt-3 ${isFullBleed ? "px-4 sm:px-6 lg:px-8" : "px-1.5"}`}>
+              {block.value.caption}
+            </p>
+          )}
+        </div>
+      );
+    }
+
+    case "steps": {
+      const { heading, items } = block.value;
+      if (!items || items.length === 0) return null;
+      return (
+        <Container>
+          <div className="max-w-3xl py-6">
+            {heading && (
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: color }} aria-hidden="true" />
+                <h2 className="font-[var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-light text-[var(--color-ink)] tracking-tight">
+                  {heading}
+                </h2>
+              </div>
+            )}
+            <ul className="space-y-4 pl-5">
+              {items.map((step, idx) => (
+                <li key={idx} className="flex items-start gap-4 text-lg text-[var(--color-ink-light)] leading-relaxed">
+                  <span
+                    className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium shrink-0 mt-0.5 ring-1"
+                    style={{ backgroundColor: color + "10", color, borderColor: color + "20" }}
+                  >
+                    {idx + 1}
+                  </span>
+                  {step}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      );
+    }
+
+    default:
+      return null;
+  }
 }

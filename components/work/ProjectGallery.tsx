@@ -41,19 +41,26 @@ interface Props {
   title: string;
 }
 
-const COLLAPSED_HEIGHT = 480;
-const PREVIEW_COUNT = 4;
+const COLLAPSED_HEIGHT = 280;
 
 export function ProjectGallery({ items, color, title }: Props) {
   const [expanded, setExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [overflows, setOverflows] = useState(false);
   const [naturalHeight, setNaturalHeight] = useState(0);
-  const needsCollapse = items.length > PREVIEW_COUNT;
 
   useEffect(() => {
-    if (contentRef.current) {
-      setNaturalHeight(contentRef.current.scrollHeight);
-    }
+    const el = contentRef.current;
+    if (!el) return;
+    const measure = () => {
+      const sh = el.scrollHeight;
+      setNaturalHeight(sh);
+      setOverflows(sh > COLLAPSED_HEIGHT + 40);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
   }, [items]);
 
   const rows: { items: GalleryItem[]; type: "full" | "pair" }[] = [];
@@ -70,13 +77,11 @@ export function ProjectGallery({ items, color, title }: Props) {
     }
   }
 
-  const isCollapsed = needsCollapse && !expanded;
-  const hiddenCount = items.length - PREVIEW_COUNT;
+  const isCollapsed = overflows && !expanded;
 
   return (
     <section className="pb-20">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        {/* Section header */}
         <div className="flex items-center gap-3 mb-8">
           <span
             className="w-1.5 h-1.5 rounded-full shrink-0"
@@ -92,14 +97,13 @@ export function ProjectGallery({ items, color, title }: Props) {
           </span>
         </div>
 
-        {/* Gallery body */}
         <div className="relative">
           <div
             ref={contentRef}
-            className="space-y-5 transition-[max-height] duration-700 overflow-hidden"
+            className="space-y-5 overflow-hidden"
             style={{
               maxHeight: isCollapsed ? `${COLLAPSED_HEIGHT}px` : `${naturalHeight || 99999}px`,
-              willChange: isCollapsed ? undefined : "max-height",
+              transition: "max-height 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             {rows.map((row, rowIdx) => (
@@ -119,43 +123,31 @@ export function ProjectGallery({ items, color, title }: Props) {
             ))}
           </div>
 
-          {/* Gradient fade + expand button */}
-          {needsCollapse && (
-            <div
-              className="transition-opacity duration-500"
-              style={{ opacity: expanded ? 0 : 1, pointerEvents: expanded ? "none" : "auto" } as React.CSSProperties}
-            >
-              {!expanded && (
-                <>
-                  <div
-                    className="absolute bottom-0 inset-x-0 h-48 pointer-events-none"
-                    style={{
-                      background: "linear-gradient(to bottom, transparent, var(--color-cream) 85%)",
-                    }}
-                  />
-                  <div className="absolute bottom-0 inset-x-0 flex justify-center pb-2">
-                    <button
-                      onClick={() => setExpanded(true)}
-                      className="group relative inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white ring-1 ring-black/[0.06] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 active:scale-[0.97]"
-                    >
-                      <span className="text-sm font-medium text-[var(--color-ink)]">
-                        Show all {items.length} items
-                      </span>
-                      <span
-                        className="inline-flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-semibold text-white"
-                        style={{ backgroundColor: color }}
-                      >
-                        +{hiddenCount}
-                      </span>
-                    </button>
-                  </div>
-                </>
-              )}
-            </div>
+          {overflows && !expanded && (
+            <>
+              <div
+                className="absolute bottom-0 inset-x-0 h-40 pointer-events-none"
+                style={{
+                  background: "linear-gradient(to bottom, transparent, var(--color-cream) 80%)",
+                }}
+              />
+              <div className="absolute bottom-0 inset-x-0 flex justify-center pb-1">
+                <button
+                  onClick={() => setExpanded(true)}
+                  className="group relative inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white ring-1 ring-black/[0.06] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 active:scale-[0.97]"
+                >
+                  <span className="text-sm font-medium text-[var(--color-ink)]">
+                    Show all {items.length} items
+                  </span>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="opacity-40 group-hover:opacity-100 transition-opacity">
+                    <path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </>
           )}
 
-          {/* Collapse button after expand */}
-          {expanded && needsCollapse && (
+          {expanded && overflows && (
             <div className="flex justify-center pt-8">
               <button
                 onClick={() => {
