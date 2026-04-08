@@ -10,6 +10,7 @@
       "role": "Production Assistant",
       "year": "2024",
       "thumbnail": "/images/projects/items/0/thumbnail.svg",
+      "gallery": [],
       "featured": true,
       "color": "#7C3AED",
       "challenge": "This wasn't a campaign I led — it was one I learned from. AEON was launching their new Beta store format and needed production support. I was there to coordinate logistics, manage schedules, keep things moving.",
@@ -43,6 +44,7 @@
       "role": "Lead Strategist & Creative Director",
       "year": "2025",
       "thumbnail": "/images/projects/items/1/thumbnail.svg",
+      "gallery": [],
       "featured": true,
       "color": "#D4A574",
       "challenge": "There's a 300-year-old craft village 20km from Hanoi where artisans spend months inlaying mother-of-pearl into wood. Their children are leaving for office jobs. Young Vietnamese scroll past temples on TikTok without recognizing the craftsmanship. The question wasn't 'how do we sell pearl inlay' — it was 'how do we help young people feel pride in something they've been taught to see as old-fashioned?'",
@@ -83,6 +85,20 @@
       "role": "Founder & Full-Stack Marketer",
       "year": "2024",
       "thumbnail": "/images/projects/items/2/thumbnail.jpg",
+      "gallery": [
+        {
+          "type": "image",
+          "image": "/images/projects/items/2/gallery/0/image.jpeg"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/2/gallery/1/image.jpg"
+        },
+        {
+          "type": "video",
+          "videoUrl": "https://www.tiktok.com/@pixself/video/7551064434207198485?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610"
+        }
+      ],
       "featured": true,
       "color": "#EC4899",
       "challenge": "I started Pixself as a side project: custom pixel-art keychains from personal photos. The practical question was 'can I make money selling keychains?' But the real question turned out to be: 'Why do people want to carry physical reminders of the things they love?'",
@@ -121,9 +137,10 @@
       "role": "Research Lead & Strategist",
       "year": "2024",
       "thumbnail": "/images/projects/items/3/thumbnail.svg",
+      "gallery": [],
       "featured": true,
       "color": "#06B6D4",
-      "challenge": "Kingsport sells sports equipment for kids. They wanted to reach 'Gen Z moms.' But when we started talking to these women, we realized the brief missed the point. These aren't just 'consumers' — they're first-time parents terrified of making the wrong choice, drowning in conflicting advice, desperate to be seen as good mothers.",
+      "challenge": "Kingsport sells sports equipment for kids. They wanted to reach 'Gen Z moms.' But when we started talking to these women, we realized the brief missed the point. These aren't just 'consumers' — they're first-time parents terrified of making the wrong choice, drowning in conflicting advice, desperate to be seen as good mothers.\n\n",
       "insight": "Gen Z moms don't trust brands. They've grown up seeing through marketing. But they desperately trust each other. What they need isn't better ads — it's permission to trust their own instincts.",
       "approach": "We recommended Kingsport stop trying to convince moms and start trying to support them. Build community infrastructure. Become the place where moms help each other, with Kingsport as a quiet, trusted presence — not the loudest voice.",
       "execution": [
@@ -161,6 +178,7 @@
       "role": "Strategy Lead",
       "year": "2025",
       "thumbnail": "/images/projects/items/4/thumbnail.svg",
+      "gallery": [],
       "featured": true,
       "color": "#059669",
       "challenge": "BIDV wanted help communicating their ESG commitments. The problem: ESG reports are written for investors, not customers. Regular people don't care about 'carbon-neutral operations' or 'governance frameworks.' They care about their mortgage, their savings, their kids' education funds. How do you bridge that gap?",
@@ -197,6 +215,7 @@
       "role": "Campaign Lead",
       "year": "2024",
       "thumbnail": "/images/projects/items/5/thumbnail.svg",
+      "gallery": [],
       "featured": false,
       "color": "#DC2626",
       "challenge": "Valentine's Day e-commerce is brutal. Everyone's screaming discounts. We had two weeks. Limited budget. The practical goal was 'double revenue.' But the human question was more interesting: why does Valentine's gift shopping feel so stressful?",
