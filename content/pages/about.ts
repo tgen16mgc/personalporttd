@@ -36,6 +36,7 @@ export interface AfterworkItem {
 export const afterwork: AfterworkItem[] = data.afterwork.map((item) => ({
   ...item,
   subtitle: item.subtitle || null,
+  image: item.image ?? null,
   size: item.size as "large" | "small",
 }));
 
