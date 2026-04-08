@@ -11,22 +11,49 @@
       "company": "VuVer.vn"
     },
     "education": "Marketing @ NEU, GPA 3.69 (yes, I actually study)",
-    "industries": ["F&B", "Hospitality", "Lifestyle", "FMCG"],
-    "tools": ["Meta", "TikTok", "AI Tools"],
+    "industries": [
+      "F&B",
+      "Hospitality",
+      "Lifestyle",
+      "FMCG"
+    ],
+    "tools": [
+      "Meta",
+      "TikTok",
+      "AI Tools"
+    ],
     "gravityTags": [
-      { "label": "fresher '26", "color": "#06B6D4" },
-      { "label": "ca phe sua da", "color": "#D4A574" },
-      { "label": "Hanoi based", "color": "#1A1A1A" },
-      { "label": "brand strategy", "color": "#EC4899" },
-      { "label": "cat person", "color": "#D4A574" },
-      { "label": "social & content", "color": "#06B6D4" }
+      {
+        "label": "fresher '26",
+        "color": "#06B6D4"
+      },
+      {
+        "label": "ca phe sua da",
+        "color": "#D4A574"
+      },
+      {
+        "label": "Hanoi based",
+        "color": "#1A1A1A"
+      },
+      {
+        "label": "brand strategy",
+        "color": "#EC4899"
+      },
+      {
+        "label": "cat person",
+        "color": "#D4A574"
+      },
+      {
+        "label": "social & content",
+        "color": "#06B6D4"
+      }
     ]
   },
   "quickIntroContent": {
     "kicker": "The Short Version",
-    "headline": "Good marketing doesn\u2019t feel like marketing.",
-    "headlineSub": "That\u2019s what I aim for.",
-    "body": "I work at the intersection of strategy and creativity \u2014 figuring out what makes people care, then finding interesting ways to say it. Currently focused on F&B, tech, and lifestyle brands targeting Gen Z.",
+    "headline": "Good marketing doesn’t feel like marketing.",
+    "headlineSub": "That’s what I aim for.",
+    "body": "I work at the intersection of strategy and creativity — figuring out what makes people care, then finding interesting ways to say it. Currently focused on F&B, tech, and lifestyle brands targeting Gen Z.",
     "facts": [
       {
         "label": "Currently",
@@ -36,7 +63,7 @@
       {
         "label": "Education",
         "primary": "Marketing, NEU",
-        "secondary": "3.69 GPA \u00b7 2027"
+        "secondary": "3.69 GPA · 2027"
       },
       {
         "label": "Industry",
@@ -45,17 +72,35 @@
       },
       {
         "label": "Approach",
-        "primary": "Insight \u2192 Story",
+        "primary": "Insight → Story",
         "secondary": "Strategy meets craft"
       }
     ]
   },
   "brands": [
-    { "name": "AEON Vietnam", "logo": "/images/homepage/brands/0/logo.svg" },
-    { "name": "BIDV", "logo": "/images/homepage/brands/1/logo.svg" },
-    { "name": "Kingsport", "logo": "/images/homepage/brands/2/logo.svg" },
-    { "name": "VuVer", "logo": "/images/homepage/brands/3/logo.svg" },
-    { "name": "Chu\u1ed3n Ng\u00f5", "logo": "/images/homepage/brands/4/logo.svg" },
-    { "name": "Pixself", "logo": "/images/homepage/brands/5/logo.svg" }
+    {
+      "name": "AEON Vietnam",
+      "logo": "/images/homepage/brands/0/logo.svg"
+    },
+    {
+      "name": "BIDV",
+      "logo": "/images/homepage/brands/1/logo.svg"
+    },
+    {
+      "name": "Kingsport",
+      "logo": "/images/homepage/brands/2/logo.svg"
+    },
+    {
+      "name": "VuVer",
+      "logo": "/images/homepage/brands/3/logo.svg"
+    },
+    {
+      "name": "Chuồn Ngõ",
+      "logo": "/images/homepage/brands/4/logo.svg"
+    },
+    {
+      "name": "Pixself",
+      "logo": "/images/homepage/brands/5/logo.png"
+    }
   ]
 }
