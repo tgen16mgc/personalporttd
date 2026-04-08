@@ -115,18 +115,36 @@
       "story": [
         {
           "discriminant": "heading",
-          "value": { "body": "The Challenge" }
+          "value": {
+            "body": "The Challenge"
+          }
         },
         {
           "discriminant": "text",
-          "value": { "body": "I started Pixself as a side project: custom pixel-art keychains from personal photos. The practical question was 'can I make money selling keychains?' But the real question turned out to be: 'Why do people want to carry physical reminders of the things they love?'" }
+          "value": {
+            "body": "I started Pixself as a side project: custom pixel-art keychains from personal photos. The practical question was 'can I make money selling keychains?' But the real question turned out to be: 'Why do people want to carry physical reminders of the things they love?'"
+          }
         },
         {
           "discriminant": "image",
-          "value": { "image": "/images/projects/items/2/story/1/image.jpg", "caption": "", "size": "wide" }
+          "value": {
+            "image": "/images/projects/items/2/story/2/value/image.jpg",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The Insight"
+          }
+        },
+        {
+          "discriminant": "quote",
+          "value": {
+            "body": "In a world where everything is digital, people crave physical objects that anchor their identity. A keychain isn't functional — it's a tiny declaration: 'this is what matters to me.' Pet owners, K-pop fans, couples — they all want to carry proof of belonging."
+          }
         }
       ],
-      "insight": "In a world where everything is digital, people crave physical objects that anchor their identity. A keychain isn't functional — it's a tiny declaration: 'this is what matters to me.' Pet owners, K-pop fans, couples — they all want to carry proof of belonging.",
       "approach": "Stopped selling 'custom keychains' and started selling 'a piece of your world you can hold.' The product was the same. The emotional framing changed everything.",
       "execution": [
         "Created TikToks that focused on the reaction moment — not the product, but the person receiving it",
