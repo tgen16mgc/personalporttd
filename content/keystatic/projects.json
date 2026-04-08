@@ -87,6 +87,7 @@
       "role": "Founder & Full-Stack Marketer",
       "year": "2024",
       "thumbnail": "/images/projects/items/2/thumbnail.jpg",
+      "heroImage": "/images/projects/items/2/heroImage.jpg",
       "gallery": [
         {
           "type": "image",
@@ -97,6 +98,16 @@
           "type": "video",
           "videoUrl": "https://www.tiktok.com/@pixself/video/7551064434207198485?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
           "size": "half"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/2/gallery/2/image.jpeg",
+          "size": "full"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/2/gallery/3/image.jpg",
+          "size": "full"
         }
       ],
       "featured": true,
