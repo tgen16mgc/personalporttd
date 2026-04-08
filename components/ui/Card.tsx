@@ -59,7 +59,7 @@ export function Card({
 }
 
 interface CardImageProps {
-  src: string;
+  src: string | null;
   alt: string;
   className?: string;
   aspectRatio?: "video" | "square" | "portrait";
@@ -78,14 +78,20 @@ export function CardImage({
   };
 
   return (
-    <div className={cn("relative overflow-hidden", ratioClasses[aspectRatio], className)}>
-      <motion.img
-        src={src}
-        alt={alt}
-        className="w-full h-full object-cover will-change-transform"
-        whileHover={{ scale: 1.08 }}
-        transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
-      />
+    <div className={cn("relative overflow-hidden bg-[var(--color-cream-dark)]", ratioClasses[aspectRatio], className)}>
+      {src ? (
+        <motion.img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover will-change-transform"
+          whileHover={{ scale: 1.08 }}
+          transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center text-[var(--color-ink-muted)] text-sm">
+          {alt}
+        </div>
+      )}
     </div>
   );
 }

@@ -21,7 +21,7 @@ export const quickIntroContent = data.quickIntroContent as {
 
 export interface Brand {
   name: string;
-  logo: string;
+  logo: string | null;
 }
 
 export const brands: Brand[] = data.brands;

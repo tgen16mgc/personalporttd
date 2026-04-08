@@ -8,23 +8,31 @@ import { brands, type Brand } from "@/content/pages/home";
 function LogoItem({ brand }: { brand: Brand }) {
   return (
     <div className="flex items-center justify-center h-10 px-8 shrink-0">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={brand.logo}
-        alt={brand.name}
-        className="h-7 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0"
-        onError={(e) => {
-          const target = e.currentTarget;
-          target.style.display = "none";
-          const fallback = target.nextElementSibling as HTMLElement;
-          if (fallback) fallback.style.display = "block";
-        }}
-      />
-      <span
-        className="hidden text-lg font-[var(--font-display)] font-light text-[var(--color-ink)] opacity-40 tracking-tight whitespace-nowrap"
-      >
-        {brand.name}
-      </span>
+      {brand.logo ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={brand.logo}
+            alt={brand.name}
+            className="h-7 w-auto object-contain opacity-40 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0"
+            onError={(e) => {
+              const target = e.currentTarget;
+              target.style.display = "none";
+              const fallback = target.nextElementSibling as HTMLElement;
+              if (fallback) fallback.style.display = "block";
+            }}
+          />
+          <span
+            className="hidden text-lg font-[var(--font-display)] font-light text-[var(--color-ink)] opacity-40 tracking-tight whitespace-nowrap"
+          >
+            {brand.name}
+          </span>
+        </>
+      ) : (
+        <span className="text-lg font-[var(--font-display)] font-light text-[var(--color-ink)] opacity-40 tracking-tight whitespace-nowrap">
+          {brand.name}
+        </span>
+      )}
     </div>
   );
 }

@@ -9,7 +9,7 @@ export interface Project {
   industry: string;
   role: string;
   year: string;
-  thumbnail: string;
+  thumbnail: string | null;
   featured: boolean;
   color: string;
   challenge?: string;
@@ -24,6 +24,7 @@ export interface Project {
 
 export const projects: Project[] = data.items.map((item) => ({
   ...item,
+  thumbnail: item.thumbnail ?? null,
   brand: item.brand || undefined,
   challenge: item.challenge || undefined,
   insight: item.insight || undefined,

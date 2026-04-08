@@ -126,11 +126,17 @@ export default async function CaseStudyPage({ params }: Props) {
               style={{ backgroundColor: project.color + "12" }}
             >
               <div className="aspect-[16/9]">
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
+                {project.thumbnail ? (
+                  <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-[var(--color-ink-muted)]">
+                    <span className="text-lg">{project.title}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
