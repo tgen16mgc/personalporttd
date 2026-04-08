@@ -305,7 +305,8 @@ export default config({
                   label: "Type",
                   options: [
                     { label: "Image", value: "image" },
-                    { label: "Video (YouTube/Vimeo)", value: "video" },
+                    { label: "Video embed (YouTube/Vimeo/TikTok)", value: "video" },
+                    { label: "Video file (upload)", value: "videoFile" },
                   ],
                   defaultValue: "image",
                 }),
@@ -316,14 +317,32 @@ export default config({
                 }),
                 videoUrl: fields.text({
                   label: "Video URL",
-                  description: "YouTube or Vimeo link",
+                  description: "YouTube, Vimeo, or TikTok link",
+                }),
+                videoFile: fields.file({
+                  label: "Video File",
+                  directory: "public/videos/projects",
+                  publicPath: "/videos/projects/",
+                  description: "MP4 recommended. Keep under 50MB for git.",
+                }),
+                size: fields.select({
+                  label: "Size",
+                  options: [
+                    { label: "Full width", value: "full" },
+                    { label: "Half width (pairs with next item)", value: "half" },
+                  ],
+                  defaultValue: "full",
                 }),
                 caption: fields.text({ label: "Caption (optional)" }),
               }),
               {
                 label: "Gallery (images & videos)",
-                itemLabel: (props) =>
-                  props.fields.type.value === "image" ? "Image" : "Video",
+                itemLabel: (props) => {
+                  const t = props.fields.type.value;
+                  const s = props.fields.size.value === "half" ? " · half" : "";
+                  const label = t === "image" ? "Image" : t === "video" ? "Video embed" : "Video file";
+                  return `${label}${s}`;
+                },
               }
             ),
             featured: fields.checkbox({

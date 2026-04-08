@@ -7,18 +7,44 @@ import { projects, getProjectBySlug } from "@/content/projects";
 import { personal } from "@/content/personal";
 import { ArrowLeft, ArrowRight, Trophy } from "lucide-react";
 
-function getEmbedUrl(url: string): string | null {
+type EmbedResult = {
+  url: string;
+  platform: "youtube" | "vimeo" | "tiktok";
+  isVertical: boolean;
+};
+
+function getEmbedInfo(url: string): EmbedResult | null {
   try {
     const u = new URL(url);
+
     if (u.hostname.includes("youtube.com") || u.hostname.includes("youtu.be")) {
       const id = u.hostname.includes("youtu.be")
         ? u.pathname.slice(1)
         : u.searchParams.get("v");
-      return id ? `https://www.youtube.com/embed/${id}` : null;
+      if (!id) return null;
+      const isShort = u.pathname.startsWith("/shorts/");
+      const shortId = isShort ? u.pathname.split("/shorts/")[1] : null;
+      return {
+        url: `https://www.youtube.com/embed/${shortId || id}`,
+        platform: "youtube",
+        isVertical: isShort,
+      };
     }
+
     if (u.hostname.includes("vimeo.com")) {
       const id = u.pathname.split("/").filter(Boolean).pop();
-      return id ? `https://player.vimeo.com/video/${id}` : null;
+      return id
+        ? { url: `https://player.vimeo.com/video/${id}`, platform: "vimeo", isVertical: false }
+        : null;
+    }
+
+    if (u.hostname.includes("tiktok.com")) {
+      const segments = u.pathname.split("/").filter(Boolean);
+      const videoIdx = segments.indexOf("video");
+      const id = videoIdx !== -1 ? segments[videoIdx + 1] : null;
+      return id
+        ? { url: `https://www.tiktok.com/embed/v2/${id}`, platform: "tiktok", isVertical: true }
+        : null;
     }
   } catch { /* invalid URL */ }
   return null;
@@ -161,57 +187,157 @@ export default async function CaseStudyPage({ params }: Props) {
       </section>
 
       {/* Gallery */}
-      {project.gallery && project.gallery.length > 0 && (
-        <section className="pb-16">
-          <Container size="wide">
-            <div className="space-y-6">
-              {project.gallery.map((item, i) => (
-                <div key={i}>
-                  <div className="p-2 rounded-[2rem] bg-black/[0.02] ring-1 ring-black/[0.04]">
-                    <div
-                      className="rounded-[calc(2rem-0.5rem)] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.75),0_6px_24px_rgba(0,0,0,0.05)]"
-                      style={{ backgroundColor: project.color + "12" }}
-                    >
-                      {item.type === "image" && item.image && (
-                        <img
-                          src={item.image}
-                          alt={item.caption || `${project.title} gallery ${i + 1}`}
-                          className="w-full h-auto"
-                        />
-                      )}
-                      {item.type === "video" && item.videoUrl && (() => {
-                        const embedUrl = getEmbedUrl(item.videoUrl);
-                        return embedUrl ? (
-                          <div className="aspect-video">
-                            <iframe
-                              src={embedUrl}
-                              title={item.caption || `${project.title} video ${i + 1}`}
-                              className="w-full h-full"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            />
+      {project.gallery && project.gallery.length > 0 && (() => {
+        const items = project.gallery;
+        const rows: { items: typeof items; type: "full" | "pair" }[] = [];
+        let i = 0;
+        while (i < items.length) {
+          const cur = items[i];
+          const next = items[i + 1];
+          if (cur.size === "half" && next?.size === "half") {
+            rows.push({ items: [cur, next], type: "pair" });
+            i += 2;
+          } else {
+            rows.push({ items: [cur], type: "full" });
+            i += 1;
+          }
+        }
+
+        return (
+          <section className="pb-20">
+            <Container size="wide">
+              <div className="flex items-center gap-3 mb-10">
+                <span
+                  className="w-1.5 h-1.5 rounded-full shrink-0"
+                  style={{ backgroundColor: project.color }}
+                  aria-hidden="true"
+                />
+                <p className="text-tag text-[var(--color-ink-muted)] uppercase tracking-[0.15em]">
+                  Project gallery
+                </p>
+                <span className="flex-1 h-px bg-black/[0.06]" />
+                <span className="text-tag text-[var(--color-ink-muted)] tabular-nums">
+                  {items.length} {items.length === 1 ? "item" : "items"}
+                </span>
+              </div>
+
+              <div className="space-y-6">
+                {rows.map((row, rowIdx) => (
+                  <div
+                    key={rowIdx}
+                    className={row.type === "pair" ? "grid grid-cols-1 md:grid-cols-2 gap-6" : ""}
+                  >
+                    {row.items.map((item, itemIdx) => {
+                      const isVideo = item.type === "video" || item.type === "videoFile";
+                      const embed = item.type === "video" && item.videoUrl
+                        ? getEmbedInfo(item.videoUrl)
+                        : null;
+                      const isVertical = embed?.isVertical ||
+                        (item.type === "videoFile" && item.videoFile);
+
+                      return (
+                        <div key={`${rowIdx}-${itemIdx}`} className="group">
+                          <div className="p-1.5 rounded-[1.5rem] bg-black/[0.02] ring-1 ring-black/[0.04] transition-shadow duration-500 group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+                            <div
+                              className="rounded-[calc(1.5rem-0.375rem)] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)]"
+                              style={{ backgroundColor: project.color + "08" }}
+                            >
+                              {/* Image */}
+                              {item.type === "image" && item.image && (
+                                <img
+                                  src={item.image}
+                                  alt={item.caption || `${project.title} gallery`}
+                                  className="w-full h-auto block"
+                                  loading="lazy"
+                                />
+                              )}
+
+                              {/* Video embed (YouTube / Vimeo / TikTok) */}
+                              {item.type === "video" && item.videoUrl && (() => {
+                                if (!embed) {
+                                  return (
+                                    <div className="aspect-video flex items-center justify-center text-[var(--color-ink-muted)]">
+                                      <a
+                                        href={item.videoUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full ring-1 ring-black/[0.06] text-sm hover:bg-black/[0.02] transition-colors"
+                                      >
+                                        <span className="text-base">&#9654;</span>
+                                        Watch video
+                                      </a>
+                                    </div>
+                                  );
+                                }
+                                const aspectClass = embed.isVertical
+                                  ? "aspect-[9/16] max-w-sm mx-auto"
+                                  : "aspect-video";
+                                return (
+                                  <div className={aspectClass}>
+                                    <iframe
+                                      src={embed.url}
+                                      title={item.caption || `${project.title} video`}
+                                      className="w-full h-full"
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                      allowFullScreen
+                                    />
+                                  </div>
+                                );
+                              })()}
+
+                              {/* Direct video file */}
+                              {item.type === "videoFile" && item.videoFile && (
+                                <div className={isVertical ? "max-w-sm mx-auto" : ""}>
+                                  <video
+                                    src={item.videoFile}
+                                    controls
+                                    playsInline
+                                    preload="metadata"
+                                    className="w-full h-auto block"
+                                  >
+                                    Your browser does not support the video tag.
+                                  </video>
+                                </div>
+                              )}
+                            </div>
                           </div>
-                        ) : (
-                          <div className="aspect-video flex items-center justify-center text-[var(--color-ink-muted)]">
-                            <a href={item.videoUrl} target="_blank" rel="noopener noreferrer" className="underline">
-                              Watch video
-                            </a>
-                          </div>
-                        );
-                      })()}
-                    </div>
+
+                          {/* Caption */}
+                          {(item.caption || isVideo) && (
+                            <div className="flex items-baseline gap-3 mt-3 px-2">
+                              {isVideo && embed && (
+                                <span
+                                  className="shrink-0 inline-flex items-center px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] font-medium rounded-full"
+                                  style={{ backgroundColor: project.color + "12", color: project.color }}
+                                >
+                                  {embed.platform}
+                                </span>
+                              )}
+                              {item.type === "videoFile" && (
+                                <span
+                                  className="shrink-0 inline-flex items-center px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] font-medium rounded-full"
+                                  style={{ backgroundColor: project.color + "12", color: project.color }}
+                                >
+                                  video
+                                </span>
+                              )}
+                              {item.caption && (
+                                <p className="text-sm text-[var(--color-ink-muted)] leading-relaxed">
+                                  {item.caption}
+                                </p>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
-                  {item.caption && (
-                    <p className="text-sm text-[var(--color-ink-muted)] text-center mt-3">
-                      {item.caption}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-      )}
+                ))}
+              </div>
+            </Container>
+          </section>
+        );
+      })()}
 
       {/* Awards */}
       {project.awards && project.awards.length > 0 && (
