@@ -18,8 +18,12 @@ const creditField = () =>
     name: fields.text({ label: "Name" }),
   });
 
+const useGithubStorage = !!process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG;
+
 export default config({
-  storage: { kind: "local" },
+  storage: useGithubStorage
+    ? { kind: "github", repo: "tgen16mgc/personalporttd" }
+    : { kind: "local" },
   singletons: {
     personal: singleton({
       label: "Personal Info",
