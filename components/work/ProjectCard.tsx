@@ -25,7 +25,7 @@ export function ProjectCard({ project, index, featured = false }: ProjectCardPro
         <Card className={featured ? "overflow-visible" : ""}>
           <div className="relative">
             <CardImage
-              src={project.thumbnail}
+              src={featured ? (project.heroImage || project.thumbnail) : project.thumbnail}
               alt={project.title}
               aspectRatio={featured ? "video" : "square"}
             />

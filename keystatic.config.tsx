@@ -290,7 +290,12 @@ export default config({
             role: fields.text({ label: "Your Role" }),
             year: fields.text({ label: "Year" }),
             thumbnail: fields.image({
-              label: "Thumbnail",
+              label: "Thumbnail (square, for /work grid)",
+              directory: "public/images/projects",
+              publicPath: "/images/projects/",
+            }),
+            heroImage: fields.image({
+              label: "Hero Image (landscape, for project detail page)",
               directory: "public/images/projects",
               publicPath: "/images/projects/",
             }),

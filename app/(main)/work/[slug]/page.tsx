@@ -126,9 +126,9 @@ export default async function CaseStudyPage({ params }: Props) {
               style={{ backgroundColor: project.color + "12" }}
             >
               <div className="aspect-[16/9]">
-                {project.thumbnail ? (
+                {(project.heroImage || project.thumbnail) ? (
                   <img
-                    src={project.thumbnail}
+                    src={(project.heroImage || project.thumbnail)!}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />

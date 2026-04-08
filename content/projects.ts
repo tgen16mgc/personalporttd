@@ -10,6 +10,7 @@ export interface Project {
   role: string;
   year: string;
   thumbnail: string | null;
+  heroImage: string | null;
   featured: boolean;
   color: string;
   challenge?: string;
@@ -25,6 +26,7 @@ export interface Project {
 export const projects: Project[] = data.items.map((item) => ({
   ...item,
   thumbnail: item.thumbnail ?? null,
+  heroImage: "heroImage" in item ? (item.heroImage as string | null) : null,
   brand: item.brand || undefined,
   challenge: item.challenge || undefined,
   insight: item.insight || undefined,
