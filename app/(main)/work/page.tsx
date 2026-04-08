@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { projects, getIndustries } from "@/content/projects";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { cn } from "@/lib/utils";
+import { CrossMark } from "@/components/ui/Decorative";
 
 export default function WorkPage() {
   const industries = ["All", ...getIndustries()];
@@ -21,12 +22,15 @@ export default function WorkPage() {
 
   return (
     <>
-      <section className="pt-32 pb-16">
+      <section className="pt-32 pb-16 relative overflow-hidden">
         <Container>
           <ScrollReveal>
-            <p className="section-kicker mb-4">
-              Portfolio
-            </p>
+            <div className="flex items-center gap-3 mb-4">
+              <CrossMark size={10} />
+              <p className="section-kicker">
+                Portfolio
+              </p>
+            </div>
             <h1 className="text-display text-[var(--color-ink)] mb-6">
               Selected Work
             </h1>
@@ -36,7 +40,7 @@ export default function WorkPage() {
             </p>
           </ScrollReveal>
 
-          {/* Filter Pills */}
+          {/* Filter Pills with animated indicator */}
           <ScrollReveal>
             <div className="flex flex-wrap gap-2 mb-12">
               {industries.map((industry) => (
@@ -44,12 +48,19 @@ export default function WorkPage() {
                   key={industry}
                   onClick={() => setActiveFilter(industry)}
                   className={cn(
-                    "px-4 py-2 rounded-full text-sm font-medium transition-all duration-500 ring-1 ring-black/[0.05]",
+                    "relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-500 cursor-pointer",
                     activeFilter === industry
-                      ? "bg-[var(--color-ink)] text-white shadow-[0_8px_20px_rgba(10,10,10,0.14)]"
-                      : "bg-white/70 text-[var(--color-ink-light)] hover:bg-[var(--color-ink)]/10"
+                      ? "text-white"
+                      : "text-[var(--color-ink-light)] hover:text-[var(--color-ink)] ring-1 ring-black/[0.05] bg-white/70"
                   )}
                 >
+                  {activeFilter === industry && (
+                    <motion.span
+                      layoutId="filter-pill"
+                      className="absolute inset-0 rounded-full bg-[var(--color-ink)] shadow-[0_8px_20px_rgba(10,10,10,0.14)] -z-10"
+                      transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
+                    />
+                  )}
                   {industry}
                 </button>
               ))}

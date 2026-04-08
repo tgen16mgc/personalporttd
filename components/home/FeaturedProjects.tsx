@@ -8,6 +8,7 @@ import { ProjectCard } from "@/components/work/ProjectCard";
 import { getFeaturedProjects } from "@/content/projects";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { ArrowRight } from "lucide-react";
+import { CrossMark } from "@/components/ui/Decorative";
 
 export function FeaturedProjects() {
   const projects = getFeaturedProjects();
@@ -22,9 +23,12 @@ export function FeaturedProjects() {
         <ScrollReveal>
           <div className="flex justify-between items-end mb-16">
             <div>
-              <p className="section-kicker mb-4">
-                Selected Work
-              </p>
+              <div className="flex items-center gap-3 mb-4">
+                <CrossMark size={10} />
+                <p className="section-kicker">
+                  Selected Work
+                </p>
+              </div>
               <h2 className="text-headline text-[var(--color-ink)]">
                 Featured projects
               </h2>

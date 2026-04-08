@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -10,7 +11,6 @@ interface CardProps {
   bezel?: boolean;
 }
 
-// Premium cubic-bezier for fluid motion
 const fluidEase: [number, number, number, number] = [0.32, 0.72, 0, 1];
 
 export function Card({
@@ -19,17 +19,28 @@ export function Card({
   hover = true,
   bezel = true,
 }: CardProps) {
+  const outerRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!outerRef.current) return;
+    const rect = outerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    outerRef.current.style.setProperty("--spotlight-x", `${x}px`);
+    outerRef.current.style.setProperty("--spotlight-y", `${y}px`);
+  }, []);
+
   return (
-    /* Double-Bezel Architecture: Outer Shell */
     <div
+      ref={outerRef}
+      onMouseMove={handleMouseMove}
       className={cn(
-        "group/card p-1.5 rounded-[2rem] bg-black/[0.02] ring-1 ring-black/[0.04]",
+        "group/card card-spotlight p-1.5 rounded-[2rem] bg-black/[0.02] ring-1 ring-black/[0.04]",
         "transition-[box-shadow] duration-700",
         "hover:shadow-[0_16px_40px_rgba(6,182,212,0.08)]",
         bezel && "backdrop-blur-sm"
       )}
     >
-      {/* Inner Core */}
       <motion.div
         whileHover={hover ? { y: -6, scale: 1.015 } : undefined}
         transition={{ duration: 0.7, ease: fluidEase }}

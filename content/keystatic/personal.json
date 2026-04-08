@@ -1,0 +1,27 @@
+{
+  "name": "Tien Duong Ngoc",
+  "shortName": "Tien",
+  "email": "tiendn.fw@gmail.com",
+  "phone": "(+84) 345 205 918",
+  "location": "Hanoi, Vietnam",
+  "linkedin": "https://www.linkedin.com/in/tienduongngoc/",
+  "linkedinHandle": "/in/tienduongngoc",
+  "facebook": "https://www.facebook.com/tienduong.0822/",
+  "resumeUrl": "https://canva.link/o4b4tnptmaj8nri",
+  "status": "Open to opportunities",
+  "portraitImage": "/tien.jpg",
+  "aboutImage": "/tien-about.jpg",
+  "seo": {
+    "title": "Tien Duong Ngoc | Marketing Strategist",
+    "description": "Marketing. Strategy. Meaning. Portfolio of Tien Duong Ngoc, a marketer who finds beauty in every brief.",
+    "shortDescription": "Marketing. Strategy. Meaning.",
+    "keywords": ["marketing", "strategy", "portfolio", "Tien Duong", "creative"]
+  },
+  "navigation": [
+    { "href": "/", "label": "Home" },
+    { "href": "/work", "label": "Work" },
+    { "href": "/about", "label": "About" },
+    { "href": "/contact", "label": "Contact" }
+  ],
+  "footerQuote": "Make things worth feeling."
+}

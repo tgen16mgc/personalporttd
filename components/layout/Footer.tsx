@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Mail, ArrowUpRight } from "lucide-react";
+import { personal } from "@/content/personal";
 
-// Custom LinkedIn icon since lucide doesn't include brand icons
 function LinkedInIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -11,67 +11,97 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+    </svg>
+  );
+}
+
 const socialLinks = [
   {
     name: "Email",
-    href: "mailto:tiendn.fw@gmail.com",
+    href: `mailto:${personal.email}`,
     icon: Mail,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/tienduongngoc/",
+    href: personal.linkedin,
     icon: LinkedInIcon,
+  },
+  {
+    name: "Facebook",
+    href: personal.facebook,
+    icon: FacebookIcon,
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="relative py-24 sm:py-32 border-t border-[var(--color-cream-dark)]">
+    <footer className="relative py-24 sm:py-32">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-cyan)]/60 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-cyan)]/40 to-transparent"
       />
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
-          {/* Left side - CTA */}
-          <div>
-            <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl mb-4 text-[var(--color-ink)]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+          {/* Left side - CTA (wider) */}
+          <div className="md:col-span-7">
+            <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl font-light mb-4 text-[var(--color-ink)] leading-tight">
               Let&apos;s create something
               <br />
               <span className="text-[var(--color-ink-light)]">meaningful together.</span>
             </h2>
-            <p className="text-[var(--color-ink-light)] text-lg mb-6">
+            <p className="text-[var(--color-ink-light)] text-lg mb-8 max-w-md">
               Always open to interesting conversations and collaborations.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-[var(--color-ink)] font-medium hover:text-[var(--color-cyan)] transition-colors group"
+              className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/70 ring-1 ring-black/[0.06] text-[var(--color-ink)] font-medium shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:bg-[var(--color-ink)] hover:text-white hover:shadow-[0_8px_24px_rgba(10,10,10,0.12)] transition-all duration-500 active:scale-[0.98]"
             >
               Get in touch
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <span className="w-7 h-7 rounded-full bg-black/[0.06] group-hover:bg-white/20 flex items-center justify-center transition-colors duration-500">
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
             </Link>
           </div>
 
           {/* Right side - Links & Social */}
-          <div className="flex flex-col justify-between md:items-end">
-            <div className="flex gap-4 mb-8">
+          <div className="md:col-span-5 flex flex-col justify-between md:items-end">
+            <div className="flex gap-3 mb-8">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/70 ring-1 ring-black/[0.06] text-[var(--color-ink-light)] hover:bg-[var(--color-ink)] hover:text-white hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)] transition-all duration-500"
+                  className="w-11 h-11 flex items-center justify-center rounded-full bg-white/70 ring-1 ring-black/[0.06] text-[var(--color-ink-light)] hover:bg-[var(--color-ink)] hover:text-white hover:ring-0 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)] transition-all duration-500 active:scale-[0.95]"
                   aria-label={link.name}
                 >
                   <link.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
-            <div className="text-sm text-[var(--color-ink-muted)]">
-              <p>© {new Date().getFullYear()} Tien Duong Ngoc</p>
-              <p className="mt-1 italic font-[var(--font-display)]">
-                &ldquo;Grow with grace, find beauty in everything.&rdquo;
+
+            <nav className="flex gap-6 mb-8 text-sm text-[var(--color-ink-light)]">
+              <Link href="/work" className="hover:text-[var(--color-ink)] transition-colors">Work</Link>
+              <Link href="/about" className="hover:text-[var(--color-ink)] transition-colors">About</Link>
+              <Link href="/contact" className="hover:text-[var(--color-ink)] transition-colors">Contact</Link>
+              <a
+                href={personal.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--color-ink)] transition-colors"
+              >
+                View Resume
+              </a>
+            </nav>
+
+            <div className="text-sm text-[var(--color-ink-muted)] md:text-right">
+              <p>&copy; {new Date().getFullYear()} {personal.name}</p>
+              <p className="mt-2 italic font-[var(--font-display)] text-base text-[var(--color-ink-light)]">
+                &ldquo;{personal.footerQuote}&rdquo;
               </p>
             </div>
           </div>

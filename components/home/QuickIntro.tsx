@@ -5,32 +5,38 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { CrossMark, Divider } from "@/components/ui/Decorative";
+import { quickIntroContent } from "@/content/pages/home";
 
 export function QuickIntro() {
   return (
-    <section className="py-32 lg:py-40">
+    <section className="py-32 lg:py-40 relative">
       <Container>
         <ScrollReveal>
           <div className="max-w-4xl">
             {/* Section label */}
-            <p className="section-kicker mb-6 text-[var(--color-cyan)]">
-              The Short Version
-            </p>
+            <div className="flex items-center gap-3 mb-6">
+              <CrossMark size={10} color="var(--color-cyan)" />
+              <p className="section-kicker text-[var(--color-cyan)]">
+                {quickIntroContent.kicker}
+              </p>
+            </div>
             
             {/* Big statement */}
             <h2 className="text-headline text-[var(--color-ink)] mb-8 leading-tight">
-              Good marketing doesn't feel like marketing.{" "}
+              {quickIntroContent.headline}{" "}
               <span className="text-[var(--color-ink-light)]">
-                That's what I aim for.
+                {quickIntroContent.headlineSub}
               </span>
             </h2>
 
             {/* The explanation - simpler */}
             <p className="text-xl text-[var(--color-ink-light)] leading-relaxed max-w-2xl mb-12">
-              I work at the intersection of strategy and creativity — figuring out 
-              what makes people care, then finding interesting ways to say it. 
-              Currently focused on F&B, tech, and lifestyle brands targeting Gen Z.
+              {quickIntroContent.body}
             </p>
+
+            {/* Decorative divider */}
+            <Divider accent color="cyan" className="mb-8" />
 
             {/* What I actually do - less corporate */}
             <motion.div 
@@ -38,28 +44,15 @@ export function QuickIntro() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-[var(--color-cream-dark)]"
+              className="grid grid-cols-2 md:grid-cols-4 gap-6"
             >
-              <motion.div variants={fadeInUp}>
-                <p className="text-sm text-[var(--color-ink-muted)] mb-2">Currently</p>
-                <p className="font-medium text-[var(--color-ink)]">Account Executive</p>
-                <p className="text-[var(--color-ink-light)]">Red Agency JSC</p>
-              </motion.div>
-              <motion.div variants={fadeInUp}>
-                <p className="text-sm text-[var(--color-ink-muted)] mb-2">Education</p>
-                <p className="font-medium text-[var(--color-ink)]">Marketing, NEU</p>
-                <p className="text-[var(--color-ink-light)]">3.69 GPA · 2027</p>
-              </motion.div>
-              <motion.div variants={fadeInUp}>
-                <p className="text-sm text-[var(--color-ink-muted)] mb-2">Industry</p>
-                <p className="font-medium text-[var(--color-ink)]">F&B, Tech, Lifestyle</p>
-                <p className="text-[var(--color-ink-light)]">Gen Z focus</p>
-              </motion.div>
-              <motion.div variants={fadeInUp}>
-                <p className="text-sm text-[var(--color-ink-muted)] mb-2">Approach</p>
-                <p className="font-medium text-[var(--color-ink)]">Insight → Story</p>
-                <p className="text-[var(--color-ink-light)]">Strategy meets craft</p>
-              </motion.div>
+              {quickIntroContent.facts.map((fact) => (
+                <motion.div key={fact.label} variants={fadeInUp}>
+                  <p className="text-sm text-[var(--color-ink-muted)] mb-2">{fact.label}</p>
+                  <p className="font-medium text-[var(--color-ink)]">{fact.primary}</p>
+                  <p className="text-[var(--color-ink-light)]">{fact.secondary}</p>
+                </motion.div>
+              ))}
             </motion.div>
 
             {/* Link to about */}

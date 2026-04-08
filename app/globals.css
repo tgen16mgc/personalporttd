@@ -136,6 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  text-wrap: balance;
 }
 
 .text-display {
@@ -144,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 0.95;
+  text-wrap: balance;
 }
 
 .text-headline {
@@ -151,11 +153,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 400;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .text-body-lg {
   font-size: clamp(1.125rem, 2vw, 1.5rem);
   line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .text-tag {
@@ -268,4 +272,56 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.55);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Spotlight card border: cursor-following glow */
+.card-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+    rgba(6, 182, 212, 0.25),
+    transparent 40%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s var(--spring-smooth);
+}
+.card-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Premium input focus glow */
+.input-premium {
+  transition: all 0.4s var(--spring-smooth);
+  background: white;
+}
+.input-premium:focus {
+  box-shadow:
+    0 0 0 2px var(--color-cyan),
+    0 0 20px rgba(6, 182, 212, 0.12),
+    inset 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* Scroll progress */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 9998;
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-gold), var(--color-pink));
 }

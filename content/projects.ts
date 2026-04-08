@@ -1,3 +1,5 @@
+import data from "./keystatic/projects.json";
+
 export interface Project {
   slug: string;
   title: string;
@@ -10,8 +12,6 @@ export interface Project {
   thumbnail: string;
   featured: boolean;
   color: string;
-  
-  // Case study content
   challenge?: string;
   insight?: string;
   approach?: string;
@@ -22,171 +22,21 @@ export interface Project {
   images?: string[];
 }
 
-export const projects: Project[] = [
-  {
-    slug: "social-pioneers-chuon-ngo",
-    title: "Chuon Ngo Pearl Inlay Art",
-    tagline: "What happens when young people feel disconnected from their own heritage?",
-    client: "Social Pioneers 2025",
-    brand: "Chuon Ngo Village",
-    industry: "Cultural Heritage",
-    role: "Lead Strategist & Creative Director",
-    year: "2025",
-    thumbnail: "/images/projects/chuon-ngo-thumb.svg",
-    featured: true,
-    color: "#D4A574",
-    challenge: "There's a 300-year-old craft village 20km from Hanoi where artisans spend months inlaying mother-of-pearl into wood. Their children are leaving for office jobs. Young Vietnamese scroll past temples on TikTok without recognizing the craftsmanship. The question wasn't 'how do we sell pearl inlay' — it was 'how do we help young people feel pride in something they've been taught to see as old-fashioned?'",
-    insight: "Gen Z doesn't want to be lectured about tradition. But they desperately want to belong to something meaningful — to participate in culture, not just observe it from behind museum glass.",
-    approach: "We stopped treating Chuon Ngo as a heritage site to be preserved and started treating it as a living creative community to be joined. The artisans became collaborators, not subjects. The goal wasn't short-term awareness — it was long-term cultural pride.",
-    execution: [
-      "Partnered with artisans to tell their stories in their own words — no voiceover, no polish",
-      "Created hands-on workshops where young people could learn the basics (and fail, and laugh)",
-      "Collaborated with contemporary Vietnamese designers to show pearl inlay in modern contexts",
-      "Launched #MyPearlStory — not about the craft, but about what 'home' means to each participant",
-    ],
-    results: [
-      { metric: "Champion Title", value: "Social Pioneers 2025" },
-      { metric: "Workshop Participants", value: "500+" },
-      { metric: "What actually mattered", value: "Young people who'd never visited a craft village choosing to go back" },
-    ],
-    awards: ["🏆 Champion - Social Pioneers 2025"],
-  },
-  {
-    slug: "pixself-keychain",
-    title: "Pixself",
-    tagline: "Why do people carry tiny versions of their pets on their bags?",
-    client: "Personal Venture",
-    brand: "Pixself",
-    industry: "D2C E-commerce",
-    role: "Founder & Full-Stack Marketer",
-    year: "2024",
-    thumbnail: "/images/projects/pixself-thumb.svg",
-    featured: true,
-    color: "#EC4899",
-    challenge: "I started Pixself as a side project: custom pixel-art keychains from personal photos. The practical question was 'can I make money selling keychains?' But the real question turned out to be: 'Why do people want to carry physical reminders of the things they love?'",
-    insight: "In a world where everything is digital, people crave physical objects that anchor their identity. A keychain isn't functional — it's a tiny declaration: 'this is what matters to me.' Pet owners, K-pop fans, couples — they all want to carry proof of belonging.",
-    approach: "Stopped selling 'custom keychains' and started selling 'a piece of your world you can hold.' The product was the same. The emotional framing changed everything.",
-    execution: [
-      "Created TikToks that focused on the reaction moment — not the product, but the person receiving it",
-      "Built the customer journey around anticipation and reveal, not just delivery",
-      "Used referral program that felt like sharing, not selling",
-      "A/B tested not just ads, but the stories we told about why people ordered",
-    ],
-    results: [
-      { metric: "Total Views", value: "100K+" },
-      { metric: "Orders", value: "150+" },
-      { metric: "What I learned", value: "People buy feelings, not features. Always." },
-    ],
-  },
-  {
-    slug: "kingsport-gen-z-moms",
-    title: "Kingsport Sports Equipment",
-    tagline: "The anxiety of being a first-time parent buying things you don't understand",
-    client: "Digital Creatory 2024",
-    brand: "Kingsport",
-    industry: "Sports & Fitness",
-    role: "Research Lead & Strategist",
-    year: "2024",
-    thumbnail: "/images/projects/kingsport-thumb.svg",
-    featured: true,
-    color: "#06B6D4",
-    challenge: "Kingsport sells sports equipment for kids. They wanted to reach 'Gen Z moms.' But when we started talking to these women, we realized the brief missed the point. These aren't just 'consumers' — they're first-time parents terrified of making the wrong choice, drowning in conflicting advice, desperate to be seen as good mothers.",
-    insight: "Gen Z moms don't trust brands. They've grown up seeing through marketing. But they desperately trust each other. What they need isn't better ads — it's permission to trust their own instincts.",
-    approach: "We recommended Kingsport stop trying to convince moms and start trying to support them. Build community infrastructure. Become the place where moms help each other, with Kingsport as a quiet, trusted presence — not the loudest voice.",
-    execution: [
-      "30+ in-depth interviews with first-time mothers about their fears, not just their purchases",
-      "Mapped the emotional journey from 'my kid needs this' to 'I actually bought it'",
-      "Designed community engagement framework centered on peer support",
-      "Created content strategy based on real mom questions, not brand talking points",
-    ],
-    results: [
-      { metric: "Award", value: "1st Runner-up" },
-      { metric: "Strategy Impact", value: "Adopted by brand team" },
-      { metric: "What changed", value: "Shifted from product-push to community-support approach" },
-    ],
-    awards: ["🥈 1st Runner-up - Digital Creatory 2024"],
-  },
-  {
-    slug: "bidv-esg-banking",
-    title: "BIDV ESG Initiative",
-    tagline: "How do you make 'sustainable banking' mean something to a normal person?",
-    client: "MOA 2025",
-    brand: "BIDV",
-    industry: "Banking & Finance",
-    role: "Strategy Lead",
-    year: "2025",
-    thumbnail: "/images/projects/bidv-thumb.svg",
-    featured: true,
-    color: "#059669",
-    challenge: "BIDV wanted help communicating their ESG commitments. The problem: ESG reports are written for investors, not customers. Regular people don't care about 'carbon-neutral operations' or 'governance frameworks.' They care about their mortgage, their savings, their kids' education funds. How do you bridge that gap?",
-    insight: "People want to do good. But they're exhausted by abstract promises. They need to see the thread between 'I opened this account' and 'this village got clean water.' The connection has to be tangible, specific, human.",
-    approach: "Translate corporate sustainability into personal impact. Not 'we planted 10,000 trees' but 'your savings account helped plant a tree in Lào Cai — here's a photo, here's the farmer who tends it.'",
-    execution: [
-      "Developed customer-facing impact dashboard showing real outcomes",
-      "Created storytelling framework connecting deposits to development projects",
-      "Designed 'banking for good' narratives for frontline staff to share",
-      "Built social proof through customer-submitted impact stories",
-    ],
-    results: [
-      { metric: "Competition Stage", value: "Semi-finalist" },
-      { metric: "What we aimed for", value: "Make sustainability feel personal, not corporate" },
-    ],
-    awards: ["Semi-finalist - MOA 2025"],
-  },
-  {
-    slug: "vuver-valentine",
-    title: "VuVer Valentine Campaign",
-    tagline: "The quiet panic of finding a gift that says 'I actually know you'",
-    client: "VuVer.vn",
-    brand: "VuVer",
-    industry: "E-commerce",
-    role: "Campaign Lead",
-    year: "2024",
-    thumbnail: "/images/projects/vuver-thumb.svg",
-    featured: false,
-    color: "#DC2626",
-    challenge: "Valentine's Day e-commerce is brutal. Everyone's screaming discounts. We had two weeks. Limited budget. The practical goal was 'double revenue.' But the human question was more interesting: why does Valentine's gift shopping feel so stressful?",
-    insight: "They're afraid of getting it wrong. Of giving a gift that says 'I don't really know you.' The purchase isn't about the product — it's about proving you pay attention.",
-    approach: "We stopped selling products and started providing reassurance. 'We'll help you find something that shows you've been paying attention.' Gift guides organized by relationship stage, not product category.",
-    execution: [
-      "Gift-matching quiz: 'tell us about them, we'll suggest what says you get it'",
-      "Limited edition bundles that felt curated, not discounted",
-      "Abandoned cart emails that said 'still looking for the right one? we get it'",
-      "Micro-influencer content about gift-giving anxiety, not product features",
-    ],
-    results: [
-      { metric: "Revenue Growth", value: "2x" },
-      { metric: "Conversion Rate", value: "+45%" },
-      { metric: "What worked", value: "Addressing the anxiety, not just the transaction" },
-    ],
-  },
-  {
-    slug: "aeon-beta-tvc",
-    title: "AEON Beta TVC Production",
-    tagline: "Learning by watching — my first professional production set",
-    client: "AEON Vietnam",
-    brand: "AEON",
-    industry: "Retail",
-    role: "Production Assistant",
-    year: "2024",
-    thumbnail: "/images/projects/aeon-thumb.svg",
-    featured: false,
-    color: "#7C3AED",
-    challenge: "This wasn't a campaign I led — it was one I learned from. AEON was launching their new Beta store format and needed production support. I was there to coordinate logistics, manage schedules, keep things moving.",
-    approach: "Showed up, stayed curious, asked questions when appropriate, stayed quiet when I should watch. Sometimes the best learning happens when you're not the one in charge.",
-    execution: [
-      "Managed on-set coordination and scheduling across multiple shooting days",
-      "Liaised between creative agency and client stakeholders",
-      "Handled talent coordination and location logistics",
-      "Ensured brand guideline compliance throughout production",
-    ],
-    results: [
-      { metric: "Deliverable", value: "Completed on time" },
-      { metric: "What I learned", value: "How the professionals do it. How much I still need to learn." },
-    ],
-  },
-];
+export const projects: Project[] = data.items.map((item) => ({
+  ...item,
+  brand: item.brand || undefined,
+  challenge: item.challenge || undefined,
+  insight: item.insight || undefined,
+  approach: item.approach || undefined,
+  execution: item.execution.length > 0 ? item.execution : undefined,
+  results: item.results.length > 0 ? item.results : undefined,
+  awards: item.awards.length > 0 ? item.awards : undefined,
+  credits: item.credits.length > 0 ? item.credits : undefined,
+}));
 
 export const getFeaturedProjects = () => projects.filter((p) => p.featured);
-export const getProjectBySlug = (slug: string) => projects.find((p) => p.slug === slug);
-export const getIndustries = () => [...new Set(projects.map((p) => p.industry))];
+export const getProjectBySlug = (slug: string) =>
+  projects.find((p) => p.slug === slug);
+export const getIndustries = () => [
+  ...new Set(projects.map((p) => p.industry)),
+];
