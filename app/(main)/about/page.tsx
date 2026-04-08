@@ -36,15 +36,17 @@ export default function AboutPage() {
               >
                 <div className="p-2 rounded-[2rem] bg-white/60 ring-1 ring-black/[0.04]">
                   <div className="rounded-[calc(2rem-0.5rem)] bg-[var(--color-cream-dark)] aspect-[3/4] overflow-hidden relative">
-                    {/* Placeholder */}
-                    <div className="absolute inset-0 flex items-center justify-center text-[var(--color-ink-muted)]">
-                      <div className="text-center">
-                        <Camera className="w-16 h-16 mx-auto mb-3 text-[var(--color-ink-muted)]" strokeWidth={1} />
-                        <p className="text-sm">Your photo here</p>
-                        <p className="text-xs text-[var(--color-ink-muted)] mt-1">/public{personal.aboutImage}</p>
+                    {personal.aboutImage ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={personal.aboutImage} alt={personal.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center text-[var(--color-ink-muted)]">
+                        <div className="text-center">
+                          <Camera className="w-16 h-16 mx-auto mb-3 text-[var(--color-ink-muted)]" strokeWidth={1} />
+                          <p className="text-sm">Upload via Keystatic</p>
+                        </div>
                       </div>
-                    </div>
-                    {/* <img src={personal.aboutImage} alt={personal.name} className="w-full h-full object-cover" /> */}
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -201,12 +203,15 @@ export default function AboutPage() {
                     <div className={`rounded-[calc(2rem-0.5rem)] bg-gradient-to-br ${item.bgGradient} ${item.size === "large" ? "p-8" : "p-6"} h-full ${item.size === "large" ? "flex flex-col md:flex-row gap-6" : ""}`}>
                       {item.size === "large" && item.id !== "cat" && (
                         <>
-                          {/* Image placeholder */}
-                          <div className="w-full md:w-48 h-48 md:h-auto rounded-xl bg-white/60 flex-shrink-0 flex items-center justify-center overflow-hidden">
-                            <div className="text-center text-[var(--color-ink-muted)]">
-                              <span className="text-4xl block mb-2">{item.emoji}</span>
-                              <p className="text-xs">/public{item.image}</p>
-                            </div>
+                          <div className="w-full md:w-48 h-48 md:h-auto rounded-xl bg-white/60 flex-shrink-0 overflow-hidden">
+                            {item.image ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-[var(--color-ink-muted)]">
+                                <span className="text-4xl">{item.emoji}</span>
+                              </div>
+                            )}
                           </div>
                           <div className="flex-1">
                             <h3 className="text-xl font-medium text-[var(--color-ink)] mb-3">{item.title}</h3>
@@ -225,24 +230,30 @@ export default function AboutPage() {
                             <p className="text-[var(--color-ink-light)] leading-relaxed mb-4">{item.description}</p>
                             <p className="text-sm text-[var(--color-ink)] font-medium">&darr; {item.takeaway}</p>
                           </div>
-                          {/* Image placeholder */}
-                          <div className="w-full md:w-48 h-48 md:h-auto rounded-xl bg-white/60 flex-shrink-0 flex items-center justify-center overflow-hidden order-1 md:order-2">
-                            <div className="text-center text-[var(--color-ink-muted)]">
-                              <span className="text-4xl block mb-2">{item.emoji}</span>
-                              <p className="text-xs">/public{item.image}</p>
-                            </div>
+                          <div className="w-full md:w-48 h-48 md:h-auto rounded-xl bg-white/60 flex-shrink-0 overflow-hidden order-1 md:order-2">
+                            {item.image ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-[var(--color-ink-muted)]">
+                                <span className="text-4xl">{item.emoji}</span>
+                              </div>
+                            )}
                           </div>
                         </>
                       )}
 
                       {item.size === "small" && (
                         <>
-                          {/* Image placeholder */}
-                          <div className="w-full h-32 rounded-xl bg-white/60 mb-4 flex items-center justify-center overflow-hidden">
-                            <div className="text-center text-[var(--color-ink-muted)]">
-                              <span className="text-3xl block mb-1">{item.emoji}</span>
-                              <p className="text-[10px]">/public{item.image}</p>
-                            </div>
+                          <div className="w-full h-32 rounded-xl bg-white/60 mb-4 overflow-hidden">
+                            {item.image ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-[var(--color-ink-muted)]">
+                                <span className="text-3xl">{item.emoji}</span>
+                              </div>
+                            )}
                           </div>
                           <h3 className="text-lg font-medium text-[var(--color-ink)] mb-2">{item.title}</h3>
                           <p className="text-sm text-[var(--color-ink-light)] leading-relaxed mb-3">{item.description}</p>
