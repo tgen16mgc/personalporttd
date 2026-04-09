@@ -11,25 +11,24 @@
       "period": "2025 - present"
     },
     {
-      "company": "LG Electronics",
+      "company": "Vuver.vn",
       "location": "Hanoi",
-      "role": "Marketing Intern",
+      "role": "Creative Executive (Part-time)",
       "period": "2024"
     }
   ],
   "recognition": [
     {
       "title": "Champion",
-      "event": "Social Pioneers 2025",
-      "note": "team Chuồn Ngố"
+      "event": "Social Pioneers 2025"
     },
     {
       "title": "1st Runner-up",
-      "event": "Digital Creatory 2024"
+      "event": "Digital Creatory 2025"
     },
     {
       "title": "Semi-finalist",
-      "event": "Marketing Olympics ASEAN 2025"
+      "event": "Marketing On Air 2025"
     }
   ],
   "education": {
@@ -125,6 +124,6 @@
   "aboutCta": {
     "kicker": "Let’s Connect",
     "headline": "Got a project? A question?",
-    "body": "I’m always down for a good conversation. Especially if it involves marketing strategy, creative campaigns, or debating whether AP or AD is better on certain champions."
+    "body": "I’m always down for a good conversation. Especially if it involves marketing strategy, creative campaigns, or just a good casual story that you just remembered."
   }
 }
