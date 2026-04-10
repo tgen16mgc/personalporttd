@@ -4,20 +4,24 @@ export const aboutHero = data.aboutHero;
 
 export const experience = data.experience;
 
-export const recognition = data.recognition.map((r) => ({
-  title: r.title,
-  event: r.event,
-  ...(r.note ? { note: r.note } : {}),
-}));
+export const recognition = data.recognition.map(
+  (r: { title: string; event: string; note?: string }) => ({
+    title: r.title,
+    event: r.event,
+    ...(r.note ? { note: r.note } : {}),
+  })
+);
 
 export const education = data.education;
 
-export const personalBits = data.personalBits.map((b) => ({
-  text: b.text,
-  ...(b.linkText ? { linkText: b.linkText } : {}),
-  ...(b.linkHref ? { linkHref: b.linkHref } : {}),
-  ...(b.suffix ? { suffix: b.suffix } : {}),
-}));
+export const personalBits = data.personalBits.map(
+  (b: { text: string; linkText?: string; linkHref?: string; suffix?: string }) => ({
+    text: b.text,
+    ...(b.linkText ? { linkText: b.linkText } : {}),
+    ...(b.linkHref ? { linkHref: b.linkHref } : {}),
+    ...(b.suffix ? { suffix: b.suffix } : {}),
+  })
+);
 
 export const philosophy = data.philosophy;
 
