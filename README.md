@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## CMS + Contact Form Setup
 
 - **Update favicon in CMS:** Keystatic → **Personal Info** → **SEO** → **Favicon / Site Icon**.
-- If no favicon is set in CMS, the app falls back to `app/favicon.ico`.
+- If no favicon is set in CMS, the app falls back to `public/favicon.ico`.
 
 To make the contact form send emails, configure these environment variables:
 
