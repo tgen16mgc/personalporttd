@@ -222,7 +222,7 @@ export default function ContactPage() {
                         </div>
 
                         {submitError ? (
-                          <p className="text-sm text-red-600" role="alert" aria-live="polite">
+                          <p className="text-sm text-red-600" role="alert" aria-live="assertive">
                             {submitError}
                           </p>
                         ) : null}
