@@ -17,6 +17,7 @@ export const personal = data as {
     title: string;
     description: string;
     shortDescription: string;
+    favicon: string | null;
     keywords: string[];
   };
   navigation: { href: string; label: string }[];

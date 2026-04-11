@@ -52,6 +52,13 @@ export default config({
           title: fields.text({ label: "SEO Title" }),
           description: fields.text({ label: "SEO Description", multiline: true }),
           shortDescription: fields.text({ label: "OG Short Description" }),
+          favicon: fields.image({
+            label: "Favicon / Site Icon",
+            directory: "public/images/personal",
+            publicPath: "/images/personal/",
+            description:
+              "Square PNG/SVG recommended. Leave empty to use app/favicon.ico.",
+          }),
           keywords: fields.array(fields.text({ label: "Keyword" }), {
             label: "SEO Keywords",
             itemLabel: (props) => props.value,
