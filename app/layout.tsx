@@ -3,11 +3,17 @@ import { fontVariables } from "@/lib/fonts";
 import { personal } from "@/content/personal";
 import "./globals.css";
 
+const faviconPath = personal.seo.favicon || "/favicon.ico";
+
 export const metadata: Metadata = {
   title: personal.seo.title,
   description: personal.seo.description,
   keywords: personal.seo.keywords,
   authors: [{ name: personal.name }],
+  icons: {
+    icon: faviconPath,
+    shortcut: faviconPath,
+  },
   openGraph: {
     title: personal.seo.title,
     description: personal.seo.shortDescription,

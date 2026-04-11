@@ -26,14 +26,38 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormState({ name: "", email: "", message: "" });
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      if (!response.ok) {
+        const result = (await response.json().catch(() => null)) as
+          | { error?: string }
+          | null;
+        throw new Error(result?.error || "Failed to send message.");
+      }
+
+      setIsSubmitted(true);
+      setFormState({ name: "", email: "", message: "" });
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again.";
+      setSubmitError(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -144,6 +168,7 @@ export default function ContactPage() {
                           <input
                             type="text"
                             id="name"
+                            name="name"
                             required
                             value={formState.name}
                             onChange={(e) =>
@@ -164,6 +189,7 @@ export default function ContactPage() {
                           <input
                             type="email"
                             id="email"
+                            name="email"
                             required
                             value={formState.email}
                             onChange={(e) =>
@@ -183,6 +209,7 @@ export default function ContactPage() {
                           </label>
                           <textarea
                             id="message"
+                            name="message"
                             required
                             rows={5}
                             value={formState.message}
@@ -193,6 +220,12 @@ export default function ContactPage() {
                             placeholder="Tell me about your project or just say hello..."
                           />
                         </div>
+
+                        {submitError ? (
+                          <p className="text-sm text-red-600" role="alert" aria-live="assertive">
+                            {submitError}
+                          </p>
+                        ) : null}
 
                         <div className="flex justify-center">
                           <Button 

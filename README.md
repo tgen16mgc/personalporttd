@@ -1,5 +1,22 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## CMS + Contact Form Setup
+
+- **Update favicon in CMS:** Keystatic → **Personal Info** → **SEO** → **Favicon / Site Icon**.
+- If no favicon is set in CMS, the app falls back to `app/favicon.ico`.
+
+To make the contact form send emails, configure these environment variables:
+
+```bash
+CONTACT_SMTP_HOST=smtp.gmail.com
+CONTACT_SMTP_PORT=465
+CONTACT_SMTP_SECURE=true
+CONTACT_SMTP_USER=your-smtp-user
+CONTACT_SMTP_PASS=your-smtp-password-or-app-password
+CONTACT_EMAIL_FROM=your-smtp-user
+CONTACT_EMAIL_TO=tiendn.fw@gmail.com
+```
+
 ## Getting Started
 
 First, run the development server:
