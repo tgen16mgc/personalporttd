@@ -57,7 +57,7 @@ export default config({
             directory: "public/images/personal",
             publicPath: "/images/personal/",
             description:
-              "Square PNG/SVG recommended. Leave empty to use app/favicon.ico.",
+              "Square PNG/SVG recommended. Leave empty to use public/favicon.ico.",
           }),
           keywords: fields.array(fields.text({ label: "Keyword" }), {
             label: "SEO Keywords",
