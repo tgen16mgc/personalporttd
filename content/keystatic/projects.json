@@ -95,13 +95,66 @@
         {
           "discriminant": "text",
           "value": {
-            "body": "Pixself was a 13-week university business project where our team launched a real small business from scratch and used sales promotion tactics to drive revenue and communication performance. The project brief was to build, run, and grow a startup within one semester, with success measured by both commercial results and the quality of execution.\n\nAs Project Lead, I drove the overall direction of the project and led execution across product, communications, and operations. I also owned the masterplan, product strategy, website, and much of the visual and character design.\n\nTo keep the idea realistic within a 13-week launch window, I helped the team narrow the product category early. We chose keychains because they were practical to produce, easy to merchandise, and suitable for a short startup cycle. Once the category was set, I pushed the concept further by combining multiple early ideas into one stronger product direction: customizable pixel-style character keychains. Customers could personalize their own character online, from hairstyle to clothing details, turning a simple product into a more interactive and personal experience.\n\nFrom there, I led the team in turning the concept into a real business. I managed execution across product and communications, built the website myself, and worked with a graphic designer to develop the pixel-art visual system and character assets. We explored 8-bit design techniques, including working in Aseprite, to make the product style feel distinctive and consistent.\n\nWe launched on time with a functioning website and an early Google Form-based order flow. After launch, I identified two major growth opportunities. First, I proposed using ads to increase product curiosity and engagement, which helped amplify awareness. Second, I noticed the team was spending too much time processing orders manually, so I optimized the workflow by upgrading the website and building an n8n automation system. This reduced operational friction and made the order process almost fully automated, allowing the team to focus mainly on fulfillment and shipping.\n\nThe project became the highest-graded in the class and generated around 15 million VND in revenue in a very short period. It also delivered 333,000 impressions and 1,800 website link clicks across Facebook, TikTok, Instagram, and the website, including a viral TikTok video that significantly boosted reach."
+            "body": "Pixself was a 13-week university business project where our team launched a real small business from scratch and used sales promotion tactics to drive revenue and communication performance. The project brief was to build, run, and grow a startup within one semester, with success measured by both commercial results and the quality of execution."
           }
         },
         {
-          "discriminant": "quote",
+          "discriminant": "text",
           "value": {
-            "body": "Links\nWebsite: pixself.studio\nFacebook Fanpage: facebook.com/wearepixself"
+            "body": "As Project Lead, I drove the overall direction of the project and led execution across product, communications, and operations. I also owned the masterplan, product strategy, website, and much of the visual and character design."
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {
+            "body": "To keep the idea realistic within a 13-week launch window, I helped the team narrow the product category early. We chose keychains because they were practical to produce, easy to merchandise, and suitable for a short startup cycle. Once the category was set, I pushed the concept further by combining multiple early ideas into one stronger product direction: customizable pixel-style character keychains. Customers could personalize their own character online, from hairstyle to clothing details, turning a simple product into a more interactive and personal experience."
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/3/value/image.png",
+            "caption": "Website screenshots",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {
+            "body": "From there, I led the team in turning the concept into a real business. I managed execution across product and communications, built the website myself, and worked with a graphic designer to develop the pixel-art visual system and character assets. We explored 8-bit design techniques, including working in Aseprite, to make the product style feel distinctive and consistent."
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/5/value/image.jpg",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {
+            "body": "We launched on time with a functioning website and an early Google Form-based order flow. After launch, I identified two major growth opportunities. First, I proposed using ads to increase product curiosity and engagement, which helped amplify awareness. Second, I noticed the team was spending too much time processing orders manually, so I optimized the workflow by upgrading the website and building an n8n automation system. This reduced operational friction and made the order process almost fully automated, allowing the team to focus mainly on fulfillment and shipping."
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/7/value/image.png",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {
+            "body": "The project became the highest-graded in the class and generated around 15 million VND in revenue in a very short period. It also delivered 333,000 impressions and 1,800 website link clicks across Facebook, TikTok, Instagram, and the website, including a viral TikTok video that significantly boosted reach."
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/9/value/image.png",
+            "size": "wide"
           }
         }
       ],
