@@ -151,10 +151,9 @@
           }
         },
         {
-          "discriminant": "image",
+          "discriminant": "text",
           "value": {
-            "image": "/images/projects/items/2/story/9/value/image.png",
-            "size": "wide"
+            "body": "<a href=\"https://pixself.studio\" target=\"_blank\">Pixself Website</a>\n<a href=\"https://www.facebook.com/wearepixself\" target=\"_blank\">Facebook Fanpage</a>"
           }
         }
       ],
