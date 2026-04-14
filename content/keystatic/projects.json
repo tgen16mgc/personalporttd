@@ -80,90 +80,44 @@
     {
       "slug": "pixself-keychain",
       "title": "Pixself",
-      "tagline": "Why do people carry tiny versions of their pets on their bags?",
-      "client": "Personal Venture",
+      "tagline": "Pixself: Building a Custom Pixel Merch Brand in 13 Weeks",
+      "client": "University Group Project",
       "brand": "Pixself",
-      "industry": "D2C E-commerce",
-      "role": "Founder & Full-Stack Marketer",
-      "year": "2024",
+      "industry": "Startup",
+      "role": "Project Lead, Product Strategy, Website, and Brand Design",
+      "year": "Aug 22, 2025 – Nov 18, 2025",
       "thumbnail": "/images/projects/items/2/thumbnail.jpg",
       "heroImage": "/images/projects/items/2/heroImage.jpg",
-      "gallery": [
-        {
-          "type": "image",
-          "image": "/images/projects/items/2/gallery/0/image.jpg",
-          "size": "half"
-        },
-        {
-          "type": "video",
-          "videoUrl": "https://www.tiktok.com/@pixself/video/7551064434207198485?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
-          "size": "half"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/2/gallery/2/image.jpeg",
-          "size": "full"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/2/gallery/3/image.jpg",
-          "size": "full"
-        }
-      ],
+      "gallery": [],
       "featured": true,
       "color": "#EC4899",
       "story": [
         {
-          "discriminant": "heading",
-          "value": {
-            "body": "The Challenge"
-          }
-        },
-        {
           "discriminant": "text",
           "value": {
-            "body": "I started Pixself as a side project: custom pixel-art keychains from personal photos. The practical question was 'can I make money selling keychains?' But the real question turned out to be: 'Why do people want to carry physical reminders of the things they love?'"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/2/story/2/value/image.jpg",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "The Insight"
+            "body": "Pixself was a 13-week university business project where our team launched a real small business from scratch and used sales promotion tactics to drive revenue and communication performance. The project brief was to build, run, and grow a startup within one semester, with success measured by both commercial results and the quality of execution.\n\nAs Project Lead, I drove the overall direction of the project and led execution across product, communications, and operations. I also owned the masterplan, product strategy, website, and much of the visual and character design.\n\nTo keep the idea realistic within a 13-week launch window, I helped the team narrow the product category early. We chose keychains because they were practical to produce, easy to merchandise, and suitable for a short startup cycle. Once the category was set, I pushed the concept further by combining multiple early ideas into one stronger product direction: customizable pixel-style character keychains. Customers could personalize their own character online, from hairstyle to clothing details, turning a simple product into a more interactive and personal experience.\n\nFrom there, I led the team in turning the concept into a real business. I managed execution across product and communications, built the website myself, and worked with a graphic designer to develop the pixel-art visual system and character assets. We explored 8-bit design techniques, including working in Aseprite, to make the product style feel distinctive and consistent.\n\nWe launched on time with a functioning website and an early Google Form-based order flow. After launch, I identified two major growth opportunities. First, I proposed using ads to increase product curiosity and engagement, which helped amplify awareness. Second, I noticed the team was spending too much time processing orders manually, so I optimized the workflow by upgrading the website and building an n8n automation system. This reduced operational friction and made the order process almost fully automated, allowing the team to focus mainly on fulfillment and shipping.\n\nThe project became the highest-graded in the class and generated around 15 million VND in revenue in a very short period. It also delivered 333,000 impressions and 1,800 website link clicks across Facebook, TikTok, Instagram, and the website, including a viral TikTok video that significantly boosted reach."
           }
         },
         {
           "discriminant": "quote",
           "value": {
-            "body": "In a world where everything is digital, people crave physical objects that anchor their identity. A keychain isn't functional — it's a tiny declaration: 'this is what matters to me.' Pet owners, K-pop fans, couples — they all want to carry proof of belonging."
+            "body": "Links\nWebsite: pixself.studio\nFacebook Fanpage: facebook.com/wearepixself"
           }
         }
       ],
-      "approach": "Stopped selling 'custom keychains' and started selling 'a piece of your world you can hold.' The product was the same. The emotional framing changed everything.",
-      "execution": [
-        "Created TikToks that focused on the reaction moment — not the product, but the person receiving it",
-        "Built the customer journey around anticipation and reveal, not just delivery",
-        "Used referral program that felt like sharing, not selling",
-        "A/B tested not just ads, but the stories we told about why people ordered"
-      ],
+      "execution": [],
       "results": [
         {
-          "metric": "Total Views",
-          "value": "100K+"
+          "metric": "revenue",
+          "value": "15M VND"
         },
         {
-          "metric": "Orders",
-          "value": "150+"
+          "metric": "impressions",
+          "value": "333K"
         },
         {
-          "metric": "What I learned",
-          "value": "People buy feelings, not features. Always."
+          "metric": "link clicks",
+          "value": "1,800"
         }
       ],
       "awards": [],
