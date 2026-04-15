@@ -375,7 +375,10 @@ export default config({
                 }),
                 {
                   text: fields.object({
-                    body: fields.text({ label: "Paragraph", multiline: true }),
+                    body: fields.text({
+                      label: "Paragraph (HTML links allowed)",
+                      multiline: true,
+                    }),
                   }),
                   heading: fields.object({
                     body: fields.text({ label: "Heading text" }),
@@ -398,7 +401,10 @@ export default config({
                     }),
                   }),
                   quote: fields.object({
-                    body: fields.text({ label: "Quote text", multiline: true }),
+                    body: fields.text({
+                      label: "Quote text (HTML links allowed)",
+                      multiline: true,
+                    }),
                   }),
                   steps: fields.object({
                     heading: fields.text({ label: "Steps heading (optional)" }),
@@ -426,15 +432,15 @@ export default config({
               }
             ),
             challenge: fields.text({
-              label: "The Challenge (legacy -- use Story blocks instead)",
+              label: "The Challenge (legacy -- HTML links allowed)",
               multiline: true,
             }),
             insight: fields.text({
-              label: "The Insight (legacy -- use Story blocks instead)",
+              label: "The Insight (legacy -- HTML links allowed)",
               multiline: true,
             }),
             approach: fields.text({
-              label: "The Approach (legacy -- use Story blocks instead)",
+              label: "The Approach (legacy -- HTML links allowed)",
               multiline: true,
             }),
             execution: fields.array(
