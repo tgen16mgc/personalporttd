@@ -21,6 +21,17 @@ import {
 } from "@/content/pages/about";
 
 export default function AboutPage() {
+  const isSafeHref = (href: string) => {
+    if (href.startsWith("//")) return false;
+    if (href.startsWith("/") || href.startsWith("#")) return true;
+    try {
+      const { protocol } = new URL(href);
+      return protocol === "http:" || protocol === "https:" || protocol === "mailto:" || protocol === "tel:";
+    } catch {
+      return false;
+    }
+  };
+
   return (
     <>
       {/* Hero - Big Photo + Simple Intro */}
@@ -91,7 +102,7 @@ export default function AboutPage() {
                     >
                       &bull;{" "}
                       {bit.text}
-                      {bit.linkText && bit.linkHref ? (
+                      {bit.linkText && bit.linkHref && isSafeHref(bit.linkHref) ? (
                         <>
                           {" "}
                           {bit.linkHref.startsWith("/") ? (
