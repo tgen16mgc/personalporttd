@@ -14,10 +14,22 @@ import {
   experience,
   recognition,
   education,
+  personalBits,
   philosophy,
   afterwork,
   aboutCta,
 } from "@/content/pages/about";
+
+const isSafeHref = (href: string) => {
+  if (href.startsWith("//")) return false;
+  if (href.startsWith("/") || href.startsWith("#")) return true;
+  try {
+    const { protocol } = new URL(href);
+    return protocol === "http:" || protocol === "https:" || protocol === "mailto:" || protocol === "tel:";
+  } catch {
+    return false;
+  }
+};
 
 export default function AboutPage() {
   return (
@@ -83,14 +95,36 @@ export default function AboutPage() {
 
                 {/* Personal bits */}
                 <motion.div variants={fadeInUp} className="mb-8 space-y-2">
-                  <p className="text-[var(--color-ink-light)]">
-                    &bull; I run on <span className="text-[var(--color-ink)]">c&agrave; ph&ecirc; sữa đ&aacute;</span> and can debate LoL builds for hours. 
-                    Check out my <Link href="/work" className="text-[var(--color-cyan)] hover:underline">work</Link>.
-                  </p>
-                  <p className="text-[var(--color-ink-light)]">
-                    &bull; I dream of having croissants in Paris one day. 
-                    Until then, <span className="text-[var(--color-ink)]">b&aacute;nh m&igrave; chả</span> in Hanoi hits different.
-                  </p>
+                  {personalBits.map((bit) => (
+                    <p
+                      key={`${bit.text}-${bit.linkHref ?? "nolink"}-${bit.linkText ?? ""}-${bit.suffix ?? ""}`}
+                      className="text-[var(--color-ink-light)]"
+                    >
+                      &bull;{" "}
+                      {bit.text}
+                      {bit.linkText && bit.linkHref && isSafeHref(bit.linkHref) ? (
+                        <>
+                          {" "}
+                          {bit.linkHref.startsWith("/") ? (
+                            <Link href={bit.linkHref} className="text-[var(--color-cyan)] hover:underline">
+                              {bit.linkText}
+                            </Link>
+                          ) : (
+                            <a
+                              href={bit.linkHref}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[var(--color-cyan)] hover:underline"
+                            >
+                              {bit.linkText}
+                            </a>
+                          )}
+                          {bit.suffix}
+                        </>
+                      ) : null}
+                      {(!bit.linkText || !bit.linkHref) && bit.suffix ? bit.suffix : null}
+                    </p>
+                  ))}
                 </motion.div>
 
                 {/* Recognition */}
