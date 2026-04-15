@@ -21,8 +21,6 @@ import {
 } from "@/content/pages/about";
 
 export default function AboutPage() {
-  const stripHtml = (text: string) => text.replace(/<[^>]*>/g, "");
-
   return (
     <>
       {/* Hero - Big Photo + Simple Intro */}
@@ -86,10 +84,13 @@ export default function AboutPage() {
 
                 {/* Personal bits */}
                 <motion.div variants={fadeInUp} className="mb-8 space-y-2">
-                  {personalBits.map((bit, index) => (
-                    <p key={index} className="text-[var(--color-ink-light)]">
+                  {personalBits.map((bit) => (
+                    <p
+                      key={`${bit.text}-${bit.linkHref ?? "nolink"}-${bit.linkText ?? ""}-${bit.suffix ?? ""}`}
+                      className="text-[var(--color-ink-light)]"
+                    >
                       &bull;{" "}
-                      {stripHtml(bit.text)}
+                      {bit.text}
                       {bit.linkText && bit.linkHref ? (
                         <>
                           {" "}
