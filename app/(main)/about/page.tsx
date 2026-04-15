@@ -110,9 +110,8 @@ export default function AboutPage() {
                           )}
                           {bit.suffix}
                         </>
-                      ) : bit.suffix ? (
-                        bit.suffix
                       ) : null}
+                      {(!bit.linkText || !bit.linkHref) && bit.suffix ? bit.suffix : null}
                     </p>
                   ))}
                 </motion.div>
