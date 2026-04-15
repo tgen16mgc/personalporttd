@@ -21,14 +21,7 @@ import {
 } from "@/content/pages/about";
 
 export default function AboutPage() {
-  const sanitizeInlineHtml = (html: string) =>
-    html
-      .replace(/<\s*br\s*\/?\s*>/gi, "<br />")
-      .replace(/<\s*\/?\s*em\b[^>]*>/gi, (tag) => (tag.includes("/") ? "</em>" : "<em>"))
-      .replace(/<\s*\/?\s*strong\b[^>]*>/gi, (tag) =>
-        tag.includes("/") ? "</strong>" : "<strong>"
-      )
-      .replace(/<(?!\/?(em|strong|br)\s*\/?>)[^>]+>/gi, "");
+  const stripHtml = (text: string) => text.replace(/<[^>]*>/g, "");
 
   return (
     <>
@@ -93,13 +86,10 @@ export default function AboutPage() {
 
                 {/* Personal bits */}
                 <motion.div variants={fadeInUp} className="mb-8 space-y-2">
-                  {personalBits.map((bit) => (
-                    <p
-                      key={`${bit.text}-${bit.linkHref ?? "nolink"}-${bit.linkText ?? ""}-${bit.suffix ?? ""}`}
-                      className="text-[var(--color-ink-light)]"
-                    >
+                  {personalBits.map((bit, index) => (
+                    <p key={index} className="text-[var(--color-ink-light)]">
                       &bull;{" "}
-                      <span dangerouslySetInnerHTML={{ __html: sanitizeInlineHtml(bit.text) }} />
+                      {stripHtml(bit.text)}
                       {bit.linkText && bit.linkHref ? (
                         <>
                           {" "}
@@ -117,7 +107,7 @@ export default function AboutPage() {
                               {bit.linkText}
                             </a>
                           )}
-                          {bit.suffix || ""}
+                          {bit.suffix}
                         </>
                       ) : bit.suffix ? (
                         bit.suffix
