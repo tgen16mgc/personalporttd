@@ -13,6 +13,15 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+function RichText({ html, className = "" }: { html: string; className?: string }) {
+  return (
+    <span
+      className={`[&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-[0.08em] [&_a:hover]:opacity-80 ${className}`.trim()}
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
+}
+
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
@@ -239,7 +248,9 @@ export default async function CaseStudyPage({ params }: Props) {
                     <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: project.color }} aria-hidden="true" />
                     <h2 className="font-[var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-light text-[var(--color-ink)] tracking-tight">The Challenge</h2>
                   </div>
-                  <p className="text-lg text-[var(--color-ink-light)] leading-relaxed pl-5">{project.challenge}</p>
+                  <p className="text-lg text-[var(--color-ink-light)] leading-relaxed pl-5">
+                    <RichText html={project.challenge} />
+                  </p>
                 </div>
               )}
 
@@ -250,7 +261,9 @@ export default async function CaseStudyPage({ params }: Props) {
                     <h2 className="font-[var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-light text-[var(--color-ink)] tracking-tight">The Insight</h2>
                   </div>
                   <blockquote className="pl-5 border-l-2 ml-0" style={{ borderColor: project.color + "40" }}>
-                    <p className="text-xl text-[var(--color-ink)] leading-relaxed font-[var(--font-display)] font-light italic">{project.insight}</p>
+                    <p className="text-xl text-[var(--color-ink)] leading-relaxed font-[var(--font-display)] font-light italic">
+                      <RichText html={project.insight} />
+                    </p>
                   </blockquote>
                 </div>
               )}
@@ -261,7 +274,9 @@ export default async function CaseStudyPage({ params }: Props) {
                     <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: project.color }} aria-hidden="true" />
                     <h2 className="font-[var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-light text-[var(--color-ink)] tracking-tight">The Approach</h2>
                   </div>
-                  <p className="text-lg text-[var(--color-ink-light)] leading-relaxed pl-5">{project.approach}</p>
+                  <p className="text-lg text-[var(--color-ink-light)] leading-relaxed pl-5">
+                    <RichText html={project.approach} />
+                  </p>
                 </div>
               )}
 
@@ -278,7 +293,7 @@ export default async function CaseStudyPage({ params }: Props) {
                           className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium shrink-0 mt-0.5 ring-1"
                           style={{ backgroundColor: project.color + "10", color: project.color, borderColor: project.color + "20" }}
                         >{index + 1}</span>
-                        {item}
+                        <RichText html={item} />
                       </li>
                     ))}
                   </ul>
@@ -406,7 +421,7 @@ function StoryBlockRenderer({ block, color }: { block: StoryBlock; color: string
         <Container>
           <div className="max-w-3xl py-3">
             <p className="text-lg text-[var(--color-ink-light)] leading-[1.8] pl-5">
-              {block.value.body}
+              <RichText html={block.value.body} />
             </p>
           </div>
         </Container>
@@ -420,7 +435,7 @@ function StoryBlockRenderer({ block, color }: { block: StoryBlock; color: string
           <div className="max-w-3xl py-8">
             <blockquote className="pl-5 border-l-2 ml-0" style={{ borderColor: color + "40" }}>
               <p className="text-xl text-[var(--color-ink)] leading-relaxed font-[var(--font-display)] font-light italic">
-                {block.value.body}
+                <RichText html={block.value.body} />
               </p>
             </blockquote>
           </div>
@@ -479,7 +494,7 @@ function StoryBlockRenderer({ block, color }: { block: StoryBlock; color: string
                   >
                     {idx + 1}
                   </span>
-                  {step}
+                  <RichText html={step} />
                 </li>
               ))}
             </ul>
