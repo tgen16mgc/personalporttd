@@ -20,18 +20,18 @@ import {
   aboutCta,
 } from "@/content/pages/about";
 
-export default function AboutPage() {
-  const isSafeHref = (href: string) => {
-    if (href.startsWith("//")) return false;
-    if (href.startsWith("/") || href.startsWith("#")) return true;
-    try {
-      const { protocol } = new URL(href);
-      return protocol === "http:" || protocol === "https:" || protocol === "mailto:" || protocol === "tel:";
-    } catch {
-      return false;
-    }
-  };
+const isSafeHref = (href: string) => {
+  if (href.startsWith("//")) return false;
+  if (href.startsWith("/") || href.startsWith("#")) return true;
+  try {
+    const { protocol } = new URL(href);
+    return protocol === "http:" || protocol === "https:" || protocol === "mailto:" || protocol === "tel:";
+  } catch {
+    return false;
+  }
+};
 
+export default function AboutPage() {
   return (
     <>
       {/* Hero - Big Photo + Simple Intro */}
