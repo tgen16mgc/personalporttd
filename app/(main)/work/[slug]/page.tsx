@@ -46,6 +46,10 @@ function getStoryBodyPath(projectIndex: number, blockIndex: number) {
   );
 }
 
+/**
+ * Story text blocks may contain either a legacy plain string body
+ * or document-node arrays from Keystatic's rich text field.
+ */
 function hasStoryBlockBody(body: unknown) {
   if (typeof body === "string") return body.trim().length > 0;
   if (Array.isArray(body)) return body.length > 0;
@@ -87,7 +91,10 @@ async function resolveStoryBodiesFromMdoc(slug: string) {
           body,
         },
       });
-    } catch {
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code && (error as NodeJS.ErrnoException).code !== "ENOENT") {
+        throw error;
+      }
       story.push(block);
       continue;
     }
