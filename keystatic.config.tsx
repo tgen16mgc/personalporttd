@@ -375,7 +375,19 @@ export default config({
                 }),
                 {
                   text: fields.object({
-                    body: fields.text({ label: "Paragraph", multiline: true }),
+                    body: fields.document({
+                      label: "Paragraph",
+                      description:
+                        "Rich text editor — use Ctrl+K to add links, toolbar for bold/italic",
+                      formatting: {
+                        inlineMarks: {
+                          bold: true,
+                          italic: true,
+                          strikethrough: true,
+                        },
+                      },
+                      links: true,
+                    }),
                   }),
                   heading: fields.object({
                     body: fields.text({ label: "Heading text" }),

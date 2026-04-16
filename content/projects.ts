@@ -1,7 +1,22 @@
 import data from "./keystatic/projects.json";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export type DocumentNode = {
+  type?: string;
+  children?: (DocumentNode | DocumentTextNode)[];
+  href?: string;
+  [key: string]: any;
+};
+export type DocumentTextNode = {
+  text: string;
+  bold?: boolean;
+  italic?: boolean;
+  strikethrough?: boolean;
+  [key: string]: any;
+};
+
 export type StoryBlock =
-  | { discriminant: "text"; value: { body: string } }
+  | { discriminant: "text"; value: { body: string | DocumentNode[] } }
   | { discriminant: "heading"; value: { body: string } }
   | { discriminant: "image"; value: { image: string | null; caption: string; size: "content" | "wide" | "full" } }
   | { discriminant: "quote"; value: { body: string } }
@@ -93,7 +108,14 @@ function parseStory(item: RawItem): StoryBlock[] | undefined {
         });
         break;
       default: {
-        results.push({ discriminant: "text", value: { body: (v.body as string) || "" } });
+        // body can be a plain string (legacy) or document nodes (new fields.document)
+        const body = v.body;
+        results.push({
+          discriminant: "text",
+          value: {
+            body: (typeof body === "string" ? body : Array.isArray(body) ? body : String(body || "")) as string | DocumentNode[],
+          },
+        });
         if (v.image) {
           results.push({
             discriminant: "image",
