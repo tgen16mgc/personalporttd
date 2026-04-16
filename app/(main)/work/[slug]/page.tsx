@@ -56,6 +56,10 @@ function hasStoryBlockBody(body: unknown) {
   return false;
 }
 
+/**
+ * Loads a project by slug and fills empty text story blocks from
+ * Keystatic `.mdoc` files when the JSON payload omits rich-text body content.
+ */
 async function resolveStoryBodiesFromMdoc(slug: string) {
   const projectIndex = projects.findIndex((p) => p.slug === slug);
   if (projectIndex < 0) return null;
@@ -94,7 +98,10 @@ async function resolveStoryBodiesFromMdoc(slug: string) {
     } catch (error) {
       const errorCode = (error as NodeJS.ErrnoException).code;
       if (errorCode && errorCode !== "ENOENT") {
-        throw error;
+        throw new Error(
+          `Failed to load story body for "${slug}" at ${bodyPath}`,
+          { cause: error }
+        );
       }
       story.push(block);
     }
