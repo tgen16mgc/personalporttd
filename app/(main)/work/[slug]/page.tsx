@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import fs from "node:fs";
+import { constants as fsConstants } from "node:fs";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { projects, getProjectBySlug } from "@/content/projects";
 import { personal } from "@/content/personal";
@@ -9,6 +10,13 @@ import { CaseStudyContent } from "@/components/work/CaseStudyContent";
 interface Props {
   params: Promise<{ slug: string }>;
 }
+
+const KEYSTATIC_PROJECTS_DIR = path.join(
+  process.cwd(),
+  "content",
+  "keystatic",
+  "projects"
+);
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -27,14 +35,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function resolveStoryBodiesFromMdoc(slug: string) {
-  const project = getProjectBySlug(slug);
+function getStoryBodyPath(projectIndex: number, blockIndex: number) {
+  return path.join(
+    KEYSTATIC_PROJECTS_DIR,
+    "items",
+    String(projectIndex),
+    "story",
+    String(blockIndex),
+    "value",
+    "body.mdoc"
+  );
+}
+
+async function resolveStoryBodiesFromMdoc(slug: string) {
+  const projectIndex = projects.findIndex((p) => p.slug === slug);
+  if (projectIndex < 0) return null;
+
+  const project = projects[projectIndex];
   if (!project || !project.story || project.story.length === 0) return project;
 
-  const projectIndex = projects.findIndex((p) => p.slug === slug);
-  if (projectIndex < 0) return project;
-
-  const story = project.story.map((block, blockIndex) => {
+  const story = await Promise.all(project.story.map(async (block, blockIndex) => {
     if (block.discriminant !== "text") return block;
 
     const hasBody =
@@ -43,22 +63,15 @@ function resolveStoryBodiesFromMdoc(slug: string) {
         : Array.isArray(block.value.body) && block.value.body.length > 0;
     if (hasBody) return block;
 
-    const bodyPath = path.join(
-      process.cwd(),
-      "content",
-      "keystatic",
-      "projects",
-      "items",
-      String(projectIndex),
-      "story",
-      String(blockIndex),
-      "value",
-      "body.mdoc"
-    );
+    const bodyPath = getStoryBodyPath(projectIndex, blockIndex);
 
-    if (!fs.existsSync(bodyPath)) return block;
+    try {
+      await access(bodyPath, fsConstants.R_OK);
+    } catch {
+      return block;
+    }
 
-    const body = fs.readFileSync(bodyPath, "utf8").trim();
+    const body = (await readFile(bodyPath, "utf8")).trim();
     if (!body) return block;
 
     return {
@@ -68,7 +81,7 @@ function resolveStoryBodiesFromMdoc(slug: string) {
         body,
       },
     };
-  });
+  }));
 
   return {
     ...project,
@@ -78,7 +91,7 @@ function resolveStoryBodiesFromMdoc(slug: string) {
 
 export default async function CaseStudyPage({ params }: Props) {
   const { slug } = await params;
-  const project = resolveStoryBodiesFromMdoc(slug);
+  const project = await resolveStoryBodiesFromMdoc(slug);
 
   if (!project) {
     notFound();
