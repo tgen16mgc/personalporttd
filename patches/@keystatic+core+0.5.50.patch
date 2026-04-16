@@ -1,0 +1,47 @@
+diff --git a/node_modules/@keystatic/core/dist/keystatic-core-ui.js b/node_modules/@keystatic/core/dist/keystatic-core-ui.js
+index 24d4713..08f7e99 100644
+--- a/node_modules/@keystatic/core/dist/keystatic-core-ui.js
++++ b/node_modules/@keystatic/core/dist/keystatic-core-ui.js
+@@ -1962,12 +1962,12 @@ function useUpsertItem(args) {
+         const existing = getTreeNodeAtPath(unscopedTree, addition_1.path);
+         return (existing === null || existing === void 0 ? void 0 : existing.entry.sha) !== sha;
+       });
+-      const deletions = [...filesToDelete].map(path => ({
++      const deletions = [...filesToDelete].filter(path => !!getTreeNodeAtPath(unscopedTree, path)).map(path => ({
+         path
+       }));
+       const updatedTree = await updateTreeWithChanges(unscopedTree, {
+         additions,
+-        deletions: [...filesToDelete]
++        deletions: deletions.map(x => x.path)
+       });
+       await hydrateTreeCacheWithEntries(updatedTree.entries);
+       if (args.config.storage.kind === 'github' || args.config.storage.kind === 'cloud') {
+@@ -1979,7 +1979,7 @@ function useUpsertItem(args) {
+           branchName: (_override$branch = override === null || override === void 0 ? void 0 : override.branch) !== null && _override$branch !== void 0 ? _override$branch : currentBranch,
+           repositoryNameWithOwner: `${repoInfo.owner}/${repoInfo.name}`
+         };
+-        const runMutation = expectedHeadOid => mutate({
++        const runMutation = (expectedHeadOid, deletionsToApply = deletions) => mutate({
+           input: {
+             branch,
+             expectedHeadOid,
+@@ -1991,7 +1991,7 @@ function useUpsertItem(args) {
+                 ...addition_2,
+                 contents: base64Encode(addition_2.contents)
+               })),
+-              deletions
++              deletions: deletionsToApply
+             }
+           }
+         });
+@@ -2020,7 +2020,8 @@ function useUpsertItem(args) {
+             const tree = scopeEntriesWithPathPrefix(await fetchGitHubTreeData(refData.data.repository.ref.target.oid, args.config), args.config);
+             const treeKey = getTreeKey(getDirectoriesForTreeKey(object(args.schema), args.basePath, (_args$slug3 = args.slug) === null || _args$slug3 === void 0 ? void 0 : _args$slug3.value, args.format), tree.tree);
+             if (treeKey === args.currentLocalTreeKey) {
+-              result = await runMutation(refData.data.repository.ref.target.oid);
++              const deletionsOnLatestTree = deletions.filter(deletion => !!getTreeNodeAtPath(tree.tree, deletion.path));
++              result = await runMutation(refData.data.repository.ref.target.oid, deletionsOnLatestTree);
+             } else {
+               setState({
+                 kind: 'needs-new-branch',
