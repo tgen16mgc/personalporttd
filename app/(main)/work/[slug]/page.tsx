@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { constants as fsConstants } from "node:fs";
-import { access, readFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { projects, getProjectBySlug } from "@/content/projects";
 import { personal } from "@/content/personal";
@@ -47,6 +46,12 @@ function getStoryBodyPath(projectIndex: number, blockIndex: number) {
   );
 }
 
+function hasStoryBlockBody(body: unknown) {
+  if (typeof body === "string") return body.trim().length > 0;
+  if (Array.isArray(body)) return body.length > 0;
+  return false;
+}
+
 async function resolveStoryBodiesFromMdoc(slug: string) {
   const projectIndex = projects.findIndex((p) => p.slug === slug);
   if (projectIndex < 0) return null;
@@ -61,11 +66,7 @@ async function resolveStoryBodiesFromMdoc(slug: string) {
       continue;
     }
 
-    const hasBody =
-      typeof block.value.body === "string"
-        ? block.value.body.trim().length > 0
-        : Array.isArray(block.value.body) && block.value.body.length > 0;
-    if (hasBody) {
+    if (hasStoryBlockBody(block.value.body)) {
       story.push(block);
       continue;
     }
@@ -73,25 +74,23 @@ async function resolveStoryBodiesFromMdoc(slug: string) {
     const bodyPath = getStoryBodyPath(projectIndex, blockIndex);
 
     try {
-      await access(bodyPath, fsConstants.R_OK);
+      const body = (await readFile(bodyPath, "utf8")).trim();
+      if (!body) {
+        story.push(block);
+        continue;
+      }
+
+      story.push({
+        ...block,
+        value: {
+          ...block.value,
+          body,
+        },
+      });
     } catch {
       story.push(block);
       continue;
     }
-
-    const body = (await readFile(bodyPath, "utf8")).trim();
-    if (!body) {
-      story.push(block);
-      continue;
-    }
-
-    story.push({
-      ...block,
-      value: {
-        ...block.value,
-        body,
-      },
-    });
   }
 
   return {
