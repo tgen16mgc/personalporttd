@@ -65,7 +65,7 @@ async function resolveStoryBodiesFromMdoc(slug: string) {
   if (projectIndex < 0) return null;
 
   const project = projects[projectIndex];
-  if (!project || !project.story || project.story.length === 0) return project;
+  if (!project.story || project.story.length === 0) return project;
 
   const story = [];
   for (const [blockIndex, block] of project.story.entries()) {
@@ -99,7 +99,7 @@ async function resolveStoryBodiesFromMdoc(slug: string) {
       const errorCode = (error as NodeJS.ErrnoException).code;
       if (errorCode && errorCode !== "ENOENT") {
         throw new Error(
-          `Failed to load story body for "${slug}" at ${bodyPath}`,
+          `Failed to load story body for "${slug}" at ${bodyPath} (code: ${errorCode})`,
           { cause: error }
         );
       }
