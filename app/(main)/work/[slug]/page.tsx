@@ -54,34 +54,45 @@ async function resolveStoryBodiesFromMdoc(slug: string) {
   const project = projects[projectIndex];
   if (!project || !project.story || project.story.length === 0) return project;
 
-  const story = await Promise.all(project.story.map(async (block, blockIndex) => {
-    if (block.discriminant !== "text") return block;
+  const story = [];
+  for (const [blockIndex, block] of project.story.entries()) {
+    if (block.discriminant !== "text") {
+      story.push(block);
+      continue;
+    }
 
     const hasBody =
       typeof block.value.body === "string"
         ? block.value.body.trim().length > 0
         : Array.isArray(block.value.body) && block.value.body.length > 0;
-    if (hasBody) return block;
+    if (hasBody) {
+      story.push(block);
+      continue;
+    }
 
     const bodyPath = getStoryBodyPath(projectIndex, blockIndex);
 
     try {
       await access(bodyPath, fsConstants.R_OK);
     } catch {
-      return block;
+      story.push(block);
+      continue;
     }
 
     const body = (await readFile(bodyPath, "utf8")).trim();
-    if (!body) return block;
+    if (!body) {
+      story.push(block);
+      continue;
+    }
 
-    return {
+    story.push({
       ...block,
       value: {
         ...block.value,
         body,
       },
-    };
-  }));
+    });
+  }
 
   return {
     ...project,
