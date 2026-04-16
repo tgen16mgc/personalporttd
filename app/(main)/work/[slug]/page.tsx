@@ -92,11 +92,11 @@ async function resolveStoryBodiesFromMdoc(slug: string) {
         },
       });
     } catch (error) {
-      if ((error as NodeJS.ErrnoException).code && (error as NodeJS.ErrnoException).code !== "ENOENT") {
+      const errorCode = (error as NodeJS.ErrnoException).code;
+      if (errorCode && errorCode !== "ENOENT") {
         throw error;
       }
       story.push(block);
-      continue;
     }
   }
 
