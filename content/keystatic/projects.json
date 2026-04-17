@@ -1,83 +1,6 @@
 {
   "items": [
     {
-      "slug": "aeon-beta-tvc",
-      "title": "AEON Beta TVC Production",
-      "tagline": "Learning by watching — my first professional production set",
-      "client": "AEON Vietnam",
-      "brand": "AEON",
-      "industry": "Retail",
-      "role": "Production Assistant",
-      "year": "2024",
-      "thumbnail": "/images/projects/items/0/thumbnail.svg",
-      "gallery": [],
-      "featured": true,
-      "color": "#7C3AED",
-      "story": [],
-      "challenge": "This wasn't a campaign I led — it was one I learned from. AEON was launching their new Beta store format and needed production support. I was there to coordinate logistics, manage schedules, keep things moving.",
-      "approach": "Showed up, stayed curious, asked questions when appropriate, stayed quiet when I should watch. Sometimes the best learning happens when you're not the one in charge.",
-      "execution": [
-        "Managed on-set coordination and scheduling across multiple shooting days",
-        "Liaised between creative agency and client stakeholders",
-        "Handled talent coordination and location logistics",
-        "Ensured brand guideline compliance throughout production"
-      ],
-      "results": [
-        {
-          "metric": "Deliverable",
-          "value": "Completed on time"
-        },
-        {
-          "metric": "What I learned",
-          "value": "How the professionals do it. How much I still need to learn."
-        }
-      ],
-      "awards": [],
-      "credits": []
-    },
-    {
-      "slug": "social-pioneers-chuon-ngo",
-      "title": "Chuon Ngo Pearl Inlay Art",
-      "tagline": "What happens when young people feel disconnected from their own heritage?",
-      "client": "Social Pioneers 2025",
-      "brand": "Chuon Ngo Village",
-      "industry": "Cultural Heritage",
-      "role": "Lead Strategist & Creative Director",
-      "year": "2025",
-      "thumbnail": "/images/projects/items/1/thumbnail.svg",
-      "gallery": [],
-      "featured": true,
-      "color": "#D4A574",
-      "story": [],
-      "challenge": "There's a 300-year-old craft village 20km from Hanoi where artisans spend months inlaying mother-of-pearl into wood. Their children are leaving for office jobs. Young Vietnamese scroll past temples on TikTok without recognizing the craftsmanship. The question wasn't 'how do we sell pearl inlay' — it was 'how do we help young people feel pride in something they've been taught to see as old-fashioned?'",
-      "insight": "Gen Z doesn't want to be lectured about tradition. But they desperately want to belong to something meaningful — to participate in culture, not just observe it from behind museum glass.",
-      "approach": "We stopped treating Chuon Ngo as a heritage site to be preserved and started treating it as a living creative community to be joined. The artisans became collaborators, not subjects. The goal wasn't short-term awareness — it was long-term cultural pride.",
-      "execution": [
-        "Partnered with artisans to tell their stories in their own words — no voiceover, no polish",
-        "Created hands-on workshops where young people could learn the basics (and fail, and laugh)",
-        "Collaborated with contemporary Vietnamese designers to show pearl inlay in modern contexts",
-        "Launched #MyPearlStory — not about the craft, but about what 'home' means to each participant"
-      ],
-      "results": [
-        {
-          "metric": "Champion Title",
-          "value": "Social Pioneers 2025"
-        },
-        {
-          "metric": "Workshop Participants",
-          "value": "500+"
-        },
-        {
-          "metric": "What actually mattered",
-          "value": "Young people who'd never visited a craft village choosing to go back"
-        }
-      ],
-      "awards": [
-        "🏆 Champion - Social Pioneers 2025"
-      ],
-      "credits": []
-    },
-    {
       "slug": "pixself-keychain",
       "title": "Pixself",
       "tagline": "Pixself: Building a Custom Pixel Merch Brand in 13 Weeks",
@@ -86,8 +9,8 @@
       "industry": "Startup",
       "role": "Project Lead, Product Strategy, Website, and Brand Design",
       "year": "Aug 22, 2025 – Nov 18, 2025",
-      "thumbnail": "/images/projects/items/2/thumbnail.jpg",
-      "heroImage": "/images/projects/items/2/heroImage.jpg",
+      "thumbnail": "/images/projects/items/0/thumbnail.jpg",
+      "heroImage": "/images/projects/items/0/heroImage.jpg",
       "gallery": [],
       "featured": true,
       "color": "#7C3AED",
@@ -129,7 +52,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/2/story/7/value/image.jpg",
+            "image": "/images/projects/items/0/story/7/value/image.jpg",
             "caption": "Social post snapshot",
             "size": "content"
           }
@@ -175,6 +98,83 @@
         }
       ],
       "awards": [],
+      "credits": []
+    },
+    {
+      "slug": "aeon-beta-tvc",
+      "title": "AEON Beta TVC Production",
+      "tagline": "Learning by watching — my first professional production set",
+      "client": "AEON Vietnam",
+      "brand": "AEON",
+      "industry": "Retail",
+      "role": "Production Assistant",
+      "year": "2024",
+      "thumbnail": "/images/projects/items/1/thumbnail.svg",
+      "gallery": [],
+      "featured": true,
+      "color": "#7C3AED",
+      "story": [],
+      "challenge": "This wasn't a campaign I led — it was one I learned from. AEON was launching their new Beta store format and needed production support. I was there to coordinate logistics, manage schedules, keep things moving.",
+      "approach": "Showed up, stayed curious, asked questions when appropriate, stayed quiet when I should watch. Sometimes the best learning happens when you're not the one in charge.",
+      "execution": [
+        "Managed on-set coordination and scheduling across multiple shooting days",
+        "Liaised between creative agency and client stakeholders",
+        "Handled talent coordination and location logistics",
+        "Ensured brand guideline compliance throughout production"
+      ],
+      "results": [
+        {
+          "metric": "Deliverable",
+          "value": "Completed on time"
+        },
+        {
+          "metric": "What I learned",
+          "value": "How the professionals do it. How much I still need to learn."
+        }
+      ],
+      "awards": [],
+      "credits": []
+    },
+    {
+      "slug": "social-pioneers-chuon-ngo",
+      "title": "Chuon Ngo Pearl Inlay Art",
+      "tagline": "What happens when young people feel disconnected from their own heritage?",
+      "client": "Social Pioneers 2025",
+      "brand": "Chuon Ngo Village",
+      "industry": "Cultural Heritage",
+      "role": "Lead Strategist & Creative Director",
+      "year": "2025",
+      "thumbnail": "/images/projects/items/2/thumbnail.svg",
+      "gallery": [],
+      "featured": true,
+      "color": "#D4A574",
+      "story": [],
+      "challenge": "There's a 300-year-old craft village 20km from Hanoi where artisans spend months inlaying mother-of-pearl into wood. Their children are leaving for office jobs. Young Vietnamese scroll past temples on TikTok without recognizing the craftsmanship. The question wasn't 'how do we sell pearl inlay' — it was 'how do we help young people feel pride in something they've been taught to see as old-fashioned?'",
+      "insight": "Gen Z doesn't want to be lectured about tradition. But they desperately want to belong to something meaningful — to participate in culture, not just observe it from behind museum glass.",
+      "approach": "We stopped treating Chuon Ngo as a heritage site to be preserved and started treating it as a living creative community to be joined. The artisans became collaborators, not subjects. The goal wasn't short-term awareness — it was long-term cultural pride.",
+      "execution": [
+        "Partnered with artisans to tell their stories in their own words — no voiceover, no polish",
+        "Created hands-on workshops where young people could learn the basics (and fail, and laugh)",
+        "Collaborated with contemporary Vietnamese designers to show pearl inlay in modern contexts",
+        "Launched #MyPearlStory — not about the craft, but about what 'home' means to each participant"
+      ],
+      "results": [
+        {
+          "metric": "Champion Title",
+          "value": "Social Pioneers 2025"
+        },
+        {
+          "metric": "Workshop Participants",
+          "value": "500+"
+        },
+        {
+          "metric": "What actually mattered",
+          "value": "Young people who'd never visited a craft village choosing to go back"
+        }
+      ],
+      "awards": [
+        "🏆 Champion - Social Pioneers 2025"
+      ],
       "credits": []
     },
     {
