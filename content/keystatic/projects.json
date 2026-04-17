@@ -81,7 +81,7 @@
       "slug": "pixself-keychain",
       "title": "Pixself",
       "tagline": "Pixself: Building a Custom Pixel Merch Brand in 13 Weeks",
-      "client": "University Group Project",
+      "client": "Group Project",
       "brand": "Pixself",
       "industry": "Startup",
       "role": "Project Lead, Product Strategy, Website, and Brand Design",
@@ -125,6 +125,14 @@
         {
           "discriminant": "text",
           "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/7/value/image.jpg",
+            "caption": "Social post snapshot",
+            "size": "content"
+          }
         },
         {
           "discriminant": "heading",
