@@ -68,7 +68,23 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/0/story/7/value/image.jpg",
+            "image": "/images/projects/items/0/story/7/value/image.png",
+            "caption": "1st brandguide draft",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/0/story/8/value/image.png",
+            "caption": "Website snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/0/story/9/value/image.jpg",
             "caption": "Social post snapshot",
             "size": "content"
           }
@@ -86,7 +102,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/0/story/10/value/image.png",
+            "image": "/images/projects/items/0/story/12/value/image.png",
             "caption": "n8n workflow snapshot",
             "size": "wide"
           }
