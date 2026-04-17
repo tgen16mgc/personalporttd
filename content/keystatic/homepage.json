@@ -51,9 +51,9 @@
   },
   "quickIntroContent": {
     "kicker": "The Short Version",
-    "headline": "Good marketing doesn’t feel like marketing.",
-    "headlineSub": "That’s what I aim for.",
-    "body": "I work at the intersection of strategy and creativity — figuring out what makes people care, then finding interesting ways to say it. Currently focused on F&B, tech, and lifestyle brands targeting Gen Z.",
+    "headline": "Good marketing should be done with mindful thought and purposeful actions.",
+    "headlineSub": "That’s what I believe.",
+    "body": "I work at the intersection of strategy and creativity - figuring out what makes people care, then finding interesting ways to say it. Currently focused on agency-side positions.",
     "facts": [
       {
         "label": "Currently",
@@ -79,28 +79,8 @@
   },
   "brands": [
     {
-      "name": "AEON Vietnam",
-      "logo": "/images/homepage/brands/0/logo.svg"
-    },
-    {
-      "name": "BIDV",
-      "logo": "/images/homepage/brands/1/logo.svg"
-    },
-    {
-      "name": "Kingsport",
-      "logo": "/images/homepage/brands/2/logo.svg"
-    },
-    {
-      "name": "VuVer",
-      "logo": "/images/homepage/brands/3/logo.svg"
-    },
-    {
-      "name": "Chuồn Ngõ",
-      "logo": "/images/homepage/brands/4/logo.svg"
-    },
-    {
       "name": "Pixself",
-      "logo": "/images/homepage/brands/5/logo.png"
+      "logo": "/images/homepage/brands/0/logo.png"
     }
   ]
 }
