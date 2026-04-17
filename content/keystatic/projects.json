@@ -141,35 +141,105 @@
       "credits": []
     },
     {
-      "slug": "aeon-beta-tvc",
-      "title": "AEON Beta TVC Production",
-      "tagline": "Learning by watching — my first professional production set",
-      "client": "AEON Vietnam",
-      "brand": "AEON",
+      "slug": "aeon-beta",
+      "title": "AEON BETA - TikTok Video Production",
+      "tagline": "Aeon Beta: Producing 31 TikTok Videos for a New Cinema Launch",
+      "client": "CleverAds",
+      "brand": "AEON BETA",
       "industry": "Retail",
-      "role": "Production Assistant",
-      "year": "2024",
-      "thumbnail": "/images/projects/items/1/thumbnail.svg",
-      "gallery": [],
-      "featured": true,
-      "color": "#7C3AED",
-      "story": [],
-      "challenge": "This wasn't a campaign I led — it was one I learned from. AEON was launching their new Beta store format and needed production support. I was there to coordinate logistics, manage schedules, keep things moving.",
-      "approach": "Showed up, stayed curious, asked questions when appropriate, stayed quiet when I should watch. Sometimes the best learning happens when you're not the one in charge.",
-      "execution": [
-        "Managed on-set coordination and scheduling across multiple shooting days",
-        "Liaised between creative agency and client stakeholders",
-        "Handled talent coordination and location logistics",
-        "Ensured brand guideline compliance throughout production"
-      ],
-      "results": [
+      "role": "Account Executive - Production Coordinator",
+      "year": "2025",
+      "thumbnail": "/images/projects/items/1/thumbnail.png",
+      "heroImage": "/images/projects/items/1/heroImage.png",
+      "gallery": [
         {
-          "metric": "Deliverable",
-          "value": "Completed on time"
+          "type": "video",
+          "videoUrl": "https://www.tiktok.com/@aeonbetacinema/video/7607358245002284306?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
+          "size": "half"
         },
         {
-          "metric": "What I learned",
-          "value": "How the professionals do it. How much I still need to learn."
+          "type": "video",
+          "videoUrl": "https://www.tiktok.com/@aeonbetacinema/video/7605811433552547092?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
+          "size": "half"
+        },
+        {
+          "type": "video",
+          "videoUrl": "https://www.tiktok.com/@aeonbetacinema/video/7581474903497493781?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
+          "size": "half"
+        },
+        {
+          "type": "video",
+          "videoUrl": "https://www.tiktok.com/@aeonbetacinema/video/7605259688552221969?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
+          "size": "half"
+        }
+      ],
+      "featured": true,
+      "color": "#000000",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The Brief"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "My Role"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Planning and Production Management"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "On-Set and Stakeholder Coordination"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Results"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [
+        {
+          "metric": "videos on time",
+          "value": "31"
+        },
+        {
+          "metric": "standard",
+          "value": "Strong QC"
         }
       ],
       "awards": [],
