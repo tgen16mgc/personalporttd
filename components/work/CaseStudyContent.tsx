@@ -509,10 +509,17 @@ function parseInlineMarkdown(text: string): string {
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;");
+  
   html = html.replace(
-    /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
-    '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>',
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    (match, label, url) => {
+      const isInternal = url.startsWith("/") || url.startsWith("#");
+      const href = isInternal || url.startsWith("http") ? url : `https://${url}`;
+      const targetAttr = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${targetAttr}>${label}</a>`;
+    }
   );
+
   html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   html = html.replace(/\n/g, "<br />");
   return html;
