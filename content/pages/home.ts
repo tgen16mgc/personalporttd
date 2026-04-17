@@ -2,6 +2,9 @@ import data from "../keystatic/homepage.json";
 
 export const heroContent = data.heroContent as {
   greeting: string;
+  namePrefix?: string;
+  nameTrailing?: string;
+  nameAliases?: string[];
   tagline: string;
   currentRole: { label: string; company: string };
   previousRole: { label: string; company: string };

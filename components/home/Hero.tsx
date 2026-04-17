@@ -1,24 +1,48 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { LayoutGroup, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { GravityTags } from "@/components/ui/GravityTags";
 import { personal } from "@/content/personal";
 import { heroContent } from "@/content/pages/home";
+import TextRotate from "@/components/ui/TextRotate";
 
 const fluidEase: [number, number, number, number] = [0.32, 0.72, 0, 1];
 
-const nameChars = heroContent.greeting.split("");
+function splitGreeting(greeting: string): { prefix: string; trailing: string } {
+  const match = greeting.match(/^(.*?)([A-Za-z][A-Za-z\s]*?)(\.?)\s*$/);
+  if (match && match[1]) return { prefix: match[1], trailing: match[3] ?? "" };
+  return { prefix: greeting, trailing: "" };
+}
+
+const fallback = splitGreeting(heroContent.greeting);
+const greetingPrefix = heroContent.namePrefix ?? fallback.prefix;
+const baseAliases =
+  heroContent.nameAliases && heroContent.nameAliases.length > 0
+    ? heroContent.nameAliases
+    : ["Tien"];
+const nameAliases = baseAliases;
+
+const pillPalette: { bg: string; text: string }[] = [
+  { bg: "var(--color-ink)", text: "var(--color-cream)" },
+  { bg: "var(--color-cyan)", text: "var(--color-ink)" },
+  { bg: "var(--color-gold)", text: "var(--color-ink)" },
+  { bg: "var(--color-pink)", text: "var(--color-cream)" },
+];
 
 export function Hero() {
+  const [pillIndex, setPillIndex] = useState(0);
+  const pill = pillPalette[pillIndex % pillPalette.length];
+
   return (
     <section className="min-h-[100dvh] relative overflow-hidden">
       <Container>
         <div className="min-h-[100dvh] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-32 pb-20">
-          
+
           {/* Left Column: Text + Info */}
           <div className="lg:col-span-7 order-2 lg:order-1">
             <motion.div
@@ -36,25 +60,60 @@ export function Hero() {
                 {personal.location} · {personal.status}
               </motion.p>
 
-              {/* Name - Character-by-character reveal */}
-              <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-[var(--font-display)] font-light text-[var(--color-ink)] leading-[0.95] tracking-tight mb-6">
-                {nameChars.map((char, i) => (
+              {/* Name - prefix + rotating pill with layout animation */}
+              <LayoutGroup>
+                <motion.h1
+                  layout
+                  className="flex flex-wrap items-center gap-x-[0.25em] gap-y-2 text-[clamp(2.5rem,7vw,5rem)] font-[var(--font-display)] font-light text-[var(--color-ink)] leading-[0.95] tracking-tight mb-6"
+                >
                   <motion.span
-                    key={i}
-                    initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                    layout
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                    initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.2 + i * 0.04,
-                      ease: fluidEase,
-                    }}
-                    className="inline-block"
-                    style={char === " " ? { width: "0.25em" } : undefined}
                   >
-                    {char === " " ? "\u00A0" : char}
+                    {greetingPrefix.trimEnd()}
                   </motion.span>
-                ))}
-              </h1>
+                  <motion.div
+                    layout
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    style={
+                      {
+                        "--pill-bg": pill.bg,
+                        "--pill-text": pill.text,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <TextRotate
+                      texts={nameAliases}
+                      rotationInterval={2400}
+                      staggerFrom="last"
+                      staggerDuration={0.025}
+                      splitBy="characters"
+                      transition={{
+                        type: "spring",
+                        damping: 30,
+                        stiffness: 400,
+                      }}
+                      initial={{ y: "100%" }}
+                      animate={{ y: 0 }}
+                      exit={{ y: "-120%" }}
+                      onNext={() =>
+                        setPillIndex((i) => (i + 1) % pillPalette.length)
+                      }
+                      mainClassName="px-[0.45em] py-[0.08em] rounded-full overflow-hidden leading-[1] justify-center font-medium transition-colors duration-500 ease-out"
+                      splitLevelClassName="overflow-hidden pb-[0.12em]"
+                      elementLevelClassName="will-change-transform"
+                      style={{
+                        backgroundColor: "var(--pill-bg)",
+                        color: "var(--pill-text)",
+                      }}
+                    />
+                  </motion.div>
+                </motion.h1>
+              </LayoutGroup>
 
               {/* The Hook */}
               <motion.p
@@ -137,7 +196,7 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Column: Image */}
+          {/* Right Column: Portrait card */}
           <div className="lg:col-span-5 order-1 lg:order-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.92, filter: "blur(10px)" }}
@@ -157,10 +216,7 @@ export function Hero() {
                       className="object-cover"
                     />
                   )}
-
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10" />
-
-                  {/* Gravity-based falling tags */}
                   <GravityTags />
                 </div>
               </div>

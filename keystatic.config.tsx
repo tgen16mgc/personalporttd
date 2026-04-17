@@ -85,6 +85,25 @@ export default config({
       schema: {
         heroContent: fields.object({
           greeting: fields.text({ label: "Greeting" }),
+          namePrefix: fields.text({
+            label: "Greeting Prefix (before animated name)",
+            description: "Static text rendered before the typewriter name. e.g. \"Hi, I'm \"",
+            defaultValue: "Hi, I'm ",
+          }),
+          nameTrailing: fields.text({
+            label: "Trailing punctuation after name",
+            description: "e.g. \".\" — rendered after the typewriter.",
+            defaultValue: ".",
+          }),
+          nameAliases: fields.array(
+            fields.text({ label: "Alias" }),
+            {
+              label: "Name Aliases (typewriter loop)",
+              description:
+                "Cycled in the typewriter after the prefix. First item shows first.",
+              itemLabel: (props) => props.value,
+            },
+          ),
           tagline: fields.text({ label: "Tagline", multiline: true }),
           currentRole: roleField(),
           previousRole: roleField(),

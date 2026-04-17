@@ -1,6 +1,18 @@
 {
   "heroContent": {
     "greeting": "Hi, I'm Tien.",
+    "namePrefix": "Hi, I'm ",
+    "nameTrailing": ".",
+    "nameAliases": [
+      "Tien",
+      "Tien Duong",
+      "tienduonn",
+      "tduong",
+      "dnt",
+      "ngoctien",
+      "em tien",
+      "td"
+    ],
     "tagline": "As an early-career Account Planner and a young marketer, I help brands stop talking at people and start talking \"with\" them. The kind of work that makes someone say \"finally, they get it\" not just \"oh, another ad.\"",
     "currentRole": {
       "label": "Account Executive (Hybrid)",
