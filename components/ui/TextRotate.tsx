@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  CSSProperties,
   ElementType,
   forwardRef,
   useCallback,
@@ -30,6 +31,7 @@ const splitIntoCharacters = (text: string): string[] => {
 interface TextRotateProps {
   texts: string[];
   as?: ElementType;
+  style?: CSSProperties;
   rotationInterval?: number;
   initial?: MotionProps["initial"] | MotionProps["initial"][];
   animate?: MotionProps["animate"] | MotionProps["animate"][];
