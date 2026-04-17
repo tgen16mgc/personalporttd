@@ -11,9 +11,25 @@
       "year": "Aug 22, 2025 – Nov 18, 2025",
       "thumbnail": "/images/projects/items/0/thumbnail.jpg",
       "heroImage": "/images/projects/items/0/heroImage.jpg",
-      "gallery": [],
+      "gallery": [
+        {
+          "type": "video",
+          "videoUrl": "https://www.tiktok.com/@pixself/video/7551064434207198485?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
+          "size": "half"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/0/gallery/1/image.jpg",
+          "size": "half"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/0/gallery/2/image.jpg",
+          "size": "half"
+        }
+      ],
       "featured": true,
-      "color": "#7C3AED",
+      "color": "#A3E7FC",
       "story": [
         {
           "discriminant": "heading",
@@ -66,6 +82,14 @@
         {
           "discriminant": "text",
           "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/0/story/10/value/image.png",
+            "caption": "n8n workflow snapshot",
+            "size": "wide"
+          }
         },
         {
           "discriminant": "heading",
