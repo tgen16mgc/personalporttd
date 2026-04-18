@@ -492,6 +492,131 @@
       ],
       "awards": [],
       "credits": []
+    },
+    {
+      "slug": "cnspaper",
+      "title": "C&S Paper Vietnam Brand Strategy",
+      "tagline": "C&S Paper Vietnam: Building a Localized Brand Strategy for Market Entry",
+      "client": "C&S Paper Vietnam",
+      "industry": "FMCG",
+      "role": "Strategic Planner, Copywriter",
+      "year": "March 2026",
+      "thumbnail": "/images/projects/items/7/thumbnail.png",
+      "heroImage": "/images/projects/items/7/heroImage.png",
+      "gallery": [],
+      "featured": true,
+      "color": "#9a7446",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The Brief"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What I Owned"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Strategic Approach"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/6/value/image.png",
+            "caption": "Proposal Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/8/value/image.png",
+            "caption": "Proposal Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Brand Positioning and Creative Direction"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/10/value/image.png",
+            "caption": "Proposal Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/12/value/image.png",
+            "caption": "Proposal Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What I Did"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Results"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [],
+      "awards": [],
+      "credits": [
+        {
+          "role": "Research Support",
+          "name": "Red Agency Team"
+        }
+      ]
     }
   ]
 }
