@@ -19,11 +19,13 @@ export function GravityTags() {
     const canvas = canvasRef.current;
     if (!container || !canvas) return;
 
-    const { Engine, World, Bodies, Runner, Mouse, MouseConstraint, Composite } = Matter;
+    const { Engine, World, Bodies, Body, Runner, Mouse, MouseConstraint, Composite } = Matter;
 
-    const rect = container.getBoundingClientRect();
-    const W = rect.width;
-    const H = rect.height;
+    // Use offsetWidth/offsetHeight so we get unscaled layout size,
+    // unaffected by any CSS transform on ancestors (the Hero card animates
+    // in from scale: 0.92, which would otherwise shrink getBoundingClientRect).
+    let W = container.offsetWidth;
+    let H = container.offsetHeight;
 
     canvas.width = W;
     canvas.height = H;
@@ -33,12 +35,24 @@ export function GravityTags() {
     });
 
     const wallThickness = 60;
-    const walls = [
-      Bodies.rectangle(W / 2, H + wallThickness / 2, W + wallThickness * 2, wallThickness, { isStatic: true, restitution: 0.3 }),
-      Bodies.rectangle(-wallThickness / 2, H / 2, wallThickness, H * 2, { isStatic: true }),
-      Bodies.rectangle(W + wallThickness / 2, H / 2, wallThickness, H * 2, { isStatic: true }),
-    ];
-    World.add(engine.world, walls);
+    const floor = Bodies.rectangle(W / 2, H + wallThickness / 2, W + wallThickness * 2, wallThickness, { isStatic: true, restitution: 0.3 });
+    const leftWall = Bodies.rectangle(-wallThickness / 2, H / 2, wallThickness, H * 2, { isStatic: true });
+    const rightWall = Bodies.rectangle(W + wallThickness / 2, H / 2, wallThickness, H * 2, { isStatic: true });
+    World.add(engine.world, [floor, leftWall, rightWall]);
+
+    const resizeObserver = new ResizeObserver(() => {
+      const nextW = container.offsetWidth;
+      const nextH = container.offsetHeight;
+      if (nextW === W && nextH === H) return;
+      W = nextW;
+      H = nextH;
+      canvas.width = W;
+      canvas.height = H;
+      Body.setPosition(floor, { x: W / 2, y: H + wallThickness / 2 });
+      Body.setPosition(leftWall, { x: -wallThickness / 2, y: H / 2 });
+      Body.setPosition(rightWall, { x: W + wallThickness / 2, y: H / 2 });
+    });
+    resizeObserver.observe(container);
 
     const tagBodies: Matter.Body[] = [];
 
@@ -89,6 +103,7 @@ export function GravityTags() {
 
     return () => {
       cancelAnimationFrame(rafRef.current);
+      resizeObserver.disconnect();
       Runner.stop(runner);
       Composite.clear(engine.world, false);
       Engine.clear(engine);
