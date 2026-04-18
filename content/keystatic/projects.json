@@ -467,7 +467,7 @@
       "year": "2025",
       "thumbnail": "/images/projects/items/4/thumbnail.svg",
       "gallery": [],
-      "featured": true,
+      "featured": false,
       "color": "#D4A574",
       "story": [],
       "challenge": "There's a 300-year-old craft village 20km from Hanoi where artisans spend months inlaying mother-of-pearl into wood. Their children are leaving for office jobs. Young Vietnamese scroll past temples on TikTok without recognizing the craftsmanship. The question wasn't 'how do we sell pearl inlay' — it was 'how do we help young people feel pride in something they've been taught to see as old-fashioned?'",
@@ -509,7 +509,7 @@
       "year": "2024",
       "thumbnail": "/images/projects/items/5/thumbnail.svg",
       "gallery": [],
-      "featured": true,
+      "featured": false,
       "color": "#06B6D4",
       "story": [],
       "challenge": "Kingsport sells sports equipment for kids. They wanted to reach 'Gen Z moms.' But when we started talking to these women, we realized the brief missed the point. These aren't just 'consumers' — they're first-time parents terrified of making the wrong choice, drowning in conflicting advice, desperate to be seen as good mothers.\n\n",
@@ -551,7 +551,7 @@
       "year": "2025",
       "thumbnail": "/images/projects/items/6/thumbnail.svg",
       "gallery": [],
-      "featured": true,
+      "featured": false,
       "color": "#059669",
       "story": [],
       "challenge": "BIDV wanted help communicating their ESG commitments. The problem: ESG reports are written for investors, not customers. Regular people don't care about 'carbon-neutral operations' or 'governance frameworks.' They care about their mortgage, their savings, their kids' education funds. How do you bridge that gap?",
@@ -615,6 +615,112 @@
           "value": "Addressing the anxiety, not just the transaction"
         }
       ],
+      "awards": [],
+      "credits": []
+    },
+    {
+      "slug": "hongha",
+      "title": "Hong Ha Consumer Research",
+      "tagline": "Hồng Hà Consumer Research & Digital Strategy",
+      "client": "Hong Ha",
+      "industry": "Stationery",
+      "role": "Research & Strategic Planner",
+      "year": "Oct 2025",
+      "thumbnail": "/images/projects/items/8/thumbnail.png",
+      "heroImage": "/images/projects/items/8/heroImage.png",
+      "gallery": [],
+      "featured": true,
+      "color": "#ed0000",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The Brief"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What I Did"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Research Approach"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Key Insights"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/8/story/9/value/image.png",
+            "caption": "Report Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/8/story/10/value/image.png",
+            "caption": "Report Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/8/story/13/value/image.png",
+            "caption": "Report Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Results"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [],
       "awards": [],
       "credits": []
     }
