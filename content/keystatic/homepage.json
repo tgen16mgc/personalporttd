@@ -100,6 +100,10 @@
     {
       "name": "Deloitte",
       "logo": "/images/homepage/brands/3/logo.svg"
+    },
+    {
+      "name": "5s",
+      "logo": "/images/homepage/brands/4/logo.svg"
     }
   ]
 }
