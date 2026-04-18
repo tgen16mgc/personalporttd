@@ -1,146 +1,6 @@
 {
   "items": [
     {
-      "slug": "pixself-keychain",
-      "title": "Pixself",
-      "tagline": "Pixself: Building a Custom Pixel Merch Brand in 13 Weeks",
-      "client": "Group Project",
-      "brand": "Pixself",
-      "industry": "Startup",
-      "role": "Project Lead, Product Strategy, Website, and Brand Design",
-      "year": "Aug 22, 2025 – Nov 18, 2025",
-      "thumbnail": "/images/projects/items/0/thumbnail.jpg",
-      "heroImage": "/images/projects/items/0/heroImage.jpg",
-      "gallery": [
-        {
-          "type": "video",
-          "videoUrl": "https://www.tiktok.com/@pixself/video/7551064434207198485?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
-          "size": "half"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/0/gallery/1/image.jpg",
-          "size": "half"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/0/gallery/2/image.jpg",
-          "size": "half"
-        }
-      ],
-      "featured": true,
-      "color": "#A3E7FC",
-      "story": [
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "The Brief"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Finding the Right Product Concept"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Building the Brand and Website"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/0/story/7/value/image.png",
-            "caption": "1st brandguide draft",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/0/story/8/value/image.png",
-            "caption": "Website snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/0/story/9/value/image.jpg",
-            "caption": "Social post snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Improving the Workflow After Launch"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/0/story/12/value/image.png",
-            "caption": "n8n workflow snapshot",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Results"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        }
-      ],
-      "execution": [],
-      "results": [
-        {
-          "metric": "revenue",
-          "value": "15M VND"
-        },
-        {
-          "metric": "impressions",
-          "value": "333K"
-        },
-        {
-          "metric": "link clicks",
-          "value": "1,800"
-        }
-      ],
-      "awards": [],
-      "credits": []
-    },
-    {
       "slug": "aeon-beta",
       "title": "AEON BETA - TikTok Video Production",
       "tagline": "Aeon Beta: Producing 31 TikTok Videos for a New Cinema Launch",
@@ -149,8 +9,8 @@
       "industry": "Retail",
       "role": "Account Executive - Production Coordinator",
       "year": "2025",
-      "thumbnail": "/images/projects/items/1/thumbnail.png",
-      "heroImage": "/images/projects/items/1/heroImage.png",
+      "thumbnail": "/images/projects/items/0/thumbnail.png",
+      "heroImage": "/images/projects/items/0/heroImage.png",
       "gallery": [
         {
           "type": "video",
@@ -246,6 +106,238 @@
       "credits": []
     },
     {
+      "slug": "la-passion",
+      "title": "La Passion Restaurant & Hospitality - Social Media Production",
+      "tagline": "La Passion Group: Managing Hospitality Content and Revenue-Based Media Planning",
+      "client": "La Passion Group",
+      "industry": "Hospitality, F&B, Lifestyle",
+      "role": "Account Executive, Brand Operations, Production Coordinator, Booking Management",
+      "year": "Nov 2025 - Apr 2026",
+      "thumbnail": "/images/projects/items/1/thumbnail.jpg",
+      "heroImage": "/images/projects/items/1/heroImage.png",
+      "gallery": [
+        {
+          "type": "video",
+          "videoUrl": "https://www.facebook.com/share/p/18QCnw3Tci/",
+          "size": "half"
+        }
+      ],
+      "featured": true,
+      "color": "06B6D4",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The Brief"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What I Owned"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {}
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Revenue Planning and Ads Logic"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Production and Content Management"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Results"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [],
+      "awards": [],
+      "credits": []
+    },
+    {
+      "slug": "pixself-keychain",
+      "title": "Pixself",
+      "tagline": "Pixself: Building a Custom Pixel Merch Brand in 13 Weeks",
+      "client": "Group Project",
+      "brand": "Pixself",
+      "industry": "Startup",
+      "role": "Project Lead, Product Strategy, Website, and Brand Design",
+      "year": "Aug 22, 2025 – Nov 18, 2025",
+      "thumbnail": "/images/projects/items/2/thumbnail.jpg",
+      "heroImage": "/images/projects/items/2/heroImage.jpg",
+      "gallery": [
+        {
+          "type": "video",
+          "videoUrl": "https://www.tiktok.com/@pixself/video/7551064434207198485?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
+          "size": "half"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/2/gallery/1/image.jpg",
+          "size": "half"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/2/gallery/2/image.jpg",
+          "size": "half"
+        }
+      ],
+      "featured": true,
+      "color": "#A3E7FC",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The Brief"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Finding the Right Product Concept"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Building the Brand and Website"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/7/value/image.png",
+            "caption": "1st brandguide draft",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/8/value/image.png",
+            "caption": "Website snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/9/value/image.jpg",
+            "caption": "Social post snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Improving the Workflow After Launch"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/12/value/image.png",
+            "caption": "n8n workflow snapshot",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Results"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [
+        {
+          "metric": "revenue",
+          "value": "15M VND"
+        },
+        {
+          "metric": "impressions",
+          "value": "333K"
+        },
+        {
+          "metric": "link clicks",
+          "value": "1,800"
+        }
+      ],
+      "awards": [],
+      "credits": []
+    },
+    {
       "slug": "social-pioneers-chuon-ngo",
       "title": "Chuon Ngo Pearl Inlay Art",
       "tagline": "What happens when young people feel disconnected from their own heritage?",
@@ -254,7 +346,7 @@
       "industry": "Cultural Heritage",
       "role": "Lead Strategist & Creative Director",
       "year": "2025",
-      "thumbnail": "/images/projects/items/2/thumbnail.svg",
+      "thumbnail": "/images/projects/items/3/thumbnail.svg",
       "gallery": [],
       "featured": true,
       "color": "#D4A574",
@@ -296,7 +388,7 @@
       "industry": "Sports & Fitness",
       "role": "Research Lead & Strategist",
       "year": "2024",
-      "thumbnail": "/images/projects/items/3/thumbnail.svg",
+      "thumbnail": "/images/projects/items/4/thumbnail.svg",
       "gallery": [],
       "featured": true,
       "color": "#06B6D4",
@@ -338,7 +430,7 @@
       "industry": "Banking & Finance",
       "role": "Strategy Lead",
       "year": "2025",
-      "thumbnail": "/images/projects/items/4/thumbnail.svg",
+      "thumbnail": "/images/projects/items/5/thumbnail.svg",
       "gallery": [],
       "featured": true,
       "color": "#059669",
@@ -376,7 +468,7 @@
       "industry": "E-commerce",
       "role": "Campaign Lead",
       "year": "2024",
-      "thumbnail": "/images/projects/items/5/thumbnail.svg",
+      "thumbnail": "/images/projects/items/6/thumbnail.svg",
       "gallery": [],
       "featured": false,
       "color": "#DC2626",
