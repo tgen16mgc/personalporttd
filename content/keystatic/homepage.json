@@ -92,6 +92,10 @@
     {
       "name": "AEON MALL",
       "logo": "/images/homepage/brands/1/logo.svg"
+    },
+    {
+      "name": "La Passion",
+      "logo": "/images/homepage/brands/2/logo.svg"
     }
   ]
 }
