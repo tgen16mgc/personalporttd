@@ -115,13 +115,7 @@
       "year": "Nov 2025 - Apr 2026",
       "thumbnail": "/images/projects/items/1/thumbnail.jpg",
       "heroImage": "/images/projects/items/1/heroImage.png",
-      "gallery": [
-        {
-          "type": "video",
-          "videoUrl": "https://www.facebook.com/share/p/18QCnw3Tci/",
-          "size": "half"
-        }
-      ],
+      "gallery": [],
       "featured": true,
       "color": "06B6D4",
       "story": [
