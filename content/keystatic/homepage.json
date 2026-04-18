@@ -98,40 +98,36 @@
       "logo": "/images/homepage/brands/2/logo.svg"
     },
     {
-      "name": "Deloitte",
+      "name": "5s",
       "logo": "/images/homepage/brands/3/logo.svg"
     },
     {
-      "name": "5s",
+      "name": "RED Agency",
       "logo": "/images/homepage/brands/4/logo.svg"
     },
     {
-      "name": "RED Agency",
+      "name": "C&S",
       "logo": "/images/homepage/brands/5/logo.svg"
     },
     {
-      "name": "C&S",
+      "name": "Anpeco",
       "logo": "/images/homepage/brands/6/logo.svg"
     },
     {
-      "name": "Anpeco",
+      "name": "CleverAds",
       "logo": "/images/homepage/brands/7/logo.svg"
     },
     {
-      "name": "CleverAds",
+      "name": "Wine",
       "logo": "/images/homepage/brands/8/logo.svg"
     },
     {
-      "name": "Wine",
+      "name": "Hong Ha",
       "logo": "/images/homepage/brands/9/logo.svg"
     },
     {
-      "name": "Hong Ha",
-      "logo": "/images/homepage/brands/10/logo.svg"
-    },
-    {
       "name": "Delight Park",
-      "logo": "/images/homepage/brands/11/logo.svg"
+      "logo": "/images/homepage/brands/10/logo.svg"
     }
   ]
 }
