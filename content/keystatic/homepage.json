@@ -124,6 +124,10 @@
     {
       "name": "Wine",
       "logo": "/images/homepage/brands/9/logo.svg"
+    },
+    {
+      "name": "Hong Ha",
+      "logo": "/images/homepage/brands/10/logo.svg"
     }
   ]
 }
