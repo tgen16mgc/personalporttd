@@ -192,6 +192,131 @@
       "credits": []
     },
     {
+      "slug": "cnspaper",
+      "title": "C&S Paper Vietnam Brand Strategy",
+      "tagline": "C&S Paper Vietnam: Building a Localized Brand Strategy for Market Entry",
+      "client": "C&S Paper Vietnam",
+      "industry": "FMCG",
+      "role": "Strategic Planner, Copywriter",
+      "year": "March 2026",
+      "thumbnail": "/images/projects/items/2/thumbnail.png",
+      "heroImage": "/images/projects/items/2/heroImage.png",
+      "gallery": [],
+      "featured": true,
+      "color": "#9a7446",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The Brief"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What I Owned"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Strategic Approach"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/6/value/image.png",
+            "caption": "Proposal Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/8/value/image.png",
+            "caption": "Proposal Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Brand Positioning and Creative Direction"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/10/value/image.png",
+            "caption": "Proposal Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/2/story/12/value/image.png",
+            "caption": "Proposal Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What I Did"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Results"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [],
+      "awards": [],
+      "credits": [
+        {
+          "role": "Research Support",
+          "name": "Red Agency Team"
+        }
+      ]
+    },
+    {
       "slug": "pixself-keychain",
       "title": "Pixself",
       "tagline": "Pixself: Building a Custom Pixel Merch Brand in 13 Weeks",
@@ -200,8 +325,8 @@
       "industry": "Startup",
       "role": "Project Lead, Product Strategy, Website, and Brand Design",
       "year": "Aug 22, 2025 – Nov 18, 2025",
-      "thumbnail": "/images/projects/items/2/thumbnail.jpg",
-      "heroImage": "/images/projects/items/2/heroImage.jpg",
+      "thumbnail": "/images/projects/items/3/thumbnail.jpg",
+      "heroImage": "/images/projects/items/3/heroImage.jpg",
       "gallery": [
         {
           "type": "video",
@@ -210,12 +335,12 @@
         },
         {
           "type": "image",
-          "image": "/images/projects/items/2/gallery/1/image.jpg",
+          "image": "/images/projects/items/3/gallery/1/image.jpg",
           "size": "half"
         },
         {
           "type": "image",
-          "image": "/images/projects/items/2/gallery/2/image.jpg",
+          "image": "/images/projects/items/3/gallery/2/image.jpg",
           "size": "half"
         }
       ],
@@ -259,7 +384,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/2/story/7/value/image.png",
+            "image": "/images/projects/items/3/story/7/value/image.png",
             "caption": "1st brandguide draft",
             "size": "content"
           }
@@ -267,7 +392,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/2/story/8/value/image.png",
+            "image": "/images/projects/items/3/story/8/value/image.png",
             "caption": "Website snapshot",
             "size": "content"
           }
@@ -275,7 +400,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/2/story/9/value/image.jpg",
+            "image": "/images/projects/items/3/story/9/value/image.jpg",
             "caption": "Social post snapshot",
             "size": "content"
           }
@@ -293,7 +418,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/2/story/12/value/image.png",
+            "image": "/images/projects/items/3/story/12/value/image.png",
             "caption": "n8n workflow snapshot",
             "size": "wide"
           }
@@ -340,7 +465,7 @@
       "industry": "Cultural Heritage",
       "role": "Lead Strategist & Creative Director",
       "year": "2025",
-      "thumbnail": "/images/projects/items/3/thumbnail.svg",
+      "thumbnail": "/images/projects/items/4/thumbnail.svg",
       "gallery": [],
       "featured": true,
       "color": "#D4A574",
@@ -382,7 +507,7 @@
       "industry": "Sports & Fitness",
       "role": "Research Lead & Strategist",
       "year": "2024",
-      "thumbnail": "/images/projects/items/4/thumbnail.svg",
+      "thumbnail": "/images/projects/items/5/thumbnail.svg",
       "gallery": [],
       "featured": true,
       "color": "#06B6D4",
@@ -424,7 +549,7 @@
       "industry": "Banking & Finance",
       "role": "Strategy Lead",
       "year": "2025",
-      "thumbnail": "/images/projects/items/5/thumbnail.svg",
+      "thumbnail": "/images/projects/items/6/thumbnail.svg",
       "gallery": [],
       "featured": true,
       "color": "#059669",
@@ -462,7 +587,7 @@
       "industry": "E-commerce",
       "role": "Campaign Lead",
       "year": "2024",
-      "thumbnail": "/images/projects/items/6/thumbnail.svg",
+      "thumbnail": "/images/projects/items/7/thumbnail.svg",
       "gallery": [],
       "featured": false,
       "color": "#DC2626",
@@ -492,131 +617,6 @@
       ],
       "awards": [],
       "credits": []
-    },
-    {
-      "slug": "cnspaper",
-      "title": "C&S Paper Vietnam Brand Strategy",
-      "tagline": "C&S Paper Vietnam: Building a Localized Brand Strategy for Market Entry",
-      "client": "C&S Paper Vietnam",
-      "industry": "FMCG",
-      "role": "Strategic Planner, Copywriter",
-      "year": "March 2026",
-      "thumbnail": "/images/projects/items/7/thumbnail.png",
-      "heroImage": "/images/projects/items/7/heroImage.png",
-      "gallery": [],
-      "featured": true,
-      "color": "#9a7446",
-      "story": [
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "The Brief"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "What I Owned"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Strategic Approach"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/6/value/image.png",
-            "caption": "Proposal Snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/8/value/image.png",
-            "caption": "Proposal Snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Brand Positioning and Creative Direction"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/10/value/image.png",
-            "caption": "Proposal Snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/12/value/image.png",
-            "caption": "Proposal Snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "What I Did"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Results"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        }
-      ],
-      "execution": [],
-      "results": [],
-      "awards": [],
-      "credits": [
-        {
-          "role": "Research Support",
-          "name": "Red Agency Team"
-        }
-      ]
     }
   ]
 }
