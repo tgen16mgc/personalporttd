@@ -117,7 +117,7 @@
       "heroImage": "/images/projects/items/1/heroImage.png",
       "gallery": [],
       "featured": true,
-      "color": "06B6D4",
+      "color": "#0d1657",
       "story": [
         {
           "discriminant": "heading",
