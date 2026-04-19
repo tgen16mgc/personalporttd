@@ -139,7 +139,7 @@ function StoryLightbox({
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
           >
-            {item.emoji} Life Outside Work
+            {item.emoji} Kept around
           </motion.p>
 
           <motion.h3
@@ -305,7 +305,7 @@ export default function AfterworkSection() {
             transition={{ duration: 0.9, delay: 0.8, ease: [0.32, 0.72, 0, 1] }}
           >
             <p className="text-[10px] uppercase tracking-[0.25em] text-[var(--color-ink-muted)] mb-4 font-[var(--font-mono)]">
-              Life outside work
+              Some things I kept around
             </p>
             <h2 className="font-[var(--font-display)] text-[clamp(3rem,8vw,6.5rem)] font-light text-[var(--color-ink)] leading-[0.95] tracking-[-0.03em] text-center">
               After
@@ -313,14 +313,14 @@ export default function AfterworkSection() {
               work
             </h2>
             <p className="mt-4 text-sm text-[var(--color-ink-muted)] max-w-xs text-center tracking-wide">
-              The things that make me better at understanding people.
+              A few people, places, nights, meals, gifts, songs, and small evidence that I have been here, paying attention.
             </p>
             <motion.p
               className="mt-6 text-[10px] uppercase tracking-[0.2em] text-[var(--color-cyan)]"
               animate={{ opacity: [0.4, 1, 0.4] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              Click any image to explore
+              Click any image to read
             </motion.p>
           </motion.div>
 
