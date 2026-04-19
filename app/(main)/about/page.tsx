@@ -16,10 +16,9 @@ import {
   education,
   personalBits,
   philosophy,
-  afterwork,
   aboutCta,
 } from "@/content/pages/about";
-import { AfterworkParallax } from "./AfterworkParallax";
+import AfterworkSection from "@/components/about/AfterworkSection";
 
 export default function AboutPage() {
   return (
@@ -183,7 +182,7 @@ export default function AboutPage() {
       </section>
 
       {/* Afterwork Section - Parallax Floating */}
-      <AfterworkParallax items={afterwork} />
+      <AfterworkSection />
 
       {/* Philosophy */}
       <section className="py-24">

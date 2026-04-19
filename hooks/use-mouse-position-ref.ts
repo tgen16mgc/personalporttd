@@ -1,41 +1,45 @@
-import { RefObject, useEffect, useRef } from "react"
+import { RefObject, useEffect, useRef } from "react";
 
+/**
+ * useMousePositionRef
+ * Tracks mouse/touch position relative to a container (or the viewport)
+ * using a ref instead of state, to avoid re-renders on every move.
+ */
 export const useMousePositionRef = (
   containerRef?: RefObject<HTMLElement | SVGElement | null>
 ) => {
-  const positionRef = useRef({ x: 0, y: 0 })
+  const positionRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const updatePosition = (x: number, y: number) => {
       if (containerRef && containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect()
-        // Center the coordinate system on the container's center
-        const relativeX = x - (rect.left + rect.width / 2)
-        const relativeY = y - (rect.top + rect.height / 2)
-
-        positionRef.current = { x: relativeX, y: relativeY }
+        const rect = containerRef.current.getBoundingClientRect();
+        // Center-relative coordinates
+        const relativeX = x - rect.left - rect.width / 2;
+        const relativeY = y - rect.top - rect.height / 2;
+        positionRef.current = { x: relativeX, y: relativeY };
       } else {
-        positionRef.current = { x, y }
+        positionRef.current = { x, y };
       }
-    }
+    };
 
     const handleMouseMove = (ev: MouseEvent) => {
-      updatePosition(ev.clientX, ev.clientY)
-    }
+      updatePosition(ev.clientX, ev.clientY);
+    };
 
     const handleTouchMove = (ev: TouchEvent) => {
-      const touch = ev.touches[0]
-      updatePosition(touch.clientX, touch.clientY)
-    }
+      const touch = ev.touches[0];
+      updatePosition(touch.clientX, touch.clientY);
+    };
 
-    window.addEventListener("mousemove", handleMouseMove)
-    window.addEventListener("touchmove", handleTouchMove)
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-      window.removeEventListener("touchmove", handleTouchMove)
-    }
-  }, [containerRef])
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, [containerRef]);
 
-  return positionRef
-}
+  return positionRef;
+};
