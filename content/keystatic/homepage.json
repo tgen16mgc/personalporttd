@@ -56,10 +56,11 @@
       },
       {
         "label": "freelancer",
-        "color": "06B6D4"
+        "color": "FFDE42"
       },
       {
-        "label": "(sometime) design & video editing"
+        "label": "(sometime) design & video editing",
+        "color": "2F2FE4"
       }
     ]
   },
