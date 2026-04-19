@@ -40,7 +40,7 @@
   },
   "personalBits": [
     {
-      "text": "I run on <em> caffeine </em> and can debate gamimg for hours. Check out my",
+      "text": "I run on <em> caffeine </em> and can debate gaming for hours. Check out my",
       "linkText": "work",
       "linkHref": "/work",
       "suffix": "."
@@ -48,129 +48,185 @@
   ],
   "philosophy": {
     "approach": {
-      "headline": "Marketing isn’t about winning customers.",
-      "subheadline": "It’s about understanding people well enough to actually help them.",
+      "headline": "I’m interested in people before campaigns.",
+      "subheadline": "What they notice, avoid, repeat, complain about, laugh at, and quietly care about.",
       "paragraphs": [
-        "My approach is deeply inspired by <strong>Hùng Võ</strong> (APAC 2021 Top 50 CMO) and his philosophy of <strong>“Hiểu để yêu thương”</strong>: understand in order to love. Marketing isn’t a battle for attention. It’s a battle of moving people from mind to heart.",
-        "That means starting every project not with “how do we get people to buy?” but with <strong>“what struggle do they wake up worrying about?”</strong>",
-        "The campaigns I’m most proud of aren’t the ones that hit the biggest numbers. They’re the ones where someone reached out saying “I felt seen.”"
+        "A lot of how I think about marketing comes from the idea of <strong>“Hiểu để yêu thương”</strong>: understand in order to care. I like that because it keeps the work from becoming too cold.",
+        "Before asking how to sell something, I try to understand what is already happening in someone’s day. What are they tired of? What do they not say out loud? What small thing would make them feel understood?",
+        "The work I remember most is usually not the loudest work. It is the kind that makes someone pause for a second and think, “yeah, that feels true.”"
       ]
     },
     "reflections": [
       {
         "kicker": "What Shapes My Work",
-        "title": "Living Multiple Lives",
+        "title": "Not Staying In One Room Too Long",
         "paragraphs": [
-          "You can’t write for people you’ve never talked to. So I try to live messily: eating at the phở stall next to the xe ôm drivers at 6am, then presenting to executives in an air-conditioned boardroom by noon.",
-          "The best insights don’t come from data dashboards. They come from overhearing a mom complain about her kid’s eating habits, or watching how a group of Gen Z friends roast each other’s fashion choices. <strong>Real life is the research.</strong>"
+          "I try not to build my whole view of people from one kind of room. Some days it is a classroom, a client meeting, a net cafe, a family dinner, or a tiny food place I found by accident.",
+          "Moving between those places keeps me honest. People sound different when they are relaxed, rushed, hungry, proud, annoyed, or just trying to get through the day. I like noticing those small shifts, because they usually say more than the big statements."
         ]
       },
       {
         "kicker": "What I’m Still Learning",
-        "title": "Slowing Down to See Clearly",
+        "title": "Answering A Little Slower",
         "paragraphs": [
-          "This industry moves fast and rewards people who move faster. I used to think speed was the game. Now I think clarity is.",
-          "The times I’ve messed up were times I was so busy proving I could deliver quickly that I didn’t stop to ask: <strong>“Is this actually what they need?”</strong> Humility isn’t weakness. It’s the only way to stay curious enough to keep learning."
+          "I used to answer too fast because fast felt useful. Now I’m trying to be okay with a slower first thought.",
+          "A lot of the better work starts with admitting I do not understand enough yet. Ask one more question, listen to one more person, let the first answer be wrong for a bit. It is less impressive in the moment, but it usually gets closer to something real."
         ]
       }
     ],
-    "quote": "“The best marketing doesn’t feel like marketing. It feels like someone finally understood what you were going through.”",
-    "mission": "I’m not chasing awards or viral moments. I’m trying to create work that makes people feel <strong>less alone</strong>. Work that gives them belonging, confidence, or just a moment of real connection."
+    "quote": "“I like work that makes people feel quietly understood.”",
+    "mission": "I’m not trying to make everything louder. I’m trying to make work that feels closer to people: something useful, familiar, comforting, or just honest enough to stay with them for a while."
   },
   "afterwork": [
     {
-      "id": "lol",
-      "title": "League of Legends",
-      "subtitle": "10 years, still Platinum tho",
-      "description": "The best players make everyone else look good. That’s me in a nutshell.",
-      "takeaway": "Learning to lose gracefully (it’s not that deep but anyway)",
+      "id": "net-dem",
+      "title": "net đêm",
+      "subtitle": "League with my brother",
+      "description": "Late night at a net cafe with my brother, playing League like the next game was going to fix our lives. I like places like this. Bright screens, bad chairs, instant noodles nearby, everyone locked into their own little mission.",
+      "takeaway": "Small missions, bad chairs, good nights.",
       "image": "/images/about/afterwork/0/image.jpeg",
       "emoji": "🎮",
       "bgGradient": "from-violet-50 to-indigo-100",
       "size": "large"
     },
     {
+      "id": "marketing-club",
+      "title": "marketing club",
+      "subtitle": "uni gang",
+      "description": "My uni marketing club gang. A lot of my favorite memories started with staying too late, making something slightly chaotic, and somehow becoming close because of it. This was one of those groups. ",
+      "takeaway": "Shout out to MGC-NEU ^^",
+      "image": "/images/about/afterwork/1/image.jpeg",
+      "emoji": "🫶",
+      "bgGradient": "from-rose-50 to-pink-100",
+      "size": "small"
+    },
+    {
+      "id": "finals",
+      "title": "finals",
+      "subtitle": "room got bigger",
+      "description": "Me talking in front of a room that suddenly felt much bigger once I was standing there. I used to think I had to sound completely ready before speaking. These days, I think showing up with shaky hands still counts.",
+      "image": "/images/about/afterwork/2/image.JPG",
+      "emoji": "🎤",
+      "bgGradient": "from-sky-50 to-blue-100",
+      "size": "small"
+    },
+    {
+      "id": "more-finals",
+      "title": "more finals",
+      "subtitle": "trying to make the words land",
+      "description": "Another stage, another room, another version of me trying to make the words land. I keep photos like this because they remind me that confidence is usually something I notice after.",
+      "takeaway": "Confidence usually arrives late.",
+      "image": "/images/about/afterwork/3/image.jpg",
+      "emoji": "🏆",
+      "bgGradient": "from-amber-50 to-yellow-100",
+      "size": "small"
+    },
+    {
+      "id": "her-polaroids",
+      "title": "her polaroids",
+      "subtitle": "taken by my girlfriend",
+      "description": "Photos my girlfriend took of me. I like how polaroids do not let you edit yourself too much. You get one version, slightly soft, slightly off, probably more honest than the one you would have chosen.",
+      "takeaway": "Soft, off, probably honest.",
+      "image": "/images/about/afterwork/4/image.png",
+      "emoji": "📷",
+      "bgGradient": "from-gray-50 to-slate-100",
+      "size": "large"
+    },
+    {
+      "id": "tui-xach",
+      "title": "8.3",
+      "subtitle": "for my mom",
+      "description": "A bag I got for my mom.",
+      "image": "/images/about/afterwork/5/image.jpeg",
+      "emoji": "👜",
+      "bgGradient": "from-pink-50 to-rose-100",
+      "size": "small"
+    },
+    {
+      "id": "cat",
+      "title": "cat",
+      "subtitle": "main character energy",
+      "description": "My cat, doing very little and somehow still being the main character. I respect that kind of presence. No explanation, no performance, just sitting there like the room was built around them.",
+      "takeaway": "Presence without explanation.",
+      "image": "/images/about/afterwork/6/image.jpg",
+      "emoji": "🐱",
+      "bgGradient": "from-orange-50 to-amber-100",
+      "size": "large"
+    },
+    {
+      "id": "food-notes",
+      "title": "food notes",
+      "subtitle": "evidence I was there",
+      "description": "I take food photos like I am collecting evidence. Not just of what tasted good, but where I was sitting, who I was with, what we ordered too much of, and which place I quietly decided I would come back to.",
+      "takeaway": "Meals remember more than taste.",
+      "image": "/images/about/afterwork/7/image.jpg",
+      "emoji": "🍜",
+      "bgGradient": "from-lime-50 to-green-100",
+      "size": "small"
+    },
+    {
+      "id": "concert",
+      "title": "concert",
+      "subtitle": "wrong lyrics, full confidence",
+      "description": "Me at a concert, probably singing the wrong part with full confidence. I like being in a crowd where everyone is briefly pointed toward the same sound. It makes being emotional feel less private.",
+      "image": "/images/about/afterwork/8/image.jpeg",
+      "emoji": "🎧",
+      "bgGradient": "from-purple-50 to-fuchsia-100",
+      "size": "small"
+    },
+    {
       "id": "guitar",
-      "title": "Guitar",
-      "description": "Self-taught. Still can’t nail barre chords. But choosing to be a beginner keeps you humble.",
-      "takeaway": "The discipline of being bad at something",
-      "image": "/images/about/afterwork/1/image.png",
+      "title": "guitar",
+      "subtitle": "fewer chords than the photo suggests",
+      "description": "Me with a guitar, probably knowing fewer chords than the photo suggests. Still, I like having something around that makes me slower. You cannot scroll and play at the same time, which is already a good reason to keep trying.",
+      "takeaway": "A reason to go slower.",
+      "image": "/images/about/afterwork/9/image.jpeg",
       "emoji": "🎸",
       "bgGradient": "from-amber-50 to-orange-100",
       "size": "small"
     },
     {
-      "id": "coffee",
-      "title": "“Coffeeholic”",
-      "description": "Morning. Afternoon. Evening. Seven day a week",
-      "takeaway": "Insights live in the pauses",
-      "image": "/images/about/afterwork/2/image.png",
-      "emoji": "☕",
-      "bgGradient": "from-amber-50 to-yellow-100",
-      "size": "small"
-    },
-    {
-      "id": "cat",
-      "title": "Living with a cat",
-      "subtitle": "She runs the house, not me",
-      "description": "She ignores me when I need attention, shows up for pets at the worst times, and has zero respect for my deadlines.",
-      "takeaway": "I’m not always the main character, and that’s a useful thing to remember",
-      "image": "/images/about/afterwork/3/image.png",
-      "emoji": "🐱",
-      "bgGradient": "from-pink-50 to-rose-100",
-      "size": "large"
-    },
-    {
-      "id": "film",
-      "title": "Film photography",
-      "subtitle": "36 exposures of questionable decisions",
-      "description": "No delete button. No retake. Just you, the light, and a prayer that the lab doesn’t lose your roll.",
-      "takeaway": "Constraints breed creativity",
-      "image": "/images/about/afterwork/4/image.png",
-      "emoji": "📷",
-      "bgGradient": "from-gray-50 to-slate-100",
-      "size": "small"
-    },
-    {
-      "id": "running",
-      "title": "Morning runs",
-      "description": "Not fast. Not far. Just enough to clear the head before the screen takes over. Best ideas come around kilometer three.",
-      "takeaway": "Movement is thinking in disguise",
-      "image": "/images/about/afterwork/5/image.png",
-      "emoji": "🏃",
-      "bgGradient": "from-sky-50 to-blue-100",
-      "size": "small"
-    },
-    {
-      "id": "sketching",
-      "title": "Doodling & sketching",
-      "description": "Wireframes start as doodles. Ideas start as scribbles. The sketchbook is where things get ugly before they get beautiful.",
-      "takeaway": "Thinking with your hands",
-      "image": "/images/about/afterwork/6/image.png",
-      "emoji": "✏️",
-      "bgGradient": "from-yellow-50 to-amber-100",
-      "size": "small"
-    },
-    {
-      "id": "nightwalks",
-      "title": "Night walks",
-      "subtitle": "Hà Nội after midnight",
-      "description": "The city talks differently when the motorbikes stop. Old Quarter streets, phở bò steam, neon signs on wet pavement.",
-      "takeaway": "You see more when you slow down",
-      "image": "/images/about/afterwork/7/image.png",
+      "id": "late-walk",
+      "title": "late walk",
+      "subtitle": "nowhere urgent to be",
+      "description": "A late night walk with nowhere urgent to be. I like the city more when it stops trying to impress anyone. Closed shops, half-lit streets, people going home, everything a little quieter than usual.",
+      "takeaway": "The city gets better when it gets quieter.",
+      "image": "/images/about/afterwork/10/image.jpg",
       "emoji": "🌙",
       "bgGradient": "from-indigo-50 to-violet-100",
       "size": "large"
     },
     {
-      "id": "badminton",
-      "title": "Badminton",
-      "subtitle": "Weekend warrior energy",
-      "description": "Nothing resets a week like smashing a shuttlecock at unreasonable speeds with friends. Competitive but never serious.",
-      "takeaway": "Play is underrated for adults",
-      "image": "/images/about/afterwork/8/image.png",
-      "emoji": "🏸",
-      "bgGradient": "from-rose-50 to-pink-100",
+      "id": "tin-vao",
+      "title": "tin vào những điều m làm",
+      "subtitle": "a small note",
+      "description": "Tin vào những điều m làm. Believe in the things you do. I do not remember why this photo happened, but I kept it because it says something I need often. Not in a loud motivational way. More like a small note left on the table.",
+      "takeaway": "A note I still need.",
+      "image": "/images/about/afterwork/11/image.jpg",
+      "emoji": "📝",
+      "bgGradient": "from-yellow-50 to-amber-100",
+      "size": "large"
+    },
+    {
+      "id": "flowers",
+      "title": "flowers",
+      "subtitle": "sometimes that is enough",
+      "description": "Flowers, because sometimes that is enough. I like that they do not need much writing around them. They just sit there, look temporary, and make the day feel a little more considered.",
+      "takeaway": "Temporary, but considered.",
+      "image": "/images/about/afterwork/12/image.jpg",
+      "emoji": "💐",
+      "bgGradient": "from-pink-50 to-rose-100",
+      "size": "small"
+    },
+    {
+      "id": "drunk",
+      "title": "drunk",
+      "subtitle": "only makes sense if you were there",
+      "description": "A photo from one of those nights that only makes sense if you were there. I like keeping a few unserious pictures around. They are good proof that not everything needs to become a lesson.",
+      "takeaway": "Not everything needs to become a lesson.",
+      "image": "/images/about/afterwork/13/image.jpeg",
+      "emoji": "🍻",
+      "bgGradient": "from-cyan-50 to-sky-100",
       "size": "small"
     }
   ],
