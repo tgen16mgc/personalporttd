@@ -83,7 +83,7 @@
       "title": "League of Legends",
       "subtitle": "10 years, still Platinum tho",
       "description": "The best players make everyone else look good. That’s me in a nutshell.",
-      "takeaway": "Learning to lose gracefully (it's not that deep but anyway)",
+      "takeaway": "Learning to lose gracefully (it’s not that deep but anyway)",
       "image": "/images/about/afterwork/0/image.jpeg",
       "emoji": "🎮",
       "bgGradient": "from-violet-50 to-indigo-100",
@@ -94,15 +94,17 @@
       "title": "Guitar",
       "description": "Self-taught. Still can’t nail barre chords. But choosing to be a beginner keeps you humble.",
       "takeaway": "The discipline of being bad at something",
+      "image": "/images/about/afterwork/1/image.png",
       "emoji": "🎸",
       "bgGradient": "from-amber-50 to-orange-100",
       "size": "small"
     },
     {
       "id": "coffee",
-      "title": "\"Coffeeholic\"",
+      "title": "“Coffeeholic”",
       "description": "Morning. Afternoon. Evening. Seven day a week",
       "takeaway": "Insights live in the pauses",
+      "image": "/images/about/afterwork/2/image.png",
       "emoji": "☕",
       "bgGradient": "from-amber-50 to-yellow-100",
       "size": "small"
@@ -112,10 +114,64 @@
       "title": "Living with a cat",
       "subtitle": "She runs the house, not me",
       "description": "She ignores me when I need attention, shows up for pets at the worst times, and has zero respect for my deadlines.",
-      "takeaway": "I'm not always the main character, and that’s a useful thing to remember",
+      "takeaway": "I’m not always the main character, and that’s a useful thing to remember",
+      "image": "/images/about/afterwork/3/image.png",
       "emoji": "🐱",
       "bgGradient": "from-pink-50 to-rose-100",
       "size": "large"
+    },
+    {
+      "id": "film",
+      "title": "Film photography",
+      "subtitle": "36 exposures of questionable decisions",
+      "description": "No delete button. No retake. Just you, the light, and a prayer that the lab doesn’t lose your roll.",
+      "takeaway": "Constraints breed creativity",
+      "image": "/images/about/afterwork/4/image.png",
+      "emoji": "📷",
+      "bgGradient": "from-gray-50 to-slate-100",
+      "size": "small"
+    },
+    {
+      "id": "running",
+      "title": "Morning runs",
+      "description": "Not fast. Not far. Just enough to clear the head before the screen takes over. Best ideas come around kilometer three.",
+      "takeaway": "Movement is thinking in disguise",
+      "image": "/images/about/afterwork/5/image.png",
+      "emoji": "🏃",
+      "bgGradient": "from-sky-50 to-blue-100",
+      "size": "small"
+    },
+    {
+      "id": "sketching",
+      "title": "Doodling & sketching",
+      "description": "Wireframes start as doodles. Ideas start as scribbles. The sketchbook is where things get ugly before they get beautiful.",
+      "takeaway": "Thinking with your hands",
+      "image": "/images/about/afterwork/6/image.png",
+      "emoji": "✏️",
+      "bgGradient": "from-yellow-50 to-amber-100",
+      "size": "small"
+    },
+    {
+      "id": "nightwalks",
+      "title": "Night walks",
+      "subtitle": "Hà Nội after midnight",
+      "description": "The city talks differently when the motorbikes stop. Old Quarter streets, phở bò steam, neon signs on wet pavement.",
+      "takeaway": "You see more when you slow down",
+      "image": "/images/about/afterwork/7/image.png",
+      "emoji": "🌙",
+      "bgGradient": "from-indigo-50 to-violet-100",
+      "size": "large"
+    },
+    {
+      "id": "badminton",
+      "title": "Badminton",
+      "subtitle": "Weekend warrior energy",
+      "description": "Nothing resets a week like smashing a shuttlecock at unreasonable speeds with friends. Competitive but never serious.",
+      "takeaway": "Play is underrated for adults",
+      "image": "/images/about/afterwork/8/image.png",
+      "emoji": "🏸",
+      "bgGradient": "from-rose-50 to-pink-100",
+      "size": "small"
     }
   ],
   "aboutCta": {
