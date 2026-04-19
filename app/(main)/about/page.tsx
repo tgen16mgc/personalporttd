@@ -19,6 +19,7 @@ import {
   afterwork,
   aboutCta,
 } from "@/content/pages/about";
+import { AfterworkParallax } from "./AfterworkParallax";
 
 export default function AboutPage() {
   return (
@@ -181,104 +182,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Afterwork Section - Visual Grid Layout */}
-      <section className="py-24 bg-white relative">
-        <Container>
-          <ScrollReveal>
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-ink-muted)] mb-4">
-                  Life outside work
-                </p>
-                <h2 className="text-3xl font-[var(--font-display)] font-semibold text-[var(--color-ink)]">
-                  After&middot;work
-                </h2>
-              </div>
-              <p className="text-[var(--color-ink-light)] max-w-md mt-4 lg:mt-0">
-                The things that make me better at understanding people.
-              </p>
-            </div>
-
-            {/* Bento Grid Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {afterwork.map((item) => (
-                <motion.div
-                  key={item.id}
-                  variants={fadeInUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className={item.size === "large" ? "lg:col-span-2 group" : "group"}
-                >
-                  <div className="p-2 rounded-[2rem] bg-white/60 ring-1 ring-black/[0.04] h-full">
-                    <div className={`rounded-[calc(2rem-0.5rem)] bg-gradient-to-br ${item.bgGradient} ${item.size === "large" ? "p-8" : "p-6"} h-full ${item.size === "large" ? "flex flex-col md:flex-row gap-6" : ""}`}>
-                      {item.size === "large" && item.id !== "cat" && (
-                        <>
-                          <div className="w-full md:w-48 h-48 md:h-auto rounded-xl bg-white/60 flex-shrink-0 overflow-hidden">
-                            {item.image ? (
-                              // eslint-disable-next-line @next/next/no-img-element
-                              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                            ) : (
-                              <div className="w-full h-full flex items-center justify-center text-[var(--color-ink-muted)]">
-                                <span className="text-4xl">{item.emoji}</span>
-                              </div>
-                            )}
-                          </div>
-                          <div className="flex-1">
-                            <h3 className="text-xl font-medium text-[var(--color-ink)] mb-3">{item.title}</h3>
-                            {item.subtitle && <p className="text-sm text-[var(--color-ink-muted)] mb-4">{item.subtitle}</p>}
-                            <p className="text-[var(--color-ink-light)] leading-relaxed mb-4">{item.description}</p>
-                            <p className="text-sm text-[var(--color-ink)] font-medium">&darr; {item.takeaway}</p>
-                          </div>
-                        </>
-                      )}
-
-                      {item.size === "large" && item.id === "cat" && (
-                        <>
-                          <div className="flex-1 order-2 md:order-1">
-                            <h3 className="text-xl font-medium text-[var(--color-ink)] mb-3">{item.title}</h3>
-                            {item.subtitle && <p className="text-sm text-[var(--color-ink-muted)] mb-4">{item.subtitle}</p>}
-                            <p className="text-[var(--color-ink-light)] leading-relaxed mb-4">{item.description}</p>
-                            <p className="text-sm text-[var(--color-ink)] font-medium">&darr; {item.takeaway}</p>
-                          </div>
-                          <div className="w-full md:w-48 h-48 md:h-auto rounded-xl bg-white/60 flex-shrink-0 overflow-hidden order-1 md:order-2">
-                            {item.image ? (
-                              // eslint-disable-next-line @next/next/no-img-element
-                              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                            ) : (
-                              <div className="w-full h-full flex items-center justify-center text-[var(--color-ink-muted)]">
-                                <span className="text-4xl">{item.emoji}</span>
-                              </div>
-                            )}
-                          </div>
-                        </>
-                      )}
-
-                      {item.size === "small" && (
-                        <>
-                          <div className="w-full h-32 rounded-xl bg-white/60 mb-4 overflow-hidden">
-                            {item.image ? (
-                              // eslint-disable-next-line @next/next/no-img-element
-                              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                            ) : (
-                              <div className="w-full h-full flex items-center justify-center text-[var(--color-ink-muted)]">
-                                <span className="text-3xl">{item.emoji}</span>
-                              </div>
-                            )}
-                          </div>
-                          <h3 className="text-lg font-medium text-[var(--color-ink)] mb-2">{item.title}</h3>
-                          <p className="text-sm text-[var(--color-ink-light)] leading-relaxed mb-3">{item.description}</p>
-                          <p className="text-xs text-[var(--color-ink)] font-medium">&darr; {item.takeaway}</p>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </Container>
-      </section>
+      {/* Afterwork Section - Parallax Floating */}
+      <AfterworkParallax items={afterwork} />
 
       {/* Philosophy */}
       <section className="py-24">
