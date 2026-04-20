@@ -1,97 +1,6 @@
 {
   "items": [
     {
-      "slug": "freelance",
-      "title": "Freelance Design & Editing",
-      "tagline": "A running collection of freelance videos, social posts, and design jobs I made as a sometimes designer and editor.",
-      "client": "Various freelance clients",
-      "industry": "Freelance",
-      "role": "Designer, Video Editor",
-      "year": "2023 - present",
-      "thumbnail": "/images/projects/items/0/thumbnail.png",
-      "heroImage": "/images/projects/items/0/heroImage.jpg",
-      "gallery": [
-        {
-          "type": "videoFile",
-          "size": "half",
-          "caption": "EDIT LATER: Replace with a short-form video edit, event recap, or motion piece."
-        },
-        {
-          "type": "videoFile",
-          "size": "half",
-          "caption": "EDIT LATER: Replace with another video sample."
-        },
-        {
-          "type": "image",
-          "size": "half",
-          "caption": "EDIT LATER: Replace with a social design post or campaign visual."
-        },
-        {
-          "type": "image",
-          "size": "half",
-          "caption": "EDIT LATER: Replace with a poster, key visual, carousel slide, or layout sample."
-        },
-        {
-          "type": "videoFile",
-          "size": "half",
-          "caption": "EDIT LATER: Replace with a third video sample if useful."
-        },
-        {
-          "type": "image",
-          "size": "half",
-          "caption": "EDIT LATER: Replace with another design post."
-        }
-      ],
-      "featured": true,
-      "color": "#2F6BFF",
-      "story": [
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "The Brief"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "What This Collects"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "My Role"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Replace These Notes"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        }
-      ],
-      "execution": [],
-      "results": [],
-      "awards": [],
-      "credits": []
-    },
-    {
       "slug": "aeon-beta",
       "title": "AEON BETA - TikTok Video Production",
       "tagline": "Aeon Beta: Producing 31 TikTok Videos for a New Cinema Launch",
@@ -100,6 +9,8 @@
       "industry": "Retail",
       "role": "Account Executive - Production Coordinator",
       "year": "2025",
+      "thumbnail": "/images/projects/items/0/thumbnail.png",
+      "heroImage": "/images/projects/items/0/heroImage.png",
       "gallery": [
         {
           "type": "video",
@@ -202,6 +113,8 @@
       "industry": "Hospitality & F&B",
       "role": "Account Executive, Brand Operations, Production Coordinator, Booking Management",
       "year": "Nov 2025 - Apr 2026",
+      "thumbnail": "/images/projects/items/1/thumbnail.jpg",
+      "heroImage": "/images/projects/items/1/heroImage.png",
       "gallery": [],
       "featured": true,
       "color": "#0d1657",
@@ -286,6 +199,8 @@
       "industry": "FMCG",
       "role": "Strategic Planner, Copywriter",
       "year": "March 2026",
+      "thumbnail": "/images/projects/items/2/thumbnail.png",
+      "heroImage": "/images/projects/items/2/heroImage.png",
       "gallery": [],
       "featured": true,
       "color": "#9a7446",
@@ -323,6 +238,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/2/story/6/value/image.png",
             "caption": "Proposal Snapshot",
             "size": "content"
           }
@@ -334,6 +250,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/2/story/8/value/image.png",
             "caption": "Proposal Snapshot",
             "size": "content"
           }
@@ -347,6 +264,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/2/story/10/value/image.png",
             "caption": "Proposal Snapshot",
             "size": "content"
           }
@@ -358,6 +276,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/2/story/12/value/image.png",
             "caption": "Proposal Snapshot",
             "size": "content"
           }
@@ -405,6 +324,8 @@
       "industry": "Stationery",
       "role": "Research & Strategic Planner",
       "year": "Oct 2025",
+      "thumbnail": "/images/projects/items/3/thumbnail.png",
+      "heroImage": "/images/projects/items/3/heroImage.png",
       "gallery": [],
       "featured": true,
       "color": "#ed0000",
@@ -456,6 +377,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/3/story/9/value/image.png",
             "caption": "Report Snapshot",
             "size": "content"
           }
@@ -463,6 +385,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/3/story/10/value/image.png",
             "caption": "Report Snapshot",
             "size": "content"
           }
@@ -478,6 +401,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/3/story/13/value/image.png",
             "caption": "Report Snapshot",
             "size": "content"
           }
@@ -507,6 +431,8 @@
       "industry": "Startup",
       "role": "Project Lead, Product Strategy, Website, and Brand Design",
       "year": "Aug 22, 2025 – Nov 18, 2025",
+      "thumbnail": "/images/projects/items/4/thumbnail.jpg",
+      "heroImage": "/images/projects/items/4/heroImage.jpg",
       "gallery": [
         {
           "type": "video",
@@ -515,10 +441,12 @@
         },
         {
           "type": "image",
+          "image": "/images/projects/items/4/gallery/1/image.jpg",
           "size": "half"
         },
         {
           "type": "image",
+          "image": "/images/projects/items/4/gallery/2/image.jpg",
           "size": "half"
         }
       ],
@@ -562,6 +490,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/4/story/7/value/image.png",
             "caption": "1st brandguide draft",
             "size": "content"
           }
@@ -569,6 +498,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/4/story/8/value/image.png",
             "caption": "Website snapshot",
             "size": "content"
           }
@@ -576,6 +506,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/4/story/9/value/image.jpg",
             "caption": "Social post snapshot",
             "size": "content"
           }
@@ -593,6 +524,7 @@
         {
           "discriminant": "image",
           "value": {
+            "image": "/images/projects/items/4/story/12/value/image.png",
             "caption": "n8n workflow snapshot",
             "size": "wide"
           }
@@ -639,6 +571,7 @@
       "industry": "Cultural Heritage",
       "role": "Lead Strategist & Creative Director",
       "year": "2025",
+      "thumbnail": "/images/projects/items/5/thumbnail.svg",
       "gallery": [],
       "featured": false,
       "color": "#D4A574",
@@ -680,6 +613,7 @@
       "industry": "Sports & Fitness",
       "role": "Research Lead & Strategist",
       "year": "2024",
+      "thumbnail": "/images/projects/items/6/thumbnail.svg",
       "gallery": [],
       "featured": false,
       "color": "#06B6D4",
@@ -721,6 +655,7 @@
       "industry": "Banking & Finance",
       "role": "Strategy Lead",
       "year": "2025",
+      "thumbnail": "/images/projects/items/7/thumbnail.svg",
       "gallery": [],
       "featured": false,
       "color": "#059669",
@@ -758,6 +693,7 @@
       "industry": "E-commerce",
       "role": "Campaign Lead",
       "year": "2024",
+      "thumbnail": "/images/projects/items/8/thumbnail.svg",
       "gallery": [],
       "featured": false,
       "color": "#DC2626",
