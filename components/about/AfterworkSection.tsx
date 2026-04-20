@@ -219,12 +219,12 @@ function FloatingCard({
 }) {
   return (
     <motion.div
-      className="afterwork-card group cursor-pointer"
+      className="afterwork-card group cursor-pointer h-full"
       initial={{ opacity: 0 }}
       onClick={onClick}
     >
-      <div className="p-1.5 rounded-2xl bg-white/80 ring-1 ring-black/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.06),0_2px_8px_rgba(0,0,0,0.04)] group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-500 group-hover:scale-105">
-        <div className="rounded-[calc(1rem-0.25rem)] overflow-hidden relative">
+      <div className="h-full p-1.5 rounded-2xl bg-white/80 ring-1 ring-black/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.06),0_2px_8px_rgba(0,0,0,0.04)] group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-500 group-hover:scale-105">
+        <div className="h-full rounded-[calc(1rem-0.25rem)] overflow-hidden relative">
           {item.image ? (
             <Image
               src={item.image}
