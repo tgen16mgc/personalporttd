@@ -6,7 +6,6 @@ import Floating, {
   FloatingElement,
 } from "@/components/fancy/image/parallax-floating";
 import { afterwork, AfterworkItem } from "@/content/pages/about";
-import Image from "next/image";
 
 /* ───────────────────────────────────────────────────── 
    Lightbox / Story Slide  
@@ -117,12 +116,11 @@ function StoryLightbox({
         <div className="w-full md:w-1/2 flex-shrink-0">
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
             {item.image ? (
-              <Image
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
                 src={item.image}
                 alt={item.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                className="w-full h-full object-cover"
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
@@ -219,19 +217,19 @@ function FloatingCard({
 }) {
   return (
     <motion.div
-      className="afterwork-card group cursor-pointer h-full"
+      className="afterwork-card group cursor-pointer"
       initial={{ opacity: 0 }}
       onClick={onClick}
     >
-      <div className="h-full p-1.5 rounded-2xl bg-white/80 ring-1 ring-black/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.06),0_2px_8px_rgba(0,0,0,0.04)] group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-500 group-hover:scale-105">
-        <div className="h-full rounded-[calc(1rem-0.25rem)] overflow-hidden relative">
+      <div className="p-1.5 rounded-2xl bg-white/80 ring-1 ring-black/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.06),0_2px_8px_rgba(0,0,0,0.04)] group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-500 group-hover:scale-105">
+        <div className="rounded-[calc(1rem-0.25rem)] overflow-hidden relative">
           {item.image ? (
-            <Image
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
               src={item.image}
               alt={item.title}
-              fill
-              sizes="(max-width: 768px) 50vw, 25vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
             />
           ) : (
             <div className={`w-full h-full bg-gradient-to-br ${item.bgGradient} flex items-center justify-center`}>
