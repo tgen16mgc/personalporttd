@@ -1,14 +1,15 @@
 {
   "items": [
     {
-      "slug": "freelance-design-editing",
+      "slug": "freelance",
       "title": "Freelance Design & Editing",
       "tagline": "A running collection of freelance videos, social posts, and design jobs I made as a sometimes designer and editor.",
       "client": "Various freelance clients",
-      "brand": "Freelance",
-      "industry": "Design & Content",
-      "role": "Designer, Video Editor, Content Maker",
-      "year": "2024 - present",
+      "industry": "Freelance",
+      "role": "Designer, Video Editor",
+      "year": "2023 - present",
+      "thumbnail": "/images/projects/items/0/thumbnail.png",
+      "heroImage": "/images/projects/items/0/heroImage.jpg",
       "gallery": [
         {
           "type": "videoFile",
@@ -85,26 +86,8 @@
           "value": {}
         }
       ],
-      "execution": [
-        "EDIT LATER: Short-form video editing",
-        "EDIT LATER: Social post and poster design",
-        "EDIT LATER: Layout adaptation for different formats",
-        "EDIT LATER: Final export and handoff"
-      ],
-      "results": [
-        {
-          "metric": "video edits",
-          "value": "EDIT"
-        },
-        {
-          "metric": "design posts",
-          "value": "EDIT"
-        },
-        {
-          "metric": "clients / briefs",
-          "value": "EDIT"
-        }
-      ],
+      "execution": [],
+      "results": [],
       "awards": [],
       "credits": []
     },
