@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Footer } from "@/components/layout/Footer";
 import { ProjectGallery } from "@/components/work/ProjectGallery";
 import type { Project, StoryBlock, DocumentNode, DocumentTextNode } from "@/content/projects";
+import Image from "next/image";
 import {
   FadeInUp,
   StaggerContainer,
@@ -381,13 +382,14 @@ function CinematicNav({
         className="group relative block overflow-hidden rounded-[1.5rem] ring-1 ring-black/[0.05] bg-[var(--color-cream-dark)]"
       >
         {/* Thumbnail background */}
-        <div className="aspect-[16/9] md:aspect-[3/1] overflow-hidden">
+        <div className="aspect-[16/9] md:aspect-[3/1] overflow-hidden relative">
           {img ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               src={img}
               alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
             />
           ) : (
             <div
@@ -685,12 +687,13 @@ function StoryBlockRenderer({
         <div className={`${wrapperClass} py-10`}>
           <FadeInUp delay={0.1}>
             <div className={rounded}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={block.value.image}
                 alt={block.value.caption || ""}
+                width={1920}
+                height={1080}
+                sizes="100vw"
                 className="w-full h-auto block"
-                loading="lazy"
               />
             </div>
             {block.value.caption && (
