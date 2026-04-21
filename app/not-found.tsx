@@ -1,9 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
@@ -17,10 +15,10 @@ export default function NotFound() {
           
           {/* Message */}
           <h2 className="text-2xl md:text-3xl font-[var(--font-display)] font-semibold text-[var(--color-ink)] mb-4">
-            This page doesn't exist
+            This page doesn&apos;t exist
           </h2>
           <p className="text-lg text-[var(--color-ink-light)] mb-10 max-w-md mx-auto">
-            Or maybe it's just shy. Either way, let's get you back to somewhere that actually exists.
+            Or maybe it&apos;s just shy. Either way, let&apos;s get you back to somewhere that actually exists.
           </p>
           
           {/* Actions */}
@@ -32,11 +30,6 @@ export default function NotFound() {
               View my work
             </Button>
           </div>
-          
-          {/* Fun fact */}
-          <p className="text-sm text-[var(--color-ink-muted)] mt-12">
-            Fun fact: This 404 page has better copy than most people's entire portfolios.
-          </p>
         </div>
       </Container>
     </div>

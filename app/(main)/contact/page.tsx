@@ -1,264 +1,128 @@
-"use client";
-
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { Container } from "@/components/ui/Container";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Button } from "@/components/ui/Button";
-import { Footer } from "@/components/layout/Footer";
-import { fadeInUp } from "@/lib/animations";
-import { Mail, Send, MapPin, Phone, Loader2 } from "lucide-react";
 import { personal } from "@/content/personal";
 
-function LinkedInIcon({ className }: { className?: string }) {
+function ArrowGlyph({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    <svg
+      aria-hidden="true"
+      className={className}
+      viewBox="0 0 97 72"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="currentColor"
+        d="M57.2 1.4 54.4 2C57.9 20.8 66.9 29.7 76.2 34H1.3v3.7h75.3c-9.7 4.2-20.2 13.2-23.2 31.9l3.8.6C61.7 41.5 84.8 38 92.5 37.7c1.7.1 2.7 0 2.8 0l-.1-3.8h-3.9c-8.6-.5-29.1-4.6-34.1-32.5Z"
+      />
     </svg>
   );
 }
 
+function LinkedInMark({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0h.01Z" />
+    </svg>
+  );
+}
+
+const usefulLinks = [
+  {
+    label: "LinkedIn",
+    href: personal.linkedin,
+    icon: LinkedInMark,
+  },
+  {
+    label: "Resume",
+    href: personal.resumeUrl,
+    icon: ArrowGlyph,
+  },
+];
+
+function ContactFootnote() {
+  return (
+    <footer className="contact-footnote border-t border-[var(--color-ink)]/10 py-6">
+      <Container size="wide">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 text-sm text-[var(--color-ink-muted)] sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            &copy; {new Date().getFullYear()} {personal.name}
+          </p>
+          <p className="font-[var(--font-display)] text-base italic text-[var(--color-ink-light)]">
+            &ldquo;{personal.footerQuote}&rdquo;
+          </p>
+        </div>
+      </Container>
+    </footer>
+  );
+}
+
 export default function ContactPage() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError(null);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
-      });
-
-      if (!response.ok) {
-        const result = (await response.json().catch(() => null)) as
-          | { error?: string }
-          | null;
-        throw new Error(result?.error || "Failed to send message.");
-      }
-
-      setIsSubmitted(true);
-      setFormState({ name: "", email: "", message: "" });
-    } catch (error) {
-      const message =
-        error instanceof Error
-          ? error.message
-          : "Failed to send message. Please try again.";
-      setSubmitError(message);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <>
-      <section className="pt-32 pb-16 min-h-[80vh] relative overflow-hidden">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left - Info */}
-            <ScrollReveal>
-              <p className="section-kicker mb-4">
+      <section className="relative isolate overflow-hidden pt-28 pb-16 sm:pt-32 lg:flex lg:min-h-[100dvh] lg:items-center lg:pb-24">
+        <Container size="wide">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 lg:grid-cols-[0.82fr_1fr] lg:items-start lg:gap-16">
+            <div>
+              <p className="contact-reveal contact-delay-1 mb-5 text-sm font-medium text-[var(--color-ink-muted)]">
                 Contact
               </p>
-              <h1 className="text-display text-[var(--color-ink)] mb-6">
-                Let&apos;s create
-                <br />
-                <span className="text-[var(--color-ink-light)]">
-                  something meaningful
+
+              <h1 className="contact-title max-w-3xl font-[var(--font-display)] text-5xl font-light leading-[0.96] tracking-normal text-[var(--color-ink)] sm:text-6xl lg:text-7xl xl:text-8xl">
+                <span className="contact-title-line">
+                  <span className="contact-title-text">Want to</span>
+                </span>
+                <span className="contact-title-line">
+                  <span className="contact-title-text">start a new</span>
+                </span>
+                <span className="contact-title-line">
+                  <span className="contact-title-text">project?</span>
                 </span>
               </h1>
-              <p className="text-body-lg text-[var(--color-ink-light)] mb-12">
-                Whether you have a project in mind, want to collaborate, or 
-                just want to say hello, I&apos;d love to hear from you.
+
+              <p className="contact-reveal contact-delay-4 mt-7 max-w-md text-base leading-relaxed text-[var(--color-ink-light)] sm:text-lg">
+                Or just say hello.
               </p>
 
-              <div className="space-y-6">
-                <a
-                  href={`mailto:${personal.email}`}
-                  className="flex items-center gap-4 group active:scale-[0.98] transition-transform cursor-pointer"
-                >
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-cyan)]/10 flex items-center justify-center group-hover:bg-[var(--color-cyan)]/20 transition-colors duration-300">
-                    <Mail className="w-5 h-5 text-[var(--color-cyan)]" />
-                  </div>
-                  <div>
-                    <p className="text-tag text-[var(--color-ink-muted)]">Email</p>
-                    <p className="text-[var(--color-ink)] group-hover:text-[var(--color-cyan)] transition-colors">
-                      {personal.email}
-                    </p>
-                  </div>
-                </a>
+              <a
+                href={`mailto:${personal.email}?subject=A%20request%20for%20you`}
+                className="contact-email contact-reveal contact-delay-5 group mt-9 block w-fit cursor-pointer overflow-hidden font-[var(--font-display)] text-3xl font-light leading-tight tracking-normal text-[var(--color-cyan)] transition-colors duration-200 hover:text-[var(--color-ink)] sm:text-4xl"
+              >
+                {personal.email}
+                <span
+                  aria-hidden="true"
+                  className="mt-3 block h-px origin-left bg-current transition-transform duration-200 group-hover:scale-x-90"
+                />
+              </a>
 
-                <a
-                  href={personal.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 group active:scale-[0.98] transition-transform cursor-pointer"
-                >
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-cyan)]/10 flex items-center justify-center group-hover:bg-[var(--color-cyan)]/20 transition-colors duration-300">
-                    <LinkedInIcon className="w-5 h-5 text-[var(--color-cyan)]" />
-                  </div>
-                  <div>
-                    <p className="text-tag text-[var(--color-ink-muted)]">LinkedIn</p>
-                    <p className="text-[var(--color-ink)] group-hover:text-[var(--color-cyan)] transition-colors">
-                      {personal.linkedinHandle}
-                    </p>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-[var(--color-gold)]" />
-                  </div>
-                  <div>
-                    <p className="text-tag text-[var(--color-ink-muted)]">Location</p>
-                    <p className="text-[var(--color-ink)]">{personal.location}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[var(--color-pink)]/10 flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-[var(--color-pink)]" />
-                  </div>
-                  <div>
-                    <p className="text-tag text-[var(--color-ink-muted)]">Phone</p>
-                    <p className="text-[var(--color-ink)]">{personal.phone}</p>
-                  </div>
-                </div>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {usefulLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-link group inline-flex min-h-11 cursor-pointer items-center gap-3 rounded-sm border border-[var(--color-ink)]/15 bg-white/55 px-4 py-2.5 text-sm font-medium text-[var(--color-ink)] transition-colors duration-200 hover:bg-[var(--color-ink)] hover:text-white active:-translate-y-[1px]"
+                  >
+                    <link.icon className="h-4 w-4" />
+                    {link.label}
+                  </a>
+                ))}
               </div>
-            </ScrollReveal>
+            </div>
 
-            {/* Right - Form with Double-Bezel */}
-            <ScrollReveal>
-              <motion.div variants={fadeInUp}>
-                {/* Outer Shell */}
-                <div className="p-2 rounded-[2rem] bg-black/[0.02] ring-1 ring-black/[0.04]">
-                  {/* Inner Core */}
-                  <div className="bg-white rounded-[calc(2rem-0.5rem)] p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.75),0_6px_24px_rgba(0,0,0,0.05)]">
-                    {isSubmitted ? (
-                      <div className="text-center py-12">
-                        <div className="w-16 h-16 rounded-full bg-[var(--color-cyan)]/10 flex items-center justify-center mx-auto mb-6">
-                          <Send className="w-8 h-8 text-[var(--color-cyan)]" />
-                        </div>
-                        <h3 className="text-xl font-medium text-[var(--color-ink)] mb-2">
-                          Message sent
-                        </h3>
-                        <p className="text-[var(--color-ink-light)]">
-                          Thanks for reaching out. I&apos;ll get back to you soon.
-                        </p>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleSubmit} className="space-y-6">
-                        <div>
-                          <label
-                            htmlFor="name"
-                            className="block text-sm font-medium text-[var(--color-ink)] mb-2"
-                          >
-                            Name
-                          </label>
-                          <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            value={formState.name}
-                            onChange={(e) =>
-                              setFormState({ ...formState, name: e.target.value })
-                            }
-                            className="input-premium w-full px-4 py-3 rounded-xl border border-[var(--color-cream-dark)] focus:outline-none transition-all bg-white"
-                            placeholder="Your name"
-                          />
-                        </div>
-
-                        <div>
-                          <label
-                            htmlFor="email"
-                            className="block text-sm font-medium text-[var(--color-ink)] mb-2"
-                          >
-                            Email
-                          </label>
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            value={formState.email}
-                            onChange={(e) =>
-                              setFormState({ ...formState, email: e.target.value })
-                            }
-                            className="input-premium w-full px-4 py-3 rounded-xl border border-[var(--color-cream-dark)] focus:outline-none transition-all bg-white"
-                            placeholder="your@email.com"
-                          />
-                        </div>
-
-                        <div>
-                          <label
-                            htmlFor="message"
-                            className="block text-sm font-medium text-[var(--color-ink)] mb-2"
-                          >
-                            Message
-                          </label>
-                          <textarea
-                            id="message"
-                            name="message"
-                            required
-                            rows={5}
-                            value={formState.message}
-                            onChange={(e) =>
-                              setFormState({ ...formState, message: e.target.value })
-                            }
-                            className="input-premium w-full px-4 py-3 rounded-xl border border-[var(--color-cream-dark)] focus:outline-none transition-all resize-none bg-white"
-                            placeholder="Tell me about your project or just say hello..."
-                          />
-                        </div>
-
-                        {submitError ? (
-                          <p className="text-sm text-red-600" role="alert" aria-live="assertive">
-                            {submitError}
-                          </p>
-                        ) : null}
-
-                        <div className="flex justify-center">
-                          <Button 
-                            type="submit" 
-                            variant="primary" 
-                            size="lg" 
-                            disabled={isSubmitting}
-                            className="w-full"
-                          >
-                            {isSubmitting ? (
-                              <>
-                                <Loader2 className="w-4 h-4 animate-spin" />
-                                Sending...
-                              </>
-                            ) : (
-                              <>
-                                <Send className="w-4 h-4" />
-                                Send message
-                              </>
-                            )}
-                          </Button>
-                        </div>
-                      </form>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            </ScrollReveal>
+            <div>
+              <ContactForm />
+            </div>
           </div>
         </Container>
       </section>
-
-      <Footer />
+      <ContactFootnote />
     </>
   );
 }

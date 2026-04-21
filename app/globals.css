@@ -342,6 +342,309 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+@keyframes contact-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.1rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes contact-title-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 110%, 0) rotate(1deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes contact-line-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes contact-success-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes contact-check-pop {
+  from {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+.contact-rise {
+  animation: contact-rise 500ms var(--spring-smooth) both;
+  animation-delay: var(--contact-delay, 0ms);
+}
+
+.contact-delay-1 {
+  --contact-delay: 80ms;
+}
+
+.contact-delay-4 {
+  --contact-delay: 360ms;
+}
+
+.contact-delay-5 {
+  --contact-delay: 460ms;
+}
+
+.contact-reveal,
+.contact-link,
+.contact-panel,
+.contact-form-item,
+.contact-footnote {
+  animation: contact-rise 640ms var(--spring-smooth) both;
+  animation-delay: var(--contact-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.contact-title-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.04em;
+}
+
+.contact-title-line + .contact-title-line {
+  margin-top: 0;
+}
+
+.contact-title-text {
+  display: block;
+  animation: contact-title-in 820ms var(--spring-smooth) both;
+  animation-delay: var(--contact-delay, 160ms);
+  transform-origin: left bottom;
+  will-change: opacity, transform;
+}
+
+.contact-title-line:nth-child(2) .contact-title-text {
+  --contact-delay: 240ms;
+}
+
+.contact-title-line:nth-child(3) .contact-title-text {
+  --contact-delay: 320ms;
+}
+
+.contact-email span {
+  animation: contact-line-draw 620ms var(--spring-smooth) both;
+  animation-delay: 720ms;
+}
+
+.contact-link {
+  --contact-delay: 560ms;
+}
+
+.contact-link:nth-child(2) {
+  --contact-delay: 640ms;
+}
+
+.contact-panel {
+  --contact-delay: 220ms;
+}
+
+.contact-panel > .contact-form-item {
+  --contact-delay: 360ms;
+}
+
+.contact-panel form .contact-form-item:nth-child(1) {
+  --contact-delay: 440ms;
+}
+
+.contact-panel form .contact-form-item:nth-child(2) {
+  --contact-delay: 520ms;
+}
+
+.contact-panel form .contact-form-item:nth-child(3) {
+  --contact-delay: 600ms;
+}
+
+.contact-field {
+  position: relative;
+  z-index: 0;
+  border-radius: 4px;
+}
+
+.contact-field::before {
+  content: "";
+  position: absolute;
+  inset: -0.35rem -0.5rem;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgba(6, 182, 212, 0.045);
+  opacity: 0;
+  transform: scaleY(0.94);
+  transition:
+    opacity 220ms var(--spring-smooth),
+    transform 220ms var(--spring-smooth);
+}
+
+.contact-field:hover::before,
+.contact-field:focus-within::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.contact-label {
+  position: relative;
+  z-index: 1;
+  transition:
+    color 200ms var(--spring-smooth),
+    transform 200ms var(--spring-smooth);
+}
+
+.contact-field:hover .contact-label,
+.contact-field:focus-within .contact-label {
+  color: var(--color-cyan);
+  transform: translateX(0.18rem);
+}
+
+.contact-input {
+  position: relative;
+  z-index: 1;
+  transition:
+    border-color 200ms var(--spring-smooth),
+    color 200ms var(--spring-smooth),
+    transform 200ms var(--spring-smooth);
+}
+
+.contact-input:hover {
+  border-color: rgba(10, 10, 10, 0.4);
+}
+
+.contact-field:focus-within .contact-input {
+  transform: translateX(0.18rem);
+}
+
+.contact-field > p {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-submit {
+  --contact-delay: 680ms;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-submit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.16),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 700ms var(--spring-smooth);
+}
+
+.contact-submit:hover::after {
+  transform: translateX(120%);
+}
+
+.contact-footnote {
+  --contact-delay: 760ms;
+}
+
+.contact-success-mark {
+  position: relative;
+  width: 2.625rem;
+  height: 2.625rem;
+  border-radius: 999px;
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  background: rgba(6, 182, 212, 0.06);
+  animation: contact-success-pop 520ms var(--spring-bounce) both;
+}
+
+.contact-success-mark::after {
+  content: "";
+  position: absolute;
+  left: 0.95rem;
+  top: 0.68rem;
+  width: 0.58rem;
+  height: 1rem;
+  border-right: 2px solid var(--color-cyan);
+  border-bottom: 2px solid var(--color-cyan);
+  animation: contact-check-pop 260ms var(--spring-smooth) 220ms both;
+}
+
+.contact-success > .contact-form-item:nth-child(2) {
+  --contact-delay: 120ms;
+}
+
+.contact-success > .contact-form-item:nth-child(3) {
+  --contact-delay: 200ms;
+}
+
+.contact-success > button.contact-form-item {
+  --contact-delay: 280ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-rise,
+  .contact-reveal,
+  .contact-link,
+  .contact-panel,
+  .contact-form-item,
+  .contact-footnote,
+  .contact-title-text,
+  .contact-email span {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .contact-submit::after {
+    display: none;
+  }
+
+  .contact-field::before {
+    transition: none;
+  }
+
+  .contact-field:hover .contact-label,
+  .contact-field:focus-within .contact-label,
+  .contact-field:focus-within .contact-input {
+    transform: none;
+  }
+
+  .contact-success-mark,
+  .contact-success-mark::after {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 /* Spotlight card border: cursor-following glow */
 .card-spotlight {
   position: relative;
