@@ -1,4 +1,8 @@
 import { personal } from "@/content/personal";
+import {
+  createFixedWindowLimiter,
+  getContactRateLimitKey,
+} from "@/lib/security.mjs";
 import nodemailer from "nodemailer";
 
 export const dynamic = "force-dynamic";
@@ -7,6 +11,10 @@ const MAX_NAME_LENGTH = 120;
 const MAX_EMAIL_LENGTH = 254;
 const MAX_MESSAGE_LENGTH = 5000;
 const EMAIL_LOCAL_PART_PATTERN = /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+$/;
+const contactLimiter = createFixedWindowLimiter({
+  limit: process.env.CONTACT_RATE_LIMIT_MAX,
+  windowMs: process.env.CONTACT_RATE_LIMIT_WINDOW_MS,
+});
 
 function sanitizeHeaderValue(value: string): string {
   return value.replace(/[\r\n]/g, "").trim();
@@ -78,6 +86,19 @@ export async function POST(request: Request) {
 
     if (!isValidEmail(email)) {
       return Response.json({ error: "Invalid email address." }, { status: 400 });
+    }
+
+    const rateLimit = contactLimiter.check(
+      getContactRateLimitKey(request.headers, email)
+    );
+    if (!rateLimit.allowed) {
+      return Response.json(
+        { error: "Too many messages. Please try again later." },
+        {
+          status: 429,
+          headers: { "Retry-After": String(rateLimit.retryAfter) },
+        }
+      );
     }
 
     const host = process.env.CONTACT_SMTP_HOST;

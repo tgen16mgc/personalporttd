@@ -10,6 +10,12 @@ import { Camera } from "lucide-react";
 import { CrossMark } from "@/components/ui/Decorative";
 import { personal } from "@/content/personal";
 import {
+  createMailtoHref,
+  getSafeExternalHref,
+  normalizeNavigationHref,
+  sanitizeInlineHtml,
+} from "@/lib/security.mjs";
+import {
   aboutHero,
   experience,
   recognition,
@@ -21,6 +27,9 @@ import {
 import AfterworkSection from "@/components/about/AfterworkSection";
 
 export default function AboutPage() {
+  const emailHref = createMailtoHref(personal.email);
+  const linkedInHref = getSafeExternalHref(personal.linkedin);
+
   return (
     <>
       {/* Hero - Big Photo + Simple Intro */}
@@ -84,24 +93,30 @@ export default function AboutPage() {
 
                 {/* Personal bits */}
                 <motion.div variants={fadeInUp} className="mb-8 space-y-2">
-                  {personalBits.map((bit, index) => (
-                    <p key={index} className="text-[var(--color-ink-light)]">
-                      &bull;{" "}
-                      <span dangerouslySetInnerHTML={{ __html: bit.text }} />
-                      {bit.linkText && bit.linkHref ? (
-                        <>
-                          {" "}
-                          <Link
-                            href={bit.linkHref}
-                            className="text-[var(--color-cyan)] hover:underline"
-                          >
-                            {bit.linkText}
-                          </Link>
-                          {bit.suffix}
-                        </>
-                      ) : null}
-                    </p>
-                  ))}
+                  {personalBits.map((bit, index) => {
+                    const bitHref = bit.linkHref
+                      ? normalizeNavigationHref(bit.linkHref, "")
+                      : "";
+
+                    return (
+                      <p key={index} className="text-[var(--color-ink-light)]">
+                        &bull;{" "}
+                        <span dangerouslySetInnerHTML={{ __html: sanitizeInlineHtml(bit.text) }} />
+                        {bit.linkText && bitHref ? (
+                          <>
+                            {" "}
+                            <Link
+                              href={bitHref}
+                              className="text-[var(--color-cyan)] hover:underline"
+                            >
+                              {bit.linkText}
+                            </Link>
+                            {bit.suffix}
+                          </>
+                        ) : null}
+                      </p>
+                    );
+                  })}
                 </motion.div>
 
                 {/* Recognition */}
@@ -148,7 +163,7 @@ export default function AboutPage() {
 
               <div className="space-y-8 text-lg text-[var(--color-ink-light)] leading-relaxed">
                 {philosophy.approach.paragraphs.map((p, i) => (
-                  <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+                  <p key={i} dangerouslySetInnerHTML={{ __html: sanitizeInlineHtml(p) }} />
                 ))}
               </div>
             </div>
@@ -171,7 +186,7 @@ export default function AboutPage() {
                   </h2>
                   <div className="space-y-4 text-[var(--color-ink-light)]">
                     {reflection.paragraphs.map((p, i) => (
-                      <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+                      <p key={i} dangerouslySetInnerHTML={{ __html: sanitizeInlineHtml(p) }} />
                     ))}
                   </div>
                 </div>
@@ -196,7 +211,7 @@ export default function AboutPage() {
                 {philosophy.quote}
               </blockquote>
               <div className="mt-10 pt-8 border-t border-[var(--color-cream-dark)] space-y-4">
-                <p className="text-[var(--color-ink-light)]" dangerouslySetInnerHTML={{ __html: philosophy.mission }} />
+                <p className="text-[var(--color-ink-light)]" dangerouslySetInnerHTML={{ __html: sanitizeInlineHtml(philosophy.mission) }} />
               </div>
             </div>
           </ScrollReveal>
@@ -226,20 +241,24 @@ export default function AboutPage() {
                 {aboutCta.body}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a
-                  href={`mailto:${personal.email}`}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-b from-[var(--color-ink)] to-[#101010] text-white rounded-full font-medium ring-1 ring-black/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_10px_22px_rgba(10,10,10,0.18)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.28),0_14px_30px_rgba(10,10,10,0.2)] transition-all duration-500 active:scale-[0.98]"
-                >
-                  {personal.email}
-                </a>
-                <a
-                  href={personal.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/70 border border-[var(--color-ink)]/15 text-[var(--color-ink)] rounded-full font-medium shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),0_8px_20px_rgba(10,10,10,0.08)] hover:bg-[var(--color-ink)] hover:text-white hover:shadow-[0_12px_24px_rgba(10,10,10,0.12)] transition-all duration-500 active:scale-[0.98]"
-                >
-                  Connect on LinkedIn
-                </a>
+                {emailHref ? (
+                  <a
+                    href={emailHref}
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-b from-[var(--color-ink)] to-[#101010] text-white rounded-full font-medium ring-1 ring-black/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_10px_22px_rgba(10,10,10,0.18)] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.28),0_14px_30px_rgba(10,10,10,0.2)] transition-all duration-500 active:scale-[0.98]"
+                  >
+                    {personal.email}
+                  </a>
+                ) : null}
+                {linkedInHref ? (
+                  <a
+                    href={linkedInHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/70 border border-[var(--color-ink)]/15 text-[var(--color-ink)] rounded-full font-medium shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),0_8px_20px_rgba(10,10,10,0.08)] hover:bg-[var(--color-ink)] hover:text-white hover:shadow-[0_12px_24px_rgba(10,10,10,0.12)] transition-all duration-500 active:scale-[0.98]"
+                  >
+                    Connect on LinkedIn
+                  </a>
+                ) : null}
               </div>
             </div>
           </ScrollReveal>

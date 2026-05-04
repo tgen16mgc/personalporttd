@@ -6,14 +6,19 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { personal } from "@/content/personal";
+import { createMailtoHref, normalizeNavigationHref } from "@/lib/security.mjs";
 
-const navItems = personal.navigation;
+const navItems = personal.navigation.map((item) => ({
+  ...item,
+  href: normalizeNavigationHref(item.href),
+}));
 
 const fluidEase = [0.32, 0.72, 0, 1] as const;
 
 export function Navigation() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const emailHref = createMailtoHref(personal.email);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -25,10 +30,6 @@ export function Navigation() {
       document.body.style.overflow = "unset";
     };
   }, [mobileOpen]);
-
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
 
   return (
     <>
@@ -175,12 +176,14 @@ export function Navigation() {
                 <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-ink-muted)]">
                   {personal.location}
                 </p>
-                <a
-                  href={`mailto:${personal.email}`}
-                  className="text-sm text-[var(--color-cyan)] mt-2 block"
-                >
-                  {personal.email}
-                </a>
+                {emailHref ? (
+                  <a
+                    href={emailHref}
+                    className="text-sm text-[var(--color-cyan)] mt-2 block"
+                  >
+                    {personal.email}
+                  </a>
+                ) : null}
               </motion.div>
             </div>
           </motion.div>

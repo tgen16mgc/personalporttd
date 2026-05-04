@@ -2,38 +2,16 @@
 
 import { useState, useRef, useEffect } from "react";
 import type { GalleryItem } from "@/content/projects";
+import {
+  getSafeExternalHref,
+  getTrustedVideoEmbedInfo,
+} from "@/lib/security.mjs";
 
 type EmbedResult = {
   url: string;
   platform: "youtube" | "vimeo" | "tiktok";
   isVertical: boolean;
 };
-
-function getEmbedInfo(url: string): EmbedResult | null {
-  try {
-    const u = new URL(url);
-    if (u.hostname.includes("youtube.com") || u.hostname.includes("youtu.be")) {
-      const id = u.hostname.includes("youtu.be")
-        ? u.pathname.slice(1)
-        : u.searchParams.get("v");
-      if (!id) return null;
-      const isShort = u.pathname.startsWith("/shorts/");
-      const shortId = isShort ? u.pathname.split("/shorts/")[1] : null;
-      return { url: `https://www.youtube.com/embed/${shortId || id}`, platform: "youtube", isVertical: isShort };
-    }
-    if (u.hostname.includes("vimeo.com")) {
-      const id = u.pathname.split("/").filter(Boolean).pop();
-      return id ? { url: `https://player.vimeo.com/video/${id}`, platform: "vimeo", isVertical: false } : null;
-    }
-    if (u.hostname.includes("tiktok.com")) {
-      const segments = u.pathname.split("/").filter(Boolean);
-      const videoIdx = segments.indexOf("video");
-      const id = videoIdx !== -1 ? segments[videoIdx + 1] : null;
-      return id ? { url: `https://www.tiktok.com/embed/v2/${id}`, platform: "tiktok", isVertical: true } : null;
-    }
-  } catch { /* invalid URL */ }
-  return null;
-}
 
 interface Props {
   items: GalleryItem[];
@@ -171,7 +149,12 @@ export function ProjectGallery({ items, color, title }: Props) {
 
 function GalleryCard({ item, color, title }: { item: GalleryItem; color: string; title: string }) {
   const isVideo = item.type === "video" || item.type === "videoFile";
-  const embed = item.type === "video" && item.videoUrl ? getEmbedInfo(item.videoUrl) : null;
+  const embed = item.type === "video" && item.videoUrl
+    ? getTrustedVideoEmbedInfo(item.videoUrl) as EmbedResult | null
+    : null;
+  const fallbackVideoHref = item.type === "video" && item.videoUrl
+    ? getSafeExternalHref(item.videoUrl)
+    : null;
 
   return (
     <div className="group">
@@ -193,15 +176,19 @@ function GalleryCard({ item, color, title }: { item: GalleryItem; color: string;
             if (!embed) {
               return (
                 <div className="aspect-video flex items-center justify-center text-[var(--color-ink-muted)]">
-                  <a
-                    href={item.videoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full ring-1 ring-black/[0.06] text-sm hover:bg-black/[0.02] transition-colors"
-                  >
-                    <span className="text-base">&#9654;</span>
-                    Watch video
-                  </a>
+                  {fallbackVideoHref ? (
+                    <a
+                      href={fallbackVideoHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full ring-1 ring-black/[0.06] text-sm hover:bg-black/[0.02] transition-colors"
+                    >
+                      <span className="text-base">&#9654;</span>
+                      Watch video
+                    </a>
+                  ) : (
+                    <span className="text-sm">Video unavailable</span>
+                  )}
                 </div>
               );
             }

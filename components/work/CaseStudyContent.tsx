@@ -9,6 +9,11 @@ import { Footer } from "@/components/layout/Footer";
 import { ProjectGallery } from "@/components/work/ProjectGallery";
 import type { Project, StoryBlock, DocumentNode, DocumentTextNode } from "@/content/projects";
 import {
+  formatSafeInlineMarkdown,
+  getSafeContentHref,
+  isExternalHref,
+} from "@/lib/security.mjs";
+import {
   FadeInUp,
   StaggerContainer,
   StaggerItem,
@@ -502,27 +507,7 @@ function CreditsBlock({
 
 /* ─── Inline markdown → HTML helper ─── */
 function parseInlineMarkdown(text: string): string {
-  const hasRawHtml = /<a\s/.test(text);
-  let html = hasRawHtml
-    ? text
-    : text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-  
-  html = html.replace(
-    /\[([^\]]+)\]\(([^)]+)\)/g,
-    (match, label, url) => {
-      const isInternal = url.startsWith("/") || url.startsWith("#");
-      const href = isInternal || url.startsWith("http") ? url : `https://${url}`;
-      const targetAttr = isInternal ? "" : ' target="_blank" rel="noopener noreferrer"';
-      return `<a href="${href}"${targetAttr}>${label}</a>`;
-    }
-  );
-
-  html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-  html = html.replace(/\n/g, "<br />");
-  return html;
+  return formatSafeInlineMarkdown(text);
 }
 
 function renderDocumentNodes(nodes: DocumentNode[]): React.ReactNode {
@@ -549,8 +534,18 @@ function renderInlineChildren(
       return <span key={i}>{content}</span>;
     }
     if (child.type === "link" && child.href && child.children) {
+      const href = getSafeContentHref(child.href);
+      if (!href) {
+        return <span key={i}>{renderInlineChildren(child.children)}</span>;
+      }
+
       return (
-        <a key={i} href={child.href} target="_blank" rel="noopener noreferrer">
+        <a
+          key={i}
+          href={href}
+          target={isExternalHref(href) ? "_blank" : undefined}
+          rel={isExternalHref(href) ? "noopener noreferrer" : undefined}
+        >
           {renderInlineChildren(child.children)}
         </a>
       );
