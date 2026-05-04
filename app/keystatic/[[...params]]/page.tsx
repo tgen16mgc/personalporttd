@@ -1,6 +1,11 @@
-"use client";
+import { notFound } from "next/navigation";
+import { isKeystaticAdminEnabled } from "@/lib/security.mjs";
 
-import { makePage } from "@keystatic/next/ui/app";
-import config from "../../../keystatic.config";
+export default async function KeystaticPage() {
+  if (!isKeystaticAdminEnabled(process.env)) {
+    notFound();
+  }
 
-export default makePage(config);
+  const { default: KeystaticAdmin } = await import("./KeystaticAdmin");
+  return <KeystaticAdmin />;
+}

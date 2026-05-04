@@ -1,6 +1,7 @@
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Container } from "@/components/ui/Container";
 import { personal } from "@/content/personal";
+import { createMailtoHref, getSafeExternalHref } from "@/lib/security.mjs";
 
 function ArrowGlyph({ className }: { className?: string }) {
   return (
@@ -35,15 +36,19 @@ function LinkedInMark({ className }: { className?: string }) {
 const usefulLinks = [
   {
     label: "LinkedIn",
-    href: personal.linkedin,
+    href: getSafeExternalHref(personal.linkedin),
     icon: LinkedInMark,
   },
   {
     label: "Resume",
-    href: personal.resumeUrl,
+    href: getSafeExternalHref(personal.resumeUrl),
     icon: ArrowGlyph,
   },
-];
+].flatMap((link) =>
+  link.href
+    ? [{ label: link.label, href: link.href, icon: link.icon }]
+    : []
+);
 
 function ContactFootnote() {
   return (
@@ -63,6 +68,8 @@ function ContactFootnote() {
 }
 
 export default function ContactPage() {
+  const emailHref = createMailtoHref(personal.email, "A request for you");
+
   return (
     <>
       <section className="relative isolate overflow-hidden pt-28 pb-16 sm:pt-32 lg:flex lg:min-h-[100dvh] lg:items-center lg:pb-24">
@@ -89,16 +96,18 @@ export default function ContactPage() {
                 Or just say hello.
               </p>
 
-              <a
-                href={`mailto:${personal.email}?subject=A%20request%20for%20you`}
-                className="contact-email contact-reveal contact-delay-5 group mt-9 block w-fit cursor-pointer overflow-hidden font-[var(--font-display)] text-3xl font-light leading-tight tracking-normal text-[var(--color-cyan)] transition-colors duration-200 hover:text-[var(--color-ink)] sm:text-4xl"
-              >
-                {personal.email}
-                <span
-                  aria-hidden="true"
-                  className="mt-3 block h-px origin-left bg-current transition-transform duration-200 group-hover:scale-x-90"
-                />
-              </a>
+              {emailHref ? (
+                <a
+                  href={emailHref}
+                  className="contact-email contact-reveal contact-delay-5 group mt-9 block w-fit cursor-pointer overflow-hidden font-[var(--font-display)] text-3xl font-light leading-tight tracking-normal text-[var(--color-cyan)] transition-colors duration-200 hover:text-[var(--color-ink)] sm:text-4xl"
+                >
+                  {personal.email}
+                  <span
+                    aria-hidden="true"
+                    className="mt-3 block h-px origin-left bg-current transition-transform duration-200 group-hover:scale-x-90"
+                  />
+                </a>
+              ) : null}
 
               <div className="mt-8 flex flex-wrap gap-3">
                 {usefulLinks.map((link) => (

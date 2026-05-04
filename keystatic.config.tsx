@@ -1,5 +1,7 @@
 import { config, fields, singleton } from "@keystatic/core";
 
+const hasGithubStorage = Boolean(process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG);
+
 const roleField = () =>
   fields.object({
     label: fields.text({ label: "Label" }),
@@ -19,7 +21,7 @@ const creditField = () =>
   });
 
 export default config({
-  storage: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG
+  storage: hasGithubStorage
     ? { kind: "github", repo: "tgen16mgc/personalporttd" }
     : { kind: "local" },
   singletons: {

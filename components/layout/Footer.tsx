@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Mail, ArrowUpRight } from "lucide-react";
 import { personal } from "@/content/personal";
+import { createMailtoHref, getSafeExternalHref } from "@/lib/security.mjs";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -22,22 +23,28 @@ function FacebookIcon({ className }: { className?: string }) {
 const socialLinks = [
   {
     name: "Email",
-    href: `mailto:${personal.email}`,
+    href: createMailtoHref(personal.email),
     icon: Mail,
   },
   {
     name: "LinkedIn",
-    href: personal.linkedin,
+    href: getSafeExternalHref(personal.linkedin),
     icon: LinkedInIcon,
   },
   {
     name: "Facebook",
-    href: personal.facebook,
+    href: getSafeExternalHref(personal.facebook),
     icon: FacebookIcon,
   },
-];
+].flatMap((link) =>
+  link.href
+    ? [{ name: link.name, href: link.href, icon: link.icon }]
+    : []
+);
 
 export function Footer() {
+  const resumeHref = getSafeExternalHref(personal.resumeUrl);
+
   return (
     <footer className="relative py-24 sm:py-32">
       <div
@@ -70,15 +77,15 @@ export function Footer() {
           {/* Right side - Links & Social */}
           <div className="md:col-span-5 flex flex-col justify-between md:items-end">
             <div className="flex gap-3 mb-8">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 flex items-center justify-center rounded-full bg-white/70 ring-1 ring-black/[0.06] text-[var(--color-ink-light)] hover:bg-[var(--color-ink)] hover:text-white hover:ring-0 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)] transition-all duration-500 active:scale-[0.95]"
-                  aria-label={link.name}
-                >
+	              {socialLinks.map((link) => (
+	                <a
+	                  key={link.name}
+	                  href={link.href}
+	                  target={link.href.startsWith("http") ? "_blank" : undefined}
+	                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+	                  className="w-11 h-11 flex items-center justify-center rounded-full bg-white/70 ring-1 ring-black/[0.06] text-[var(--color-ink-light)] hover:bg-[var(--color-ink)] hover:text-white hover:ring-0 hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)] transition-all duration-500 active:scale-[0.95]"
+	                  aria-label={link.name}
+	                >
                   <link.icon className="w-5 h-5" />
                 </a>
               ))}
@@ -88,14 +95,16 @@ export function Footer() {
               <Link href="/work" className="hover:text-[var(--color-ink)] transition-colors">Work</Link>
               <Link href="/about" className="hover:text-[var(--color-ink)] transition-colors">About</Link>
               <Link href="/contact" className="hover:text-[var(--color-ink)] transition-colors">Contact</Link>
-              <a
-                href={personal.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[var(--color-ink)] transition-colors"
-              >
-                View Resume
-              </a>
+              {resumeHref ? (
+                <a
+                  href={resumeHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[var(--color-ink)] transition-colors"
+                >
+                  View Resume
+                </a>
+              ) : null}
             </nav>
 
             <div className="text-sm text-[var(--color-ink-muted)] md:text-right">
