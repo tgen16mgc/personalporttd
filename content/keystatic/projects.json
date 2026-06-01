@@ -423,6 +423,87 @@
       "credits": []
     },
     {
+      "slug": "freelance-visualizer",
+      "title": "Freelance Marketing & Creative Projects",
+      "tagline": "Developed visual identities, advertising creatives, and social content for businesses across multiple industries.",
+      "client": "Various Clients",
+      "brand": "Independent Freelance Practice",
+      "industry": "Marketing & Advertising",
+      "role": "Creative Designer",
+      "year": "2022–Present",
+      "thumbnail": "/images/projects/items/4/thumbnail.png",
+      "heroImage": "/images/projects/items/4/heroImage.jpg",
+      "gallery": [],
+      "featured": true,
+      "color": "#0c1919",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Art Direction | H4TF"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/1/value/image.png",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/2/value/image.png",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Art Direction | TEDx NEU 24'"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/4/value/image.jpg",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/5/value/image.jpg",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/6/value/image.jpg",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/7/value/image.jpg",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Art Direction | Marketing's Generation Club "
+          }
+        }
+      ],
+      "execution": [],
+      "results": [],
+      "awards": [],
+      "credits": []
+    },
+    {
       "slug": "pixself-keychain",
       "title": "Pixself",
       "tagline": "Pixself: Building a Custom Pixel Merch Brand in 13 Weeks",
@@ -431,8 +512,8 @@
       "industry": "Startup",
       "role": "Project Lead, Product Strategy, Website, and Brand Design",
       "year": "Aug 22, 2025 – Nov 18, 2025",
-      "thumbnail": "/images/projects/items/4/thumbnail.jpg",
-      "heroImage": "/images/projects/items/4/heroImage.jpg",
+      "thumbnail": "/images/projects/items/5/thumbnail.jpg",
+      "heroImage": "/images/projects/items/5/heroImage.jpg",
       "gallery": [
         {
           "type": "video",
@@ -441,12 +522,12 @@
         },
         {
           "type": "image",
-          "image": "/images/projects/items/4/gallery/1/image.jpg",
+          "image": "/images/projects/items/5/gallery/1/image.jpg",
           "size": "half"
         },
         {
           "type": "image",
-          "image": "/images/projects/items/4/gallery/2/image.jpg",
+          "image": "/images/projects/items/5/gallery/2/image.jpg",
           "size": "half"
         }
       ],
@@ -490,7 +571,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/4/story/7/value/image.png",
+            "image": "/images/projects/items/5/story/7/value/image.png",
             "caption": "1st brandguide draft",
             "size": "content"
           }
@@ -498,7 +579,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/4/story/8/value/image.png",
+            "image": "/images/projects/items/5/story/8/value/image.png",
             "caption": "Website snapshot",
             "size": "content"
           }
@@ -506,7 +587,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/4/story/9/value/image.jpg",
+            "image": "/images/projects/items/5/story/9/value/image.jpg",
             "caption": "Social post snapshot",
             "size": "content"
           }
@@ -524,7 +605,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/4/story/12/value/image.png",
+            "image": "/images/projects/items/5/story/12/value/image.png",
             "caption": "n8n workflow snapshot",
             "size": "wide"
           }
@@ -559,47 +640,6 @@
           "value": "1,800"
         }
       ],
-      "awards": [],
-      "credits": []
-    },
-    {
-      "slug": "freelance-visualizer",
-      "title": "Freelance Marketing & Creative Projects",
-      "tagline": "Developed visual identities, advertising creatives, and social content for businesses across multiple industries.",
-      "client": "Various Clients",
-      "brand": "Independent Freelance Practice",
-      "industry": "Marketing & Advertising",
-      "role": "Creative Designer",
-      "year": "2022–Present",
-      "thumbnail": "/images/projects/items/5/thumbnail.png",
-      "heroImage": "/images/projects/items/5/heroImage.jpg",
-      "gallery": [
-        {
-          "type": "image",
-          "image": "/images/projects/items/5/gallery/0/image.avif",
-          "size": "full"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/5/gallery/1/image.webp",
-          "size": "half"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/5/gallery/2/image.webp",
-          "size": "half"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/5/gallery/3/image.avif",
-          "size": "full"
-        }
-      ],
-      "featured": true,
-      "color": "#0c1919",
-      "story": [],
-      "execution": [],
-      "results": [],
       "awards": [],
       "credits": []
     }
