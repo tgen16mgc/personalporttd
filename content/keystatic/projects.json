@@ -430,6 +430,12 @@
             "image": "/images/projects/items/3/story/14/value/image.png",
             "size": "content"
           }
+        },
+        {
+          "discriminant": "facebook",
+          "value": {
+            "url": "https://www.facebook.com/share/v/1HBwChnM5d/"
+          }
         }
       ],
       "execution": [],
