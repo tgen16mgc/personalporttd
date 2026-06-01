@@ -317,6 +317,127 @@
       ]
     },
     {
+      "slug": "freelance-visualizer",
+      "title": "Freelance Marketing & Creative Projects",
+      "tagline": "Developed visual identities, advertising creatives, and social content for businesses across multiple industries.",
+      "client": "Various Clients",
+      "industry": "Marketing & Advertising",
+      "role": "Creative Designer",
+      "year": "2022–Present",
+      "thumbnail": "/images/projects/items/3/thumbnail.png",
+      "heroImage": "/images/projects/items/3/heroImage.jpg",
+      "gallery": [],
+      "featured": true,
+      "color": "#0c1919",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Art Direction | H4TF"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/1/value/image.png",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/2/value/image.png",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Art Direction | TEDx NEU 24'"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/4/value/image.jpg",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/5/value/image.jpg",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/6/value/image.jpg",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/7/value/image.jpg",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Art Direction | Marketing's Generation Club "
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/9/value/image.png",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/10/value/image.png",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/11/value/image.png",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Social Post | Sun Group"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/13/value/image.jpg",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/14/value/image.png",
+            "size": "content"
+          }
+        }
+      ],
+      "execution": [],
+      "results": [],
+      "awards": [],
+      "credits": []
+    },
+    {
       "slug": "hongha",
       "title": "Hong Ha Consumer Research",
       "tagline": "Hồng Hà Consumer Research & Digital Strategy",
@@ -324,8 +445,8 @@
       "industry": "Stationery",
       "role": "Research & Strategic Planner",
       "year": "Oct 2025",
-      "thumbnail": "/images/projects/items/3/thumbnail.png",
-      "heroImage": "/images/projects/items/3/heroImage.png",
+      "thumbnail": "/images/projects/items/4/thumbnail.png",
+      "heroImage": "/images/projects/items/4/heroImage.png",
       "gallery": [],
       "featured": true,
       "color": "#ed0000",
@@ -377,7 +498,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/9/value/image.png",
+            "image": "/images/projects/items/4/story/9/value/image.png",
             "caption": "Report Snapshot",
             "size": "content"
           }
@@ -385,7 +506,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/10/value/image.png",
+            "image": "/images/projects/items/4/story/10/value/image.png",
             "caption": "Report Snapshot",
             "size": "content"
           }
@@ -401,7 +522,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/13/value/image.png",
+            "image": "/images/projects/items/4/story/13/value/image.png",
             "caption": "Report Snapshot",
             "size": "content"
           }
@@ -415,113 +536,6 @@
         {
           "discriminant": "text",
           "value": {}
-        }
-      ],
-      "execution": [],
-      "results": [],
-      "awards": [],
-      "credits": []
-    },
-    {
-      "slug": "freelance-visualizer",
-      "title": "Freelance Marketing & Creative Projects",
-      "tagline": "Developed visual identities, advertising creatives, and social content for businesses across multiple industries.",
-      "client": "Various Clients",
-      "industry": "Marketing & Advertising",
-      "role": "Creative Designer",
-      "year": "2022–Present",
-      "thumbnail": "/images/projects/items/4/thumbnail.png",
-      "heroImage": "/images/projects/items/4/heroImage.jpg",
-      "gallery": [],
-      "featured": true,
-      "color": "#0c1919",
-      "story": [
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Art Direction | H4TF"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/1/value/image.png",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/2/value/image.png",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Art Direction | TEDx NEU 24'"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/4/value/image.jpg",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/5/value/image.jpg",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/6/value/image.jpg",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/7/value/image.jpg",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Art Direction | Marketing's Generation Club "
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/9/value/image.png",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/10/value/image.png",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/11/value/image.png",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Social Post | Sun Group"
-          }
         }
       ],
       "execution": [],
