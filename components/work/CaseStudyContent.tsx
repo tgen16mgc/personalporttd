@@ -11,6 +11,7 @@ import type { Project, StoryBlock, DocumentNode, DocumentTextNode } from "@/cont
 import {
   formatSafeInlineMarkdown,
   getSafeContentHref,
+  getTrustedFacebookPostEmbedInfo,
   isExternalHref,
 } from "@/lib/security.mjs";
 import {
@@ -665,6 +666,17 @@ function StoryBlockRenderer({
       );
     }
 
+    case "facebook": {
+      if (!block.value.url) return null;
+      return (
+        <FacebookPostBlock
+          url={block.value.url}
+          caption={block.value.caption}
+          color={color}
+        />
+      );
+    }
+
     case "image": {
       if (!block.value.image) return null;
       const size = block.value.size;
@@ -738,4 +750,51 @@ function StoryBlockRenderer({
     default:
       return null;
   }
+}
+
+function FacebookPostBlock({
+  url,
+  caption,
+  color,
+}: {
+  url: string;
+  caption: string;
+  color: string;
+}) {
+  const embed = getTrustedFacebookPostEmbedInfo(url);
+  if (!embed) return null;
+
+  return (
+    <div className="mx-auto max-w-[42rem] px-4 sm:px-6 lg:px-8 py-10">
+      <FadeInUp delay={0.1}>
+        <div
+          className="rounded-[1.25rem] overflow-hidden ring-1 ring-black/[0.06] bg-white"
+          style={{ boxShadow: `0 18px 60px ${color}14` }}
+        >
+          <iframe
+            src={embed.url}
+            title={caption || "Facebook post"}
+            className="block w-full h-[620px] sm:h-[700px]"
+            style={{ border: "none" }}
+            loading="lazy"
+            scrolling="yes"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>
+        <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
+          {caption && <p>{caption}</p>}
+          <a
+            href={embed.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 decoration-black/20 transition-colors hover:text-[var(--color-ink)]"
+          >
+            View on Facebook
+          </a>
+        </div>
+      </FadeInUp>
+    </div>
+  );
 }
