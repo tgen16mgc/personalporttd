@@ -495,6 +495,33 @@
           "value": {
             "body": "Art Direction | Marketing's Generation Club "
           }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/9/value/image.png",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/10/value/image.png",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/11/value/image.png",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Social Post | Sun Group"
+          }
         }
       ],
       "execution": [],
