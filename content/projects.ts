@@ -57,6 +57,11 @@ export interface Project {
 
 type RawItem = (typeof data.items)[number] & Record<string, unknown>;
 
+function getOptionalString(item: RawItem, key: string): string | undefined {
+  const value = item[key];
+  return typeof value === "string" && value.length > 0 ? value : undefined;
+}
+
 function parseGallery(item: RawItem): GalleryItem[] | undefined {
   if (!("gallery" in item) || !Array.isArray(item.gallery)) return undefined;
   const arr = item.gallery as {
@@ -141,9 +146,9 @@ export const projects: Project[] = data.items.map((item) => {
     heroImage: "heroImage" in item ? (item.heroImage as string | null) : null,
     brand: item.brand || undefined,
     story: parseStory(raw),
-    challenge: item.challenge || undefined,
-    insight: item.insight || undefined,
-    approach: item.approach || undefined,
+    challenge: getOptionalString(raw, "challenge"),
+    insight: getOptionalString(raw, "insight"),
+    approach: getOptionalString(raw, "approach"),
     execution: item.execution.length > 0 ? item.execution : undefined,
     results: item.results.length > 0 ? item.results : undefined,
     awards: item.awards.length > 0 ? item.awards : undefined,
