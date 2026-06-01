@@ -389,7 +389,7 @@ export default config({
                     { label: "Text paragraph", value: "text" },
                     { label: "Section heading", value: "heading" },
                     { label: "Image (inline break)", value: "image" },
-                    { label: "Facebook post embed", value: "facebook" },
+                    { label: "Facebook embed", value: "facebook" },
                     { label: "Pull quote", value: "quote" },
                     { label: "Steps / numbered list", value: "steps" },
                   ],
@@ -433,8 +433,8 @@ export default config({
                   }),
                   facebook: fields.object({
                     url: fields.text({
-                      label: "Facebook post URL",
-                      description: "Paste a public Facebook post URL.",
+                      label: "Facebook post or video URL",
+                      description: "Paste a public Facebook post, reel, or video URL.",
                     }),
                     caption: fields.text({ label: "Caption (optional)" }),
                   }),

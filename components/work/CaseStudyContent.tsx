@@ -11,7 +11,7 @@ import type { Project, StoryBlock, DocumentNode, DocumentTextNode } from "@/cont
 import {
   formatSafeInlineMarkdown,
   getSafeContentHref,
-  getTrustedFacebookPostEmbedInfo,
+  getTrustedFacebookEmbedInfo,
   isExternalHref,
 } from "@/lib/security.mjs";
 import {
@@ -761,8 +761,9 @@ function FacebookPostBlock({
   caption: string;
   color: string;
 }) {
-  const embed = getTrustedFacebookPostEmbedInfo(url);
+  const embed = getTrustedFacebookEmbedInfo(url);
   if (!embed) return null;
+  const label = embed.type === "video" ? "Facebook video" : "Facebook post";
 
   return (
     <div className="mx-auto max-w-[42rem] px-4 sm:px-6 lg:px-8 py-10">
@@ -773,7 +774,7 @@ function FacebookPostBlock({
         >
           <iframe
             src={embed.url}
-            title={caption || "Facebook post"}
+            title={caption || label}
             className="block w-full h-[620px] sm:h-[700px]"
             style={{ border: "none" }}
             loading="lazy"
@@ -791,7 +792,7 @@ function FacebookPostBlock({
             rel="noopener noreferrer"
             className="underline underline-offset-4 decoration-black/20 transition-colors hover:text-[var(--color-ink)]"
           >
-            View on Facebook
+            View {embed.type === "video" ? "video" : "post"} on Facebook
           </a>
         </div>
       </FadeInUp>
