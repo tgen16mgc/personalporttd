@@ -436,6 +436,18 @@
           "value": {
             "url": "https://www.facebook.com/reel/2028102208112428?locale=vi_VN"
           }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Ebook - Editorial"
+          }
+        },
+        {
+          "discriminant": "pdf",
+          "value": {
+            "url": "https://drive.google.com/file/d/1GZPgjVElBeCnzSY7v7iIR5_u9N3n3fY4/view?usp=sharing"
+          }
         }
       ],
       "execution": [],
