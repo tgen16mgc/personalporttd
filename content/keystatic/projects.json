@@ -563,164 +563,43 @@
       "credits": []
     },
     {
-      "slug": "social-pioneers-chuon-ngo",
-      "title": "Chuon Ngo Pearl Inlay Art",
-      "tagline": "What happens when young people feel disconnected from their own heritage?",
-      "client": "Social Pioneers 2025",
-      "brand": "Chuon Ngo Village",
-      "industry": "Cultural Heritage",
-      "role": "Lead Strategist & Creative Director",
-      "year": "2025",
-      "thumbnail": "/images/projects/items/5/thumbnail.svg",
-      "gallery": [],
-      "featured": false,
-      "color": "#D4A574",
-      "story": [],
-      "challenge": "There's a 300-year-old craft village 20km from Hanoi where artisans spend months inlaying mother-of-pearl into wood. Their children are leaving for office jobs. Young Vietnamese scroll past temples on TikTok without recognizing the craftsmanship. The question wasn't 'how do we sell pearl inlay' — it was 'how do we help young people feel pride in something they've been taught to see as old-fashioned?'",
-      "insight": "Gen Z doesn't want to be lectured about tradition. But they desperately want to belong to something meaningful — to participate in culture, not just observe it from behind museum glass.",
-      "approach": "We stopped treating Chuon Ngo as a heritage site to be preserved and started treating it as a living creative community to be joined. The artisans became collaborators, not subjects. The goal wasn't short-term awareness — it was long-term cultural pride.",
-      "execution": [
-        "Partnered with artisans to tell their stories in their own words — no voiceover, no polish",
-        "Created hands-on workshops where young people could learn the basics (and fail, and laugh)",
-        "Collaborated with contemporary Vietnamese designers to show pearl inlay in modern contexts",
-        "Launched #MyPearlStory — not about the craft, but about what 'home' means to each participant"
-      ],
-      "results": [
+      "slug": "freelance-visualizer",
+      "title": "Freelance Marketing & Creative Projects",
+      "tagline": "Developed visual identities, advertising creatives, and social content for businesses across multiple industries.",
+      "client": "Various Clients",
+      "brand": "Independent Freelance Practice",
+      "industry": "Marketing & Advertising",
+      "role": "Creative Designer",
+      "year": "2022–Present",
+      "thumbnail": "/images/projects/items/5/thumbnail.png",
+      "heroImage": "/images/projects/items/5/heroImage.jpg",
+      "gallery": [
         {
-          "metric": "Champion Title",
-          "value": "Social Pioneers 2025"
+          "type": "image",
+          "image": "/images/projects/items/5/gallery/0/image.avif",
+          "size": "full"
         },
         {
-          "metric": "Workshop Participants",
-          "value": "500+"
+          "type": "image",
+          "image": "/images/projects/items/5/gallery/1/image.webp",
+          "size": "half"
         },
         {
-          "metric": "What actually mattered",
-          "value": "Young people who'd never visited a craft village choosing to go back"
+          "type": "image",
+          "image": "/images/projects/items/5/gallery/2/image.webp",
+          "size": "half"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/5/gallery/3/image.avif",
+          "size": "full"
         }
       ],
-      "awards": [
-        "🏆 Champion - Social Pioneers 2025"
-      ],
-      "credits": []
-    },
-    {
-      "slug": "kingsport-gen-z-moms",
-      "title": "Kingsport Sports Equipment",
-      "tagline": "The anxiety of being a first-time parent buying things you don't understand",
-      "client": "Digital Creatory 2024",
-      "brand": "Kingsport",
-      "industry": "Sports & Fitness",
-      "role": "Research Lead & Strategist",
-      "year": "2024",
-      "thumbnail": "/images/projects/items/6/thumbnail.svg",
-      "gallery": [],
-      "featured": false,
-      "color": "#06B6D4",
+      "featured": true,
+      "color": "#0c1919",
       "story": [],
-      "challenge": "Kingsport sells sports equipment for kids. They wanted to reach 'Gen Z moms.' But when we started talking to these women, we realized the brief missed the point. These aren't just 'consumers' — they're first-time parents terrified of making the wrong choice, drowning in conflicting advice, desperate to be seen as good mothers.\n\n",
-      "insight": "Gen Z moms don't trust brands. They've grown up seeing through marketing. But they desperately trust each other. What they need isn't better ads — it's permission to trust their own instincts.",
-      "approach": "We recommended Kingsport stop trying to convince moms and start trying to support them. Build community infrastructure. Become the place where moms help each other, with Kingsport as a quiet, trusted presence — not the loudest voice.",
-      "execution": [
-        "30+ in-depth interviews with first-time mothers about their fears, not just their purchases",
-        "Mapped the emotional journey from 'my kid needs this' to 'I actually bought it'",
-        "Designed community engagement framework centered on peer support",
-        "Created content strategy based on real mom questions, not brand talking points"
-      ],
-      "results": [
-        {
-          "metric": "Award",
-          "value": "1st Runner-up"
-        },
-        {
-          "metric": "Strategy Impact",
-          "value": "Adopted by brand team"
-        },
-        {
-          "metric": "What changed",
-          "value": "Shifted from product-push to community-support approach"
-        }
-      ],
-      "awards": [
-        "🥈 1st Runner-up - Digital Creatory 2024"
-      ],
-      "credits": []
-    },
-    {
-      "slug": "bidv-esg-banking",
-      "title": "BIDV ESG Initiative",
-      "tagline": "How do you make 'sustainable banking' mean something to a normal person?",
-      "client": "MOA 2025",
-      "brand": "BIDV",
-      "industry": "Banking & Finance",
-      "role": "Strategy Lead",
-      "year": "2025",
-      "thumbnail": "/images/projects/items/7/thumbnail.svg",
-      "gallery": [],
-      "featured": false,
-      "color": "#059669",
-      "story": [],
-      "challenge": "BIDV wanted help communicating their ESG commitments. The problem: ESG reports are written for investors, not customers. Regular people don't care about 'carbon-neutral operations' or 'governance frameworks.' They care about their mortgage, their savings, their kids' education funds. How do you bridge that gap?",
-      "insight": "People want to do good. But they're exhausted by abstract promises. They need to see the thread between 'I opened this account' and 'this village got clean water.' The connection has to be tangible, specific, human.",
-      "approach": "Translate corporate sustainability into personal impact. Not 'we planted 10,000 trees' but 'your savings account helped plant a tree in Lào Cai — here's a photo, here's the farmer who tends it.'",
-      "execution": [
-        "Developed customer-facing impact dashboard showing real outcomes",
-        "Created storytelling framework connecting deposits to development projects",
-        "Designed 'banking for good' narratives for frontline staff to share",
-        "Built social proof through customer-submitted impact stories"
-      ],
-      "results": [
-        {
-          "metric": "Competition Stage",
-          "value": "Semi-finalist"
-        },
-        {
-          "metric": "What we aimed for",
-          "value": "Make sustainability feel personal, not corporate"
-        }
-      ],
-      "awards": [
-        "Semi-finalist - MOA 2025"
-      ],
-      "credits": []
-    },
-    {
-      "slug": "vuver-valentine",
-      "title": "VuVer Valentine Campaign",
-      "tagline": "The quiet panic of finding a gift that says 'I actually know you'",
-      "client": "VuVer.vn",
-      "brand": "VuVer",
-      "industry": "E-commerce",
-      "role": "Campaign Lead",
-      "year": "2024",
-      "thumbnail": "/images/projects/items/8/thumbnail.svg",
-      "gallery": [],
-      "featured": false,
-      "color": "#DC2626",
-      "story": [],
-      "challenge": "Valentine's Day e-commerce is brutal. Everyone's screaming discounts. We had two weeks. Limited budget. The practical goal was 'double revenue.' But the human question was more interesting: why does Valentine's gift shopping feel so stressful?",
-      "insight": "They're afraid of getting it wrong. Of giving a gift that says 'I don't really know you.' The purchase isn't about the product — it's about proving you pay attention.",
-      "approach": "We stopped selling products and started providing reassurance. 'We'll help you find something that shows you've been paying attention.' Gift guides organized by relationship stage, not product category.",
-      "execution": [
-        "Gift-matching quiz: 'tell us about them, we'll suggest what says you get it'",
-        "Limited edition bundles that felt curated, not discounted",
-        "Abandoned cart emails that said 'still looking for the right one? we get it'",
-        "Micro-influencer content about gift-giving anxiety, not product features"
-      ],
-      "results": [
-        {
-          "metric": "Revenue Growth",
-          "value": "2x"
-        },
-        {
-          "metric": "Conversion Rate",
-          "value": "+45%"
-        },
-        {
-          "metric": "What worked",
-          "value": "Addressing the anxiety, not just the transaction"
-        }
-      ],
+      "execution": [],
+      "results": [],
       "awards": [],
       "credits": []
     }
