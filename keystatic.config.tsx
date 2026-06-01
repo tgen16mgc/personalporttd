@@ -389,6 +389,7 @@ export default config({
                     { label: "Text paragraph", value: "text" },
                     { label: "Section heading", value: "heading" },
                     { label: "Image (inline break)", value: "image" },
+                    { label: "Facebook post embed", value: "facebook" },
                     { label: "Pull quote", value: "quote" },
                     { label: "Steps / numbered list", value: "steps" },
                   ],
@@ -430,6 +431,13 @@ export default config({
                       defaultValue: "wide",
                     }),
                   }),
+                  facebook: fields.object({
+                    url: fields.text({
+                      label: "Facebook post URL",
+                      description: "Paste a public Facebook post URL.",
+                    }),
+                    caption: fields.text({ label: "Caption (optional)" }),
+                  }),
                   quote: fields.object({
                     body: fields.text({ label: "Quote text", multiline: true }),
                   }),
@@ -452,6 +460,7 @@ export default config({
                   const v = props.value as unknown as Record<string, { value: string }>;
                   if (d === "heading") return `H: ${v.body?.value?.slice(0, 50) || "heading"}`;
                   if (d === "image") return `IMG: ${v.caption?.value || "image"}`;
+                  if (d === "facebook") return `FB: ${v.url?.value?.slice(0, 50) || "Facebook post"}`;
                   if (d === "quote") return `Q: ${v.body?.value?.slice(0, 40) || "quote"}`;
                   if (d === "steps") return `Steps: ${v.heading?.value || "numbered list"}`;
                   return v.body?.value?.slice(0, 50) || "text";
