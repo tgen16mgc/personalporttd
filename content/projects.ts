@@ -20,6 +20,7 @@ export type StoryBlock =
   | { discriminant: "heading"; value: { body: string } }
   | { discriminant: "image"; value: { image: string | null; caption: string; size: "content" | "wide" | "full" } }
   | { discriminant: "facebook"; value: { url: string; caption: string } }
+  | { discriminant: "pdf"; value: { url: string; title: string; caption: string } }
   | { discriminant: "quote"; value: { body: string } }
   | { discriminant: "steps"; value: { heading: string; items: string[] } };
 
@@ -106,6 +107,16 @@ function parseStory(item: RawItem): StoryBlock[] | undefined {
           discriminant: "facebook",
           value: {
             url: (v.url as string) || "",
+            caption: (v.caption as string) || "",
+          },
+        });
+        break;
+      case "pdf":
+        results.push({
+          discriminant: "pdf",
+          value: {
+            url: (v.url as string) || "",
+            title: (v.title as string) || "",
             caption: (v.caption as string) || "",
           },
         });

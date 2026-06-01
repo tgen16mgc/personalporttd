@@ -390,6 +390,7 @@ export default config({
                     { label: "Section heading", value: "heading" },
                     { label: "Image (inline break)", value: "image" },
                     { label: "Facebook embed", value: "facebook" },
+                    { label: "Google Drive PDF", value: "pdf" },
                     { label: "Pull quote", value: "quote" },
                     { label: "Steps / numbered list", value: "steps" },
                   ],
@@ -438,6 +439,15 @@ export default config({
                     }),
                     caption: fields.text({ label: "Caption (optional)" }),
                   }),
+                  pdf: fields.object({
+                    url: fields.text({
+                      label: "Google Drive PDF URL",
+                      description:
+                        "Paste a shared Google Drive PDF link. Sharing must allow anyone with the link to view.",
+                    }),
+                    title: fields.text({ label: "Title (optional)" }),
+                    caption: fields.text({ label: "Caption (optional)" }),
+                  }),
                   quote: fields.object({
                     body: fields.text({ label: "Quote text", multiline: true }),
                   }),
@@ -461,6 +471,7 @@ export default config({
                   if (d === "heading") return `H: ${v.body?.value?.slice(0, 50) || "heading"}`;
                   if (d === "image") return `IMG: ${v.caption?.value || "image"}`;
                   if (d === "facebook") return `FB: ${v.url?.value?.slice(0, 50) || "Facebook post"}`;
+                  if (d === "pdf") return `PDF: ${v.title?.value || v.url?.value?.slice(0, 50) || "Google Drive PDF"}`;
                   if (d === "quote") return `Q: ${v.body?.value?.slice(0, 40) || "quote"}`;
                   if (d === "steps") return `Steps: ${v.heading?.value || "numbered list"}`;
                   return v.body?.value?.slice(0, 50) || "text";

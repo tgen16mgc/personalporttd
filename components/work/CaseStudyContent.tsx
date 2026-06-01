@@ -12,6 +12,7 @@ import {
   formatSafeInlineMarkdown,
   getSafeContentHref,
   getTrustedFacebookEmbedInfo,
+  getTrustedGoogleDrivePdfEmbedInfo,
   isExternalHref,
 } from "@/lib/security.mjs";
 import {
@@ -677,6 +678,18 @@ function StoryBlockRenderer({
       );
     }
 
+    case "pdf": {
+      if (!block.value.url) return null;
+      return (
+        <GoogleDrivePdfBlock
+          url={block.value.url}
+          title={block.value.title}
+          caption={block.value.caption}
+          color={color}
+        />
+      );
+    }
+
     case "image": {
       if (!block.value.image) return null;
       const size = block.value.size;
@@ -793,6 +806,59 @@ function FacebookPostBlock({
             className="underline underline-offset-4 decoration-black/20 transition-colors hover:text-[var(--color-ink)]"
           >
             View {embed.type === "video" ? "video" : "post"} on Facebook
+          </a>
+        </div>
+      </FadeInUp>
+    </div>
+  );
+}
+
+function GoogleDrivePdfBlock({
+  url,
+  title,
+  caption,
+  color,
+}: {
+  url: string;
+  title: string;
+  caption: string;
+  color: string;
+}) {
+  const embed = getTrustedGoogleDrivePdfEmbedInfo(url);
+  if (!embed) return null;
+  const label = title || "Google Drive PDF";
+
+  return (
+    <div className="mx-auto max-w-[48rem] px-4 sm:px-6 lg:px-8 py-10">
+      <FadeInUp delay={0.1}>
+        {title && (
+          <p className="mb-4 text-[0.8125rem] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+            {title}
+          </p>
+        )}
+        <div
+          className="rounded-[1.25rem] overflow-hidden ring-1 ring-black/[0.06] bg-white"
+          style={{ boxShadow: `0 18px 60px ${color}14` }}
+        >
+          <iframe
+            src={embed.url}
+            title={label}
+            className="block w-full h-[520px] sm:h-[680px]"
+            style={{ border: "none" }}
+            loading="lazy"
+            allow="autoplay"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>
+        <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-[12px] leading-relaxed text-[var(--color-ink-muted)]">
+          {caption && <p>{caption}</p>}
+          <a
+            href={embed.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 decoration-black/20 transition-colors hover:text-[var(--color-ink)]"
+          >
+            Open PDF in Google Drive
           </a>
         </div>
       </FadeInUp>
