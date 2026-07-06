@@ -854,6 +854,149 @@
           "name": "AI coding agent"
         }
       ]
+    },
+    {
+      "slug": "aeon-mall-thanh-hoa-kv",
+      "title": "AEON MALL Thanh Hoa - Launch Key Visual",
+      "tagline": "A launch KV built from the brief \"The Universe of Happiness and Joy\", then shaped into a visual system that could travel across social, app, web, poster, and POSM formats.",
+      "client": "AEON MALL Thanh Hoa",
+      "brand": "AEON MALL Thanh Hoa",
+      "industry": "Retail Launch / Key Visual",
+      "role": "Creative Translation, Project Management, Account Management",
+      "year": "2026",
+      "thumbnail": "/images/projects/items/7/thumbnail.png",
+      "heroImage": "/images/projects/items/7/heroImage.png",
+      "gallery": [],
+      "featured": true,
+      "color": "#b0187c",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The brief"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/2/value/image.png",
+            "caption": "Square launch KV for the AEONMALL Vietnam app push, using the universe treatment around the mascot, app screen, vouchers, and QR call to action.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "From idea to visual world"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/4/value/image.png",
+            "caption": "Web slide adaptation showing how the same world could explain app benefits without losing the launch mood.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/6/value/image.jpg",
+            "caption": "Standee adaptation for the app download lucky-draw mechanic, keeping the message clear at a tall POSM ratio.",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/7/value/image.png",
+            "caption": "Bilingual floor sign system using the mascot and activity cues to keep navigation on-brand across mall touchpoints.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Making the KV travel"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/9/value/image.gif",
+            "caption": "Mascot animation extended the KV language into a small motion asset for digital use.",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/10/value/image.png",
+            "caption": "Cover-format adaptation for wider placements, keeping the same hierarchy while giving the universe more breathing room.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "steps",
+          "value": {
+            "heading": "What I helped connect",
+            "items": [
+              "Translated the emotional brief into a clear visual direction with the team.",
+              "Kept the work aligned with AEON MALL color guidelines and launch expectations.",
+              "Managed client feedback, internal coordination, and project timing across adaptation needs.",
+              "Helped make sure the KV could stretch into social, app, web, poster, and POSM formats."
+            ]
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Why it mattered"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [
+        {
+          "metric": "core idea",
+          "value": "Universe of Happiness and Joy"
+        },
+        {
+          "metric": "adaptation scope",
+          "value": "Social / App / Web / Poster / POSM"
+        },
+        {
+          "metric": "role mix",
+          "value": "Creative + PM + Account"
+        }
+      ],
+      "awards": [],
+      "credits": [
+        {
+          "role": "Creative Translation / Project & Account Management",
+          "name": "Tien Duong"
+        },
+        {
+          "role": "Visual Craft and Execution",
+          "name": "Project team"
+        }
+      ]
     }
   ]
 }
