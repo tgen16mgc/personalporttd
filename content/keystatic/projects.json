@@ -714,6 +714,100 @@
       ],
       "awards": [],
       "credits": []
+    },
+    {
+      "slug": "redagencyads",
+      "title": "Red Agency Ads Tool",
+      "tagline": "Building an AI-agent-assisted Meta Ads operating dashboard for faster campaign diagnosis, competitor research, bilingual Verdicts, and client-ready reports.",
+      "client": "Red Agency JSC",
+      "brand": "Red Agency Ads Tool",
+      "industry": "Marketing Technology",
+      "role": "Product Owner, Ads Strategist, AI-Agent Workflow Designer",
+      "year": "2026",
+      "thumbnail": "/images/projects/items/6/thumbnail.png",
+      "heroImage": "/images/projects/items/6/heroImage.png",
+      "gallery": [],
+      "featured": true,
+      "color": "#6a4cf5",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The Brief"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Product Snapshot"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/6/story/3/value/image.png",
+            "caption": "Red Agency Ads Tool local app snapshot from commit 5f84240.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "AI Agent as a Productivity Partner"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "steps",
+          "value": {
+            "heading": "What the dashboard brings into one workflow",
+            "items": [
+              "Connect a Meta token through an encrypted HttpOnly session.",
+              "Choose account, campaign scope, date range, KPI pack, and comparison mode.",
+              "Pull campaign, ad set, ad, daily, and breakdown insights from Meta Graph API.",
+              "Generate deterministic Verdicts, AI-assisted insight tables, and bilingual report language.",
+              "Research competitors' public ads and export client-ready PDF reports."
+            ]
+          }
+        }
+      ],
+      "execution": [],
+      "results": [
+        {
+          "metric": "source commit",
+          "value": "5f84240"
+        },
+        {
+          "metric": "workflow areas",
+          "value": "3"
+        },
+        {
+          "metric": "language modes",
+          "value": "EN / VI"
+        }
+      ],
+      "awards": [],
+      "credits": [
+        {
+          "role": "Product Direction",
+          "name": "Tien Duong"
+        },
+        {
+          "role": "Build Partner",
+          "name": "AI coding agent"
+        }
+      ]
     }
   ]
 }
