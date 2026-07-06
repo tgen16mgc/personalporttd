@@ -412,9 +412,10 @@
           }
         },
         {
-          "discriminant": "heading",
+          "discriminant": "image",
           "value": {
-            "body": "Social Post | Sun Group"
+            "image": "/images/projects/items/3/story/12/value/image.jpg",
+            "size": "content"
           }
         },
         {
@@ -425,9 +426,22 @@
           }
         },
         {
+          "discriminant": "heading",
+          "value": {
+            "body": "Social Post | Sun Group"
+          }
+        },
+        {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/14/value/image.png",
+            "image": "/images/projects/items/3/story/15/value/image.jpg",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/3/story/16/value/image.png",
             "size": "content"
           }
         },
