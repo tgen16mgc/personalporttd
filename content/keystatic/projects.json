@@ -718,7 +718,7 @@
     {
       "slug": "redagencyads",
       "title": "Red Agency Ads Tool",
-      "tagline": "Building an AI-agent-assisted Meta Ads operating dashboard for faster campaign diagnosis, competitor research, bilingual Verdicts, and client-ready reports.",
+      "tagline": "A Meta Ads dashboard I built with an AI coding agent so marketers can read account health, compare campaigns, write EN/VI verdicts, and export reports without stitching tabs together.",
       "client": "Red Agency JSC",
       "brand": "Red Agency Ads Tool",
       "industry": "Marketing Technology",
@@ -733,7 +733,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "The Brief"
+            "body": "The brief"
           }
         },
         {
@@ -743,14 +743,14 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "Product Snapshot"
+            "body": "Product snapshot"
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/6/story/3/value/image.png",
-            "caption": "Red Agency Ads Tool local app snapshot from commit 5f84240.",
+            "caption": "Overview from the local Red Agency Ads Tool build at commit 5f84240.",
             "size": "wide"
           }
         },
@@ -761,7 +761,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "AI Agent as a Productivity Partner"
+            "body": "Working with the coding agent"
           }
         },
         {
@@ -771,14 +771,52 @@
         {
           "discriminant": "steps",
           "value": {
-            "heading": "What the dashboard brings into one workflow",
+            "heading": "What the dashboard does in one flow",
             "items": [
-              "Connect a Meta token through an encrypted HttpOnly session.",
-              "Choose account, campaign scope, date range, KPI pack, and comparison mode.",
-              "Pull campaign, ad set, ad, daily, and breakdown insights from Meta Graph API.",
-              "Generate deterministic Verdicts, AI-assisted insight tables, and bilingual report language.",
-              "Research competitors' public ads and export client-ready PDF reports."
+              "Store the Meta token in an encrypted HttpOnly session.",
+              "Let the user choose account, campaign scope, date range, KPI pack, and comparison mode.",
+              "Pull campaign, ad set, ad, daily, and breakdown insights from the Meta Graph API.",
+              "Turn the numbers into KPI cards, health checks, Verdicts, insight briefs, and EN/VI report copy.",
+              "Research public competitor ads and export a PDF the account team can send or adapt."
             ]
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Dashboard snapshots"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/6/story/8/value/image.png",
+            "caption": "Message trend and cost charts show where the account is drifting before the table-level drilldown.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/6/story/9/value/image.png",
+            "caption": "The ad set view points to fatigue signals and the rows that are pulling cost per message up.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/6/story/10/value/image.png",
+            "caption": "Verdict output turns the campaign diagnosis into plain next-step language for the account team.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/6/story/11/value/image.png",
+            "caption": "The AI insight brief breaks the same pull into efficiency, creative, budget, audience, and campaign structure notes.",
+            "size": "wide"
           }
         }
       ],
