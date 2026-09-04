@@ -718,11 +718,11 @@
     {
       "slug": "redagencyads",
       "title": "Red Agency Ads Tool",
-      "tagline": "I built Red Agency Ads to keep paid media decisions in one place. It now covers Meta diagnosis, competitor research, TikTok tracking, test planning, budget operations, reporting, and publishing.",
+      "tagline": "I found a broken workflow inside the agency and built the tool to fix it. Red Agency Ads shows how I turn insight into a working product with AI coding agents.",
       "client": "Red Agency JSC",
       "brand": "Red Agency Ads Tool",
       "industry": "Advertising Technology",
-      "role": "Product Owner, Ads Strategist, AI Product Builder",
+      "role": "Product Owner, Ads Strategist, AI-Native Builder",
       "year": "2026 - Present",
       "thumbnail": "/images/projects/items/6/thumbnail.png",
       "heroImage": "/images/projects/items/6/heroImage.png",
@@ -733,7 +733,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "The problem"
+            "body": "The insight"
           }
         },
         {
@@ -741,86 +741,46 @@
           "value": {}
         },
         {
-          "discriminant": "heading",
+          "discriminant": "quote",
           "value": {
-            "body": "How the tool changed"
+            "body": "Customers are not the only users. Internal teams have problems worth solving too."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/6/story/3/value/image.png",
-            "caption": "The current overview ranks the report, the next decision, and the evidence that needs attention before the user opens a full diagnosis.",
+            "caption": "Red Agency Ads turns campaign data into a ranked next action, with the rules and evidence still visible.",
             "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What I built"
           }
         },
         {
           "discriminant": "text",
           "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "What it handles now"
-          }
-        },
-        {
-          "discriminant": "steps",
-          "value": {
-            "heading": "Six connected workspaces",
-            "items": [
-              "Overview ranks the reports and signals that need attention instead of opening on a wall of charts.",
-              "Performance scopes Meta campaigns, ad sets, ads, daily trends, demographics, placements, and comparison periods into one diagnosis.",
-              "Competitor evidence collects public ads, keeps source checks attached, and builds briefs only from accepted records.",
-              "TikTok tracker keeps channel and video signals separate from paid ads performance.",
-              "Intelligence covers cross-channel summaries, creative analysis, experiment planning, budget operations, connectors, and prompt testing.",
-              "Publishing and client reports reuse the reviewed decision record in English or Vietnamese."
-            ]
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Why the evidence layer matters"
-          }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/6/story/8/value/image.png",
-            "caption": "The competitor library separates collected, matched, media-ready, verified, and discarded records before it produces a decision brief.",
+            "caption": "Competitor evidence is reviewed before the tool turns it into a brief.",
             "size": "wide"
           }
         },
         {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
           "discriminant": "heading",
           "value": {
-            "body": "How I build with coding agents"
+            "body": "How I work"
           }
         },
         {
           "discriminant": "text",
           "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "What I would not automate"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Current version"
-          }
         },
         {
           "discriminant": "text",
@@ -830,20 +790,16 @@
       "execution": [],
       "results": [
         {
-          "metric": "primary workspaces",
-          "value": "6"
+          "metric": "working product",
+          "value": "Live"
         },
         {
-          "metric": "intelligence modules",
-          "value": "6"
+          "metric": "problem source",
+          "value": "Internal ops"
         },
         {
-          "metric": "single-step budget guardrail",
-          "value": "20%"
-        },
-        {
-          "metric": "product and report modes",
-          "value": "EN / VI"
+          "metric": "build approach",
+          "value": "AI-native"
         }
       ],
       "awards": [],
@@ -853,7 +809,7 @@
           "name": "Tien Duong"
         },
         {
-          "role": "Build Partners",
+          "role": "Build Partner",
           "name": "AI coding agents"
         }
       ]
