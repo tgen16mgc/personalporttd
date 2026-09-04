@@ -718,11 +718,11 @@
     {
       "slug": "redagencyads",
       "title": "Red Agency Ads Tool",
-      "tagline": "I found a broken workflow inside the agency and built the tool to fix it. Red Agency Ads shows how I turn insight into a working product with AI coding agents.",
+      "tagline": "At Red Agency, one client question could send the account team through Ads Manager, sheets, screenshots, and old decks. I built Red Agency Ads with coding agents so the evidence and next action lived in one place.",
       "client": "Red Agency JSC",
       "brand": "Red Agency Ads Tool",
       "industry": "Advertising Technology",
-      "role": "Product Owner, Ads Strategist, AI-Native Builder",
+      "role": "Product Direction, Ads Strategy, AI-Assisted Development",
       "year": "2026 - Present",
       "thumbnail": "/images/projects/items/6/thumbnail.png",
       "heroImage": "/images/projects/items/6/heroImage.png",
@@ -743,14 +743,14 @@
         {
           "discriminant": "quote",
           "value": {
-            "body": "Customers are not the only users. Internal teams have problems worth solving too."
+            "body": "The team had plenty of data, but no reliable path from evidence to the next action."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/6/story/3/value/image.png",
-            "caption": "Red Agency Ads turns campaign data into a ranked next action, with the rules and evidence still visible.",
+            "caption": "The report ranks what needs attention and keeps the supporting evidence visible.",
             "size": "wide"
           }
         },
@@ -768,7 +768,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/6/story/8/value/image.png",
-            "caption": "Competitor evidence is reviewed before the tool turns it into a brief.",
+            "caption": "Competitor evidence must be verified before it enters the decision brief.",
             "size": "wide"
           }
         },
@@ -792,24 +792,16 @@
         {
           "metric": "working product",
           "value": "Live"
-        },
-        {
-          "metric": "problem source",
-          "value": "Internal ops"
-        },
-        {
-          "metric": "build approach",
-          "value": "AI-native"
         }
       ],
       "awards": [],
       "credits": [
         {
-          "role": "Product Direction",
+          "role": "Product and Build",
           "name": "Tien Duong"
         },
         {
-          "role": "Build Partner",
+          "role": "Development Workflow",
           "name": "AI coding agents"
         }
       ]
