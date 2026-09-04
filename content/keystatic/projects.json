@@ -718,22 +718,22 @@
     {
       "slug": "redagencyads",
       "title": "Red Agency Ads Tool",
-      "tagline": "A Meta Ads dashboard I built with an AI coding agent to help the account team read campaign health, compare scopes, write EN/VI verdicts, and export reports without stitching tabs together.",
+      "tagline": "I built Red Agency Ads to keep paid media decisions in one place. It now covers Meta diagnosis, competitor research, TikTok tracking, test planning, budget operations, reporting, and publishing.",
       "client": "Red Agency JSC",
       "brand": "Red Agency Ads Tool",
-      "industry": "Marketing Technology",
-      "role": "Product Owner, Ads Strategist, AI-Agent Workflow Designer",
-      "year": "2026",
+      "industry": "Advertising Technology",
+      "role": "Product Owner, Ads Strategist, AI Product Builder",
+      "year": "2026 - Present",
       "thumbnail": "/images/projects/items/6/thumbnail.png",
       "heroImage": "/images/projects/items/6/heroImage.png",
       "gallery": [],
       "featured": true,
-      "color": "#6a4cf5",
+      "color": "#0a84ff",
       "story": [
         {
           "discriminant": "heading",
           "value": {
-            "body": "The brief"
+            "body": "The problem"
           }
         },
         {
@@ -743,14 +743,14 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "Product snapshot"
+            "body": "How the tool changed"
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/6/story/3/value/image.png",
-            "caption": "Overview from the Red Agency Ads local build, checked against commit 8acd142.",
+            "caption": "The current overview ranks the report, the next decision, and the evidence that needs attention before the user opens a full diagnosis.",
             "size": "wide"
           }
         },
@@ -761,85 +761,88 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "Working with the coding agent"
+            "body": "What it handles now"
           }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
         },
         {
           "discriminant": "steps",
           "value": {
-            "heading": "What the dashboard handles",
+            "heading": "Six connected workspaces",
             "items": [
-              "Stores the Meta token in an encrypted HttpOnly session.",
-              "Lets the user choose account, campaign scope, date range, KPI pack, and comparison mode.",
-              "Pulls campaign, ad set, ad, daily, and breakdown insights from the Meta Graph API.",
-              "Turns the numbers into KPI cards, health checks, Verdicts, insight briefs, and EN/VI report copy.",
-              "Researches public competitor ads and exports a PDF the account team can send or adapt."
+              "Overview ranks the reports and signals that need attention instead of opening on a wall of charts.",
+              "Performance scopes Meta campaigns, ad sets, ads, daily trends, demographics, placements, and comparison periods into one diagnosis.",
+              "Competitor evidence collects public ads, keeps source checks attached, and builds briefs only from accepted records.",
+              "TikTok tracker keeps channel and video signals separate from paid ads performance.",
+              "Intelligence covers cross-channel summaries, creative analysis, experiment planning, budget operations, connectors, and prompt testing.",
+              "Publishing and client reports reuse the reviewed decision record in English or Vietnamese."
             ]
           }
         },
         {
           "discriminant": "heading",
           "value": {
-            "body": "Dashboard snapshots"
+            "body": "Why the evidence layer matters"
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/6/story/8/value/image.png",
-            "caption": "Message trend and cost charts show when performance starts moving before the team digs into the table rows.",
+            "caption": "The competitor library separates collected, matched, media-ready, verified, and discarded records before it produces a decision brief.",
             "size": "wide"
           }
         },
         {
-          "discriminant": "image",
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
           "value": {
-            "image": "/images/projects/items/6/story/9/value/image.png",
-            "caption": "The ad set view points to fatigue signals and the rows that are pulling cost per message up.",
-            "size": "wide"
+            "body": "How I build with coding agents"
           }
         },
         {
-          "discriminant": "image",
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
           "value": {
-            "image": "/images/projects/items/6/story/10/value/image.png",
-            "caption": "Verdict output turns the campaign diagnosis into plain next-step language for the account team.",
-            "size": "wide"
+            "body": "What I would not automate"
           }
         },
         {
-          "discriminant": "image",
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
           "value": {
-            "image": "/images/projects/items/6/story/11/value/image.png",
-            "caption": "The AI insight brief turns the same pull into notes on efficiency, creative fatigue, budget, audience, and campaign structure.",
-            "size": "wide"
+            "body": "Current version"
           }
         },
         {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/6/story/12/value/image.png",
-            "caption": "Top KPI and message-cost snapshot from the Red Agency Ads local build.",
-            "size": "wide"
-          }
+          "discriminant": "text",
+          "value": {}
         }
       ],
       "execution": [],
       "results": [
         {
-          "metric": "source commit",
-          "value": "8acd142"
+          "metric": "primary workspaces",
+          "value": "6"
         },
         {
-          "metric": "workflow areas",
-          "value": "3"
+          "metric": "intelligence modules",
+          "value": "6"
         },
         {
-          "metric": "language modes",
+          "metric": "single-step budget guardrail",
+          "value": "20%"
+        },
+        {
+          "metric": "product and report modes",
           "value": "EN / VI"
         }
       ],
@@ -850,8 +853,8 @@
           "name": "Tien Duong"
         },
         {
-          "role": "Build Partner",
-          "name": "AI coding agent"
+          "role": "Build Partners",
+          "name": "AI coding agents"
         }
       ]
     },
