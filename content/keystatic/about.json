@@ -37,6 +37,16 @@
   ],
   "recognition": [
     {
+      "title": "Semi-finalist",
+      "event": "Marketing On Air 2025",
+      "note": "BIDV case; Top 5 from approximately 3,500 contestants"
+    },
+    {
+      "title": "Top 60 of CAKE Case",
+      "event": "The Valiant Marketer 14",
+      "note": "Top 120 out of approximately 3,000+ contestants"
+    },
+    {
       "title": "Champion",
       "event": "Social Pioneers 2025",
       "note": "Chuon Ngo Pearl Inlay Art case; competition field of 2,100+ contestants"
@@ -45,17 +55,12 @@
       "title": "1st Runner-up",
       "event": "Digital Creatory 2025",
       "note": "Kingsport case; 20 interviews with Gen Z mothers informed positioning"
-    },
-    {
-      "title": "Semi-finalist",
-      "event": "Marketing On Air 2025",
-      "note": "BIDV case; Top 5 from approximately 3,500 contestants"
     }
   ],
   "education": {
     "school": "National Economics University",
     "location": "Hanoi",
-    "degree": "Bachelor's degree in Marketing, in progress",
+    "degree": "Bachelor's degree in Marketing",
     "graduation": "Degree completion expected Dec 2026; ceremony around mid-2027",
     "gpa": "3.69/4.0"
   },
@@ -90,9 +95,7 @@
           "Our team placed first runner-up. This was a competition proposal, rather than a launched client campaign."
         ]
       }
-    ],
-    "quote": "",
-    "mission": ""
+    ]
   },
   "afterwork": [
     {
@@ -100,7 +103,6 @@
       "title": "net đêm",
       "subtitle": "League with my brother",
       "description": "Late-night League with my brother at a net cafe. Bright screens, bad chairs, instant noodles nearby.",
-      "takeaway": "",
       "image": "/images/about/afterwork/0/image.jpeg",
       "emoji": "🎮",
       "bgGradient": "from-violet-50 to-indigo-100",
@@ -111,7 +113,6 @@
       "title": "marketing club",
       "subtitle": "uni gang",
       "description": "My Marketing's Generation Club friends at NEU. Many late nights making things together.",
-      "takeaway": "",
       "image": "/images/about/afterwork/1/image.jpeg",
       "emoji": "🫶",
       "bgGradient": "from-rose-50 to-pink-100",
@@ -122,7 +123,6 @@
       "title": "finals",
       "subtitle": "room got bigger",
       "description": "Presenting at a competition final. The room felt much bigger from the stage.",
-      "takeaway": "",
       "image": "/images/about/afterwork/2/image.JPG",
       "emoji": "🎤",
       "bgGradient": "from-sky-50 to-blue-100",
@@ -133,7 +133,6 @@
       "title": "more finals",
       "subtitle": "trying to make the words land",
       "description": "Another competition presentation. I keep these photos to remember how it felt to be up there.",
-      "takeaway": "",
       "image": "/images/about/afterwork/3/image.jpg",
       "emoji": "🏆",
       "bgGradient": "from-amber-50 to-yellow-100",
@@ -144,7 +143,6 @@
       "title": "her polaroids",
       "subtitle": "taken by my girlfriend",
       "description": "Polaroids my girlfriend took of me. Slightly soft, slightly off. I like them that way.",
-      "takeaway": "",
       "image": "/images/about/afterwork/4/image.png",
       "emoji": "📷",
       "bgGradient": "from-gray-50 to-slate-100",
@@ -155,7 +153,6 @@
       "title": "8.3",
       "subtitle": "for my mom",
       "description": "A bag I got for my mom on March 8.",
-      "takeaway": "",
       "image": "/images/about/afterwork/5/image.jpeg",
       "emoji": "👜",
       "bgGradient": "from-pink-50 to-rose-100",
@@ -166,7 +163,6 @@
       "title": "cat",
       "subtitle": "main character energy",
       "description": "My cat, doing very little and taking up most of the attention.",
-      "takeaway": "",
       "image": "/images/about/afterwork/6/image.jpg",
       "emoji": "🐱",
       "bgGradient": "from-orange-50 to-amber-100",
@@ -177,7 +173,6 @@
       "title": "food notes",
       "subtitle": "evidence I was there",
       "description": "Food photos from places I want to remember and come back to.",
-      "takeaway": "",
       "image": "/images/about/afterwork/7/image.jpg",
       "emoji": "🍜",
       "bgGradient": "from-lime-50 to-green-100",
@@ -188,7 +183,6 @@
       "title": "concert",
       "subtitle": "wrong lyrics, full confidence",
       "description": "At a concert, probably singing the wrong lyrics with full confidence.",
-      "takeaway": "",
       "image": "/images/about/afterwork/8/image.jpeg",
       "emoji": "🎧",
       "bgGradient": "from-purple-50 to-fuchsia-100",
@@ -199,7 +193,6 @@
       "title": "guitar",
       "subtitle": "fewer chords than the photo suggests",
       "description": "I know fewer chords than this photo suggests. Still practicing.",
-      "takeaway": "",
       "image": "/images/about/afterwork/9/image.jpeg",
       "emoji": "🎸",
       "bgGradient": "from-amber-50 to-orange-100",
@@ -210,7 +203,6 @@
       "title": "late walk",
       "subtitle": "nowhere urgent to be",
       "description": "A late walk with nowhere urgent to be. I like the city at this hour.",
-      "takeaway": "",
       "image": "/images/about/afterwork/10/image.jpg",
       "emoji": "🌙",
       "bgGradient": "from-indigo-50 to-violet-100",
@@ -221,7 +213,6 @@
       "title": "tin vào những điều m làm",
       "subtitle": "a small note",
       "description": "“Tin vào những điều m làm.” Believe in the things you do. A note I kept.",
-      "takeaway": "",
       "image": "/images/about/afterwork/11/image.jpg",
       "emoji": "📝",
       "bgGradient": "from-yellow-50 to-amber-100",
@@ -232,7 +223,6 @@
       "title": "flowers",
       "subtitle": "sometimes that is enough",
       "description": "Flowers from a day I wanted to keep a photo of.",
-      "takeaway": "",
       "image": "/images/about/afterwork/12/image.jpg",
       "emoji": "💐",
       "bgGradient": "from-pink-50 to-rose-100",
@@ -243,7 +233,6 @@
       "title": "a night out",
       "subtitle": "only makes sense if you were there",
       "description": "One of those nights that only makes sense if you were there.",
-      "takeaway": "",
       "image": "/images/about/afterwork/13/image.jpeg",
       "emoji": "🍻",
       "bgGradient": "from-cyan-50 to-sky-100",
