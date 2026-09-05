@@ -182,7 +182,76 @@ export default config({
           hookSub: fields.text({ label: "Hook Subtext", multiline: true }),
           hookLineVi: fields.text({ label: "Hook Line (Vietnamese)" }),
           hookSubVi: fields.text({ label: "Hook Subtext (Vietnamese)", multiline: true }),
+          introLabel: fields.text({ label: "Section Label" }),
+          resumeLabel: fields.text({ label: "Resume Button" }),
+          workLabel: fields.text({ label: "Work Button" }),
         }),
+        uiLabels: fields.object({
+          metadataTitle: fields.text({ label: "Browser Title" }),
+          pageAriaLabel: fields.text({ label: "Page Accessibility Label" }),
+          backToHomeLabel: fields.text({ label: "Back Button Accessibility Label" }),
+          homeCursorLabel: fields.text({ label: "Back Button Cursor Label" }),
+          languageGroupLabel: fields.text({ label: "Language Control Accessibility Label" }),
+          englishLanguageCode: fields.text({ label: "English Button Text" }),
+          vietnameseLanguageCode: fields.text({ label: "Vietnamese Button Text" }),
+          englishIntroLabel: fields.text({ label: "English Button Accessibility Label" }),
+          vietnameseIntroLabel: fields.text({ label: "Vietnamese Button Accessibility Label" }),
+          experienceAriaLabel: fields.text({ label: "Experience Section Accessibility Label" }),
+          brandsAriaLabel: fields.text({ label: "Brands Section Accessibility Label" }),
+          gpaLabel: fields.text({ label: "GPA Prefix" }),
+        }, { label: "Interface Labels" }),
+        proof: fields.object({
+          heading: fields.text({ label: "Heading" }),
+          items: fields.array(fields.object({
+            value: fields.text({ label: "Proof Point" }),
+            title: fields.text({ label: "Title" }),
+            body: fields.text({ label: "Contribution and Context", multiline: true }),
+            projectSlug: fields.text({ label: "Project Slug (optional, from Projects)" }),
+            linkLabel: fields.text({ label: "Case Link Label" }),
+          }), { label: "Selected Evidence", itemLabel: (props) => props.fields.title.value }),
+        }, { label: "Selected Evidence" }),
+        capabilities: fields.object({
+          heading: fields.text({ label: "Heading" }),
+          body: fields.text({ label: "Introduction", multiline: true }),
+          items: fields.array(fields.object({
+            title: fields.text({ label: "Capability" }),
+            body: fields.text({ label: "Evidence", multiline: true }),
+            tools: fields.text({ label: "Methods and Tools" }),
+            projectSlug: fields.text({ label: "Project Slug (optional, from Projects)" }),
+            linkLabel: fields.text({ label: "Case Link Label" }),
+          }), { label: "Capabilities", itemLabel: (props) => props.fields.title.value }),
+        }, { label: "Capabilities" }),
+        aiPractice: fields.object({
+          kicker: fields.text({ label: "Section Label" }),
+          heading: fields.text({ label: "Heading" }),
+          body: fields.text({ label: "Introduction", multiline: true }),
+          items: fields.array(fields.object({
+            title: fields.text({ label: "Title" }),
+            body: fields.text({ label: "Problem and Contribution", multiline: true }),
+            projectSlug: fields.text({ label: "Project Slug (from Projects)" }),
+            linkLabel: fields.text({ label: "Case Link Label" }),
+            image: fields.image({ label: "Artifact Screenshot", directory: "public/images", publicPath: "/images/" }),
+            imageAlt: fields.text({ label: "Screenshot Description (accessibility)" }),
+            caption: fields.text({ label: "Contribution Caption" }),
+          }), { label: "AI and Automation Examples", itemLabel: (props) => props.fields.title.value }),
+        }, { label: "AI in Practice" }),
+        profileFacts: fields.array(fields.object({
+          label: fields.text({ label: "Label" }),
+          primary: fields.text({ label: "Primary Text" }),
+          secondary: fields.text({ label: "Supporting Detail" }),
+        }), { label: "Profile Facts", itemLabel: (props) => props.fields.label.value }),
+        sectionLabels: fields.object({
+          experience: fields.text({ label: "Experience Heading" }),
+          recognition: fields.text({ label: "Recognition Heading" }),
+          education: fields.text({ label: "Education Heading" }),
+          brands: fields.text({ label: "Brand Relationship Note", multiline: true }),
+        }, { label: "Section Labels" }),
+        afterworkDisplay: fields.object({
+          heading: fields.text({ label: "Heading" }),
+          body: fields.text({ label: "Introduction", multiline: true }),
+          featuredIds: fields.array(fields.text({ label: "Afterwork ID" }), { label: "Featured Photos (use 4–6 IDs from Afterwork Hobbies)", itemLabel: (props) => props.value }),
+          moreLabel: fields.text({ label: "Expand Archive Label" }),
+        }, { label: "Afterwork Display" }),
         experience: fields.array(
           fields.object({
             company: fields.text({ label: "Company" }),
@@ -227,7 +296,7 @@ export default config({
             suffix: fields.text({ label: "Suffix (optional)" }),
           }),
           {
-            label: "Personal Bits",
+            label: "Legacy Personal Bits (not shown on current About page)",
             itemLabel: (props) => props.fields.text.value.slice(0, 50),
           }
         ),
@@ -265,7 +334,7 @@ export default config({
             label: "Mission Statement (HTML allowed)",
             multiline: true,
           }),
-        }),
+        }, { label: "Legacy Philosophy (not shown on current About page)" }),
         afterwork: fields.array(
           fields.object({
             id: fields.text({ label: "ID (unique, lowercase)" }),
@@ -301,6 +370,7 @@ export default config({
           kicker: fields.text({ label: "Kicker" }),
           headline: fields.text({ label: "Headline" }),
           body: fields.text({ label: "Body", multiline: true }),
+          linkLabel: fields.text({ label: "Contact Link Label" }),
         }),
       },
     }),

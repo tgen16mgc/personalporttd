@@ -1,9 +1,136 @@
 {
   "aboutHero": {
     "hookLine": "Xin chào. Hello. I’m Tien.",
-    "hookSub": "I'm a marketing undergraduate at NEU. I study what customers need and help turn those insights into brand plans and campaigns. My experience spans consumer research, agency delivery, and running a student e-commerce project.",
+    "hookSub": "Marketing undergraduate with a 3.69/4.0 GPA and hands-on experience across agency client delivery, consumer research, data-driven planning, product ownership, and AI-assisted product development. Applies structured problem-solving through award-winning competition cases, revenue-based media planning, and a student venture that recorded 150 orders and 333,000 impressions. Experienced in practical ownership and cross-functional coordination. Brings fluent working English, hunger to learn, and an AI-first approach to work. Seeking to build a long-term career through growth-oriented marketing roles within technology business. Expects to complete degree requirements and become available full-time in December 2026.",
     "hookLineVi": "Xin chào. Mình là Dương Tiên.",
-    "hookSubVi": "Mình học Marketing tại Đại học Kinh tế Quốc dân. Mình tìm hiểu nhu cầu của người tiêu dùng và góp phần chuyển những điều tìm được thành kế hoạch thương hiệu, chiến dịch truyền thông. Mình đã tham gia nghiên cứu khách hàng, triển khai công việc tại agency và vận hành một dự án kinh doanh online cùng nhóm ở trường."
+    "hookSubVi": "Mình bắt đầu từ Marketing, với công việc trải từ nghiên cứu khách hàng, lập kế hoạch thương hiệu đến triển khai chiến dịch. Khi công việc cần, mình cũng tự xây công cụ: dashboard quảng cáo, website bán hàng và luồng xử lý đơn tự động.",
+    "introLabel": "About me",
+    "resumeLabel": "View my resume",
+    "workLabel": "Explore my work"
+  },
+  "uiLabels": {
+    "metadataTitle": "About",
+    "pageAriaLabel": "About",
+    "backToHomeLabel": "Back to home",
+    "homeCursorLabel": "Home",
+    "languageGroupLabel": "Language",
+    "englishLanguageCode": "EN",
+    "vietnameseLanguageCode": "VI",
+    "englishIntroLabel": "Introduction in English",
+    "vietnameseIntroLabel": "Giới thiệu bằng tiếng Việt",
+    "experienceAriaLabel": "Experience and credentials",
+    "brandsAriaLabel": "Selected brands, agency partners and employers",
+    "gpaLabel": "GPA"
+  },
+  "proof": {
+    "heading": "A few things I've worked on",
+    "items": [
+      {
+        "value": "20 interviews",
+        "title": "Listening before planning",
+        "body": "I interviewed Gen Z mothers to help define the positioning for our Kingsport competition proposal. Our team placed first runner-up."
+      },
+      {
+        "value": "31 videos",
+        "title": "Getting a launch out the door",
+        "body": "I helped coordinate AEON Beta's launch videos across client, creative and production teams. All 31 were delivered on time and passed QC.",
+        "projectSlug": "aeon-beta",
+        "linkLabel": "The AEON Beta work"
+      },
+      {
+        "value": "150 orders",
+        "title": "Running a small business",
+        "body": "Our 13-week university project, Pixself, recorded 150 orders. I led the product and website work and added an automated order workflow.",
+        "projectSlug": "pixself-keychain",
+        "linkLabel": "Inside Pixself"
+      }
+    ]
+  },
+  "capabilities": {
+    "heading": "What I bring to a marketing team",
+    "body": "I study Marketing at NEU and work agency-side. That has meant learning both how to make a recommendation and how to get the work done with other people.",
+    "items": [
+      {
+        "title": "Customer research",
+        "body": "I use surveys and interviews to understand what people buy and why. At Hong Ha, that meant looking at stationery shopping on Shopee and TikTok Shop, then contributing to the digital strategy.",
+        "tools": "Surveys · Interviews · Excel · SPSS",
+        "projectSlug": "hongha",
+        "linkLabel": "Hong Ha research"
+      },
+      {
+        "title": "Working with commercial data",
+        "body": "For La Passion's restaurants, I looked at revenue, peak hours, table turnover and average bills to help recommend advertising budgets. I wanted the spend to have a business reason behind it.",
+        "tools": "Revenue analysis · Budget planning · Campaign reporting",
+        "projectSlug": "la-passion",
+        "linkLabel": "The budget planning work"
+      },
+      {
+        "title": "Brand and creative work",
+        "body": "At VuVer, a longer cold season changed our Valentine campaign. I extended the focus on sweaters and produced the key visual, lookbook and social copy. The team recorded revenue at twice the prior two-month average.",
+        "tools": "Positioning · Campaign concepts · Design and copy"
+      },
+      {
+        "title": "Making the work happen",
+        "body": "At Red Agency, I coordinate briefs, creative and media teams, production, and reporting. My job includes keeping people clear on what needs to happen next and following through on delivery.",
+        "tools": "Client communication · Cross-team coordination · Quality control",
+        "projectSlug": "aeon-beta",
+        "linkLabel": "A launch I helped deliver"
+      }
+    ]
+  },
+  "aiPractice": {
+    "kicker": "AI in my day-to-day work",
+    "heading": "I use AI to build things I can actually use",
+    "body": "AI coding agents are part of how I work now. The starting point is usually a marketing task I know well enough to describe: what needs checking, what a report should show, or where a manual process gets in the way.",
+    "items": [
+      {
+        "title": "An ads dashboard for account work",
+        "body": "I defined the campaign checks, reporting requirements and account-team workflow, then built the dashboard with AI coding agents. It brings KPI views, campaign health checks and reporting into one place.",
+        "projectSlug": "redagencyads",
+        "linkLabel": "See the dashboard case",
+        "image": "/images/aiPractice/items/0/image.png",
+        "imageAlt": "Red Agency Ads report with campaign checks and supporting evidence",
+        "caption": "My part: requirements, workflow design and AI-assisted development."
+      },
+      {
+        "title": "Less manual order handling at Pixself",
+        "body": "Once the shop was taking orders, I upgraded the website and added an n8n order-processing flow. The team could then focus mainly on fulfillment. This was an improvement to a business we were already running.",
+        "projectSlug": "pixself-keychain",
+        "linkLabel": "See the order workflow",
+        "image": "/images/aiPractice/items/1/image.png",
+        "imageAlt": "Pixself n8n order-processing workflow",
+        "caption": "My part: the website upgrade and order-processing automation."
+      }
+    ]
+  },
+  "profileFacts": [
+    {
+      "label": "Based in",
+      "primary": "Hanoi, Vietnam",
+      "secondary": "Currently at Red Agency JSC"
+    },
+    {
+      "label": "Languages",
+      "primary": "Vietnamese & English",
+      "secondary": "Native Vietnamese · Professional working English · IELTS 7.5 (2022)"
+    }
+  ],
+  "sectionLabels": {
+    "experience": "Where I've worked",
+    "recognition": "Recognition",
+    "education": "Education",
+    "brands": "Selected brands, agency partners and employers represented in my work. Each case explains my role and the team involved."
+  },
+  "afterworkDisplay": {
+    "heading": "Outside work",
+    "body": "League with my brother, food photos, a very comfortable cat. A few things that don't belong on a resume.",
+    "featuredIds": [
+      "net-dem",
+      "marketing-club",
+      "cat",
+      "guitar"
+    ],
+    "moreLabel": "A few more photos"
   },
   "experience": [
     {
@@ -241,7 +368,8 @@
   ],
   "aboutCta": {
     "kicker": "Let’s connect",
-    "headline": "Hiring for a graduate or marketing role?",
-    "body": "I'd be glad to hear about it. I'm available full-time from December 2026."
+    "headline": "I'd like to do this in a marketing team",
+    "body": "I'm looking for graduate programs and early-career marketing roles at a technology company or multinational. I expect to complete my Marketing degree in December 2026 and can join full-time then.",
+    "linkLabel": "Let's talk"
   }
 }

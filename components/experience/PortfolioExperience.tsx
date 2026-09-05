@@ -117,7 +117,7 @@ export function PortfolioExperience({ children }: { children: React.ReactNode })
       const headings = surface.current!.querySelectorAll<HTMLElement>("[data-reveal-heading]");
       const splits = Array.from(headings, (heading) => SplitText.create(heading, { type: "lines", tag: "span", linesClass: "reveal-line" }));
       const elements = surface.current!.querySelectorAll<HTMLElement>("[data-reveal], .reveal-line");
-      gsap.from(elements, { autoAlpha: 0, y: 16, duration: 1.02, stagger: 0.075, delay: pending.current ? 0.65 : 0, ease: "power2.out", clearProps: "all" });
+      if (elements.length > 0) gsap.from(elements, { autoAlpha: 0, y: 16, duration: 1.02, stagger: 0.075, delay: pending.current ? 0.65 : 0, ease: "power2.out", clearProps: "all" });
       return () => splits.forEach((split) => split.revert());
     }, surface);
     return () => context.revert();
@@ -190,6 +190,10 @@ function Pointer() {
       gsap.to(element, { autoAlpha: text ? 1 : 0, rotate: text ? 0 : -16, duration: 0.18, overwrite: "auto" });
     };
     const move = (event: PointerEvent) => {
+      if ((event.target as Element).closest("[data-native-cursor]")) {
+        setLabel("");
+        return;
+      }
       x(Math.max(8, Math.min(event.clientX - element.offsetWidth / 2 - 3, innerWidth - element.offsetWidth - 8)));
       y(Math.max(8, Math.min(event.clientY - element.offsetHeight - 1, innerHeight - element.offsetHeight - 8)));
       const target = (event.target as Element).closest<HTMLElement>("[data-cursor],a,button,summary");

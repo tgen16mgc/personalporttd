@@ -1,6 +1,13 @@
 import data from "../keystatic/about.json";
 
 export const aboutHero = data.aboutHero;
+export const uiLabels = data.uiLabels;
+export const proof = data.proof;
+export const capabilities = data.capabilities;
+export const aiPractice = data.aiPractice;
+export const profileFacts = data.profileFacts;
+export const sectionLabels = data.sectionLabels;
+export const afterworkDisplay = data.afterworkDisplay;
 
 export const experience = data.experience;
 
@@ -37,7 +44,14 @@ export interface AfterworkItem {
   size: "large" | "small";
 }
 
-export const afterwork: AfterworkItem[] = data.afterwork.map((item) => ({
+type RawAfterworkItem = Omit<AfterworkItem, "subtitle" | "image" | "takeaway" | "size"> & {
+  subtitle?: string;
+  image?: string;
+  takeaway?: string;
+  size: string;
+};
+
+export const afterwork: AfterworkItem[] = (data.afterwork as RawAfterworkItem[]).map((item) => ({
   ...item,
   subtitle: item.subtitle || null,
   image: item.image ?? null,
