@@ -5,6 +5,7 @@
   },
   "heroContent": {
     "greeting": "Hi, I'm Tien.",
+    "positioning": "Marketing Fresher",
     "namePrefix": "Hi, I'm ",
     "nameTrailing": ".",
     "nameAliases": [
@@ -74,11 +75,10 @@
         "label": "design & video editing",
         "color": "#2F2FE4"
       }
-    ],
-    "positioning": "Marketing Fresher"
+    ]
   },
   "quickIntroContent": {
-    "kicker": "The short version",
+    "kicker": "A (wannabe) marketer",
     "headline": "Starting with the customer.",
     "headlineSub": "Consumer insight, brand planning, and campaign execution.",
     "body": "I'm a marketing undergraduate at NEU, looking to start my career in a marketing team at a technology company or multinational. I'm interested in how customer insight shapes what a brand offers, how it communicates, and why people choose it.",
