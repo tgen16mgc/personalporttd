@@ -140,6 +140,14 @@
     {
       "name": "Fixma",
       "logo": "/images/homepage/brands/11/logo.jpg"
+    },
+    {
+      "name": "TBW",
+      "logo": "/images/homepage/brands/12/logo.png"
+    },
+    {
+      "name": "Hino",
+      "logo": "/images/homepage/brands/13/logo.svg"
     }
   ]
 }
