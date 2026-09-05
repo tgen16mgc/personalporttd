@@ -2,6 +2,7 @@ import data from "../keystatic/homepage.json";
 
 export const heroContent = data.heroContent as {
   greeting: string;
+  positioning: string;
   namePrefix?: string;
   nameTrailing?: string;
   nameAliases?: string[];

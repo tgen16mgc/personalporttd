@@ -20,7 +20,7 @@ export default function ContactPage() {
       </div>
       <a href="#contact-form" className="contact-form-jump">Send a message <ArrowUpRight size={14} /></a>
     </section>
-    <section id="contact-form" className="contact-form-section"><div><h2>Want to start a new project?</h2><p>Or just say hello.</p><p>{personal.status}<br />{personal.location}</p>{resume && <a href={resume} target="_blank" rel="noopener noreferrer" className="text-link">Resume <ArrowUpRight size={16} /></a>}</div><ContactForm /></section>
+    <section id="contact-form" className="contact-form-section"><div><h2>Hiring for a graduate or marketing role?</h2><p>I&apos;d be glad to hear about the team and the work.</p><p>{personal.status}<br />{personal.location}</p>{resume && <a href={resume} target="_blank" rel="noopener noreferrer" className="text-link">View resume <ArrowUpRight size={16} /></a>}</div><ContactForm /></section>
     <Footer />
   </>;
 }

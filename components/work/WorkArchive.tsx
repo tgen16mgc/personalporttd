@@ -125,7 +125,7 @@ export function WorkArchive() {
       <Link href="/" className="back-button" aria-label="Back to home" data-cursor="Home"><ChevronLeft size={21} strokeWidth={2} /></Link>
       <header className="work-intro">
         <p className="eyebrow" data-reveal>Selected Work</p>
-        <h1 data-reveal-heading>Projects spanning brand strategy, campaigns, consumer research, and creative execution.</h1>
+        <h1 data-reveal-heading>Selected work in consumer research, campaign delivery, e-commerce, and marketing tools.</h1>
       </header>
       <div className="archive-stage" aria-label="Looping project gallery"
         onPointerDown={(event) => { if (event.button !== 0) return; drag.current = { x: event.clientX, y: event.clientY, lastX: event.clientX, lastY: event.clientY }; moved.current = false; }}

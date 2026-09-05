@@ -240,7 +240,7 @@ export function ContactForm() {
             aria-invalid={Boolean(fieldErrors.message)}
             aria-describedby={fieldErrors.message ? `${messageId}-error` : undefined}
             className="contact-input min-h-28 w-full resize-none border-0 border-b border-[var(--color-ink)]/20 bg-transparent px-0 py-3 text-base text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)] focus:border-[var(--color-cyan)] focus:outline-none"
-            placeholder="What are we making?"
+            placeholder="Tell me about the role or project."
           />
           {fieldErrors.message ? (
             <p id={`${messageId}-error`} className="text-sm text-red-700" role="alert">

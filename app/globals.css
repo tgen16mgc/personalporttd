@@ -84,6 +84,7 @@ body.preview-open { overflow: hidden; }
 .home-profile { align-self: start; width: min(max(360px, 32vw), 100vw - 140px); }
 .home-profile p { margin: 0 0 10px; color: #737372; font-size: max(12px, min(.8vw, 7.8px + .28vw)); font-weight: 500; line-height: 1; text-transform: uppercase; letter-spacing: .045em; }
 .home-profile h1 { margin: 0; font-size: max(24px, 2.8vw); line-height: .98; font-weight: 500; letter-spacing: 0; }
+.home-profile .home-summary { margin: 16px 0 12px; max-width: 34ch; font-size: 14px; line-height: 1.5; text-transform: none; letter-spacing: 0; }
 .home-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-self: end; width: min(720px, 100%); gap: clamp(12px, 2vw, 28px); margin: 0; }
 .home-meta > div, .about-meta > div { border-top: 1px solid var(--line); padding-top: 10px; }
 .home-meta dt, .home-meta dd, .about-meta dt, .about-meta dd, .preview-meta dt, .preview-meta dd { margin: 0; text-transform: uppercase; letter-spacing: .018em; font-size: max(12px, min(.8vw, 7.8px + .28vw)); line-height: 1.25; }
@@ -238,6 +239,7 @@ body.preview-open { overflow: hidden; }
   .home-profile { width: calc(100% - 90px); }
   .home-profile h1 { max-width: 270px; font-size: 24px; }
   .home-profile p { font-size: 10px; line-height: 1.25; max-width: 200px; }
+  .home-profile .home-summary { display: none; }
   .home-meta { grid-template-columns: 1fr; gap: 10px; width: min(280px, 100%); }
   .home-meta > div { border: 0; padding: 0; }
   .home-meta dt { font-size: 10px; line-height: 1; }

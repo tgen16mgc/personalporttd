@@ -87,6 +87,7 @@ export default config({
       schema: {
         heroContent: fields.object({
           greeting: fields.text({ label: "Greeting" }),
+          positioning: fields.text({ label: "Portfolio Positioning" }),
           namePrefix: fields.text({
             label: "Greeting Prefix (before animated name)",
             description: "Static text rendered before the typewriter name. e.g. \"Hi, I'm \"",
@@ -183,6 +184,7 @@ export default config({
             location: fields.text({ label: "Location" }),
             role: fields.text({ label: "Role" }),
             period: fields.text({ label: "Period" }),
+            summary: fields.text({ label: "Contribution", multiline: true }),
           }),
           {
             label: "Experience",
@@ -206,7 +208,7 @@ export default config({
           school: fields.text({ label: "School" }),
           location: fields.text({ label: "Location" }),
           degree: fields.text({ label: "Degree" }),
-          graduation: fields.text({ label: "Graduation Year" }),
+          graduation: fields.text({ label: "Expected Degree Completion / Ceremony" }),
           gpa: fields.text({ label: "GPA" }),
         }),
         personalBits: fields.array(

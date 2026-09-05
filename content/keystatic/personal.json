@@ -8,20 +8,21 @@
   "linkedinHandle": "/in/tienduongngoc",
   "facebook": "https://www.facebook.com/tienduong.0822/",
   "resumeUrl": "https://canva.link/o4b4tnptmaj8nri",
-  "status": "Open to opportunities",
+  "status": "Open to graduate programs and early-career marketing roles. Available full-time from December 2026.",
   "portraitImage": "/images/personal/portraitImage.jpg",
   "aboutImage": "/images/personal/aboutImage.jpeg",
   "seo": {
-    "title": "Tien Duong Ngoc | A (wannabe) Marketer",
-    "description": "Marketing. Strategy. Meaning. Portfolio of Tien Duong Ngoc, a marketer who finds beauty in every brief.",
-    "shortDescription": "Marketing. Strategy. Meaning.",
+    "title": "Tien Duong Ngoc | Marketing Portfolio",
+    "description": "Marketing undergraduate at NEU with experience in consumer research, brand planning, campaign delivery and a student e-commerce business. Seeking marketing graduate and fresher roles.",
+    "shortDescription": "Consumer insight, brand planning, and campaign execution. Marketing graduate and fresher opportunities.",
     "favicon": "/images/personal/seo/favicon.png",
     "keywords": [
+      "Tien Duong Ngoc",
       "marketing",
-      "strategy",
-      "portfolio",
-      "Tien Duong",
-      "creative"
+      "consumer research",
+      "graduate programs",
+      "e-commerce",
+      "portfolio"
     ]
   },
   "navigation": [
@@ -42,5 +43,5 @@
       "label": "Contact"
     }
   ],
-  "footerQuote": "A (wannabe) Marketer | Hanoi-based"
+  "footerQuote": "Marketing Fresher | Hanoi"
 }

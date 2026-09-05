@@ -1,9 +1,353 @@
 {
   "items": [
     {
+      "slug": "pixself-keychain",
+      "title": "Pixself: a student-run commerce project",
+      "tagline": "150 orders from a 13-week university business project. I led the product and website work and added an n8n order-processing workflow.",
+      "client": "University group project",
+      "brand": "Pixself",
+      "industry": "E-commerce",
+      "role": "Project Lead | Product, Website & Order Workflow",
+      "year": "Aug - Nov 2025",
+      "thumbnail": "/images/projects/items/5/thumbnail.jpg",
+      "heroImage": "/images/projects/items/5/heroImage.jpg",
+      "gallery": [
+        {
+          "type": "video",
+          "videoUrl": "https://www.tiktok.com/@pixself/video/7551064434207198485?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
+          "size": "half"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/5/gallery/1/image.jpg",
+          "size": "half"
+        },
+        {
+          "type": "image",
+          "image": "/images/projects/items/5/gallery/2/image.jpg",
+          "size": "half"
+        }
+      ],
+      "featured": true,
+      "color": "#A3E7FC",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "A business project in 13 weeks"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Choosing a product we could deliver"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/5/story/7/value/image.png",
+            "caption": "1st brandguide draft",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/5/story/8/value/image.png",
+            "caption": "Website snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/5/story/9/value/image.jpg",
+            "caption": "Social post snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/5/story/12/value/image.png",
+            "caption": "n8n workflow snapshot",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Changing the order workflow"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What the team achieved"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [
+        {
+          "metric": "orders",
+          "value": "150"
+        },
+        {
+          "metric": "impressions",
+          "value": "333K"
+        },
+        {
+          "metric": "website link clicks",
+          "value": "1,800"
+        }
+      ],
+      "awards": [
+        "Highest-graded project in the class"
+      ],
+      "credits": []
+    },
+    {
+      "slug": "redagencyads",
+      "title": "Red Agency Ads Tool",
+      "tagline": "I defined the campaign checks and reporting workflow for an advertising dashboard, then built it with AI coding agents to support account-team work.",
+      "client": "Red Agency JSC",
+      "brand": "Red Agency Ads Tool",
+      "industry": "Advertising Technology",
+      "role": "Product Requirements, Ads Logic & AI-Assisted Development",
+      "year": "2026 - Present",
+      "thumbnail": "/images/projects/items/6/thumbnail.png",
+      "heroImage": "/images/projects/items/6/heroImage.png",
+      "gallery": [],
+      "featured": true,
+      "color": "#0a84ff",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The account-team problem"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What I defined and built"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/6/story/3/value/image.png",
+            "caption": "The report ranks what needs attention and keeps the supporting evidence visible.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/6/story/8/value/image.png",
+            "caption": "Competitor evidence must be verified before it enters the decision brief.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Checking the recommendations"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [],
+      "awards": [],
+      "credits": [
+        {
+          "role": "Product and Build",
+          "name": "Tien Duong"
+        },
+        {
+          "role": "Development Workflow",
+          "name": "AI coding agents"
+        }
+      ]
+    },
+    {
+      "slug": "hongha",
+      "title": "Hong Ha: online stationery research",
+      "tagline": "I ran an online survey and helped turn consumer research into recommendations for online channels and product presentation.",
+      "client": "Hong Ha",
+      "industry": "Stationery",
+      "role": "Research & Strategy Contributor",
+      "year": "Oct 2025",
+      "thumbnail": "/images/projects/items/4/thumbnail.png",
+      "heroImage": "/images/projects/items/4/heroImage.png",
+      "gallery": [],
+      "featured": true,
+      "color": "#ed0000",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "How people buy stationery online"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "My research contribution"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/9/value/image.png",
+            "caption": "Report Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/10/value/image.png",
+            "caption": "Report Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/4/story/13/value/image.png",
+            "caption": "Report Snapshot",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "From findings to recommendations"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The output"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [],
+      "awards": [],
+      "credits": []
+    },
+    {
+      "slug": "la-passion",
+      "title": "La Passion: content and media planning",
+      "tagline": "I coordinated content across three hospitality brands and used restaurant revenue data to help recommend advertising budgets.",
+      "client": "La Passion Group",
+      "industry": "Hospitality & F&B",
+      "role": "Account Executive | Production & Media Planning",
+      "year": "Nov 2025 - Apr 2026",
+      "thumbnail": "/images/projects/items/1/thumbnail.jpg",
+      "heroImage": "/images/projects/items/1/heroImage.png",
+      "gallery": [],
+      "featured": true,
+      "color": "#0d1657",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Supporting three hospitality brands"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "My role in delivery"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Connecting the ad budget to revenue expectations"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What I contributed"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [],
+      "awards": [],
+      "credits": []
+    },
+    {
       "slug": "aeon-beta",
-      "title": "AEON BETA - TikTok Video Production",
-      "tagline": "Aeon Beta: Producing 31 TikTok Videos for a New Cinema Launch",
+      "title": "AEON Beta: 31 TikTok launch videos",
+      "tagline": "I coordinated bookings, creator logistics and filming across Hanoi and Hai Phong. The team delivered all 31 videos on time and through quality control.",
       "client": "CleverAds",
       "brand": "AEON BETA",
       "industry": "Retail",
@@ -39,7 +383,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "The Brief"
+            "body": "31 launch videos across two cities"
           }
         },
         {
@@ -49,7 +393,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "My Role"
+            "body": "What I coordinated"
           }
         },
         {
@@ -59,31 +403,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "Planning and Production Management"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "On-Set and Stakeholder Coordination"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Results"
+            "body": "The delivery"
           }
         },
         {
@@ -94,110 +414,24 @@
       "execution": [],
       "results": [
         {
-          "metric": "videos on time",
+          "metric": "videos delivered on time",
           "value": "31"
         },
         {
-          "metric": "standard",
-          "value": "Strong QC"
+          "metric": "videos passed quality control",
+          "value": "31/31"
         }
       ],
-      "awards": [],
-      "credits": []
-    },
-    {
-      "slug": "la-passion",
-      "title": "La Passion Restaurant & Hospitality",
-      "tagline": "La Passion Restaurant & Hospitality - Managing Hospitality Content and Revenue-Based Media Planning for F&B",
-      "client": "La Passion Group",
-      "industry": "Hospitality & F&B",
-      "role": "Account Executive, Brand Operations, Production Coordinator, Booking Management",
-      "year": "Nov 2025 - Apr 2026",
-      "thumbnail": "/images/projects/items/1/thumbnail.jpg",
-      "heroImage": "/images/projects/items/1/heroImage.png",
-      "gallery": [],
-      "featured": true,
-      "color": "#0d1657",
-      "story": [
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "The Brief"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "What I Owned"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Revenue Planning and Ads Logic"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Production and Content Management"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Results"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        }
-      ],
-      "execution": [],
-      "results": [],
       "awards": [],
       "credits": []
     },
     {
       "slug": "cnspaper",
-      "title": "C&S Paper Vietnam Brand Strategy",
-      "tagline": "C&S Paper Vietnam: Building a Localized Brand Strategy for Market Entry",
+      "title": "C&S Paper: Vietnam market-entry proposal",
+      "tagline": "I contributed planning, copy and pitch development to a localized brand strategy proposal for e-commerce and modern retail.",
       "client": "C&S Paper Vietnam",
       "industry": "FMCG",
-      "role": "Strategic Planner, Copywriter",
+      "role": "Planning, Copywriting & Pitch Development",
       "year": "March 2026",
       "thumbnail": "/images/projects/items/2/thumbnail.png",
       "heroImage": "/images/projects/items/2/heroImage.png",
@@ -208,7 +442,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "The Brief"
+            "body": "A market-entry proposal for Vietnam"
           }
         },
         {
@@ -218,17 +452,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "What I Owned"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Strategic Approach"
+            "body": "The positioning choice"
           }
         },
         {
@@ -244,21 +468,11 @@
           }
         },
         {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/2/story/8/value/image.png",
             "caption": "Proposal Snapshot",
             "size": "content"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Brand Positioning and Creative Direction"
           }
         },
         {
@@ -270,10 +484,6 @@
           }
         },
         {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/2/story/12/value/image.png",
@@ -282,13 +492,9 @@
           }
         },
         {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
           "discriminant": "heading",
           "value": {
-            "body": "What I Did"
+            "body": "Turning the strategy into a proposal"
           }
         },
         {
@@ -298,7 +504,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "Results"
+            "body": "The output"
           }
         },
         {
@@ -317,15 +523,123 @@
       ]
     },
     {
+      "slug": "aeon-mall-thanh-hoa-kv",
+      "title": "AEON MALL Thanh Hoa: launch visuals",
+      "tagline": "I helped translate the launch brief into visual direction and coordinated feedback and adaptations across digital and in-store materials.",
+      "client": "AEON MALL Thanh Hoa",
+      "brand": "AEON MALL Thanh Hoa",
+      "industry": "Retail Launch / Key Visual",
+      "role": "Creative Translation & Project Coordination",
+      "year": "2026",
+      "thumbnail": "/images/projects/items/7/thumbnail.png",
+      "heroImage": "/images/projects/items/7/heroImage.png",
+      "gallery": [],
+      "featured": true,
+      "color": "#b0187c",
+      "story": [
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "A key visual for a mall launch"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "My contribution"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/2/value/image.png",
+            "caption": "Square KV for the AEONMALL Vietnam app push, built around the mascot, phone screen, vouchers, gifts, and QR call to action.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/4/value/image.png",
+            "caption": "Web slide adaptation for app benefits: WAON POINT, lucky draw, and e-voucher.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/6/value/image.jpg",
+            "caption": "Tall standee for app download and lucky-draw instructions.",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/7/value/image.png",
+            "caption": "Bilingual floor-sign set using mascot scenes for each mall area.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/9/value/image.gif",
+            "caption": "Mascot GIF for small digital moments.",
+            "size": "content"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/items/7/story/10/value/image.png",
+            "caption": "Wide cover adaptation with more room for the app CTA, mascot, vouchers, and universe background.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Adapting the launch materials"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        }
+      ],
+      "execution": [],
+      "results": [],
+      "awards": [],
+      "credits": [
+        {
+          "role": "Creative Translation / Project & Account Management",
+          "name": "Tien Duong"
+        },
+        {
+          "role": "Visual Craft and Execution",
+          "name": "Project team"
+        }
+      ]
+    },
+    {
       "slug": "freelance-visualizer",
-      "title": "Freelance Marketing & Creative Projects",
-      "tagline": "Developed visual identities, advertising creatives, and social content for businesses across multiple industries.",
-      "client": "Various Clients",
+      "title": "Selected creative work",
+      "tagline": "A selection of visual and editorial work, including student-club and event projects. Paid freelance experience is listed separately on About.",
+      "client": "Various projects",
       "industry": "Marketing & Advertising",
-      "role": "Creative Designer",
-      "year": "2022–Present",
-      "thumbnail": "/images/projects/items/3/thumbnail.png",
-      "heroImage": "/images/projects/items/3/heroImage.jpg",
+      "role": "Design & Art Direction",
+      "year": "Selected work",
+      "thumbnail": "/images/projects/items/3/story/1/value/image.png",
+      "heroImage": "/images/projects/items/3/story/1/value/image.png",
       "gallery": [],
       "featured": true,
       "color": "#0c1919",
@@ -468,486 +782,6 @@
       "results": [],
       "awards": [],
       "credits": []
-    },
-    {
-      "slug": "hongha",
-      "title": "Hong Ha Consumer Research",
-      "tagline": "Hồng Hà Consumer Research & Digital Strategy",
-      "client": "Hong Ha",
-      "industry": "Stationery",
-      "role": "Research & Strategic Planner",
-      "year": "Oct 2025",
-      "thumbnail": "/images/projects/items/4/thumbnail.png",
-      "heroImage": "/images/projects/items/4/heroImage.png",
-      "gallery": [],
-      "featured": true,
-      "color": "#ed0000",
-      "story": [
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "The Brief"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "What I Did"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Research Approach"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Key Insights"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/9/value/image.png",
-            "caption": "Report Snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/10/value/image.png",
-            "caption": "Report Snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/4/story/13/value/image.png",
-            "caption": "Report Snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Results"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        }
-      ],
-      "execution": [],
-      "results": [],
-      "awards": [],
-      "credits": []
-    },
-    {
-      "slug": "pixself-keychain",
-      "title": "Pixself",
-      "tagline": "Pixself: Building a Custom Pixel Merch Brand in 13 Weeks",
-      "client": "Group Project",
-      "brand": "Pixself",
-      "industry": "Startup",
-      "role": "Project Lead, Product Strategy, Website, and Brand Design",
-      "year": "Aug 22, 2025 – Nov 18, 2025",
-      "thumbnail": "/images/projects/items/5/thumbnail.jpg",
-      "heroImage": "/images/projects/items/5/heroImage.jpg",
-      "gallery": [
-        {
-          "type": "video",
-          "videoUrl": "https://www.tiktok.com/@pixself/video/7551064434207198485?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
-          "size": "half"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/5/gallery/1/image.jpg",
-          "size": "half"
-        },
-        {
-          "type": "image",
-          "image": "/images/projects/items/5/gallery/2/image.jpg",
-          "size": "half"
-        }
-      ],
-      "featured": true,
-      "color": "#A3E7FC",
-      "story": [
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "The Brief"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Finding the Right Product Concept"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Building the Brand and Website"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/5/story/7/value/image.png",
-            "caption": "1st brandguide draft",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/5/story/8/value/image.png",
-            "caption": "Website snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/5/story/9/value/image.jpg",
-            "caption": "Social post snapshot",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Improving the Workflow After Launch"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/5/story/12/value/image.png",
-            "caption": "n8n workflow snapshot",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Results"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        }
-      ],
-      "execution": [],
-      "results": [
-        {
-          "metric": "revenue",
-          "value": "15M VND"
-        },
-        {
-          "metric": "impressions",
-          "value": "333K"
-        },
-        {
-          "metric": "link clicks",
-          "value": "1,800"
-        }
-      ],
-      "awards": [],
-      "credits": []
-    },
-    {
-      "slug": "redagencyads",
-      "title": "Red Agency Ads Tool",
-      "tagline": "At Red Agency, one client question could send the account team through Ads Manager, sheets, screenshots, and old decks. I built Red Agency Ads with coding agents so the evidence and next action lived in one place.",
-      "client": "Red Agency JSC",
-      "brand": "Red Agency Ads Tool",
-      "industry": "Advertising Technology",
-      "role": "Product Direction, Ads Strategy, AI-Assisted Development",
-      "year": "2026 - Present",
-      "thumbnail": "/images/projects/items/6/thumbnail.png",
-      "heroImage": "/images/projects/items/6/heroImage.png",
-      "gallery": [],
-      "featured": true,
-      "color": "#0a84ff",
-      "story": [
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "The insight"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "quote",
-          "value": {
-            "body": "The team had plenty of data, but no reliable path from evidence to the next action."
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/6/story/3/value/image.png",
-            "caption": "The report ranks what needs attention and keeps the supporting evidence visible.",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "What I built"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/6/story/8/value/image.png",
-            "caption": "Competitor evidence must be verified before it enters the decision brief.",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "How I work"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        }
-      ],
-      "execution": [],
-      "results": [
-        {
-          "metric": "working product",
-          "value": "Live"
-        }
-      ],
-      "awards": [],
-      "credits": [
-        {
-          "role": "Product and Build",
-          "name": "Tien Duong"
-        },
-        {
-          "role": "Development Workflow",
-          "name": "AI coding agents"
-        }
-      ]
-    },
-    {
-      "slug": "aeon-mall-thanh-hoa-kv",
-      "title": "AEON MALL Thanh Hoa - Launch Key Visual",
-      "tagline": "A launch KV for AEON MALL Thanh Hoa, built from \"The Universe of Happiness and Joy\" and adapted into social, app, web, poster, and POSM touchpoints.",
-      "client": "AEON MALL Thanh Hoa",
-      "brand": "AEON MALL Thanh Hoa",
-      "industry": "Retail Launch / Key Visual",
-      "role": "Creative Translation, Project Management, Account Management",
-      "year": "2026",
-      "thumbnail": "/images/projects/items/7/thumbnail.png",
-      "heroImage": "/images/projects/items/7/heroImage.png",
-      "gallery": [],
-      "featured": true,
-      "color": "#b0187c",
-      "story": [
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "The brief"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/2/value/image.png",
-            "caption": "Square KV for the AEONMALL Vietnam app push, built around the mascot, phone screen, vouchers, gifts, and QR call to action.",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "From idea to visual world"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/4/value/image.png",
-            "caption": "Web slide adaptation for app benefits: WAON POINT, lucky draw, and e-voucher.",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/6/value/image.jpg",
-            "caption": "Tall standee for app download and lucky-draw instructions.",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/7/value/image.png",
-            "caption": "Bilingual floor-sign set using mascot scenes for each mall area.",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Making the KV travel"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/9/value/image.gif",
-            "caption": "Mascot GIF for small digital moments.",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/7/story/10/value/image.png",
-            "caption": "Wide cover adaptation with more room for the app CTA, mascot, vouchers, and universe background.",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "steps",
-          "value": {
-            "heading": "What I helped keep together",
-            "items": [
-              "Translated the emotional brief into a clear visual direction with the team.",
-              "Kept the work close to AEON MALL color guidelines and launch expectations.",
-              "Managed client feedback, internal coordination, and timing across adaptation rounds.",
-              "Helped the KV hold up across social, app, web, poster, standee, floor-sign, and POSM formats."
-            ]
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Why it mattered"
-          }
-        },
-        {
-          "discriminant": "text",
-          "value": {}
-        }
-      ],
-      "execution": [],
-      "results": [
-        {
-          "metric": "adaptation scope",
-          "value": "Social / App / Web / POSM"
-        },
-        {
-          "metric": "core idea",
-          "value": "Happiness universe"
-        },
-        {
-          "metric": "role mix",
-          "value": "Creative + PM + Account"
-        }
-      ],
-      "awards": [],
-      "credits": [
-        {
-          "role": "Creative Translation / Project & Account Management",
-          "name": "Tien Duong"
-        },
-        {
-          "role": "Visual Craft and Execution",
-          "name": "Project team"
-        }
-      ]
     }
   ]
 }

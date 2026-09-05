@@ -157,7 +157,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     const drawSigns = (time: number) => {
       const cycle = Math.floor(time / 3.65);
       const progress = reduced.matches ? 1 : Math.min((time % 3.65) / 1.25, 1);
-      const labels = [personal.name.toUpperCase(), heroContent.currentRole.label.toUpperCase()];
+      const labels = [personal.name.toUpperCase(), heroContent.positioning.toUpperCase()];
       for (const [name, { context: ctx, texture }] of canvases) {
         ctx.clearRect(0, 0, 1024, 1024);
         ctx.textBaseline = "middle";

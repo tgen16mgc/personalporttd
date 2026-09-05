@@ -12,26 +12,32 @@
       "em tien",
       "td"
     ],
-    "tagline": "As an early-career Account Planner and a young marketer, I help brands stop talking at people and start talking \"with\" them. The kind of work that makes someone say \"finally, they get it\" not just \"oh, another ad.\"",
+    "tagline": "At Red Agency, I contribute to consumer research, brand proposals and campaign delivery. For Pixself, our student e-commerce project, I led the product and website work. I also use AI and automation in practical ways, including an ads dashboard and an order-processing workflow.",
     "currentRole": {
-      "label": "Account Executive (Hybrid)",
+      "label": "Account Executive",
       "company": "Red Agency JSC"
     },
     "previousRole": {
-      "label": "Creative Executive (Part-time)",
+      "label": "Creative & Marketing Executive (Part-time)",
       "company": "VuVer.vn"
     },
-    "education": "Marketing @ NEU, GPA 3.69 (yes, I actually study)",
+    "education": "Marketing at NEU | GPA 3.69/4.0 | Degree completion expected December 2026",
     "industries": [
+      "Retail",
       "F&B",
       "Hospitality",
-      "Lifestyle",
-      "FMCG"
+      "FMCG",
+      "E-commerce"
     ],
-    "tools": [],
+    "tools": [
+      "Excel / SPSS: research and analysis",
+      "Meta Ads / GA4: campaign tracking",
+      "n8n: order processing",
+      "AI coding agents: dashboard development"
+    ],
     "gravityTags": [
       {
-        "label": "fresher '27",
+        "label": "Available Dec 2026",
         "color": "#06B6D4"
       },
       {
@@ -55,40 +61,41 @@
         "color": "#06B6D4"
       },
       {
-        "label": "freelancer",
+        "label": "e-commerce",
         "color": "#FFDE42"
       },
       {
-        "label": "(sometime) design & video editing",
+        "label": "design & video editing",
         "color": "#2F2FE4"
       }
-    ]
+    ],
+    "positioning": "Marketing Fresher"
   },
   "quickIntroContent": {
-    "kicker": "The Short Version",
-    "headline": "Good marketing should be done with mindful thought and purposeful actions.",
-    "headlineSub": "That’s what I believe.",
-    "body": "I work at the intersection of strategy and creativity - figuring out what makes people care, then finding interesting ways to say it. Currently focused on agency-side positions.",
+    "kicker": "The short version",
+    "headline": "Starting with the customer.",
+    "headlineSub": "Consumer insight, brand planning, and campaign execution.",
+    "body": "I'm a marketing undergraduate at NEU, looking to start my career in a marketing team at a technology company or multinational. I'm interested in how customer insight shapes what a brand offers, how it communicates, and why people choose it.",
     "facts": [
       {
         "label": "Currently",
         "primary": "Account Executive",
-        "secondary": "Red Agency JSC"
+        "secondary": "Red Agency JSC | Hanoi"
       },
       {
         "label": "Education",
         "primary": "Marketing, NEU",
-        "secondary": "3.69 GPA · 2027"
+        "secondary": "GPA 3.69/4.0 | Completion expected Dec 2026"
       },
       {
-        "label": "Industry",
-        "primary": "F&B, Hospitality, Lifestyle",
-        "secondary": "Gen Z focus"
+        "label": "Available",
+        "primary": "Full-time from Dec 2026",
+        "secondary": "Graduate programs & marketing roles"
       },
       {
-        "label": "Approach",
-        "primary": "Insight → Story",
-        "secondary": "Mind.purposeful"
+        "label": "Languages",
+        "primary": "Vietnamese & English",
+        "secondary": "Native Vietnamese | Professional working English; IELTS 7.5 (2022)"
       }
     ]
   },
@@ -136,6 +143,22 @@
     {
       "name": "Delight Park",
       "logo": "/images/homepage/brands/10/logo.svg"
+    },
+    {
+      "name": "Fixma",
+      "logo": "/images/homepage/brands/11/logo.jpg"
+    },
+    {
+      "name": "TBW",
+      "logo": "/images/homepage/brands/12/logo.png"
+    },
+    {
+      "name": "Hino",
+      "logo": "/images/homepage/brands/13/logo.svg"
+    },
+    {
+      "name": "Onsen Fuji",
+      "logo": "/images/homepage/brands/14/logo.png"
     }
   ]
 }
