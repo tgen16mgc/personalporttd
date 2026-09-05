@@ -1,4 +1,5 @@
 import { config, fields, singleton } from "@keystatic/core";
+import { getStoryItemLabel } from "./lib/cms-content.mjs";
 
 const hasGithubStorage = Boolean(process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG);
 
@@ -85,23 +86,27 @@ export default config({
       path: "content/keystatic/homepage",
       format: { data: "json" },
       schema: {
+        homeDetails: fields.object({
+          seeking: fields.text({ label: "Seeking (home detail)" }),
+          available: fields.text({ label: "Available (home detail)" }),
+        }),
         heroContent: fields.object({
-          greeting: fields.text({ label: "Greeting" }),
+          greeting: fields.text({ label: "Greeting (legacy hero)" }),
           positioning: fields.text({ label: "Portfolio Positioning" }),
           namePrefix: fields.text({
-            label: "Greeting Prefix (before animated name)",
+            label: "Greeting Prefix (legacy hero)",
             description: "Static text rendered before the typewriter name. e.g. \"Hi, I'm \"",
             defaultValue: "Hi, I'm ",
           }),
           nameTrailing: fields.text({
-            label: "Trailing punctuation after name",
+            label: "Trailing punctuation after name (legacy hero)",
             description: "e.g. \".\" — rendered after the typewriter.",
             defaultValue: ".",
           }),
           nameAliases: fields.array(
             fields.text({ label: "Alias" }),
             {
-              label: "Name Aliases (typewriter loop)",
+              label: "Name Aliases (legacy hero)",
               description:
                 "Cycled in the typewriter after the prefix. First item shows first.",
               itemLabel: (props) => props.value,
@@ -310,6 +315,13 @@ export default config({
             slug: fields.text({
               label: "Slug",
               description: "URL-safe identifier, e.g. my-project-name",
+              validation: {
+                isRequired: true,
+                pattern: {
+                  regex: /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
+                  message: "Use lowercase letters, numbers, and single hyphens only.",
+                },
+              },
             }),
             title: fields.text({ label: "Title" }),
             tagline: fields.text({ label: "Tagline", multiline: true }),
@@ -469,17 +481,7 @@ export default config({
               ),
               {
                 label: "Story (editorial blocks -- images between text)",
-                itemLabel: (props) => {
-                  const d = props.discriminant;
-                  const v = props.value as unknown as Record<string, { value: string }>;
-                  if (d === "heading") return `H: ${v.body?.value?.slice(0, 50) || "heading"}`;
-                  if (d === "image") return `IMG: ${v.caption?.value || "image"}`;
-                  if (d === "facebook") return `FB: ${v.url?.value?.slice(0, 50) || "Facebook post"}`;
-                  if (d === "pdf") return `PDF: ${v.title?.value || v.url?.value?.slice(0, 50) || "Google Drive PDF"}`;
-                  if (d === "quote") return `Q: ${v.body?.value?.slice(0, 40) || "quote"}`;
-                  if (d === "steps") return `Steps: ${v.heading?.value || "numbered list"}`;
-                  return v.body?.value?.slice(0, 50) || "text";
-                },
+                itemLabel: getStoryItemLabel,
               }
             ),
             challenge: fields.text({
@@ -522,6 +524,17 @@ export default config({
               `${props.fields.featured.value ? "★ " : ""}${props.fields.title.value}`,
           }
         ),
+      },
+    }),
+    contact: singleton({
+      label: "Contact Page",
+      path: "content/keystatic/contact",
+      format: { data: "json" },
+      schema: {
+        heading: fields.text({ label: "Page Heading" }),
+        formLinkLabel: fields.text({ label: "Jump to Form Label" }),
+        formHeading: fields.text({ label: "Form Heading" }),
+        formDescription: fields.text({ label: "Form Description", multiline: true }),
       },
     }),
   },

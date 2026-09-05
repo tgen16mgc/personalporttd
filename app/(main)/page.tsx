@@ -1,5 +1,5 @@
 import { personal } from "@/content/personal";
-import { heroContent, quickIntroContent } from "@/content/pages/home";
+import { heroContent, quickIntroContent, homeDetails } from "@/content/pages/home";
 
 export default function HomePage() {
   return (
@@ -11,8 +11,8 @@ export default function HomePage() {
       </header>
       <dl className="home-meta" aria-label="Home details">
         <div data-reveal><dt>Base</dt><dd>{personal.location}</dd></div>
-        <div data-reveal><dt>Seeking</dt><dd>Graduate programs / Marketing roles</dd></div>
-        <div data-reveal><dt>Available</dt><dd>{quickIntroContent.facts[2].primary}</dd></div>
+        {homeDetails.seeking && <div data-reveal><dt>Seeking</dt><dd>{homeDetails.seeking}</dd></div>}
+        {homeDetails.available && <div data-reveal><dt>Available</dt><dd>{homeDetails.available}</dd></div>}
       </dl>
     </section>
   );

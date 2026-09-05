@@ -25,7 +25,7 @@ export async function GET(req: Request) {
 
   try {
     const handlers = await getHandlers();
-    return handlers.GET(req);
+    return await handlers.GET(req);
   } catch {
     return new Response("Keystatic API not configured", { status: 503 });
   }
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
 
   try {
     const handlers = await getHandlers();
-    return handlers.POST(req);
+    return await handlers.POST(req);
   } catch {
     return new Response("Keystatic API not configured", { status: 503 });
   }

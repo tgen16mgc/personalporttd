@@ -1,5 +1,7 @@
 import data from "../keystatic/homepage.json";
 
+export const homeDetails = data.homeDetails;
+
 export const heroContent = data.heroContent as {
   greeting: string;
   positioning: string;
