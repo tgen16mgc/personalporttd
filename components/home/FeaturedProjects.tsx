@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ProjectCard } from "@/components/work/ProjectCard";
 import { getFeaturedProjects } from "@/content/projects";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { staggerContainer } from "@/lib/animations";
 import { ArrowRight } from "lucide-react";
 import { CrossMark } from "@/components/ui/Decorative";
 

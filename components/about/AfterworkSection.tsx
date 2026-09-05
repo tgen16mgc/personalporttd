@@ -208,11 +208,9 @@ function StoryLightbox({
 
 function FloatingCard({
   item,
-  index,
   onClick,
 }: {
   item: AfterworkItem;
-  index: number;
   onClick: () => void;
 }) {
   return (
@@ -358,7 +356,6 @@ export default function AfterworkSection() {
                   <div className={node.className}>
                     <FloatingCard
                       item={item}
-                      index={index}
                       onClick={() => openStory(index)}
                     />
                   </div>

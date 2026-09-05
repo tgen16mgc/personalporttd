@@ -174,6 +174,8 @@ export default config({
         aboutHero: fields.object({
           hookLine: fields.text({ label: "Hook Line" }),
           hookSub: fields.text({ label: "Hook Subtext", multiline: true }),
+          hookLineVi: fields.text({ label: "Hook Line (Vietnamese)" }),
+          hookSubVi: fields.text({ label: "Hook Subtext (Vietnamese)", multiline: true }),
         }),
         experience: fields.array(
           fields.object({

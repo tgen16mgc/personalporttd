@@ -1,7 +1,9 @@
 {
   "aboutHero": {
     "hookLine": "Xin chào. Hello. I’m Tien.",
-    "hookSub": "Think of me as the person who makes brands sound human instead of corporate, grounded in understanding, care, and a little bit of love"
+    "hookSub": "Think of me as the person who makes brands sound human instead of corporate, grounded in understanding, care, and a little bit of love",
+    "hookLineVi": "Xin chào. Mình là Tiến.",
+    "hookSubVi": "Mình giúp thương hiệu trò chuyện gần gũi như một con người, bằng sự thấu hiểu, quan tâm và một chút yêu thương."
   },
   "experience": [
     {

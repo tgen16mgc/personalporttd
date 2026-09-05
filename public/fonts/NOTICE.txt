@@ -1,0 +1,20 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * gazzetta-variable:
+ *   - http://typekit.com/eulas/0000000000000000774b9a94
+ *   - http://typekit.com/eulas/0000000000000000774b9a95
+ * helvetica-neue-lt-pro:
+ *   - http://typekit.com/eulas/0000000000000000775ad3a9
+ *   - http://typekit.com/eulas/0000000000000000775ad3aa
+ *   - http://typekit.com/eulas/0000000000000000775ad3ab
+ *   - http://typekit.com/eulas/0000000000000000775ad3b2
+ * helvetica-neue-lt-pro-cond:
+ *   - http://typekit.com/eulas/0000000000000000775ad3ad
+ *
+ * © 2009-2026 Adobe Systems Incorporated. All Rights Reserved.
+ */
+Source stylesheet: https://use.typekit.net/nof0axs.css

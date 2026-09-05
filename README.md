@@ -1,53 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tien Duong Portfolio
 
-## CMS + Contact Form Setup
+Next.js 16 portfolio with Keystatic-managed content.
 
-- **Update favicon in CMS:** Keystatic → **Personal Info** → **SEO** → **Favicon / Site Icon**.
-- If no favicon is set in CMS, the app falls back to `public/favicon.ico`.
-
-To make the contact form send emails, configure these environment variables:
+## Development
 
 ```bash
-CONTACT_SMTP_HOST=smtp.gmail.com
-CONTACT_SMTP_PORT=465
-CONTACT_SMTP_SECURE=true
-CONTACT_SMTP_USER=your-smtp-user
-CONTACT_SMTP_PASS=your-smtp-password-or-app-password
-CONTACT_EMAIL_FROM=your-smtp-user
-CONTACT_EMAIL_TO=tiendn.fw@gmail.com
-```
-
-## Getting Started
-
-First, run the development server:
-
-```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`. Content lives in `content/keystatic/`; the CMS route is `/keystatic` when enabled.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm test
+npm run build
+```
 
-## Learn More
+## Contact form
 
-To learn more about Next.js, take a look at the following resources:
+Set `CONTACT_SMTP_HOST`, `CONTACT_SMTP_PORT`, `CONTACT_SMTP_SECURE`, `CONTACT_SMTP_USER`, `CONTACT_SMTP_PASS`, `CONTACT_EMAIL_FROM`, and `CONTACT_EMAIL_TO` in `.env.local`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Portfolio experience
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+GSAP drives the loader, curved route transitions, text entrances, and looping work gallery. Three.js renders the scroll/drag camera, linked signs, project display, and sticker impacts. Reduced-motion preferences disable the continuous animation.
 
-## Deploy on Vercel
+Keystatic still manages the original content. Home uses the profile and industry fields; About includes the biography, homepage facts, experience, and afterwork entries, with editable English and Vietnamese intro text. Work previews link to the complete case studies. The contact form and CMS security remain intact.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The visual reference and signal-pole model are from [Hiroto Sato](https://www.hirotos.com/). Local environment and font assets are in `public/models/` and `public/fonts/`. Helvetica Neue LT Pro and Gazzetta are Adobe-served fonts; their original copyright and license references are recorded in `public/fonts/NOTICE.txt`.
