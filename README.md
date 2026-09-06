@@ -11,6 +11,10 @@ npm run dev
 
 Open `http://localhost:3000`. Content lives in `content/keystatic/`; the CMS route is `/keystatic` when enabled.
 
+The CMS loads in a client-only chunk with a loading message. In local mode, successfully validated, SHA-addressed content blobs are cached privately by the browser; changed files receive new URLs, while the content tree stays uncached. The Projects singleton currently loads every project's images together, so its first visit can still be heavy. Splitting projects into a collection would require a separate content/schema migration.
+
+Portfolio raster images use WebP at quality 85 with original dimensions, transparency, and animation timing preserved. SVGs and the PNG favicon stay in their original formats. Keep future CMS uploads optimized as well; the editor downloads the original uploaded files, not Next.js image derivatives.
+
 ## Checks
 
 ```bash

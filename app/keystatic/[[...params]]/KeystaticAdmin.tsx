@@ -1,8 +1,10 @@
 "use client";
 
-import { makePage } from "@keystatic/next/ui/app";
-import config from "../../../keystatic.config";
+import dynamic from "next/dynamic";
 
-const KeystaticAdmin = makePage(config);
+const KeystaticAdmin = dynamic(() => import("./KeystaticApp"), {
+  ssr: false,
+  loading: () => <p role="status" style={{ padding: "2rem" }}>Loading content editor…</p>,
+});
 
 export default KeystaticAdmin;

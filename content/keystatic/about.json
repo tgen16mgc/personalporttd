@@ -88,7 +88,7 @@
         "body": "I defined the campaign checks, reporting requirements and account-team workflow, then built the dashboard with AI coding agents. It brings KPI views, campaign health checks and reporting into one place.",
         "projectSlug": "redagencyads",
         "linkLabel": "See the dashboard case",
-        "image": "/images/aiPractice/items/0/image.png",
+        "image": "/images/aiPractice/items/0/image.webp",
         "imageAlt": "Red Agency Ads report with campaign checks and supporting evidence",
         "caption": "My part: requirements, workflow design and AI-assisted development."
       },
@@ -97,7 +97,7 @@
         "body": "Once the shop was taking orders, I upgraded the website and added an n8n order-processing flow. The team could then focus mainly on fulfillment. This was an improvement to a business we were already running.",
         "projectSlug": "pixself-keychain",
         "linkLabel": "See the order workflow",
-        "image": "/images/aiPractice/items/1/image.png",
+        "image": "/images/aiPractice/items/1/image.webp",
         "imageAlt": "Pixself n8n order-processing workflow",
         "caption": "My part: the website upgrade and order-processing automation."
       }
@@ -230,7 +230,7 @@
       "title": "net đêm",
       "subtitle": "League with my brother",
       "description": "Late-night League with my brother at a net cafe. Bright screens, bad chairs, instant noodles nearby.",
-      "image": "/images/about/afterwork/0/image.jpeg",
+      "image": "/images/about/afterwork/0/image.webp",
       "emoji": "🎮",
       "bgGradient": "from-violet-50 to-indigo-100",
       "size": "large"
@@ -240,7 +240,7 @@
       "title": "marketing club",
       "subtitle": "uni gang",
       "description": "My Marketing's Generation Club friends at NEU. Many late nights making things together.",
-      "image": "/images/about/afterwork/1/image.jpeg",
+      "image": "/images/about/afterwork/1/image.webp",
       "emoji": "🫶",
       "bgGradient": "from-rose-50 to-pink-100",
       "size": "small"
@@ -250,7 +250,7 @@
       "title": "finals",
       "subtitle": "room got bigger",
       "description": "Presenting at a competition final. The room felt much bigger from the stage.",
-      "image": "/images/about/afterwork/2/image.JPG",
+      "image": "/images/about/afterwork/2/image.webp",
       "emoji": "🎤",
       "bgGradient": "from-sky-50 to-blue-100",
       "size": "small"
@@ -260,7 +260,7 @@
       "title": "more finals",
       "subtitle": "trying to make the words land",
       "description": "Another competition presentation. I keep these photos to remember how it felt to be up there.",
-      "image": "/images/about/afterwork/3/image.jpg",
+      "image": "/images/about/afterwork/3/image.webp",
       "emoji": "🏆",
       "bgGradient": "from-amber-50 to-yellow-100",
       "size": "small"
@@ -270,7 +270,7 @@
       "title": "her polaroids",
       "subtitle": "taken by my girlfriend",
       "description": "Polaroids my girlfriend took of me. Slightly soft, slightly off. I like them that way.",
-      "image": "/images/about/afterwork/4/image.png",
+      "image": "/images/about/afterwork/4/image.webp",
       "emoji": "📷",
       "bgGradient": "from-gray-50 to-slate-100",
       "size": "large"
@@ -280,7 +280,7 @@
       "title": "8.3",
       "subtitle": "for my mom",
       "description": "A bag I got for my mom on March 8.",
-      "image": "/images/about/afterwork/5/image.jpeg",
+      "image": "/images/about/afterwork/5/image.webp",
       "emoji": "👜",
       "bgGradient": "from-pink-50 to-rose-100",
       "size": "small"
@@ -290,7 +290,7 @@
       "title": "cat",
       "subtitle": "main character energy",
       "description": "My cat, doing very little and taking up most of the attention.",
-      "image": "/images/about/afterwork/6/image.jpg",
+      "image": "/images/about/afterwork/6/image.webp",
       "emoji": "🐱",
       "bgGradient": "from-orange-50 to-amber-100",
       "size": "large"
@@ -300,7 +300,7 @@
       "title": "food notes",
       "subtitle": "evidence I was there",
       "description": "Food photos from places I want to remember and come back to.",
-      "image": "/images/about/afterwork/7/image.jpg",
+      "image": "/images/about/afterwork/7/image.webp",
       "emoji": "🍜",
       "bgGradient": "from-lime-50 to-green-100",
       "size": "small"
@@ -310,7 +310,7 @@
       "title": "concert",
       "subtitle": "wrong lyrics, full confidence",
       "description": "At a concert, probably singing the wrong lyrics with full confidence.",
-      "image": "/images/about/afterwork/8/image.jpeg",
+      "image": "/images/about/afterwork/8/image.webp",
       "emoji": "🎧",
       "bgGradient": "from-purple-50 to-fuchsia-100",
       "size": "small"
@@ -320,7 +320,7 @@
       "title": "guitar",
       "subtitle": "fewer chords than the photo suggests",
       "description": "I know fewer chords than this photo suggests. Still practicing.",
-      "image": "/images/about/afterwork/9/image.jpeg",
+      "image": "/images/about/afterwork/9/image.webp",
       "emoji": "🎸",
       "bgGradient": "from-amber-50 to-orange-100",
       "size": "small"
@@ -330,7 +330,7 @@
       "title": "late walk",
       "subtitle": "nowhere urgent to be",
       "description": "A late walk with nowhere urgent to be. I like the city at this hour.",
-      "image": "/images/about/afterwork/10/image.jpg",
+      "image": "/images/about/afterwork/10/image.webp",
       "emoji": "🌙",
       "bgGradient": "from-indigo-50 to-violet-100",
       "size": "large"
@@ -340,7 +340,7 @@
       "title": "tin vào những điều m làm",
       "subtitle": "a small note",
       "description": "“Tin vào những điều m làm.” Believe in the things you do. A note I kept.",
-      "image": "/images/about/afterwork/11/image.jpg",
+      "image": "/images/about/afterwork/11/image.webp",
       "emoji": "📝",
       "bgGradient": "from-yellow-50 to-amber-100",
       "size": "large"
@@ -350,7 +350,7 @@
       "title": "flowers",
       "subtitle": "sometimes that is enough",
       "description": "Flowers from a day I wanted to keep a photo of.",
-      "image": "/images/about/afterwork/12/image.jpg",
+      "image": "/images/about/afterwork/12/image.webp",
       "emoji": "💐",
       "bgGradient": "from-pink-50 to-rose-100",
       "size": "small"
@@ -360,7 +360,7 @@
       "title": "a night out",
       "subtitle": "only makes sense if you were there",
       "description": "One of those nights that only makes sense if you were there.",
-      "image": "/images/about/afterwork/13/image.jpeg",
+      "image": "/images/about/afterwork/13/image.webp",
       "emoji": "🍻",
       "bgGradient": "from-cyan-50 to-sky-100",
       "size": "small"

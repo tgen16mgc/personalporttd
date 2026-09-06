@@ -9,8 +9,8 @@
       "industry": "E-commerce",
       "role": "Project Lead | Product, Website & Order Workflow",
       "year": "Aug - Nov 2025",
-      "thumbnail": "/images/projects/items/5/thumbnail.jpg",
-      "heroImage": "/images/projects/items/5/heroImage.jpg",
+      "thumbnail": "/images/projects/items/5/thumbnail.webp",
+      "heroImage": "/images/projects/items/5/heroImage.webp",
       "gallery": [
         {
           "type": "video",
@@ -19,12 +19,12 @@
         },
         {
           "type": "image",
-          "image": "/images/projects/items/5/gallery/1/image.jpg",
+          "image": "/images/projects/items/5/gallery/1/image.webp",
           "size": "half"
         },
         {
           "type": "image",
-          "image": "/images/projects/items/5/gallery/2/image.jpg",
+          "image": "/images/projects/items/5/gallery/2/image.webp",
           "size": "half"
         }
       ],
@@ -54,7 +54,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/5/story/7/value/image.png",
+            "image": "/images/projects/items/5/story/7/value/image.webp",
             "caption": "1st brandguide draft",
             "size": "content"
           }
@@ -62,7 +62,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/5/story/8/value/image.png",
+            "image": "/images/projects/items/5/story/8/value/image.webp",
             "caption": "Website snapshot",
             "size": "content"
           }
@@ -70,7 +70,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/5/story/9/value/image.jpg",
+            "image": "/images/projects/items/5/story/9/value/image.webp",
             "caption": "Social post snapshot",
             "size": "content"
           }
@@ -133,8 +133,8 @@
       "industry": "Advertising Technology",
       "role": "Product Requirements, Ads Logic & AI-Assisted Development",
       "year": "2026 - Present",
-      "thumbnail": "/images/projects/items/6/thumbnail.png",
-      "heroImage": "/images/projects/items/6/heroImage.png",
+      "thumbnail": "/images/projects/items/6/thumbnail.webp",
+      "heroImage": "/images/projects/items/6/heroImage.webp",
       "gallery": [],
       "featured": true,
       "color": "#0a84ff",
@@ -170,7 +170,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/6/story/8/value/image.png",
+            "image": "/images/projects/items/6/story/8/value/image.webp",
             "caption": "Competitor evidence must be verified before it enters the decision brief.",
             "size": "wide"
           }
@@ -208,8 +208,8 @@
       "industry": "Stationery",
       "role": "Research & Strategy Contributor",
       "year": "Oct 2025",
-      "thumbnail": "/images/projects/items/4/thumbnail.png",
-      "heroImage": "/images/projects/items/4/heroImage.png",
+      "thumbnail": "/images/projects/items/4/thumbnail.webp",
+      "heroImage": "/images/projects/items/4/heroImage.webp",
       "gallery": [],
       "featured": true,
       "color": "#ed0000",
@@ -237,7 +237,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/4/story/9/value/image.png",
+            "image": "/images/projects/items/4/story/9/value/image.webp",
             "caption": "Report Snapshot",
             "size": "content"
           }
@@ -245,7 +245,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/4/story/10/value/image.png",
+            "image": "/images/projects/items/4/story/10/value/image.webp",
             "caption": "Report Snapshot",
             "size": "content"
           }
@@ -253,7 +253,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/4/story/13/value/image.png",
+            "image": "/images/projects/items/4/story/13/value/image.webp",
             "caption": "Report Snapshot",
             "size": "content"
           }
@@ -292,8 +292,8 @@
       "industry": "Hospitality & F&B",
       "role": "Account Executive | Production & Media Planning",
       "year": "Nov 2025 - Apr 2026",
-      "thumbnail": "/images/projects/items/1/thumbnail.jpg",
-      "heroImage": "/images/projects/items/1/heroImage.png",
+      "thumbnail": "/images/projects/items/1/thumbnail.webp",
+      "heroImage": "/images/projects/items/1/heroImage.webp",
       "gallery": [],
       "featured": true,
       "color": "#0d1657",
@@ -353,8 +353,8 @@
       "industry": "Retail",
       "role": "Account Executive - Production Coordinator",
       "year": "2025",
-      "thumbnail": "/images/projects/items/0/thumbnail.png",
-      "heroImage": "/images/projects/items/0/heroImage.png",
+      "thumbnail": "/images/projects/items/0/thumbnail.webp",
+      "heroImage": "/images/projects/items/0/heroImage.webp",
       "gallery": [
         {
           "type": "video",
@@ -433,8 +433,8 @@
       "industry": "FMCG",
       "role": "Planning, Copywriting & Pitch Development",
       "year": "March 2026",
-      "thumbnail": "/images/projects/items/2/thumbnail.png",
-      "heroImage": "/images/projects/items/2/heroImage.png",
+      "thumbnail": "/images/projects/items/2/thumbnail.webp",
+      "heroImage": "/images/projects/items/2/heroImage.webp",
       "gallery": [],
       "featured": true,
       "color": "#9a7446",
@@ -462,7 +462,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/2/story/6/value/image.png",
+            "image": "/images/projects/items/2/story/6/value/image.webp",
             "caption": "Proposal Snapshot",
             "size": "content"
           }
@@ -470,7 +470,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/2/story/8/value/image.png",
+            "image": "/images/projects/items/2/story/8/value/image.webp",
             "caption": "Proposal Snapshot",
             "size": "content"
           }
@@ -478,7 +478,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/2/story/10/value/image.png",
+            "image": "/images/projects/items/2/story/10/value/image.webp",
             "caption": "Proposal Snapshot",
             "size": "content"
           }
@@ -486,7 +486,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/2/story/12/value/image.png",
+            "image": "/images/projects/items/2/story/12/value/image.webp",
             "caption": "Proposal Snapshot",
             "size": "content"
           }
@@ -531,8 +531,8 @@
       "industry": "Retail Launch / Key Visual",
       "role": "Creative Translation & Project Coordination",
       "year": "2026",
-      "thumbnail": "/images/projects/items/7/thumbnail.png",
-      "heroImage": "/images/projects/items/7/heroImage.png",
+      "thumbnail": "/images/projects/items/7/thumbnail.webp",
+      "heroImage": "/images/projects/items/7/heroImage.webp",
       "gallery": [],
       "featured": true,
       "color": "#b0187c",
@@ -560,7 +560,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/7/story/2/value/image.png",
+            "image": "/images/projects/items/7/story/2/value/image.webp",
             "caption": "Square KV for the AEONMALL Vietnam app push, built around the mascot, phone screen, vouchers, gifts, and QR call to action.",
             "size": "wide"
           }
@@ -568,7 +568,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/7/story/4/value/image.png",
+            "image": "/images/projects/items/7/story/4/value/image.webp",
             "caption": "Web slide adaptation for app benefits: WAON POINT, lucky draw, and e-voucher.",
             "size": "wide"
           }
@@ -576,7 +576,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/7/story/6/value/image.jpg",
+            "image": "/images/projects/items/7/story/6/value/image.webp",
             "caption": "Tall standee for app download and lucky-draw instructions.",
             "size": "content"
           }
@@ -584,7 +584,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/7/story/7/value/image.png",
+            "image": "/images/projects/items/7/story/7/value/image.webp",
             "caption": "Bilingual floor-sign set using mascot scenes for each mall area.",
             "size": "wide"
           }
@@ -592,7 +592,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/7/story/9/value/image.gif",
+            "image": "/images/projects/items/7/story/9/value/image.webp",
             "caption": "Mascot GIF for small digital moments.",
             "size": "content"
           }
@@ -600,7 +600,7 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/7/story/10/value/image.png",
+            "image": "/images/projects/items/7/story/10/value/image.webp",
             "caption": "Wide cover adaptation with more room for the app CTA, mascot, vouchers, and universe background.",
             "size": "wide"
           }
@@ -638,8 +638,8 @@
       "industry": "Marketing & Advertising",
       "role": "Design & Art Direction",
       "year": "Selected work",
-      "thumbnail": "/images/projects/items/3/story/1/value/image.png",
-      "heroImage": "/images/projects/items/3/story/1/value/image.png",
+      "thumbnail": "/images/projects/items/3/story/1/value/image.webp",
+      "heroImage": "/images/projects/items/3/story/1/value/image.webp",
       "gallery": [],
       "featured": true,
       "color": "#0c1919",
@@ -653,14 +653,14 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/1/value/image.png",
+            "image": "/images/projects/items/3/story/1/value/image.webp",
             "size": "wide"
           }
         },
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/2/value/image.png",
+            "image": "/images/projects/items/3/story/2/value/image.webp",
             "size": "content"
           }
         },
@@ -673,28 +673,28 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/4/value/image.jpg",
+            "image": "/images/projects/items/3/story/4/value/image.webp",
             "size": "wide"
           }
         },
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/5/value/image.jpg",
+            "image": "/images/projects/items/3/story/5/value/image.webp",
             "size": "content"
           }
         },
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/6/value/image.jpg",
+            "image": "/images/projects/items/3/story/6/value/image.webp",
             "size": "content"
           }
         },
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/7/value/image.jpg",
+            "image": "/images/projects/items/3/story/7/value/image.webp",
             "size": "wide"
           }
         },
@@ -707,35 +707,35 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/9/value/image.png",
+            "image": "/images/projects/items/3/story/9/value/image.webp",
             "size": "wide"
           }
         },
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/10/value/image.png",
+            "image": "/images/projects/items/3/story/10/value/image.webp",
             "size": "content"
           }
         },
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/11/value/image.png",
+            "image": "/images/projects/items/3/story/11/value/image.webp",
             "size": "content"
           }
         },
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/12/value/image.jpg",
+            "image": "/images/projects/items/3/story/12/value/image.webp",
             "size": "content"
           }
         },
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/13/value/image.jpg",
+            "image": "/images/projects/items/3/story/13/value/image.webp",
             "size": "content"
           }
         },
@@ -748,14 +748,14 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/15/value/image.jpg",
+            "image": "/images/projects/items/3/story/15/value/image.webp",
             "size": "content"
           }
         },
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/3/story/16/value/image.png",
+            "image": "/images/projects/items/3/story/16/value/image.webp",
             "size": "content"
           }
         },

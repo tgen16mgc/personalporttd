@@ -147,11 +147,11 @@
     },
     {
       "name": "Fixma",
-      "logo": "/images/homepage/brands/11/logo.jpg"
+      "logo": "/images/homepage/brands/11/logo.webp"
     },
     {
       "name": "TBW",
-      "logo": "/images/homepage/brands/12/logo.png"
+      "logo": "/images/homepage/brands/12/logo.webp"
     },
     {
       "name": "Hino",
@@ -159,7 +159,7 @@
     },
     {
       "name": "Onsen Fuji",
-      "logo": "/images/homepage/brands/14/logo.png"
+      "logo": "/images/homepage/brands/14/logo.webp"
     }
   ]
 }

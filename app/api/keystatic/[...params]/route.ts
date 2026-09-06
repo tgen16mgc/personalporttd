@@ -1,17 +1,21 @@
 import { isKeystaticAdminEnabled } from "@/lib/security.mjs";
+import { cacheKeystaticResponse } from "@/lib/keystatic-response.mjs";
 
 type Handler = (req: Request) => Response | Promise<Response>;
-let _handlers: { GET: Handler; POST: Handler } | null = null;
+let handlersPromise: Promise<{ GET: Handler; POST: Handler }> | null = null;
 
 async function getHandlers() {
-  if (!_handlers) {
-    const [{ default: config }, { makeRouteHandler }] = await Promise.all([
+  if (!handlersPromise) {
+    handlersPromise = Promise.all([
       import("../../../../keystatic.config"),
       import("@keystatic/next/route-handler"),
-    ]);
-    _handlers = makeRouteHandler({ config });
+    ]).then(([{ default: config }, { makeRouteHandler }]) => makeRouteHandler({ config }))
+      .catch((error) => {
+        handlersPromise = null;
+        throw error;
+      });
   }
-  return _handlers;
+  return handlersPromise;
 }
 
 function disabledResponse() {
@@ -25,7 +29,10 @@ export async function GET(req: Request) {
 
   try {
     const handlers = await getHandlers();
-    return await handlers.GET(req);
+    const response = await handlers.GET(req);
+    return process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG
+      ? response
+      : cacheKeystaticResponse(req, response);
   } catch {
     return new Response("Keystatic API not configured", { status: 503 });
   }
