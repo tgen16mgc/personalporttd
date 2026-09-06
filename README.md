@@ -15,6 +15,8 @@ The CMS loads in a client-only chunk with a loading message. In local mode, succ
 
 Portfolio raster images use WebP at quality 85 with original dimensions, transparency, and animation timing preserved. SVGs and the PNG favicon stay in their original formats. Keep future CMS uploads optimized as well; the editor downloads the original uploaded files, not Next.js image derivatives.
 
+The Keystatic core patch limits content/image downloads to four at a time and retries transient network errors and HTTP 408/429/500/502/503/504 responses up to three attempts. Missing files and permission errors still surface immediately. Unavailable browser storage falls back to fetching content instead of blocking the editor. `npm install` reapplies this patch through `postinstall`; retain it when upgrading Keystatic.
+
 ## Checks
 
 ```bash
