@@ -14,7 +14,7 @@ export const heroContent = data.heroContent as {
   education: string;
   industries: string[];
   tools: string[];
-  gravityTags: { label: string; color: string }[];
+  gravityTags: { label: string; color: string; image?: string | null; width?: number | null; height?: number | null }[];
 };
 
 export const quickIntroContent = data.quickIntroContent as {

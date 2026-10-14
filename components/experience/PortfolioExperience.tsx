@@ -125,7 +125,7 @@ export function PortfolioExperience({ children }: { children: React.ReactNode })
 
   useEffect(() => () => { transition.current?.kill(); }, []);
   return (
-    <div className="portfolio-experience" data-home={pathname === "/"} data-ready={ready}>
+    <div className="portfolio-experience" data-home={pathname === "/"} data-page={pathname} data-ready={ready}>
       <a href="#main-content" className="skip-link">Skip to content</a>
       <SignalPole active={pathname === "/" && ready} onReady={() => setSceneLoaded(true)} />
       <main id="main-content" className="experience-content" ref={surface} tabIndex={-1}>{children}</main>

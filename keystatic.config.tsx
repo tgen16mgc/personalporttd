@@ -131,10 +131,27 @@ export default config({
                 label: "Color (hex)",
                 description: "e.g. #06B6D4",
               }),
+              image: fields.image({
+                label: "Sticker image (optional)",
+                description: "Upload a transparent PNG or WebP for a cutout sticker. Without an image, the label and color make a text sticker.",
+                directory: "public/images/stickers",
+                publicPath: "/images/stickers/",
+              }),
+              width: fields.number({
+                label: "Sticker width (px)", defaultValue: 100,
+                description: "Cursor-preview width; the placed sticker scales proportionally. The original size is 100 × 50.",
+                validation: { min: 24, max: 240 },
+              }),
+              height: fields.number({
+                label: "Sticker height (px)", defaultValue: 50,
+                description: "Images fit inside this size without stretching.",
+                validation: { min: 16, max: 240 },
+              }),
             }),
             {
-              label: "Gravity Tags (floating badges on portrait)",
-              itemLabel: (props) => props.fields.label.value,
+              label: "3D sticker set",
+              description: "Add, remove, or reorder the stickers visitors can place on the pole.",
+              itemLabel: (props) => props.fields.label.value || "Image sticker",
             }
           ),
         }),
@@ -410,6 +427,12 @@ export default config({
             }),
             heroImage: fields.image({
               label: "Hero Image (landscape, for project detail page)",
+              directory: "public/images/projects",
+              publicPath: "/images/projects/",
+            }),
+            circlePreviewImage: fields.image({
+              label: "Homepage circle preview (optional)",
+              description: "Separate artwork for the rotating circle on the homepage. Keep the subject centered. Featured projects appear here; if empty, the hero image or thumbnail is used.",
               directory: "public/images/projects",
               publicPath: "/images/projects/",
             }),

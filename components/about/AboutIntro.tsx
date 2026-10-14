@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, ChevronLeft } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { aboutHero, uiLabels } from "@/content/pages/about";
 import { personal } from "@/content/personal";
 import { getSafeExternalHref } from "@/lib/security.mjs";
@@ -13,33 +13,48 @@ export function AboutIntro() {
   const vietnamese = language === "vi";
   const heading = vietnamese ? aboutHero.hookLineVi : aboutHero.hookLine;
   const body = vietnamese ? aboutHero.hookSubVi : aboutHero.hookSub;
+  const sentences = body.split(/(?<=[.!?])\s+/);
   const resume = getSafeExternalHref(personal.resumeUrl);
+  const photo = personal.aboutImage || personal.portraitImage;
 
-  const languages = [
-    { id: "en", code: uiLabels.englishLanguageCode, label: uiLabels.englishIntroLabel },
-    { id: "vi", code: uiLabels.vietnameseLanguageCode, label: uiLabels.vietnameseIntroLabel },
-  ] as const;
-
-  return <section className="about-page about-hero page-shell" aria-label={uiLabels.pageAriaLabel}>
-    <Link href="/" className="back-button" aria-label={uiLabels.backToHomeLabel} data-cursor={uiLabels.homeCursorLabel}><ChevronLeft size={21} /></Link>
-    {aboutHero.hookLineVi && aboutHero.hookSubVi && <div className="about-language" role="group" aria-label={uiLabels.languageGroupLabel} data-native-cursor>
-      {languages.map((option) => <button key={option.id} type="button" aria-label={option.label} aria-pressed={language === option.id} onClick={() => setLanguage(option.id)}>{option.code}</button>)}
-    </div>}
-    <div className="about-hero-grid">
-      <div className="about-content">
-        <p className="eyebrow" data-reveal>{aboutHero.introLabel}</p>
-        <div lang={language}>
-          <h1 data-reveal>{heading.split(/(?<=[.!?])\s+/).map((line, index) => <span key={index}>{line}</span>)}</h1>
-          <p className="about-hero-description" data-reveal>{body}</p>
+  return <>
+    <div className="vucko-header">
+      <Link href="/" className="vucko-brand" aria-label={uiLabels.backToHomeLabel}>{personal.shortName.toUpperCase()}</Link>
+      <p className="vucko-location">{personal.location}</p>
+      {aboutHero.hookLineVi && aboutHero.hookSubVi && <div className="vucko-language" role="group" aria-label={uiLabels.languageGroupLabel} data-native-cursor>
+        <button type="button" aria-label={uiLabels.englishIntroLabel} aria-pressed={!vietnamese} onClick={() => setLanguage("en")}>{uiLabels.englishLanguageCode}</button>
+        <button type="button" aria-label={uiLabels.vietnameseIntroLabel} aria-pressed={vietnamese} onClick={() => setLanguage("vi")}>{uiLabels.vietnameseLanguageCode}</button>
+      </div>}
+    </div>
+    <section className="vucko-hero" aria-label={uiLabels.pageAriaLabel} id="about-top">
+      <div className="vucko-wordmark" aria-hidden="true" data-reveal>{personal.shortName.toUpperCase()}</div>
+      {photo && <a className="vucko-hero-preview" href="#about-biography" aria-label={aboutHero.introLabel}>
+        <Image src={photo} alt={personal.name} width={640} height={400} unoptimized loading="eager" fetchPriority="high" />
+        <span>{personal.name}<br />{personal.location}</span>
+      </a>}
+      <div className="vucko-hero-bottom" lang={language}>
+        <div>
+          <h1 data-reveal>{heading}</h1>
+          <a className="vucko-link" href="#about-biography">{aboutHero.introLabel}<ArrowRight size={16} /></a>
         </div>
-        <div className="about-actions" data-reveal>
-          {resume && <a className="text-link" href={resume} target="_blank" rel="noopener noreferrer">{aboutHero.resumeLabel}<ArrowUpRight size={16} /></a>}
-          <Link className="about-case-link" href="/work">{aboutHero.workLabel}<ArrowUpRight size={16} /></Link>
+        <a className="vucko-scroll" href="#about-biography" aria-label={aboutHero.introLabel}><ArrowDown size={18} /></a>
+      </div>
+    </section>
+    {photo && <figure className="vucko-wide-portrait">
+      <Image src={photo} alt={personal.name} width={1600} height={1000} unoptimized loading="eager" />
+      <figcaption>{personal.name}<br />{personal.location}</figcaption>
+    </figure>}
+    <section className="vucko-statement" id="about-biography" lang={language}>
+      <ArrowRight className="vucko-statement-arrow" size={36} aria-hidden="true" />
+      <h2>{sentences[0]}</h2>
+      <p className="vucko-section-label">({aboutHero.introLabel})</p>
+      <div className="vucko-statement-copy">
+        {sentences.slice(1).map((sentence, index) => <p key={index}>{sentence}</p>)}
+        <div className="vucko-inline-links">
+          {resume && <a className="vucko-link" href={resume} target="_blank" rel="noopener noreferrer">{aboutHero.resumeLabel}</a>}
+          <Link className="vucko-link" href="/work">{aboutHero.workLabel}</Link>
         </div>
       </div>
-      <figure className="about-hero-portrait">
-        {personal.aboutImage && <Image src={personal.aboutImage} alt={personal.name} width={600} height={800} unoptimized loading="eager" fetchPriority="high" style={{ width: "100%", height: "auto" }} />}
-      </figure>
-    </div>
-  </section>;
+    </section>
+  </>;
 }

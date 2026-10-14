@@ -55,3 +55,14 @@ test("homepage details and contact copy are editable independently of quick fact
   assert.doesNotMatch(homePage, /facts\[\d+\]/);
   assert.match(homePage, /homeDetails\.available/);
 });
+
+test("scene uploads and sticker sizing are exposed by the CMS schema", async () => {
+  const home = await reader.singletons.homepage.readOrThrow();
+  for (const sticker of home.heroContent.gravityTags) {
+    assert.ok("image" in sticker);
+    assert.ok("width" in sticker);
+    assert.ok("height" in sticker);
+  }
+  const projects = await reader.singletons.projects.readOrThrow();
+  for (const project of projects.items) assert.ok("circlePreviewImage" in project);
+});

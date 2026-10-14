@@ -13,13 +13,17 @@ import { personal } from "@/content/personal";
 import { heroContent } from "@/content/pages/home";
 import { getFeaturedProjects } from "@/content/projects";
 import { scrambleText, wheelPixels, wrap } from "@/lib/experience-math.mjs";
+import { getCirclePreviewImage, getStickerSize } from "@/lib/scene-content.mjs";
+
+import { paintHanoiSignBackground, styleHanoiPole } from "./hanoi-pole";
 
 const signLinks: Record<string, { href: string; label: string }> = {
   "hiroto-profile": { href: "/about", label: "About" },
   to_projects: { href: "/work", label: "Work" },
   to_contact: { href: "/contact", label: "Contact" },
 };
-const imagePaths = getFeaturedProjects().map((project) => project.heroImage || project.thumbnail).filter((path): path is string => Boolean(path));
+const imagePaths = getFeaturedProjects().map(getCirclePreviewImage).filter((path): path is string => Boolean(path));
+const stickers = heroContent.gravityTags.filter((sticker) => sticker.image || sticker.label.trim());
 
 export default function SignalPole({ active, onReady }: { active: boolean; onReady: () => void }) {
   const mount = useRef<HTMLDivElement>(null);
@@ -32,7 +36,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     if (!host) return;
     const style = getComputedStyle(host);
     const sansFont = style.getPropertyValue("--font-portfolio") || '"Helvetica Neue", sans-serif';
-    const condensedFont = style.getPropertyValue("--font-portfolio-condensed") || 'Impact, sans-serif';
+    const condensedFont = style.getPropertyValue("--font-portfolio-condensed").trim() || '"Helvetica Neue", sans-serif';
     let disposed = false;
     let renderer: THREE.WebGLRenderer;
     try {
@@ -99,6 +103,10 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     const textures = new Set<THREE.Texture>();
     const decals: THREE.Mesh[] = [];
     const images: HTMLImageElement[] = [];
+    const stickerImages = new Map<string, HTMLImageElement>();
+    const failedStickerImages = new Set<string>();
+    let stickerReady = false;
+    let stickerDimensions = getStickerSize();
     const canvases = new Map<string, { context: CanvasRenderingContext2D; texture: THREE.CanvasTexture }>();
     const stickerPreview = document.createElement("canvas");
     stickerPreview.width = 512; stickerPreview.height = 256;
@@ -108,18 +116,51 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     const previewX = gsap.quickTo(stickerPreview, "x", { duration: 0.18, ease: "power3.out" });
     const previewY = gsap.quickTo(stickerPreview, "y", { duration: 0.18, ease: "power3.out" });
     const paintSticker = () => {
-      const sticker = heroContent.gravityTags[stickerIndex % heroContent.gravityTags.length];
-      if (!sticker) return;
+      stickerReady = false;
+      stickerPreview.dataset.visible = "false";
+      if (!stickers.length) return;
+      let skipped = 0;
+      while (skipped < stickers.length) {
+        const candidate = stickers[stickerIndex % stickers.length];
+        if (!candidate.image || !failedStickerImages.has(candidate.image)) break;
+        stickerIndex++; skipped++;
+      }
+      if (skipped === stickers.length) return;
+      const sticker = stickers[stickerIndex % stickers.length];
+      stickerDimensions = getStickerSize(sticker);
+      const { width, height } = stickerDimensions;
+      stickerPreview.width = Math.round(width * 4); stickerPreview.height = Math.round(height * 4);
+      stickerPreview.style.width = `${width}px`; stickerPreview.style.height = `${height}px`;
       const ctx = stickerPreview.getContext("2d")!;
-      ctx.clearRect(0, 0, 512, 256);
-      ctx.fillStyle = "white"; ctx.beginPath(); ctx.roundRect(5, 5, 502, 246, 70); ctx.fill();
-      ctx.fillStyle = sticker.color; ctx.beginPath(); ctx.roundRect(16, 16, 480, 224, 62); ctx.fill();
-      const color = new THREE.Color(sticker.color);
-      ctx.fillStyle = color.r * 0.2126 + color.g * 0.7152 + color.b * 0.0722 < 0.25 ? "white" : "#111111";
-      ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.font = `700 52px ${sansFont}`;
-      ctx.fillText(sticker.label.toUpperCase(), 256, 128, 435);
+      const w = stickerPreview.width, h = stickerPreview.height;
+      if (sticker.image) {
+        const image = stickerImages.get(sticker.image);
+        if (!image?.complete || !image.naturalWidth) return;
+        const scale = Math.min(w / image.naturalWidth, h / image.naturalHeight);
+        const imageWidth = image.naturalWidth * scale, imageHeight = image.naturalHeight * scale;
+        ctx.drawImage(image, (w - imageWidth) / 2, (h - imageHeight) / 2, imageWidth, imageHeight);
+      } else {
+        const padding = Math.min(w, h) * 0.06;
+        const colorValue = CSS.supports("color", sticker.color) ? sticker.color : "#06B6D4";
+        ctx.fillStyle = "white"; ctx.beginPath(); ctx.roundRect(2, 2, w - 4, h - 4, h * 0.28); ctx.fill();
+        ctx.fillStyle = colorValue; ctx.beginPath(); ctx.roundRect(padding, padding, w - padding * 2, h - padding * 2, h * 0.24); ctx.fill();
+        const color = new THREE.Color(colorValue);
+        ctx.fillStyle = color.r * 0.2126 + color.g * 0.7152 + color.b * 0.0722 < 0.25 ? "white" : "#111111";
+        ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.font = `700 ${Math.min(h * 0.24, w * 0.16)}px ${sansFont}`;
+        ctx.fillText(sticker.label.toUpperCase(), w / 2, h / 2, w - padding * 4);
+      }
+      stickerReady = true;
     };
+    for (const sticker of stickers) {
+      if (!sticker.image || stickerImages.has(sticker.image)) continue;
+      const path = sticker.image;
+      const image = new Image(); stickerImages.set(path, image);
+      image.onload = () => { if (!disposed) paintSticker(); };
+      image.onerror = () => { if (!disposed) { failedStickerImages.add(path); paintSticker(); } };
+      image.src = path;
+    }
     paintSticker();
+    void document.fonts.load(`700 52px ${sansFont}`).then(() => { if (!disposed) paintSticker(); });
 
     const createMap = (name: string) => {
       const canvas = document.createElement("canvas");
@@ -159,23 +200,24 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       const progress = reduced.matches ? 1 : Math.min((time % 3.65) / 1.25, 1);
       const labels = [personal.name.toUpperCase(), heroContent.positioning.toUpperCase()];
       for (const [name, { context: ctx, texture }] of canvases) {
+        ctx.save();
         ctx.clearRect(0, 0, 1024, 1024);
         ctx.textBaseline = "middle";
         if (name === "hiroto-profile") {
-          ctx.fillStyle = "#ffdf0e"; ctx.fillRect(0, 0, 1024, 1024);
-          ctx.fillStyle = "#000000"; ctx.font = `500 152px ${condensedFont}`; ctx.textAlign = "center";
-          ctx.fillText(scrambleText(labels[cycle % 2], labels[(cycle + 1) % 2], progress, cycle), 512, 512, 925);
+          paintHanoiSignBackground(ctx, name);
+          ctx.fillStyle = "#f7f5ef"; ctx.font = `500 152px ${condensedFont}`; ctx.textAlign = "center";
+          ctx.fillText(scrambleText(labels[cycle % 2], labels[(cycle + 1) % 2], progress, cycle), 512, 512, 890);
         } else if (name === "to_projects") {
-          ctx.fillStyle = "#133afd"; ctx.fillRect(0, 0, 1024, 1024);
+          paintHanoiSignBackground(ctx, name);
           ctx.fillStyle = "#f7f5ef"; ctx.font = `400 72px ${sansFont}`; ctx.textAlign = "left";
           const text = "PROJECTS ARCHIVE / PROJECTS ARCHIVE / PROJECTS ARCHIVE / ";
           const width = ctx.measureText(text).width;
           for (let x = -wrap(time * 100, width); x < 1024; x += width) ctx.fillText(text, x, 512);
         } else if (name === "to_contact") {
-          ctx.fillStyle = "white"; ctx.fillRect(0, 0, 1024, 1024);
-          ctx.fillStyle = "#0047bd"; ctx.font = `700 172px ${sansFont}`; ctx.textAlign = "center";
+          paintHanoiSignBackground(ctx, name);
+          ctx.fillStyle = "#f7f5ef"; ctx.font = `700 172px ${sansFont}`; ctx.textAlign = "center";
           const contactLabels = ["SAY HELLO", "CONTACT"];
-          ctx.fillText(scrambleText(contactLabels[cycle % 2], contactLabels[(cycle + 1) % 2], progress, cycle), 512, 360, 960);
+          ctx.fillText(scrambleText(contactLabels[cycle % 2], contactLabels[(cycle + 1) % 2], progress, cycle), 512, 360, 890);
           for (let x = -560 - wrap(time * 118, 560); x < 1584; x += 560) {
             ctx.beginPath(); ctx.moveTo(x, 664); ctx.lineTo(x + 160, 552); ctx.lineTo(x + 160, 628); ctx.lineTo(x + 530, 628); ctx.lineTo(x + 530, 700); ctx.lineTo(x + 160, 700); ctx.lineTo(x + 160, 776); ctx.closePath(); ctx.fill();
           }
@@ -188,6 +230,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
             if (blend) drawCover(ctx, images[(index + 1) % images.length], blend);
           }
         }
+        ctx.restore();
         texture.needsUpdate = true;
       }
     };
@@ -199,7 +242,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       impactMaterial.uniforms.tDiffuse.value = impactFrame;
       if (!camera) return;
       camera.aspect = host.clientWidth / host.clientHeight;
-      camera.fov = host.clientWidth <= 620 ? Math.min(baseFov + 3, 72) : baseFov;
+      camera.fov = host.clientWidth <= 620 ? Math.min(baseFov + 7, 72) : baseFov;
       camera.updateProjectionMatrix();
       renderer.render(scene, camera);
     };
@@ -220,6 +263,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
           if (material instanceof THREE.MeshStandardMaterial) materials.set(material.name, material);
         }
       });
+      styleHanoiPole(model, textures);
       camera = gltf.cameras[0] as THREE.PerspectiveCamera;
       cameraPosition.copy(camera.position);
       baseFov = camera.fov;
@@ -252,8 +296,8 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     };
     const move = (event: PointerEvent) => {
       setPointer(event); pointerInside = true;
-      previewX(Math.max(10, Math.min(event.clientX - 51, innerWidth - 112)));
-      previewY(Math.max(10, Math.min(event.clientY - 61, innerHeight - 112)));
+      previewX(Math.max(10, Math.min(event.clientX - stickerDimensions.width / 2, innerWidth - stickerDimensions.width - 10)));
+      previewY(Math.max(10, Math.min(event.clientY - stickerDimensions.height - 10, innerHeight - stickerDimensions.height - 10)));
       if (pointerDown && activeRef.current && !reduced.matches) {
         const dx = pointerDown.lastX - event.clientX;
         const dy = pointerDown.lastY - event.clientY;
@@ -275,14 +319,15 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       const link = linkFor(hit);
       if (link) { window.dispatchEvent(new CustomEvent("portfolio:navigate", { detail: link.href })); return; }
       if (!(hit?.object instanceof THREE.Mesh) || !hit.face) return;
-      if (!heroContent.gravityTags.length) return;
-      const canvas = document.createElement("canvas"); canvas.width = 512; canvas.height = 256;
+      if (!stickerReady) return;
+      const { width, height } = stickerDimensions;
+      const canvas = document.createElement("canvas"); canvas.width = stickerPreview.width; canvas.height = stickerPreview.height;
       canvas.getContext("2d")!.drawImage(stickerPreview, 0, 0);
       stickerIndex++; paintSticker();
       const texture = new THREE.CanvasTexture(canvas); texture.colorSpace = THREE.SRGBColorSpace; textures.add(texture);
       const normal = hit.face.normal.clone().transformDirection(hit.object.matrixWorld);
       const orientation = new THREE.Object3D(); orientation.position.copy(hit.point); orientation.lookAt(hit.point.clone().add(normal)); orientation.rotateZ((Math.random() - 0.5) * 1.2);
-      const size = new THREE.Vector3(0.068, 0.034, 0.05);
+      const size = new THREE.Vector3(width * 0.00068, height * 0.00068, 0.05);
       const geometry = new DecalGeometry(hit.object, hit.point, orientation.rotation, size);
       const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -4 });
       const decal = new THREE.Mesh(geometry, material); scene.add(decal); decals.push(decal); shake = reduced.matches ? 0 : 1;
@@ -329,7 +374,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       if (pointerInside) {
         const hit = hitTest();
         const text = linkFor(hit)?.label || "";
-        stickerPreview.dataset.visible = String(Boolean(hit && !text && heroContent.gravityTags.length && !pointerDown));
+        stickerPreview.dataset.visible = String(Boolean(hit && !text && stickerReady && !pointerDown));
         if (text !== hoveredLabel) { hoveredLabel = text; window.dispatchEvent(new CustomEvent("portfolio:cursor", { detail: text })); host.style.cursor = hit ? "pointer" : ""; }
       }
       renderer.render(scene, camera);
@@ -350,6 +395,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       window.removeEventListener("portfolio:route-change", reset);
       canvas.removeEventListener("pointerdown", down); canvas.removeEventListener("pointermove", move); canvas.removeEventListener("pointerup", up); canvas.removeEventListener("pointercancel", cancel); canvas.removeEventListener("pointerleave", cancel); canvas.removeEventListener("wheel", wheel);
       images.forEach((image) => { image.onload = null; });
+      stickerImages.forEach((image) => { image.onload = image.onerror = null; });
       mixer?.stopAllAction();
       const geometries = new Set<THREE.BufferGeometry>(); const disposableMaterials = new Set<THREE.Material>();
       scene.traverse((object) => { if (object instanceof THREE.Mesh) { geometries.add(object.geometry); (Array.isArray(object.material) ? object.material : [object.material]).forEach((material) => disposableMaterials.add(material)); } });

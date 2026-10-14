@@ -44,6 +44,7 @@ export interface Project {
   year: string;
   thumbnail: string | null;
   heroImage: string | null;
+  circlePreviewImage: string | null;
   featured: boolean;
   color: string;
   story?: StoryBlock[];
@@ -165,6 +166,7 @@ export const projects: Project[] = data.items.map((item) => {
     ...item,
     thumbnail: item.thumbnail ?? null,
     heroImage: "heroImage" in item ? (item.heroImage as string | null) : null,
+    circlePreviewImage: getOptionalString(raw, "circlePreviewImage") || null,
     brand: item.brand || undefined,
     story: parseStory(raw),
     challenge: getOptionalString(raw, "challenge"),

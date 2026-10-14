@@ -36,3 +36,13 @@ GSAP drives the loader, curved route transitions, text entrances, and looping wo
 Keystatic still manages the original content. Home uses the profile and industry fields; About includes the biography, homepage facts, experience, and afterwork entries, with editable English and Vietnamese intro text. Work previews link to the complete case studies. The contact form and CMS security remain intact.
 
 The visual reference and signal-pole model are from [Hiroto Sato](https://www.hirotos.com/). Local environment and font assets are in `public/models/` and `public/fonts/`. Helvetica Neue LT Pro and Gazzetta are Adobe-served fonts; their original copyright and license references are recorded in `public/fonts/NOTICE.txt`.
+
+The Hanoi treatment in `components/experience/hanoi-pole.ts` follows the supplied street-sign photographs: alternating red/white pole paint, blue enamel sign backgrounds with inset white borders, and a dark traffic-light housing. Original sign copy, text animation, project slideshow, lens materials, reflective metal, and lighting effects are retained. The base GLB and its attribution are unchanged.
+
+CMS scene controls:
+
+- **Homepage → Hero Content → 3D sticker set**: add, remove, or reorder text/image stickers. Optional transparent PNG/WebP artwork replaces the text badge. Width and height control the cursor preview in pixels and scale the placed decal proportionally; existing stickers default to 100 × 50. Failed image uploads are skipped at runtime.
+- **Projects → project → Homepage circle preview**: upload independent circle artwork for a featured project. Empty fields fall back to the project's hero image, then thumbnail.
+- Sign text and moving arrows are clipped to an inset area inside the rectangular border. The original Helvetica/Gazzetta font setup is restored.
+
+The About page follows the saved [Vucko reference supplied through Mobbin](https://mobbin.com/sites/vucko-32534577-e033-48ef-afc7-a38812cd1975/daf85ae0-9ffa-4f5b-9640-c0817984a4f2/sections): oversized wordmark hero, horizontal navigation, media blocks, offset biography, interactive capability titles, and wordmark footer. The original Helvetica/Gazzetta fonts are restored. All copy and media use the existing CMS schema, including EN/VI intro, capability selection, evidence, career history, credentials, brands, and personal-photo archive. Page styles are scoped in `components/about/about-design.css`.
