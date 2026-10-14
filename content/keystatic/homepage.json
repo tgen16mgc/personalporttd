@@ -69,6 +69,13 @@
       {
         "label": "design & video editing",
         "color": "#2F2FE4"
+      },
+      {
+        "label": "zlbX",
+        "color": "#0133C9",
+        "image": "/images/stickers/heroContent/gravityTags/8/image.png",
+        "width": 100,
+        "height": 100
       }
     ]
   },
