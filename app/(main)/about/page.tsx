@@ -13,6 +13,7 @@ import {
 import { getSafeExternalHref, normalizeNavigationHref } from "@/lib/security.mjs";
 import { AboutIntro } from "@/components/about/AboutIntro";
 import { AboutCapabilities } from "@/components/about/AboutCapabilities";
+import { AboutMotion } from "@/components/about/AboutMotion";
 import "@/components/about/about-design.css";
 
 export const metadata: Metadata = {
@@ -50,7 +51,7 @@ export default function AboutPage() {
     {label:"Facebook", href:getSafeExternalHref(personal.facebook)},
   ].filter((item) => item.href);
 
-  return <div className="vucko-about">
+  return <AboutMotion>
     <AboutIntro />
     {aiPractice.items.length > 0 && <section className="vucko-work" aria-labelledby="about-work-heading">
       <header className="vucko-work-heading">
@@ -120,5 +121,5 @@ export default function AboutPage() {
       </div>
       <div className="vucko-footer-bottom"><Link href="/" className="vucko-footer-wordmark">{personal.shortName.toUpperCase()}</Link><a href="#about-top" aria-label={uiLabels.pageAriaLabel}><ArrowUp size={22} /></a><p>© {new Date().getFullYear()} {personal.name}</p></div>
     </footer>
-  </div>;
+  </AboutMotion>;
 }

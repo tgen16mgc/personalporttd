@@ -22,9 +22,13 @@
 .vucko-language button[aria-pressed="true"] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
 .vucko-hero { min-height: 100svh; position: relative; padding: 118px var(--vucko-edge) 50px; display: flex; flex-direction: column; justify-content: space-between; gap: 140px; }
 .vucko-wordmark { font-size: 40vw; font-weight: 700; letter-spacing: -.065em; line-height: .85; margin-left: -.025em; }
+.vucko-letter-mask { display: inline-block; overflow: clip; vertical-align: top; padding-block: .08em; margin-block: -.08em; }
+.vucko-letter-mask > span { display: inline-block; }
 .vucko-hero-preview { position: absolute; top: calc(118px + 20vw); right: var(--vucko-edge); width: 27vw; z-index: 1; }
-.vucko-hero-preview img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; object-position: 50% 66%; border-radius: 7px; }
-.vucko-hero-preview span { display: block; margin-top: 14px; font-size: 16px; line-height: 1.25; letter-spacing: -.025em; }
+.vucko-preview-motion { display: block; width: 100%; }
+.vucko-preview-media { width: 100%; aspect-ratio: 16/9; overflow: clip; border-radius: 7px; }
+.vucko-hero-preview img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 65%; }
+.vucko-preview-motion > span { display: block; margin-top: 14px; font-size: 16px; line-height: 1.25; letter-spacing: -.025em; }
 .vucko-hero-bottom { display: flex; justify-content: space-between; align-items: end; }
 .vucko-hero-bottom > div { max-width: 660px; }
 .vucko-about .vucko-hero h1 { font-size: clamp(36px, 4.1vw, 78px); line-height: 1.06; letter-spacing: -.04em; margin-bottom: 24px; }
@@ -32,6 +36,8 @@
 .vucko-link:hover { text-decoration-thickness: 2px; }
 .vucko-scroll { padding: 14px; }
 .vucko-wide-portrait { margin: 170px var(--vucko-edge) 0; }
+.vucko-portrait-frame { overflow: clip; border-radius: 7px; }
+.vucko-morph-active .vucko-wide-portrait { visibility: hidden; }
 .vucko-wide-portrait img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; object-position: 50% 65%; border-radius: 7px; }
 .vucko-wide-portrait figcaption { font-size: 13px; margin-top: 16px; line-height: 1.3; }
 .vucko-statement { margin: 190px var(--vucko-edge) 240px; display: grid; grid-template-columns: 1fr 1fr 2fr; column-gap: 34px; row-gap: 105px; scroll-margin-top: 120px; }
@@ -62,7 +68,9 @@
 .vucko-section-header > a { justify-self: end; padding-top: 0; }
 .vucko-services-grid { display: grid; grid-template-columns: 1fr 3fr; gap: 5vw; align-items: start; }
 .vucko-service-preview img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; border-radius: 3px; margin-bottom: 18px; }
-.vucko-service-preview > p { font-size: 14px; margin-bottom: 16px; }
+.vucko-service-preview { min-height: 310px; }
+.vucko-service-content { animation: vucko-preview-enter .45s cubic-bezier(.2,.7,.2,1) both; }
+.vucko-service-content > p { font-size: 14px; margin-bottom: 16px; }
 .vucko-service-preview .vucko-methods { color: var(--vucko-gray); font-size: 12px; }
 .vucko-service-list { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
 .vucko-service-list button { text-align: left; border: 0; padding: 0; background: none; font-size: clamp(36px, 5.3vw, 102px); line-height: 1.03; font-weight: 700; letter-spacing: -.055em; text-transform: uppercase; color: #adadad; transition: color .2s; }
@@ -126,6 +134,15 @@
 .vucko-footer-wordmark { font-size: 19vw; font-weight: 700; line-height: .8; letter-spacing: -.075em; margin-left: -.025em; }
 .vucko-footer-bottom p { font-size: 13px; }
 .vucko-footer-bottom > a:not(.vucko-footer-wordmark) { padding: 10px; }
+.vucko-link svg, .vucko-large-link svg, .vucko-scroll svg, .vucko-footer-bottom > a > svg { transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+.vucko-link:hover svg, .vucko-large-link:hover svg { transform: translateX(5px); }
+.vucko-scroll:hover svg { transform: translateY(5px); }
+.vucko-footer-bottom > a:hover > svg { transform: translateY(-5px); }
+.vucko-link:focus-visible, .vucko-large-link:focus-visible, .vucko-preview-motion:focus-visible { outline: 2px solid currentColor; outline-offset: 7px; }
+@keyframes vucko-preview-enter {
+  from { opacity: 0; transform: translateY(12px); clip-path: inset(0 0 10% 0); }
+  to { opacity: 1; transform: translateY(0); clip-path: inset(0); }
+}
 @media (max-width: 1000px) {
   .vucko-header .vucko-location { margin-left: 8vw; }
   .portfolio-experience[data-page="/about"] .site-nav { right: 14%; gap: 12px; }
@@ -220,5 +237,5 @@
   .vucko-footer-bottom p { grid-column: 1/3; font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .vucko-service-list button, .vucko-photo-plus { transition: none; }
+  .vucko-about *, .vucko-about *::before, .vucko-about *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

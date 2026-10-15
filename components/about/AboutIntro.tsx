@@ -27,21 +27,23 @@ export function AboutIntro() {
       </div>}
     </div>
     <section className="vucko-hero" aria-label={uiLabels.pageAriaLabel} id="about-top">
-      <div className="vucko-wordmark" aria-hidden="true" data-reveal>{personal.shortName.toUpperCase()}</div>
-      {photo && <a className="vucko-hero-preview" href="#about-biography" aria-label={aboutHero.introLabel}>
-        <Image src={photo} alt={personal.name} width={640} height={400} unoptimized loading="eager" fetchPriority="high" />
-        <span>{personal.name}<br />{personal.location}</span>
-      </a>}
+      <div className="vucko-wordmark" aria-hidden="true">{Array.from(personal.shortName.toUpperCase()).map((letter, index) => <span className="vucko-letter-mask" key={index}><span>{letter}</span></span>)}</div>
+      {photo && <div className="vucko-hero-preview">
+        <a className="vucko-preview-motion" href="#about-biography" aria-label={aboutHero.introLabel}>
+          <div className="vucko-preview-media"><Image src={photo} alt={personal.name} width={1600} height={1000} unoptimized loading="eager" fetchPriority="high" /></div>
+          <span>{personal.name}<br />{personal.location}</span>
+        </a>
+      </div>}
       <div className="vucko-hero-bottom" lang={language}>
         <div>
-          <h1 data-reveal>{heading}</h1>
+          <h1>{heading}</h1>
           <a className="vucko-link" href="#about-biography">{aboutHero.introLabel}<ArrowRight size={16} /></a>
         </div>
         <a className="vucko-scroll" href="#about-biography" aria-label={aboutHero.introLabel}><ArrowDown size={18} /></a>
       </div>
     </section>
     {photo && <figure className="vucko-wide-portrait">
-      <Image src={photo} alt={personal.name} width={1600} height={1000} unoptimized loading="eager" />
+      <div className="vucko-portrait-frame"><Image src={photo} alt={personal.name} width={1600} height={1000} unoptimized loading="eager" /></div>
       <figcaption>{personal.name}<br />{personal.location}</figcaption>
     </figure>}
     <section className="vucko-statement" id="about-biography" lang={language}>
