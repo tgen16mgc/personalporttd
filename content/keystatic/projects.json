@@ -126,23 +126,23 @@
     },
     {
       "slug": "redagencyads",
-      "title": "Red Agency Ads Tool",
-      "tagline": "I defined the campaign checks and reporting workflow for an advertising dashboard, then built it with AI coding agents to support account-team work.",
+      "title": "Clario: a marketer’s decision workspace",
+      "tagline": "From Red Agency Ads to Clario. I turned an account-team reporting problem into a branded workspace for campaign analysis, evidence and AI-assisted decisions.",
       "client": "Red Agency JSC",
-      "brand": "Red Agency Ads Tool",
+      "brand": "Clario",
       "industry": "Advertising Technology",
-      "role": "Product Requirements, Ads Logic & AI-Assisted Development",
+      "role": "Product Strategy, Brand & AI-Assisted Development",
       "year": "2026 - Present",
-      "thumbnail": "/images/projects/items/1/thumbnail.png",
-      "heroImage": "/images/projects/items/1/heroImage.png",
+      "thumbnail": "/images/projects/clario/thumbnail.webp",
+      "heroImage": "/images/projects/clario/cover.webp",
       "gallery": [],
       "featured": true,
-      "color": "#0a84ff",
+      "color": "#605DEB",
       "story": [
         {
           "discriminant": "heading",
           "value": {
-            "body": "The account-team problem"
+            "body": "It started with an account-team problem"
           }
         },
         {
@@ -152,7 +152,7 @@
         {
           "discriminant": "heading",
           "value": {
-            "body": "What I defined and built"
+            "body": "Turning marketing logic into a working tool"
           }
         },
         {
@@ -162,23 +162,189 @@
         {
           "discriminant": "image",
           "value": {
-            "image": "/images/projects/items/1/story/4/value/image.png",
-            "caption": "The report ranks what needs attention and keeps the supporting evidence visible.",
-            "size": "wide"
-          }
-        },
-        {
-          "discriminant": "image",
-          "value": {
-            "image": "/images/projects/items/1/story/5/value/image.png",
-            "caption": "Competitor evidence must be verified before it enters the decision brief.",
+            "image": "/images/projects/clario/original-tool.webp",
+            "caption": "Before the rebrand: the Red Agency Ads performance report, with campaign checks, diagnosis and supporting evidence in one view. Historical product screenshot.",
             "size": "wide"
           }
         },
         {
           "discriminant": "heading",
           "value": {
-            "body": "Checking the recommendations"
+            "body": "From Red Agency Ads to Clario"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/clario/identity.webp",
+            "caption": "Clario identity system: primary, dark and reversed lockups, stacked logo, app icon and the approved five-colour palette.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/clario/logo-guidelines.webp",
+            "caption": "Logo usage: one band of clear space, a 120 px minimum lockup width, the small symbol cut at 16 to 32 px, and the original paired-frame geometry.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "A UI built around the marketer’s next question"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/clario/performance.webp",
+            "caption": "Clario Performance and its revised navigation. This capture uses a sample report from the product QA preview; the displayed metrics illustrate the interface.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/clario/overview.webp",
+            "caption": "Current public Overview preview, captured from clario.id.vn on 20 October 2026. Sample data demonstrates prioritised checks, action readiness, report scope and saved reports.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "From a funnel finding to a test worth running"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "quote",
+          "value": {
+            "body": "The AI can suggest an explanation. I still need to decide whether the evidence supports testing it."
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "AI native in the product, AI assisted in the build"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "steps",
+          "value": {
+            "heading": "The decision loop",
+            "items": [
+              "Observe: choose the campaign scope and find the measurement that needs attention.",
+              "Explain: ask AI for possible causes and tests grounded in the selected evidence.",
+              "Review: check the explanation, missing evidence and proposed success metric; edit the draft.",
+              "Decide: save a hypothesis, plan a test or review an action, then return to the results."
+            ]
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Competitor research with evidence attached"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/clario/competitor.webp",
+            "caption": "Current public Competitor preview, captured on 20 October 2026. Fictional advertiser and sample creative records demonstrate verification, provenance and a proposed test brief.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "The same story on the landing page and in the report"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/clario/landing.webp",
+            "caption": "The live Clario landing page, captured on 20 October 2026: the new identity, campaign-to-decision visual and “See what changed. Know where to look.” positioning.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "image",
+          "value": {
+            "image": "/images/projects/clario/report.webp",
+            "caption": "Clario’s 16:9 PDF design, rendered locally with sample data. The performance story keeps spend, results, cost efficiency and daily diagnosis together.",
+            "size": "wide"
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "How I apply Clario to my marketing work"
+          }
+        },
+        {
+          "discriminant": "steps",
+          "value": {
+            "heading": "",
+            "items": [
+              "Daily account checks: review changes in spend, cost and results, then open the campaigns and evidence behind the signal.",
+              "Client reporting: reopen a saved scope, refresh the numbers, compare periods and prepare a report with a clear explanation of what changed.",
+              "Campaign diagnosis: inspect the funnel, drivers and creative performance before choosing which constraint deserves attention.",
+              "Test planning: use AI to draft possible explanations and tests, then define the audience, creative change, success metric and evidence still needed.",
+              "Competitor and creative briefs: verify advertiser records, identify recurring hooks or gaps and turn them into an original concept for our own campaign.",
+              "Team decisions: bring the evidence, recommendation and proposed action into the same conversation so the next step has a reason the team can inspect."
+            ]
+          }
+        },
+        {
+          "discriminant": "text",
+          "value": {}
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "What this project demonstrates"
           }
         },
         {
@@ -191,14 +357,15 @@
       "awards": [],
       "credits": [
         {
-          "role": "Product and Build",
+          "role": "Product, Marketing Logic & Brand",
           "name": "Tien Duong"
         },
         {
           "role": "Development Workflow",
-          "name": "AI coding agents"
+          "name": "AI coding agents, directed and reviewed by Tien Duong"
         }
-      ]
+      ],
+      "circlePreviewImage": "/images/projects/clario/circle.webp"
     },
     {
       "slug": "hongha",
