@@ -30,4 +30,8 @@ The narrative describes current Overview, Performance and Competitor workflows. 
 
 - Existing portfolio-content, CMS-integration and scene-content tests: 8 passed, one test worker, 256 MB Node heap. Checks include actual Keystatic schema reads, all linked rich-text documents, media existence and homepage circle fallbacks.
 - JSON comparison against `d9e6695` verifies that other projects and other About content are unchanged.
-- No full local Next build or extra dev server under the machine's memory constraint. Production deployment and visual checks are recorded after publishing.
+- No full local Next build or extra dev server under the machine's memory constraint. Vercel completed the production build for `395501a` and deployment `7204216824` succeeded.
+- Live case-study checks at 1440 px and 390 px: the expected title, all 11 chapter headings and all 11 page images loaded; document width matched viewport width. Story links point to the current Clario landing page, public preview and identity assets.
+- Live About entry checked at both widths with the new copy and sample Performance screenshot. The Work archive preview displays the new title, metadata and artwork; its View Project link was clicked and opened `/work/redagencyads` successfully.
+- Visual checks covered the hero, identity board, AI explanation and practical marketing workflow. Mobile checks used reduced motion. The preview's 4:3 image crop exposed an artwork issue; the cover was recomposed inside that crop's safe area without changing shared layouts.
+- Browser console: no errors on the case study; two CSS preload warnings. Evidence remains local in `output/playwright/clario-case/`. Temporary browser sessions were closed after QA.
