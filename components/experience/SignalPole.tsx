@@ -15,7 +15,7 @@ import { getFeaturedProjects } from "@/content/projects";
 import { scrambleText, wheelPixels, wrap } from "@/lib/experience-math.mjs";
 import { getCirclePreviewImage, getStickerSize } from "@/lib/scene-content.mjs";
 
-import { paintHanoiSignBackground, styleHanoiPole } from "./hanoi-pole";
+import { paintHanoiSignBackground } from "./hanoi-pole";
 
 const signLinks: Record<string, { href: string; label: string }> = {
   "hiroto-profile": { href: "/about", label: "About" },
@@ -47,7 +47,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
     renderer.setSize(host.clientWidth, host.clientHeight);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 2.04;
+    renderer.toneMappingExposure = 1.25;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFShadowMap;
     renderer.domElement.setAttribute("aria-hidden", "true");
@@ -176,10 +176,10 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       canvases.set(name, { context, texture });
       const material = materials.get(name);
       if (material) {
-        material.map = texture; material.emissiveMap = texture;
-        material.color.set("white"); material.emissive.set("white");
-        material.emissiveIntensity = name === "to_contact" ? 0.86 : name === "hiroto-profile" ? 0.72 : 0.68;
-        material.metalness = 0; material.roughness = 0.54; material.toneMapped = false;
+        material.map = texture;
+        material.color.set("white"); material.emissive.set("black");
+        material.emissiveMap = null; material.emissiveIntensity = 0;
+        material.metalness = 0; material.roughness = 0.46; material.toneMapped = true;
         material.needsUpdate = true;
       }
       return context;
@@ -241,8 +241,12 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       impactFrame = new THREE.FramebufferTexture(renderer.domElement.width, renderer.domElement.height);
       impactMaterial.uniforms.tDiffuse.value = impactFrame;
       if (!camera) return;
-      camera.aspect = host.clientWidth / host.clientHeight;
-      camera.fov = host.clientWidth <= 620 ? Math.min(baseFov + 7, 72) : baseFov;
+      const width = host.clientWidth, height = host.clientHeight;
+      const compact = width <= 620;
+      camera.aspect = width / height;
+      camera.fov = compact ? Math.min(baseFov + 9, 72) : baseFov;
+      // Keep the full speaker assembly clear of the fixed introduction and bottom facts.
+      camera.setViewOffset(width, height, compact ? 0 : -width * 0.12, height * (compact ? 0.09 : 0.055), width, height);
       camera.updateProjectionMatrix();
       renderer.render(scene, camera);
     };
@@ -260,13 +264,17 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
         if (!(object instanceof THREE.Mesh)) return;
         object.castShadow = object.receiveShadow = true;
         for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
-          if (material instanceof THREE.MeshStandardMaterial) materials.set(material.name, material);
+          if (material instanceof THREE.MeshStandardMaterial) {
+            materials.set(material.name, material);
+            for (const value of Object.values(material)) {
+              if (value instanceof THREE.Texture) textures.add(value);
+            }
+          }
         }
       });
-      styleHanoiPole(model, textures);
       camera = gltf.cameras[0] as THREE.PerspectiveCamera;
       cameraPosition.copy(camera.position);
-      baseFov = camera.fov;
+      baseFov = Math.max(camera.fov, 26);
       mixer = new THREE.AnimationMixer(model);
       const clip = gltf.animations.find((animation) => animation.name === "CameraAction");
       if (clip) { mixer.clipAction(clip).play(); duration = clip.duration; }
@@ -360,16 +368,6 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       }
       const frame = Math.floor(elapsed * 30);
       if (frame !== lastTextureFrame) { drawSigns(elapsed); lastTextureFrame = frame; }
-      const lightColors = ["#ff2b1f", "#ffd21f", "#12d7a8"];
-      const litIndex = reduced.matches ? 2 : Math.floor((elapsed % 3.6) / 1.2);
-      for (let index = 0; index < 3; index++) {
-        const material = materials.get(`light${index + 1}`);
-        if (!material) continue;
-        material.toneMapped = false;
-        material.color.set(index === litIndex ? lightColors[index] : "#050505");
-        material.emissive.copy(material.color);
-        material.emissiveIntensity = index === litIndex ? 2.8 * (0.74 + 0.26 * Math.sin((elapsed % 1.2) / 1.2 * Math.PI)) : 0.05;
-      }
       scene.updateMatrixWorld(true);
       if (pointerInside) {
         const hit = hitTest();
