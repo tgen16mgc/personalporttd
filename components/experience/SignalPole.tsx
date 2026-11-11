@@ -243,6 +243,8 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       if (!camera) return;
       camera.aspect = host.clientWidth / host.clientHeight;
       camera.fov = host.clientWidth <= 620 ? Math.min(baseFov + 7, 72) : baseFov;
+      camera.zoom = host.clientWidth <= 620 ? 0.85 : 0.8;
+      camera.setViewOffset(host.clientWidth, host.clientHeight, 0, host.clientWidth <= 620 ? 0 : -host.clientHeight * 0.14, host.clientWidth, host.clientHeight);
       camera.updateProjectionMatrix();
       renderer.render(scene, camera);
     };
