@@ -103,7 +103,6 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     const hornRest = new THREE.Quaternion();
     const hornWobble = new THREE.Quaternion();
     const hornAxis = new THREE.Vector3(0, 0, 1);
-    const mouth = new THREE.Vector3(), rim = new THREE.Vector3();
     const pointer = new THREE.Vector2(20, 20);
     const raycaster = new THREE.Raycaster();
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
@@ -116,20 +115,6 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     let stickerReady = false;
     let stickerDimensions = getStickerSize();
     const canvases = new Map<string, { context: CanvasRenderingContext2D; texture: THREE.CanvasTexture }>();
-    // ponytail: screen-space arcs; use 3D curves if they need scene occlusion.
-    const waves = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    waves.classList.add("speaker-waves");
-    waves.setAttribute("aria-hidden", "true");
-    waves.style.cssText = "position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0";
-    const waveGroup = document.createElementNS(waves.namespaceURI, "g");
-    const waveArcs = ["M58 -35 Q90 0 58 35", "M78 -48 Q124 0 78 48"].map((d) => {
-      const arc = document.createElementNS(waves.namespaceURI, "path");
-      arc.setAttribute("d", d); arc.setAttribute("fill", "none");
-      arc.setAttribute("stroke", "#5d7182"); arc.setAttribute("stroke-width", "1.6");
-      arc.setAttribute("stroke-linecap", "round"); waveGroup.append(arc);
-      return arc;
-    });
-    waves.append(waveGroup); host.append(waves);
     const stickerPreview = document.createElement("canvas");
     stickerPreview.width = 512; stickerPreview.height = 256;
     stickerPreview.className = "sticker-preview";
@@ -416,19 +401,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
         const wobble = reduced.matches ? 0 : Math.sin(hornHoverTime * 17) * 0.008 * hornHoverAmount;
         hornPivot.quaternion.copy(hornRest).multiply(hornWobble.setFromAxisAngle(hornAxis, wobble));
         hornPivot.updateWorldMatrix(true, true);
-        horn.localToWorld(mouth.set(0, 0.16, 0)).project(camera);
-        horn.localToWorld(rim.set(0.12, 0.16, 0)).project(camera);
-        const width = host.clientWidth, height = host.clientHeight;
-        // Emit toward the open side of the viewport, away from the corner navigation.
-        const angle = mouth.x > 0 ? 180 : 0;
-        const scale = Math.hypot((rim.x - mouth.x) * width / 2, (rim.y - mouth.y) * height / 2) / 60;
-        waveGroup.setAttribute("transform", `translate(${(mouth.x + 1) * width / 2} ${(1 - mouth.y) * height / 2}) rotate(${angle}) scale(${scale})`);
-        waves.style.opacity = String(reduced.matches || mouth.z < -1 || mouth.z > 1 ? 0 : hornHoverAmount);
-        waveArcs.forEach((arc, index) => {
-          const phase = wrap(hornHoverTime / 1.25 + index * 0.5);
-          arc.setAttribute("transform", `translate(${phase * 16} 0)`);
-          arc.setAttribute("opacity", String(Math.sin(phase * Math.PI) * 0.65));
-        });
+
       }
       if (pointerInside) {
         const text = linkFor(hit)?.label || "";
@@ -449,7 +422,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     gsap.ticker.add(tick);
     return () => {
       disposed = true; gsap.ticker.remove(tick); observer.disconnect();
-      previewX.tween.kill(); previewY.tween.kill(); stickerPreview.remove(); waves.remove();
+      previewX.tween.kill(); previewY.tween.kill(); stickerPreview.remove();
       window.removeEventListener("portfolio:route-change", reset);
       canvas.removeEventListener("pointerdown", down); canvas.removeEventListener("pointermove", move); canvas.removeEventListener("pointerup", up); canvas.removeEventListener("pointercancel", cancel); canvas.removeEventListener("pointerleave", cancel); canvas.removeEventListener("wheel", wheel);
       images.forEach((image) => { image.onload = null; });
