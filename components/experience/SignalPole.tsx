@@ -96,6 +96,14 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     let pointerDown: { x: number; y: number; lastX: number; lastY: number } | null = null;
     let hoveredLabel = "";
     let pointerInside = false;
+    let horn: THREE.Object3D | undefined;
+    let hornPivot: THREE.Group | undefined;
+    let hornHoverAmount = 0;
+    let hornHoverTime = 0;
+    const hornRest = new THREE.Quaternion();
+    const hornWobble = new THREE.Quaternion();
+    const hornAxis = new THREE.Vector3(0, 0, 1);
+    const mouth = new THREE.Vector3(), rim = new THREE.Vector3();
     const pointer = new THREE.Vector2(20, 20);
     const raycaster = new THREE.Raycaster();
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
@@ -108,6 +116,20 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     let stickerReady = false;
     let stickerDimensions = getStickerSize();
     const canvases = new Map<string, { context: CanvasRenderingContext2D; texture: THREE.CanvasTexture }>();
+    // ponytail: screen-space arcs; use 3D curves if they need scene occlusion.
+    const waves = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    waves.classList.add("speaker-waves");
+    waves.setAttribute("aria-hidden", "true");
+    waves.style.cssText = "position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0";
+    const waveGroup = document.createElementNS(waves.namespaceURI, "g");
+    const waveArcs = ["M58 -35 Q90 0 58 35", "M78 -48 Q124 0 78 48"].map((d) => {
+      const arc = document.createElementNS(waves.namespaceURI, "path");
+      arc.setAttribute("d", d); arc.setAttribute("fill", "none");
+      arc.setAttribute("stroke", "#5d7182"); arc.setAttribute("stroke-width", "1.6");
+      arc.setAttribute("stroke-linecap", "round"); waveGroup.append(arc);
+      return arc;
+    });
+    waves.append(waveGroup); host.append(waves);
     const stickerPreview = document.createElement("canvas");
     stickerPreview.width = 512; stickerPreview.height = 256;
     stickerPreview.className = "sticker-preview";
@@ -243,8 +265,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       if (!camera) return;
       camera.aspect = host.clientWidth / host.clientHeight;
       camera.fov = host.clientWidth <= 620 ? Math.min(baseFov + 7, 72) : baseFov;
-      camera.zoom = host.clientWidth <= 620 ? 0.85 : 0.8;
-      camera.setViewOffset(host.clientWidth, host.clientHeight, 0, host.clientWidth <= 620 ? 0 : -host.clientHeight * 0.14, host.clientWidth, host.clientHeight);
+      camera.zoom = 0.8;
       camera.updateProjectionMatrix();
       renderer.render(scene, camera);
     };
@@ -283,6 +304,14 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       }
       void Promise.allSettled([document.fonts.load(`500 152px ${condensedFont}`), document.fonts.load(`400 72px ${sansFont}`)]).then(() => { if (!disposed && camera) { drawSigns(elapsed); renderer.render(scene, camera); } });
       drawSigns(0); mixer.setTime(0); scene.updateMatrixWorld(true); resize();
+      model.traverse((object) => { if (object.name.includes("flared_enamel_horn")) horn = object; });
+      if (horn?.parent) {
+        hornPivot = new THREE.Group();
+        hornPivot.position.copy(horn.position); hornPivot.quaternion.copy(horn.quaternion);
+        hornRest.copy(hornPivot.quaternion); horn.parent.add(hornPivot);
+        const movingParts = [horn, model.getObjectByName("Central_horn_phase_plug"), model.getObjectByName("Speaker_compression_driver")];
+        movingParts.forEach((part) => { if (part) hornPivot!.attach(part); });
+      }
       readyRef.current();
     }, undefined, () => { if (!disposed) { host.dataset.failed = "true"; readyRef.current(); } });
 
@@ -291,6 +320,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       raycaster.setFromCamera(pointer, camera);
       return raycaster.intersectObject(model, true)[0];
     };
+    const hitsHorn = (hit: THREE.Intersection | undefined) => Boolean(hit && hornPivot && (hit.object.parent === hornPivot || hit.object.parent === horn));
     const linkFor = (hit: THREE.Intersection | undefined) => {
       if (!(hit?.object instanceof THREE.Mesh)) return undefined;
       const meshMaterials = Array.isArray(hit.object.material) ? hit.object.material : [hit.object.material];
@@ -324,6 +354,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
       const hit = hitTest();
       const link = linkFor(hit);
       if (link) { window.dispatchEvent(new CustomEvent("portfolio:navigate", { detail: link.href })); return; }
+      if (hitsHorn(hit)) return;
       if (!(hit?.object instanceof THREE.Mesh) || !hit.face) return;
       if (!stickerReady) return;
       const { width, height } = stickerDimensions;
@@ -377,10 +408,31 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
         material.emissiveIntensity = index === litIndex ? 2.8 * (0.74 + 0.26 * Math.sin((elapsed % 1.2) / 1.2 * Math.PI)) : 0.05;
       }
       scene.updateMatrixWorld(true);
+      const hit = pointerInside ? hitTest() : undefined;
+      const overHorn = hitsHorn(hit);
+      hornHoverAmount += ((overHorn && !pointerDown && !reduced.matches ? 1 : 0) - hornHoverAmount) * (1 - Math.exp(-dt * 14));
+      if (hornPivot && horn) {
+        if (hornHoverAmount > 0.001) hornHoverTime += dt; else hornHoverTime = 0;
+        const wobble = reduced.matches ? 0 : Math.sin(hornHoverTime * 17) * 0.008 * hornHoverAmount;
+        hornPivot.quaternion.copy(hornRest).multiply(hornWobble.setFromAxisAngle(hornAxis, wobble));
+        hornPivot.updateWorldMatrix(true, true);
+        horn.localToWorld(mouth.set(0, 0.16, 0)).project(camera);
+        horn.localToWorld(rim.set(0.12, 0.16, 0)).project(camera);
+        const width = host.clientWidth, height = host.clientHeight;
+        // Emit toward the open side of the viewport, away from the corner navigation.
+        const angle = mouth.x > 0 ? 180 : 0;
+        const scale = Math.hypot((rim.x - mouth.x) * width / 2, (rim.y - mouth.y) * height / 2) / 60;
+        waveGroup.setAttribute("transform", `translate(${(mouth.x + 1) * width / 2} ${(1 - mouth.y) * height / 2}) rotate(${angle}) scale(${scale})`);
+        waves.style.opacity = String(reduced.matches || mouth.z < -1 || mouth.z > 1 ? 0 : hornHoverAmount);
+        waveArcs.forEach((arc, index) => {
+          const phase = wrap(hornHoverTime / 1.25 + index * 0.5);
+          arc.setAttribute("transform", `translate(${phase * 16} 0)`);
+          arc.setAttribute("opacity", String(Math.sin(phase * Math.PI) * 0.65));
+        });
+      }
       if (pointerInside) {
-        const hit = hitTest();
         const text = linkFor(hit)?.label || "";
-        stickerPreview.dataset.visible = String(Boolean(hit && !text && stickerReady && !pointerDown));
+        stickerPreview.dataset.visible = String(Boolean(hit && !overHorn && !text && stickerReady && !pointerDown));
         if (text !== hoveredLabel) { hoveredLabel = text; window.dispatchEvent(new CustomEvent("portfolio:cursor", { detail: text })); host.style.cursor = hit ? "pointer" : ""; }
       }
       renderer.render(scene, camera);
@@ -397,7 +449,7 @@ export default function SignalPole({ active, onReady }: { active: boolean; onRea
     gsap.ticker.add(tick);
     return () => {
       disposed = true; gsap.ticker.remove(tick); observer.disconnect();
-      previewX.tween.kill(); previewY.tween.kill(); stickerPreview.remove();
+      previewX.tween.kill(); previewY.tween.kill(); stickerPreview.remove(); waves.remove();
       window.removeEventListener("portfolio:route-change", reset);
       canvas.removeEventListener("pointerdown", down); canvas.removeEventListener("pointermove", move); canvas.removeEventListener("pointerup", up); canvas.removeEventListener("pointercancel", cancel); canvas.removeEventListener("pointerleave", cancel); canvas.removeEventListener("wheel", wheel);
       images.forEach((image) => { image.onload = null; });
