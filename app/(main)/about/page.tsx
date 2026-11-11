@@ -30,7 +30,7 @@ function CaseLink({ projectSlug, linkLabel }: { projectSlug?: string; linkLabel?
 function PersonalPhoto({ item }: { item: AfterworkItem }) {
   return <details className="vucko-photo" data-native-cursor>
     <summary>
-      {item.image && <Image src={item.image} alt={item.title} loading="lazy" width={900} height={1000} unoptimized />}
+      {item.image && <Image src={item.image} alt={item.title} loading="lazy" width={900} height={1000} sizes="(max-width: 520px) calc(100vw - 40px), 46vw" />}
       <span>{item.title}<span className="vucko-photo-plus" aria-hidden="true">+</span></span>
       {item.subtitle && <small>{item.subtitle}</small>}
     </summary>
@@ -60,7 +60,7 @@ export default function AboutPage() {
         <span className="vucko-section-label">({aiPractice.kicker})</span>
       </header>
       <div className="vucko-project-grid">{aiPractice.items.map((item, index) => <article key={`${item.title}-${index}`}>
-        {item.image && <figure><Image src={item.image} alt={item.imageAlt} loading="lazy" width={1200} height={1000} unoptimized /></figure>}
+        {item.image && <figure><Image src={item.image} alt={item.imageAlt} loading="lazy" width={1200} height={1000} sizes="(max-width: 520px) calc(100vw - 40px), 46vw" /></figure>}
         <h3>{item.title}</h3><p className="vucko-project-caption">{item.caption}</p><p>{item.body}</p><CaseLink {...item} />
       </article>)}</div>
       <div className="vucko-work-end"><p>{aiPractice.body}</p><Link className="vucko-large-link" href="/work"><ArrowRight size={28} />{aboutHero.workLabel}</Link></div>
@@ -76,7 +76,7 @@ export default function AboutPage() {
     </section>}
 
     <section className="vucko-career" aria-label={uiLabels.experienceAriaLabel}>
-      {personal.portraitImage && <figure className="vucko-career-photo"><Image src={personal.portraitImage} alt={personal.name} width={900} height={1200} loading="lazy" unoptimized /></figure>}
+      {personal.portraitImage && <figure className="vucko-career-photo"><Image src={personal.portraitImage} alt={personal.name} width={900} height={1200} loading="lazy" sizes="(max-width: 520px) calc(100vw - 40px), 44vw" /></figure>}
       <div className="vucko-career-copy">
         <h2>{sectionLabels.experience}</h2>
         {experience.map((item) => <article className="vucko-career-role" key={`${item.company}-${item.role}`}>
@@ -98,7 +98,7 @@ export default function AboutPage() {
     {visibleBrands.length > 0 && <section className="vucko-brands" aria-label={uiLabels.brandsAriaLabel}>
       <p>{sectionLabels.brands}</p><div>{visibleBrands.map((brand) =>
         // eslint-disable-next-line @next/next/no-img-element
-        <img key={brand.name} src={brand.logo!} alt={brand.name} loading="lazy" />)}</div>
+        <img key={brand.name} src={brand.logo!} alt={brand.name} width={120} height={46} loading="lazy" />)}</div>
     </section>}
 
     {afterwork.length > 0 && <section className="vucko-afterwork" id="afterwork" aria-labelledby="afterwork-heading">
@@ -119,7 +119,7 @@ export default function AboutPage() {
       <div className="vucko-footer-links"><nav aria-label="Footer">{personal.navigation.map((item) => <Link key={item.href} href={normalizeNavigationHref(item.href)}>{item.label}</Link>)}</nav>
         <div>{socials.map((item) => <a key={item.label} href={item.href!} target="_blank" rel="noopener noreferrer">{item.label}</a>)}{resume && <a href={resume} target="_blank" rel="noopener noreferrer">{aboutHero.resumeLabel}</a>}</div>
       </div>
-      <div className="vucko-footer-bottom"><Link href="/" className="vucko-footer-wordmark">{personal.shortName.toUpperCase()}</Link><a href="#about-top" aria-label={uiLabels.pageAriaLabel}><ArrowUp size={22} /></a><p>© {new Date().getFullYear()} {personal.name}</p></div>
+      <div className="vucko-footer-bottom"><Link href="/" className="vucko-footer-wordmark">{personal.shortName.toLocaleUpperCase("vi-VN")}</Link><a href="#about-top" aria-label={uiLabels.pageAriaLabel}><ArrowUp size={22} /></a><p>© {new Date().getFullYear()} {personal.name}</p></div>
     </footer>
   </AboutMotion>;
 }

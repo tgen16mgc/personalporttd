@@ -28,6 +28,7 @@ export function PortfolioExperience({ children }: { children: React.ReactNode })
   const [ready, setReady] = useState(false);
   const [entered, setEntered] = useState(false);
   const [sceneLoaded, setSceneLoaded] = useState(pathname !== "/");
+  const [sceneMounted, setSceneMounted] = useState(pathname === "/");
 
   useEffect(() => {
     const capture = () => {
@@ -59,6 +60,7 @@ export function PortfolioExperience({ children }: { children: React.ReactNode })
     };
     const navigate = (href: string) => {
       if (href === pathname) return;
+      if (href === "/") setSceneMounted(true);
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches) capture();
       pending.current = true;
       router.push(href);
@@ -75,6 +77,7 @@ export function PortfolioExperience({ children }: { children: React.ReactNode })
     const onSceneNavigate = (event: Event) => navigate((event as CustomEvent<string>).detail);
     const onHistory = () => {
       if (location.pathname === previousPath.current) return;
+      if (location.pathname === "/") setSceneMounted(true);
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches) capture();
       pending.current = true;
     };
@@ -127,7 +130,7 @@ export function PortfolioExperience({ children }: { children: React.ReactNode })
   return (
     <div className="portfolio-experience" data-home={pathname === "/"} data-page={pathname} data-ready={ready}>
       <a href="#main-content" className="skip-link">Skip to content</a>
-      <SignalPole active={pathname === "/" && ready} onReady={() => setSceneLoaded(true)} />
+      {sceneMounted && <SignalPole active={pathname === "/" && ready} onReady={() => setSceneLoaded(true)} />}
       <main id="main-content" className="experience-content" ref={surface} tabIndex={-1}>{children}</main>
       <Navigation />
       <svg className="transition-definitions" aria-hidden="true"><defs><clipPath id="portfolio-route-mask" clipPathUnits="userSpaceOnUse"><path ref={mask} fillRule="evenodd" clipRule="evenodd" /></clipPath></defs></svg>

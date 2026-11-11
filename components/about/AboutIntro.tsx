@@ -18,19 +18,19 @@ export function AboutIntro() {
   const photo = personal.aboutImage || personal.portraitImage;
 
   return <>
-    <div className="vucko-header">
-      <Link href="/" className="vucko-brand" aria-label={uiLabels.backToHomeLabel}>{personal.shortName.toUpperCase()}</Link>
+    <header className="vucko-header">
+      <Link href="/" className="vucko-brand" aria-label={uiLabels.backToHomeLabel}>{personal.shortName.toLocaleUpperCase("vi-VN")}</Link>
       <p className="vucko-location">{personal.location}</p>
       {aboutHero.hookLineVi && aboutHero.hookSubVi && <div className="vucko-language" role="group" aria-label={uiLabels.languageGroupLabel} data-native-cursor>
         <button type="button" aria-label={uiLabels.englishIntroLabel} aria-pressed={!vietnamese} onClick={() => setLanguage("en")}>{uiLabels.englishLanguageCode}</button>
         <button type="button" aria-label={uiLabels.vietnameseIntroLabel} aria-pressed={vietnamese} onClick={() => setLanguage("vi")}>{uiLabels.vietnameseLanguageCode}</button>
       </div>}
-    </div>
+    </header>
     <section className="vucko-hero" aria-label={uiLabels.pageAriaLabel} id="about-top">
-      <div className="vucko-wordmark" aria-hidden="true">{Array.from(personal.shortName.toUpperCase()).map((letter, index) => <span className="vucko-letter-mask" key={index}><span>{letter}</span></span>)}</div>
+      <div className="vucko-wordmark" aria-hidden="true">{Array.from(personal.shortName.toLocaleUpperCase("vi-VN")).map((letter, index) => <span className="vucko-letter-mask" key={index}><span>{letter}</span></span>)}</div>
       {photo && <div className="vucko-hero-preview">
         <a className="vucko-preview-motion" href="#about-biography" aria-label={aboutHero.introLabel}>
-          <div className="vucko-preview-media"><Image src={photo} alt={personal.name} width={1600} height={1000} unoptimized loading="eager" fetchPriority="high" /></div>
+          <div className="vucko-preview-media"><Image src={photo} alt={personal.name} width={1600} height={1000} sizes="(max-width: 520px) calc(100vw - 40px), 92vw" loading="eager" fetchPriority="high" /></div>
           <span>{personal.name}<br />{personal.location}</span>
         </a>
       </div>}
@@ -43,7 +43,7 @@ export function AboutIntro() {
       </div>
     </section>
     {photo && <figure className="vucko-wide-portrait">
-      <div className="vucko-portrait-frame"><Image src={photo} alt={personal.name} width={1600} height={1000} unoptimized loading="eager" /></div>
+      <div className="vucko-portrait-frame"><Image src={photo} alt={personal.name} width={1600} height={1000} sizes="(max-width: 520px) calc(100vw - 40px), 92vw" loading="lazy" /></div>
       <figcaption>{personal.name}<br />{personal.location}</figcaption>
     </figure>}
     <section className="vucko-statement" id="about-biography" lang={language}>
