@@ -13,6 +13,14 @@ test("Hanoi pole retains its camera animation and navigation surfaces", async ()
     assert.ok(names.includes(name), `Missing Hanoi model component: ${name}`);
   }
   assert.ok(file.byteLength < 5_000_000, "Homepage model must stay below 5 MB");
+  assert.equal(json.scenes.length, 1, "Studio review scenes must not ship");
+  assert.ok(!names.some((name) => name === "Cube" || name.includes("Studio")));
+  assert.deepEqual(json.cameras[0].perspective, {
+    aspectRatio: 1.7777777777777777,
+    yfov: 0.16835126306094314,
+    zfar: 1000,
+    znear: 0.10000000149011612,
+  }, "Keep the original website lens and framing");
   assert.ok(json.images.length > 0);
   assert.ok(json.images.every((image) => Number.isInteger(image.bufferView) && !image.uri));
   assert.ok(!json.materials.some((material) => /^light[123]$/.test(material.name)));
@@ -24,6 +32,12 @@ test("Hanoi pole retains its camera animation and navigation surfaces", async ()
   const enamel = json.materials.find((material) => material.name === "Aged ivory horn enamel");
   assert.equal(enamel.pbrMetallicRoughness.metallicFactor, 0);
   assert.ok(enamel.pbrMetallicRoughness.metallicRoughnessTexture);
+  assert.ok(enamel.extensions.KHR_materials_clearcoat.clearcoatFactor > 0.3);
+  for (const name of ["Metallic", "Metallic.002", "Dull galvanized mounting steel"]) {
+    const metal = json.materials.find((material) => material.name === name);
+    assert.ok(metal.pbrMetallicRoughness.metallicFactor > 0.9, `${name} must reflect as exposed metal`);
+    assert.ok(metal.pbrMetallicRoughness.metallicRoughnessTexture, "Keep baked wear variation");
+  }
 
   // Decode geometry and animation in Node; embedded image decoding is checked in the browser.
   json.materials = json.materials.map(({ name }) => ({ name }));

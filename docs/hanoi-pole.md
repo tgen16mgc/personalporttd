@@ -6,7 +6,7 @@ The homepage uses `public/models/signal-pole.glb`: a red-and-cream pole with an 
 
 The web asset includes the original `Empty` camera rig, perspective camera, and `CameraAction` rotation clip. Keep these when replacing the GLB: scrolling animates the rig, and the renderer reads its embedded camera.
 
-The 4.5 MB GLB embeds the base-color, roughness, and baked normal maps. Its authored paint and UVs render directly; the client only replaces the four CMS-driven sign/display textures. The existing animated sign rendering is retained. Materials retain the names `hiroto-profile`, `to_projects`, `to_contact`, and `hirotos_showreel` for navigation and project artwork.
+The 3.8 MB GLB embeds the base-color, baked roughness, and pole normal maps. Blender's refined version adds small edge bevels, reflective exposed steel, and clearcoat over enamel paint. Roughness variation is baked into textures for the browser; the studio's procedural microscopic bump is kept in the editable Blender scene. The existing HDR environment supplies web reflections. Its authored paint and UVs render directly; the client only replaces the four CMS-driven sign/display textures. The existing animated sign rendering is retained. Materials retain the names `hiroto-profile`, `to_projects`, `to_contact`, and `hirotos_showreel` for navigation and project artwork.
 
 The original desktop/mobile field of view, camera position, exposure, and scene composition are retained. The model excludes the Blender review floor and studio lighting.
 
