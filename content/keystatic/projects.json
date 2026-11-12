@@ -2,8 +2,8 @@
   "items": [
     {
       "slug": "pixself-keychain",
-      "title": "Pixself: a student-run commerce project",
-      "tagline": "150 orders from a 13-week university business project. I led the product and website work and added an n8n order-processing workflow.",
+      "title": "Pixself: from a product idea to 150 orders",
+      "tagline": "A 13-week student business with 150 orders. I led product, website and launch planning, then added an n8n workflow for order processing.",
       "client": "University group project",
       "brand": "Pixself",
       "industry": "E-commerce",
@@ -55,7 +55,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/0/story/4/value/image.webp",
-            "caption": "1st brandguide draft",
+            "caption": "Early identity draft exploring the pixel wordmark, typography and colour palette.",
             "size": "content"
           }
         },
@@ -63,7 +63,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/0/story/5/value/image.webp",
-            "caption": "Website snapshot",
+            "caption": "The website's character builder: customers could choose features and preview their personalized pixel character.",
             "size": "content"
           }
         },
@@ -71,7 +71,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/0/story/6/value/image.webp",
-            "caption": "Social post snapshot",
+            "caption": "Launch post introducing the customizable keychains and directing customers to pixself.studio.",
             "size": "content"
           }
         },
@@ -79,7 +79,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/0/story/7/value/image.png",
-            "caption": "n8n workflow snapshot",
+            "caption": "The n8n order-processing workflow added after launch to reduce manual handling while the team focused on fulfillment.",
             "size": "wide"
           }
         },
@@ -109,6 +109,10 @@
         {
           "metric": "orders",
           "value": "150"
+        },
+        {
+          "metric": "revenue (approx.)",
+          "value": "VND 15M"
         },
         {
           "metric": "impressions",

@@ -2,7 +2,7 @@ import type { GalleryItem } from "@/content/projects";
 import { getSafeContentHref, getSafeExternalHref, getTrustedVideoEmbedInfo } from "@/lib/security.mjs";
 
 export function ProjectGallery({ items, title }: { items: GalleryItem[]; color: string; title: string }) {
-  return <section className="case-gallery" aria-label={`${title} gallery`}><details open={items.length <= 3}><summary>Project Gallery <span>{items.length} items</span></summary><div className="case-gallery-grid">{items.map((item, index) => {
+  return <section className="case-gallery" aria-label={`${title} gallery`}><details><summary>Project Gallery <span>{items.length} items</span></summary><div className="case-gallery-grid">{items.map((item, index) => {
     const image = item.image && getSafeContentHref(item.image);
     const video = item.videoFile && getSafeContentHref(item.videoFile);
     const embed = item.videoUrl && getTrustedVideoEmbedInfo(item.videoUrl);
