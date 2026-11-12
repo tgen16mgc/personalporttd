@@ -2,12 +2,12 @@
   "items": [
     {
       "slug": "pixself-keychain",
-      "title": "Pixself: from a product idea to 150 orders",
-      "tagline": "A 13-week student business with 150 orders. I led product, website and launch planning, then added an n8n workflow for order processing.",
+      "title": "Pixself: 150 completed orders in the first two weeks",
+      "tagline": "A student-run keychain business: 150 completed orders in its first two sales weeks. I led product and website work, ran Meta Ads and added an n8n order workflow.",
       "client": "University group project",
       "brand": "Pixself",
       "industry": "E-commerce",
-      "role": "Project Lead | Product, Website & Order Workflow",
+      "role": "Project Lead | Product, Website, Meta Ads & Order Workflow",
       "year": "Aug - Nov 2025",
       "thumbnail": "/images/projects/items/0/thumbnail.webp",
       "heroImage": "/images/projects/items/0/heroImage.webp",
@@ -107,20 +107,20 @@
       "execution": [],
       "results": [
         {
-          "metric": "orders",
+          "metric": "completed orders in the first two sales weeks",
           "value": "150"
         },
         {
-          "metric": "revenue (approx.)",
+          "metric": "revenue over about one sales month (approx.)",
           "value": "VND 15M"
         },
         {
-          "metric": "impressions",
-          "value": "333K"
+          "metric": "willingness to pay found in the quick survey (approx.)",
+          "value": "VND 50K"
         },
         {
-          "metric": "website link clicks",
-          "value": "1,800"
+          "metric": "selling price chosen by the team",
+          "value": "VND 49K"
         }
       ],
       "awards": [
@@ -131,7 +131,7 @@
     {
       "slug": "redagencyads",
       "title": "Clario: a marketer’s decision workspace",
-      "tagline": "From Red Agency Ads to Clario. I turned an account-team reporting problem into a branded workspace for campaign analysis, evidence and AI-assisted decisions.",
+      "tagline": "An internal tool used across the Account team for Meta Ads tracking, AI-assisted analysis and client-ready reports. I defined the workflow, directed AI-assisted development and built the Clario identity.",
       "client": "Red Agency JSC",
       "brand": "Clario",
       "industry": "Advertising Technology",
@@ -332,12 +332,11 @@
           "value": {
             "heading": "",
             "items": [
-              "Daily account checks: review changes in spend, cost and results, then open the campaigns and evidence behind the signal.",
-              "Client reporting: reopen a saved scope, refresh the numbers, compare periods and prepare a report with a clear explanation of what changed.",
-              "Campaign diagnosis: inspect the funnel, drivers and creative performance before choosing which constraint deserves attention.",
-              "Test planning: use AI to draft possible explanations and tests, then define the audience, creative change, success metric and evidence still needed.",
-              "Competitor and creative briefs: verify advertiser records, identify recurring hooks or gaps and turn them into an original concept for our own campaign.",
-              "Team decisions: bring the evidence, recommendation and proposed action into the same conversation so the next step has a reason the team can inspect."
+              "Daily tracking: choose the Meta Ads campaigns and reporting period, then review changes in spend, cost and results.",
+              "Investigate: inspect the funnel, drivers, creatives and evidence before selecting a finding that needs attention.",
+              "Review an explanation: use AI to draft possible causes and tests; check missing evidence and decide what is worth testing.",
+              "Prepare the client report: refresh a saved scope, review the figures and export the detailed PDF for the client specialist.",
+              "Develop creative briefs: use verified competitor records as research inputs while the scanning workflow is still being developed."
             ]
           }
         },
@@ -357,7 +356,16 @@
         }
       ],
       "execution": [],
-      "results": [],
+      "results": [
+        {
+          "metric": "current use across the agency",
+          "value": "Account team"
+        },
+        {
+          "metric": "detailed PDF report preparation (estimated)",
+          "value": "~5 min"
+        }
+      ],
       "awards": [],
       "credits": [
         {
@@ -409,7 +417,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/2/story/4/value/image.webp",
-            "caption": "Report Snapshot",
+            "caption": "Channel analysis in the report: Shopee and TikTok Shop compared using shopping-channel survey findings and e-commerce market data.",
             "size": "content"
           }
         },
@@ -417,7 +425,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/2/story/5/value/image.webp",
-            "caption": "Report Snapshot",
+            "caption": "Category sales and seasonality: the report compares stationery product groups and highlights the back-to-school period.",
             "size": "content"
           }
         },
@@ -425,7 +433,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/2/story/6/value/image.webp",
-            "caption": "Report Snapshot",
+            "caption": "Purchase drivers and barriers in the project survey (n=215): price, quality, product presentation and delivery concerns inform the recommendations.",
             "size": "content"
           }
         },
@@ -530,22 +538,26 @@
         {
           "type": "video",
           "videoUrl": "https://www.tiktok.com/@aeonbetacinema/video/7607358245002284306?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
-          "size": "half"
+          "size": "half",
+          "caption": "Published AEON Beta TikTok video from the launch-production work. My role covered account and production coordination."
         },
         {
           "type": "video",
           "videoUrl": "https://www.tiktok.com/@aeonbetacinema/video/7605811433552547092?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
-          "size": "half"
+          "size": "half",
+          "caption": "Published AEON Beta TikTok video from the launch-production work. My role covered account and production coordination."
         },
         {
           "type": "video",
           "videoUrl": "https://www.tiktok.com/@aeonbetacinema/video/7581474903497493781?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
-          "size": "half"
+          "size": "half",
+          "caption": "Published AEON Beta TikTok video from the launch-production work. My role covered account and production coordination."
         },
         {
           "type": "video",
           "videoUrl": "https://www.tiktok.com/@aeonbetacinema/video/7605259688552221969?is_from_webapp=1&sender_device=pc&web_id=7548696968639022610",
-          "size": "half"
+          "size": "half",
+          "caption": "Published AEON Beta TikTok video from the launch-production work. My role covered account and production coordination."
         }
       ],
       "featured": true,
@@ -634,7 +646,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/5/story/4/value/image.webp",
-            "caption": "Proposal Snapshot",
+            "caption": "Audience insight proposed in the deck: care in Vietnamese families is often expressed through small everyday actions; this is the team’s planning interpretation.",
             "size": "content"
           }
         },
@@ -642,7 +654,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/5/story/5/value/image.webp",
-            "caption": "Proposal Snapshot",
+            "caption": "Strategic approach: connect the caregiver’s small daily actions with the everyday role of tissue and paper products.",
             "size": "content"
           }
         },
@@ -650,7 +662,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/5/story/6/value/image.webp",
-            "caption": "Proposal Snapshot",
+            "caption": "Proposed brand-DNA summary connecting beliefs, benefits, personality, tone of voice and brand expression.",
             "size": "content"
           }
         },
@@ -658,7 +670,7 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/5/story/7/value/image.webp",
-            "caption": "Proposal Snapshot",
+            "caption": "Message platform in the proposal: “Chút những điều nhỏ bé”, with functional and emotional benefit directions.",
             "size": "content"
           }
         },
@@ -804,7 +816,7 @@
     {
       "slug": "freelance-visualizer",
       "title": "Selected creative work",
-      "tagline": "A selection of visual and editorial work, including student-club and event projects. Paid freelance experience is listed separately on About.",
+      "tagline": "Selected art direction, social and editorial work. The gallery shows how concepts and visual systems were carried across formats; client delivery and team credits remain project-specific.",
       "client": "Various projects",
       "industry": "Marketing & Advertising",
       "role": "Design & Art Direction",
@@ -825,14 +837,16 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/1/value/image.webp",
-            "size": "wide"
+            "size": "wide",
+            "caption": "H4TF: “Pioneer Your Future” key visual, using the green illustrated world as the starting point for the visual direction."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/2/value/image.webp",
-            "size": "content"
+            "size": "content",
+            "caption": "H4TF: visual-system and format explorations showing how the key visual carried into supporting materials."
           }
         },
         {
@@ -845,28 +859,32 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/4/value/image.webp",
-            "size": "wide"
+            "size": "wide",
+            "caption": "TEDx NEU 2024: “Retrace” cover adaptation for the “Lead Your Way” event direction."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/5/value/image.webp",
-            "size": "content"
+            "size": "content",
+            "caption": "TEDx NEU 2024: square “Retrace” adaptation, keeping the illustrated figure and red-blue visual language."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/6/value/image.webp",
-            "size": "content"
+            "size": "content",
+            "caption": "TEDx NEU 2024: event-day announcement with schedule and venue details."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/7/value/image.webp",
-            "size": "wide"
+            "size": "wide",
+            "caption": "TEDx NEU 2024: supporting “Where is our Eden?” concept visual."
           }
         },
         {
@@ -879,61 +897,69 @@
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/9/value/image.webp",
-            "size": "wide"
+            "size": "wide",
+            "caption": "Marketing’s Generation Club: “The Dream Thief” recruitment cover and illustrated direction."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/10/value/image.webp",
-            "size": "content"
+            "size": "content",
+            "caption": "Marketing’s Generation Club: square adaptation of “The Dream Thief” recruitment visual."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/11/value/image.webp",
-            "size": "content"
+            "size": "content",
+            "caption": "Marketing’s Generation Club: supporting recruitment posts carried across the same visual system."
+          }
+        },
+        {
+          "discriminant": "heading",
+          "value": {
+            "body": "Selected Social & Hospitality Visuals"
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/12/value/image.webp",
-            "size": "content"
+            "size": "content",
+            "caption": "Selected hospitality and property visual exploration; shown as artwork, without a claim of campaign performance."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/13/value/image.webp",
-            "size": "content"
-          }
-        },
-        {
-          "discriminant": "heading",
-          "value": {
-            "body": "Social Post | Sun Group"
+            "size": "content",
+            "caption": "Selected hospitality artwork: “Our Beloved Summer” seasonal visual."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/15/value/image.webp",
-            "size": "content"
+            "size": "content",
+            "caption": "Sun Group: “Casa Villa” social artwork with the product and launch message in one composition."
           }
         },
         {
           "discriminant": "image",
           "value": {
             "image": "/images/projects/items/7/story/16/value/image.webp",
-            "size": "content"
+            "size": "content",
+            "caption": "Sun Group: multi-image social adaptation connecting the property offer, interiors and lifestyle."
           }
         },
         {
           "discriminant": "facebook",
           "value": {
-            "url": "https://www.facebook.com/reel/2028102208112428?locale=vi_VN"
+            "url": "https://www.facebook.com/reel/2028102208112428?locale=vi_VN",
+            "caption": "Published video example. Open the original Facebook post to view the work in context."
           }
         },
         {
@@ -945,7 +971,9 @@
         {
           "discriminant": "pdf",
           "value": {
-            "url": "https://drive.google.com/file/d/1GZPgjVElBeCnzSY7v7iIR5_u9N3n3fY4/view?usp=sharing"
+            "url": "https://drive.google.com/file/d/1GZPgjVElBeCnzSY7v7iIR5_u9N3n3fY4/view?usp=sharing",
+            "title": "Selected ebook / editorial work",
+            "caption": "Open the original PDF to inspect the editorial layout and page sequence."
           }
         }
       ],
